@@ -7,20 +7,22 @@ import { CustomerModule } from './customer/customer.module';
 import { VendorModule } from './vendor/vendor.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CustomerModule,
-    VendorModule,
-    AuthModule,
-    SharedModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HomePageComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		CustomerModule,
+		VendorModule,
+		AuthModule,
+		SharedModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
