@@ -8,11 +8,25 @@ import { VendorModule } from './vendor/vendor.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AddedComponent } from './added/added.component';
+import { CheckOutComponent } from './check-out/check-out.component';
+import { CartComponent } from './cart/cart.component';
+import { ListComponent } from './list/list.component';
+import { RequestsComponent } from './requests/requests.component';
+import { SearchVendorsComponent } from './search-vendors/search-vendors.component';
+import { SeeCustomerrRequestComponent } from './see-customerr-request/see-customerr-request.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		HomePageComponent
+		HomePageComponent,
+  AddedComponent,
+  CheckOutComponent,
+  CartComponent,
+  ListComponent,
+  RequestsComponent,
+  SearchVendorsComponent,
+  SeeCustomerrRequestComponent
 	],
 	imports: [
 		BrowserModule,
