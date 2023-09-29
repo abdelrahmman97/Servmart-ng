@@ -2,34 +2,42 @@
 	<nav class="navbar navbar-expand-xl">
 		<div class="container-fluid px-5">
 			<!-- Logo -->
-			<a class="navbar-brand" href="../index.html">
-				<img class="light-mode-item navbar-brand-item" src="./../assets/images/logo.png" alt="logo">
-				<img class="dark-mode-item navbar-brand-item" src="./../assets/images/logo.png" alt="logo">
+			<a class="navbar-brand" href="./index.html">
+				<img class="light-mode-item navbar-brand-item" src="./assets/images/logo.png" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="./assets/images/logo.png" alt="logo">
 			</a>
 
 			<!-- Main navbar -->
 			<div class="navbar-collapse collapse" id="navbarCollapse">
-				<ul class="navbar-nav navbar-nav-scroll me-auto">
+				<ul class="navbar-nav navbar-nav-scroll me-auto nav-pills-primary-soft">
 					<!-- Home - Services - Store - Vendors -->
 
 					<!-- Nav item - Home -->
 					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="fa-duotone fa-house-chimney"></i> Home</a>
+						<a class="nav-link" [routerLink]="['']" routerLinkActive="active">
+							<i class="fa-duotone fa-house-chimney"></i> Home
+						</a>
 					</li>
 
 					<!-- Nav item - Services -->
 					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="fa-duotone fa-sparkles"></i> Services</a>
+						<a class="nav-link" [routerLink]="['/services']" routerLinkActive="active">
+							<i class="fa-duotone fa-sparkles"></i> Services
+						</a>
 					</li>
 
 					<!-- Nav item Store -->
 					<li class="nav-item ">
-						<a class="nav-link" href="#"><i class="fa-duotone fa-store"></i> Store</a>
+						<a class="nav-link" [routerLink]="['/stores']" routerLinkActive="active">
+							<i class="fa-duotone fa-store"></i> Stores
+						</a>
 					</li>
 
 					<!-- Nav item Vendors -->
 					<li class="nav-item ">
-						<a class="nav-link" href="#"><i class="fa-duotone fa-users"></i> Vendors</a>
+						<a class="nav-link" [routerLink]="['/vendores']" routerLinkActive="active">
+							<i class="fa-duotone fa-users"></i> Vendors
+						</a>
 					</li>
 
 					<!-- Nav item more-->

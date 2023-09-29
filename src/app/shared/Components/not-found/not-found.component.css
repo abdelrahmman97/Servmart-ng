@@ -1,0 +1,66 @@
+	svg#freepik_stories-404-error:not(.animated) .animable {
+		opacity: 0;
+	}
+
+	svg#freepik_stories-404-error.animated #freepik--404--inject-2 {
+		-webkit-animation: 1s 1 forwards linear zoomIn, 6s Infinite linear floating;
+		animation: 1s 1 forwards linear zoomIn, 6s Infinite linear floating;
+		-webkit-animation-delay: 0s, 1s;
+		animation-delay: 0s, 1s;
+	}
+
+	@-webkit-keyframes zoomIn {
+		0% {
+			opacity: 0;
+			transform: scale(0.5);
+		}
+
+		100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	@keyframes zoomIn {
+		0% {
+			opacity: 0;
+			transform: scale(0.5);
+		}
+
+		100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	@-webkit-keyframes floating {
+		0% {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+
+		50% {
+			transform: translateY(-10px);
+		}
+
+		100% {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
+
+	@keyframes floating {
+		0% {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+
+		50% {
+			transform: translateY(-10px);
+		}
+
+		100% {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
