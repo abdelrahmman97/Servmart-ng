@@ -1,17 +1,24 @@
 <section class="p-0 m-0">
 	<div class="container">
-		<div class="card rounded-3 border p-3 pb-2">
+		<div class="card rounded-3 border p-3 gap-4">
 			<!-- Avatar and info -->
-			<div class="d-sm-flex align-items-center">
-				<div class="avatar avatar-xl mb-2 mb-sm-0">
-					<img class="avatar-img rounded-circle" src="./../assets/images/08.jpg" alt="">
+			<div class="d-sm-flex justify-content-between align-items-start gap-2">
+				<div class="d-sm-flex align-items-center gap-2">
+					<div class="avatar avatar-xl mb-2 mb-sm-0">
+						<img class="avatar-img rounded-circle"
+							src="https://images.placeholders.dev/?width=200&height=200" alt="">
+					</div>
+					<div class="d-flex flex-column gap-1">
+						<h4 class="mb-2 mb-sm-0">
+							عبدالرحمن محمود
+							<span>
+								<i class="fa-duotone fa-badge-check text-primary"></i>
+							</span>
+						</h4>
+						<p class="mb-2 mb-sm-0">مطور ويب</p>
+					</div>
 				</div>
-				<div class="d-flex flex-column gap-1">
-					<h4 class="mb-2 mb-sm-0 ms-sm-3">Abdo Tayson <span><i
-								class="fa-duotone fa-badge-check text-primary"></i></span></h4>
-					<p class="mb-2 mb-sm-0 ms-sm-3">Service name</p>
-				</div>
-				<div class=" d-flex align-items-center flex-shrink-0 ms-auto gap-4">
+				<div class=" d-flex align-items-center flex-shrink-0 gap-4">
 					<div class="dropdown">
 						<a class="btn btn-light" href="#" id="dropdoanMenu" data-bs-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">
@@ -19,45 +26,44 @@
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdoanMenu">
 							<!-- Dropdown menu -->
-							<li> <a class="dropdown-item" href="#">Report</a></li>
-							<li> <a class="dropdown-item" href="#">Item 2</a></li>
+							<li> <a class="dropdown-item" href="#">تبليغ</a></li>
 						</ul>
 					</div>
 					<a href="#" class="btn btn-primary-soft mb-0">
-						<i class="fa-duotone fa-handshake"></i> Hire me
+						<i class="fa-duotone fa-handshake"></i> وظفني
 					</a>
 				</div>
 			</div>
 
 			<!-- Nav item -->
-			<div class="navbar navbar-expand-xl">
-				<ul class="navbar-nav navbar-offcanvas-menu flex-row gap-4" role="tablist">
+			<div class="card-footer border-0 p-0 navbar navbar-expand-xl">
+				<ul class="navbar-nav navbar-offcanvas-menu flex-row gap-4 p-0" role="tablist">
 
 					<li class="nav-item">
-						<a class="nav-link active" href="#about" data-bs-toggle="tab" aria-selected="true" role="tab">
+						<a class="nav-link p-2 rounded active" href="#about" data-bs-toggle="tab" aria-selected="true" role="tab">
 							<i class="fa-duotone fa-user"></i>
-							<span class="d-none d-sm-flex">About</span>
+							<span class="d-none d-sm-flex">معلومات عني</span>
 						</a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="#work" data-bs-toggle="tab" aria-selected="true" role="tab">
+						<a class="nav-link p-2 rounded" href="#work" data-bs-toggle="tab" aria-selected="true" role="tab">
 							<i class="fa-duotone fa-boxes-stacked"></i>
-							<span class="d-none d-sm-flex">Work</span>
+							<span class="d-none d-sm-flex">اعمالي السابقة</span>
 						</a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="#services" data-bs-toggle="tab" aria-selected="true" role="tab">
+						<a class="nav-link p-2 rounded" href="#services" data-bs-toggle="tab" aria-selected="true" role="tab">
 							<i class="fa-duotone fa-bolt"></i>
-							<div class="d-none d-sm-flex">Services</div>
+							<div class="d-none d-sm-flex">خدماتي</div>
 						</a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="#reviews" data-bs-toggle="tab" aria-selected="true" role="tab">
+						<a class="nav-link p-2 rounded" href="#reviews" data-bs-toggle="tab" aria-selected="true" role="tab">
 							<i class="fa-duotone fa-star-sharp-half"></i>
-							<div class="d-none d-sm-flex">Reviews</div>
+							<div class="d-none d-sm-flex">تقييمي</div>
 						</a>
 					</li>
 
@@ -75,7 +81,7 @@
 				<div class="col-xl-8 col-lg-12 col-sm-12">
 					<div class="card">
 						<div class="card-header">
-							<h6 class="m-0">About me</h6>
+							<h6 class="m-0">نبذة عني</h6>
 						</div>
 						<div class="card-body">
 							<p>
@@ -90,30 +96,31 @@
 				<div class="col-xl-4 col-lg-12 col-sm-12">
 					<div class="card">
 						<div class="card-header">
-							<h6 class="m-0">statistics</h6>
+							<h6 class="m-0">إحصائيات</h6>
 						</div>
 						<div class="card-body">
 							<div class="d-flex">
-								<div class="col-7">Rating</div>
+								<div class="col-7">التقييم</div>
 								<div class="col-5">
 									4.5
 									<i class="fa-solid fa-star text-warning"></i>
 								</div>
 							</div>
 							<div class="d-flex">
-								<div class="col-7">Services</div>
+								<div class="col-7">الخدمات</div>
 								<div class="col-5">
-									3 services
+									3 خدمات
 								</div>
 							</div>
 							<div class="d-flex">
-								<div class="col-7">Account created</div>
+								<div class="col-7">تاريخ إنشاء الحساب</div>
 								<div class="col-5">
-									2 years
+									<!-- 2 years -->
+									سنتان
 								</div>
 							</div>
 							<div class="d-flex">
-								<div class="col-7">Work/Services Done</div>
+								<div class="col-7">العمل/الخدمات التي تم إنجازها</div>
 								<div class="col-5">
 									12
 								</div>
@@ -130,7 +137,7 @@
 		<div class="container">
 			<div class="card border-0">
 				<div class="card-header">
-					<h6 class="mb-0">Check my latest work</h6>
+					<h6 class="mb-0">تفقد اخر اعمالي</h6>
 				</div>
 				<div class="card-body">
 					<div class="row gy-4">
@@ -142,7 +149,7 @@
 								<div class="card-body">
 									<div class="d-flex flex-column">
 										<h5 class="card-title">
-											project title
+											عنوان المشروع
 										</h5>
 										<span>
 											<i class="fa-solid fa-star text-warning"></i>
@@ -170,7 +177,7 @@
 								<div class="card-body">
 									<div class="d-flex flex-column">
 										<h5 class="card-title">
-											project title
+											عنوان المشروع
 										</h5>
 										<span>
 											<i class="fa-solid fa-star text-warning"></i>
@@ -198,7 +205,7 @@
 								<div class="card-body">
 									<div class="d-flex flex-column">
 										<h5 class="card-title">
-											project title
+											عنوان المشروع
 										</h5>
 										<span>
 											<i class="fa-solid fa-star text-warning"></i>
@@ -226,7 +233,7 @@
 								<div class="card-body">
 									<div class="d-flex flex-column">
 										<h5 class="card-title">
-											project title
+											عنوان المشروع
 										</h5>
 										<span>
 											<i class="fa-solid fa-star text-warning"></i>
@@ -254,7 +261,7 @@
 								<div class="card-body">
 									<div class="d-flex flex-column">
 										<h5 class="card-title">
-											project title
+											عنوان المشروع
 										</h5>
 										<span>
 											<i class="fa-solid fa-star text-warning"></i>
@@ -282,7 +289,7 @@
 								<div class="card-body">
 									<div class="d-flex flex-column">
 										<h5 class="card-title">
-											project title
+											عنوان المشروع
 										</h5>
 										<span>
 											<i class="fa-solid fa-star text-warning"></i>
@@ -310,7 +317,7 @@
 								<div class="card-body">
 									<div class="d-flex flex-column">
 										<h5 class="card-title">
-											project title
+											عنوان المشروع
 										</h5>
 										<span>
 											<i class="fa-solid fa-star text-warning"></i>
@@ -338,7 +345,7 @@
 								<div class="card-body">
 									<div class="d-flex flex-column">
 										<h5 class="card-title">
-											project title
+											عنوان المشروع
 										</h5>
 										<span>
 											<i class="fa-solid fa-star text-warning"></i>
@@ -370,7 +377,7 @@
 		<div class="container">
 			<div class="card border-0">
 				<div class="card-header">
-					<h6 class="mb-0">Check my services</h6>
+					<h6 class="mb-0">تفقد خدماتي</h6>
 				</div>
 				<div class="card-body">
 					<div class="row gy-4">
@@ -382,7 +389,7 @@
 								<div class="card-body pb-2">
 
 									<h5 class="card-title">
-										project title
+										عنوان المشروع
 									</h5>
 									<p class="card-text line-clamp-3">
 										Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -415,7 +422,7 @@
 								<div class="card-body pb-2">
 
 									<h5 class="card-title">
-										project title
+										عنوان المشروع
 									</h5>
 									<p class="card-text line-clamp-3">
 										Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -448,7 +455,7 @@
 								<div class="card-body pb-2">
 
 									<h5 class="card-title">
-										project title
+										عنوان المشروع
 									</h5>
 									<p class="card-text line-clamp-3">
 										Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -481,7 +488,7 @@
 								<div class="card-body pb-2">
 
 									<h5 class="card-title">
-										project title
+										عنوان المشروع
 									</h5>
 									<p class="card-text line-clamp-3">
 										Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -514,7 +521,7 @@
 								<div class="card-body pb-2">
 
 									<h5 class="card-title">
-										project title
+										عنوان المشروع
 									</h5>
 									<p class="card-text line-clamp-3">
 										Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -547,7 +554,7 @@
 								<div class="card-body pb-2">
 
 									<h5 class="card-title">
-										project title
+										عنوان المشروع
 									</h5>
 									<p class="card-text line-clamp-3">
 										Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -580,7 +587,7 @@
 								<div class="card-body pb-2">
 
 									<h5 class="card-title">
-										project title
+										عنوان المشروع
 									</h5>
 									<p class="card-text line-clamp-3">
 										Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -613,7 +620,7 @@
 								<div class="card-body pb-2">
 
 									<h5 class="card-title">
-										project title
+										عنوان المشروع
 									</h5>
 									<p class="card-text line-clamp-3">
 										Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -651,14 +658,14 @@
 			<div class="card border-0">
 				<div class="card-header">
 					<h6 class="mb-0">
-						What poeple who i worked with says
+						ما يقوله الأشخاص الذين عملت معهم
 					</h6>
 				</div>
 				<div class="card-body row gy-4">
 					<!-- reviews -->
 					<div class="card">
 						<div class="card-header">
-							<h6 class="m-0 p-0 fs-6 fw-medium">work or service title</h6>
+							<h6 class="m-0 p-0 fs-6 fw-medium">عنوان العمل أو الخدمة</h6>
 						</div>
 						<div class="card-body">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
@@ -671,7 +678,7 @@
 						<div class="card-footer">
 							<div class="row g-3">
 								<div class="col-sm-6 col-md-3">
-									<span>Nominate for others</span>
+									<span>ترشح للآخرين</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -679,7 +686,7 @@
 									</span>
 								</div>
 								<div class="col-sm-6 col-md-3">
-									<span>Work Quality</span>
+									<span>جودة العمل</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -687,7 +694,7 @@
 									</span>
 								</div>
 								<div class="col-sm-6 col-md-3">
-									<span>Respect the delivery date</span>
+									<span>احترام موعد التسليم</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -699,7 +706,7 @@
 					</div>
 					<div class="card">
 						<div class="card-header">
-							<h6 class="m-0 p-0 fs-6 fw-medium">work or service title</h6>
+							<h6 class="m-0 p-0 fs-6 fw-medium">عنوان العمل أو الخدمة</h6>
 						</div>
 						<div class="card-body">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
@@ -712,7 +719,7 @@
 						<div class="card-footer">
 							<div class="row g-3">
 								<div class="col-sm-6 col-md-3">
-									<span>Nominate for others</span>
+									<span>ترشح للآخرين</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -720,7 +727,7 @@
 									</span>
 								</div>
 								<div class="col-sm-6 col-md-3">
-									<span>Work Quality</span>
+									<span>جودة العمل</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -728,7 +735,7 @@
 									</span>
 								</div>
 								<div class="col-sm-6 col-md-3">
-									<span>Respect the delivery date</span>
+									<span>احترام موعد التسليم</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -740,7 +747,7 @@
 					</div>
 					<div class="card">
 						<div class="card-header">
-							<h6 class="m-0 p-0 fs-6 fw-medium">work or service title</h6>
+							<h6 class="m-0 p-0 fs-6 fw-medium">عنوان العمل أو الخدمة</h6>
 						</div>
 						<div class="card-body">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
@@ -753,7 +760,7 @@
 						<div class="card-footer">
 							<div class="row g-3">
 								<div class="col-sm-6 col-md-3">
-									<span>Nominate for others</span>
+									<span>ترشح للآخرين</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -761,7 +768,7 @@
 									</span>
 								</div>
 								<div class="col-sm-6 col-md-3">
-									<span>Work Quality</span>
+									<span>جودة العمل</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -769,7 +776,7 @@
 									</span>
 								</div>
 								<div class="col-sm-6 col-md-3">
-									<span>Respect the delivery date</span>
+									<span>احترام موعد التسليم</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -781,7 +788,7 @@
 					</div>
 					<div class="card">
 						<div class="card-header">
-							<h6 class="m-0 p-0 fs-6 fw-medium">work or service title</h6>
+							<h6 class="m-0 p-0 fs-6 fw-medium">عنوان العمل أو الخدمة</h6>
 						</div>
 						<div class="card-body">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
@@ -794,7 +801,7 @@
 						<div class="card-footer">
 							<div class="row g-3">
 								<div class="col-sm-6 col-md-3">
-									<span>Nominate for others</span>
+									<span>ترشح للآخرين</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -802,7 +809,7 @@
 									</span>
 								</div>
 								<div class="col-sm-6 col-md-3">
-									<span>Work Quality</span>
+									<span>جودة العمل</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>
@@ -810,7 +817,7 @@
 									</span>
 								</div>
 								<div class="col-sm-6 col-md-3">
-									<span>Respect the delivery date</span>
+									<span>احترام موعد التسليم</span>
 									<span>
 										<br>
 										<i class="fa-solid fa-star text-warning"></i>

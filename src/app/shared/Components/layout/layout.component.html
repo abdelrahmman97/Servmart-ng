@@ -1,4 +1,5 @@
-<div class="pb-9 pb-lg-4">
+<!-- <div class="pb-9 pb-lg-4"> -->
+<div class="pb-4 pb-lg-2">
 
 	<app-header></app-header>
 
@@ -7,70 +8,12 @@
 		<div class="row">
 
 			<!-- Sidebar  -->
-			<div class="col-lg-2 d-none d-lg-inline full-sidebar sticky-top z-0">
-				<div class="card bg-light w-100 sticky-top top-1">
-					<!-- Sidebar Content -->
-					<div class="card-body p-3">
-						<!-- Avatar -->
-						<div
-							class="text-center mb-3 d-flex justify-content-center flex-column align-items-center text-truncate">
-							<div class="mb-2">
-								<img class="avatar-img rounded-circle border border-2 border-white d-none d-sm-flex w-100"
-									src="https://images.placeholders.dev/?width=200&height=200" alt="">
-							</div>
-							<h6 class="mb-0 d-none d-xl-inline">Abdelrahman M.</h6>
-							<a href="#"
-								class="text-reset text-primary-hover small line-clamp-1 d-none d-xl-inline">abdelrahman.m1097@gmail.com</a>
-							<hr>
-						</div>
-
-						<!-- Sidebar menu item -->
-						<ul class="nav nav-pills-primary-soft flex-column">
-							<li class="nav-item">
-								<a class="nav-link justify-content-center justify-content-xl-start active"
-									href="../account-profile.html">
-									<i class="fa-duotone fa-user text-xl 2xl:text-base"></i>
-									<span class="d-none d-xl-inline">Profile</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link justify-content-center justify-content-xl-start"
-									href="../account-bookings.html">
-									<i class="fa-duotone fa-ticket text-xl 2xl:text-base"></i>
-									<span class="d-none d-xl-inline">Requests</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link justify-content-center justify-content-xl-start"
-									href="./../customer/cart.html">
-									<i class="fa-duotone fa-cart-shopping text-xl 2xl:text-base"></i>
-									<span class="d-none d-xl-inline">Cart</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link justify-content-center justify-content-xl-start"
-									href="../account-settings.html">
-									<i class="fa-duotone fa-gear text-xl 2xl:text-base"></i>
-									<span class="d-none d-xl-inline">Settings</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link justify-content-center justify-content-xl-start text-danger bg-danger-soft-hover"
-									href="#">
-									<i class="fa-duotone fa-power-off text-xl 2xl:text-base"></i>
-									<span class="d-none d-xl-inline">Sign Out</span>
-								</a>
-							</li>
-						</ul>
-
-					</div>
-				</div>
-			</div>
+			<app-sidebar class="col-lg-2 d-none d-lg-inline full-sidebar sticky-top z-0"></app-sidebar>
 
 			<!-- Main content -->
 			<div class="col-lg-10">
 
-				<div class="page-content mb-5 m-0">
+				<div class="page-content mb-2 m-0">
 					<router-outlet></router-outlet>
 				</div>
 
@@ -83,52 +26,6 @@
 
 
 	<!-- Sidebar for small screens -->
-	<div class="bottom-0 d-inline d-lg-none position-fixed w-100">
-		<div class="card w-100 border-bottom-0 rounded-bottom-0 shadow-lg">
-			<!-- Sidebar Content -->
-			<div class="card-body d-flex justify-content-between p-3">
-				<!-- Avatar -->
-				<div class="">
-					<img class="avatar-img rounded-circle border border-2 border-white d-none d-sm-flex "
-						style="width: 5rem;" src="https://images.placeholders.dev/?width=200&height=200" alt="">
-				</div>
-
-				<!-- Sidebar menu item -->
-				<ul class="flex-row justify-content-between align-items-center ms-5 nav nav-pills-primary-soft w-100">
-					<li class="nav-item">
-						<a class="nav-link justify-center lg:justify-start active" href="../account-profile.html">
-							<i class="fa-duotone fa-user text-xl"></i>
-							<span class="d-none lg:inline-block">Profile</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link justify-center lg:justify-start" href="../account-bookings.html">
-							<i class="fa-duotone fa-ticket text-xl"></i>
-							<span class="d-none lg:inline-block">Requests</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link justify-center lg:justify-start" href="../account-travelers.html">
-							<i class="fa-duotone fa-cart-shopping text-xl"></i>
-							<span class="d-none lg:inline-block">Cart</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link justify-center lg:justify-start" href="../account-settings.html">
-							<i class="fa-duotone fa-gear text-xl"></i>
-							<span class="d-none lg:inline-block">Settings</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link justify-center lg:justify-start text-danger bg-danger-soft-hover" href="#">
-							<i class="fa-duotone fa-power-off text-xl"></i>
-							<span class="d-none lg:inline-block">Sign Out</span>
-						</a>
-					</li>
-				</ul>
-
-			</div>
-		</div>
-	</div>
+	<app-BottomSidebar></app-BottomSidebar>
 
 </div>

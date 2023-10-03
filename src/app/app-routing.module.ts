@@ -10,8 +10,7 @@ const routes: Routes = [
 	{ path: "index", component: HomePageComponent },
 	{ path: "home", component: HomePageComponent },
 	{
-		path: "u", component: LayoutComponent, children: [
-			{ path: "", component: ProfileComponent },
+		path: "", component: LayoutComponent, children: [
 			{ path: "profile", component: ProfileComponent },
 		]
 	},
