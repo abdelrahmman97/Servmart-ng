@@ -9,7 +9,7 @@ import { SendOffersComponent } from './Components/SendOffers/SendOffers.componen
 
 
 
-@NgModule( {
+@NgModule({
 	declarations: [
 		RequestDetailsComponent,
 		RequestListComponent,
@@ -21,5 +21,5 @@ import { SendOffersComponent } from './Components/SendOffers/SendOffers.componen
 		CommonModule,
 		RouterModule
 	]
-} )
+})
 export class VendorModule { }
