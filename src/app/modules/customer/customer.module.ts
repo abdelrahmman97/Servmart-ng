@@ -8,6 +8,7 @@ import { SearchVendorsComponent } from './Components/search-vendors/search-vendo
 import { SeeCustomerRequestsComponent } from './Components/see-customer-requests/see-customer-requests.component';
 import { RequestOffersComponent } from './Components/RequestOffers/RequestOffers.component';
 import { RateServiceComponent } from './Components/RateService/RateService.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -23,7 +24,8 @@ import { RateServiceComponent } from './Components/RateService/RateService.compo
 	],
 	imports: [
 		CommonModule,
-		RouterModule
+		RouterModule,
+		SharedModule
 	]
 })
 export class CustomerModule { }

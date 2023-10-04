@@ -49,34 +49,38 @@
 			<!-- rate -->
 			<div class="card-body">
 				<div class="d-flex flex-row justify-content-between">
-					<h6>ترشحه للآخرين</h6>
-					<div class="">
-						<div class="rating-box">
+					<h6 class="fs-4">ترشحه للآخرين</h6>
+					<div class="w-25">
+						<app-Rating [numberOfStars]="5"></app-Rating>
+					</div>
+				</div>
+				<div class="d-flex flex-row justify-content-between">
+					<h6 class="fs-4">جودة العمل</h6>
+					<div class="w-25">
+						<app-Rating [numberOfStars]="5"></app-Rating>
+						<!-- (mousemove)="setMousePosition($event)"></i> -->
+						<!-- <div class="rating-box">
 							<div class="stars">
 								<i class="fs-4 "
-									[ngClass]="[(rate_1_index >= index) ? 'active' : 'fa-duotone fa-star', (mousePosition > 15 && index == rate_1_index) ? 'fa-duotone fa-star-half fa-flip-horizontal' : 'fa-solid fa-star' ]"
-									*ngFor="let item of numberOfStars; let index=index"
-									(click)="setMousePosition($event, index)"
-									(mousemove)="setMousePosition($event, index)" id="{{'rate1_star_'+index}}"></i>
+									[ngClass]="[(rate_2_index >= index2) ? 'active' : 'fa-duotone fa-star', (mousePosition > 15 && index2 == rate_2_index) ? 'fa-duotone fa-star-half fa-flip-horizontal' : 'fa-solid fa-star' ]"
+									*ngFor="let item of numberOfStars; let index2=index"
+									(click)="setMousePosition2($event, index2)"
+									(mousemove)="setMousePosition2($event, index2)" id="{{'rate2_star_'+index2}}"></i>
 
-								<!-- (mousemove)="setMousePosition($event)"></i> -->
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="d-flex flex-row justify-content-between">
-					<h6>جودة العمل</h6>
-					<div class="">
-					</div>
-				</div>
-				<div class="d-flex flex-row justify-content-between">
-					<h6>احترام موعد التسليم</h6>
-					<div class="">
+					<h6 class="fs-4">احترام موعد التسليم</h6>
+					<div class="w-25">
+						<app-Rating [numberOfStars]="5"></app-Rating>
 					</div>
 				</div>
 				<div class="mt-5">
 					<div class="form-floating">
-						<textarea type="text" class="form-control" rows="3" placeholder=""></textarea>
+						<textarea type="text" class="form-control" title="أخبر الاخرين عن رأيك" rows="3"
+							placeholder=""></textarea>
 						<label for="fullName" class="form-label">أخبر الاخرين عن رأيك</label>
 					</div>
 				</div>

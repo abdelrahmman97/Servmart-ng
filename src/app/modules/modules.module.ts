@@ -14,16 +14,16 @@ import { ModulesRoutingModule } from './modules-routing.module';
 
 
 
-@NgModule( {
+@NgModule({
 	declarations: [
 		HomePageComponent,
-		ProfileComponent
+		ProfileComponent,
 	],
 	imports: [
 		CommonModule,
 		ModulesRoutingModule,
-		CoreModule,
 
+		CoreModule,
 		AdminModule,
 		AuthModule,
 		CustomerModule,
@@ -31,5 +31,5 @@ import { ModulesRoutingModule } from './modules-routing.module';
 		ServicesProviderModule,
 
 	]
-} )
+})
 export class ModulesModule { }

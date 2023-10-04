@@ -1,12 +1,7 @@
-textarea {
-	resize: vertical;
-	min-height: 10rem;
-	max-height: 30rem;
-}
-
 .stars i {
 	cursor: pointer;
 }
+
 .stars i:hover {
 	color: #0072F5;
 }
@@ -14,4 +9,3 @@ textarea {
 .stars i.active {
 	color: #0072F5;
 }
-
