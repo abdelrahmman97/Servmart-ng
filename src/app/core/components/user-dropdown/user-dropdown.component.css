@@ -1,0 +1,4 @@
+.english-text {
+	unicode-bidi: bidi-override;
+	direction: ltr;
+}
