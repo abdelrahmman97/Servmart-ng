@@ -4,18 +4,22 @@ import { RequestDetailsComponent } from './Components/request-details/request-de
 import { RequestListComponent } from './Components/request-list/request-list.component';
 import { EaringComponent } from './Components/earing/earing.component';
 import { AddProduectsComponent } from './Components/add-produects/add-produects.component';
+import { RouterModule } from '@angular/router';
+import { SendOffersComponent } from './Components/SendOffers/SendOffers.component';
 
 
 
-@NgModule({
-  declarations: [
-    RequestDetailsComponent,
-    RequestListComponent,
-    EaringComponent,
-    AddProduectsComponent
-  ],
-  imports: [
-    CommonModule
-  ]
-})
+@NgModule( {
+	declarations: [
+		RequestDetailsComponent,
+		RequestListComponent,
+		EaringComponent,
+		AddProduectsComponent,
+		SendOffersComponent
+	],
+	imports: [
+		CommonModule,
+		RouterModule
+	]
+} )
 export class VendorModule { }

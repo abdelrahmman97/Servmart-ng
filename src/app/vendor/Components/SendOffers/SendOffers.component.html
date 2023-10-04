@@ -1,7 +1,7 @@
 <div class="card border bg-transparent">
 
 	<div class="card-header bg-transparent border-bottom">
-		<h5 class="card-header-title">طلباتي</h5>
+		<h5 class="card-header-title">العروض الخاصة بي</h5>
 	</div>
 
 	<div class="card-body p-0">
@@ -13,6 +13,13 @@
 					role="tab" tabindex="-1">
 					<i class="fa-duotone fa-flag-pennant"></i>
 					المنتظرة
+				</a>
+			</li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link mb-0 justify-center" data-bs-toggle="tab" href="#tab-4" aria-selected="false"
+					role="tab" tabindex="-1">
+					<i class="fa-duotone fa-ban"></i>
+					المستبعدة
 				</a>
 			</li>
 			<li class="nav-item" role="presentation">
@@ -57,9 +64,8 @@
 
 						<!-- Button -->
 						<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
-							<a href="#" class="btn btn-primary-soft mb-0">تعديل</a>
-							<a href="#" [routerLink]="['/offers','CGDSUAHA12548']" class="btn btn-primary mb-0">رؤية
-								العروض</a>
+							<a href="#" [routerLink]="['/edit-offer','CGDSUAHA12548']"
+								class="btn btn-primary-soft mb-0">تعديل</a>
 						</div>
 					</div>
 					<div class="card-body">
@@ -70,12 +76,12 @@
 							</div>
 
 							<div class="col-sm-6 col-md-4">
-								<span>تاريخ الانتهاء</span>
-								<h6 class="mb-0">Tue 06 Aug 4:00 PM</h6>
+								<span>مدة التنفيذ</span>
+								<h6 class="mb-0">يومان</h6>
 							</div>
 
 							<div class="col-md-4">
-								<span>الميزانية</span>
+								<span>المبلغ</span>
 								<h6 class="mb-0">$125</h6>
 							</div>
 						</div>
@@ -102,9 +108,8 @@
 
 						<!-- Button -->
 						<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
-							<a href="#" class="btn btn-primary-soft mb-0">تعديل</a>
-							<a href="#" [routerLink]="['/offers','CGDSUAHA12548']" class="btn btn-primary mb-0">رؤية
-								العروض</a>
+							<a href="#" [routerLink]="['/edit-offer','CGDSUAHA12548']"
+								class="btn btn-primary-soft mb-0">تعديل</a>
 						</div>
 					</div>
 					<div class="card-body">
@@ -115,12 +120,93 @@
 							</div>
 
 							<div class="col-sm-6 col-md-4">
-								<span>تاريخ الانتهاء</span>
-								<h6 class="mb-0">Tue 06 Aug 4:00 PM</h6>
+								<span>مدة التنفيذ</span>
+								<h6 class="mb-0">يومان</h6>
 							</div>
 
 							<div class="col-md-4">
-								<span>الميزانية</span>
+								<span>المبلغ</span>
+								<h6 class="mb-0">$125</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Tabs content item -->
+
+			<!-- Tab content item -->
+			<div class="tab-pane fade active" id="tab-4" role="tabpanel">
+				<!-- Request Item -->
+				<div class="card border mb-4">
+					<div class="card-header border-bottom d-md-flex justify-content-md-between align-items-center">
+						<!-- Icon and Title -->
+						<div class="d-flex align-items-center gap-4">
+							<div class="icon-lg bg-light rounded-circle flex-shrink-0">
+								<img src="https://images.placeholders.dev/?width=200&height=200" alt=""
+									class="rounded-circle">
+							</div>
+							<!-- Title -->
+							<div class="ms-2">
+								<h6 class="card-title mb-0">اسم الطلب او الخدمة</h6>
+								<ul class="nav nav-divider small p-0 mt-2">
+									<li class="nav-item">رقم الطلب: CGDSUAHA12548</li>
+									<li class="nav-item">اسم التصنيف</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="row g-3">
+							<div class="col-sm-6 col-md-4">
+								<span>تاريخ الانشاء</span>
+								<h6 class="mb-0">Tue 05 Aug 12:00 AM</h6>
+							</div>
+
+							<div class="col-sm-6 col-md-4">
+								<span>مدة التنفيذ</span>
+								<h6 class="mb-0">يومان</h6>
+							</div>
+
+							<div class="col-md-4">
+								<span>المبلغ</span>
+								<h6 class="mb-0">$125</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Request Item -->
+				<div class="card border mb-4">
+					<div class="card-header border-bottom d-md-flex justify-content-md-between align-items-center">
+						<!-- Icon and Title -->
+						<div class="d-flex align-items-center gap-4">
+							<div class="icon-lg bg-light rounded-circle flex-shrink-0">
+								<img src="https://images.placeholders.dev/?width=200&height=200" alt=""
+									class="rounded-circle">
+							</div>
+							<!-- Title -->
+							<div class="ms-2">
+								<h6 class="card-title mb-0">اسم الطلب او الخدمة</h6>
+								<ul class="nav nav-divider small p-0 mt-2">
+									<li class="nav-item">رقم الطلب: CGDSUAHA12548</li>
+									<li class="nav-item">اسم التصنيف</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="row g-3">
+							<div class="col-sm-6 col-md-4">
+								<span>تاريخ الانشاء</span>
+								<h6 class="mb-0">Tue 05 Aug 12:00 AM</h6>
+							</div>
+
+							<div class="col-sm-6 col-md-4">
+								<span>مدة التنفيذ</span>
+								<h6 class="mb-0">يومان</h6>
+							</div>
+
+							<div class="col-md-4">
+								<span>المبلغ</span>
 								<h6 class="mb-0">$125</h6>
 							</div>
 						</div>
@@ -163,12 +249,12 @@
 							</div>
 
 							<div class="col-sm-6 col-md-4">
-								<span>تاريخ الانتهاء</span>
-								<h6 class="mb-0">Tue 06 Aug 4:00 PM</h6>
+								<span>مدة التنفيذ</span>
+								<h6 class="mb-0">يومان</h6>
 							</div>
 
 							<div class="col-md-4">
-								<span>الميزانية</span>
+								<span>المبلغ</span>
 								<h6 class="mb-0">$125</h6>
 							</div>
 						</div>
@@ -206,12 +292,12 @@
 							</div>
 
 							<div class="col-sm-6 col-md-4">
-								<span>تاريخ الانتهاء</span>
-								<h6 class="mb-0">Tue 06 Aug 4:00 PM</h6>
+								<span>مدة التنفيذ</span>
+								<h6 class="mb-0">يومان</h6>
 							</div>
 
 							<div class="col-md-4">
-								<span>الميزانية</span>
+								<span>المبلغ</span>
 								<h6 class="mb-0">$125</h6>
 							</div>
 						</div>
@@ -243,8 +329,6 @@
 						<!-- Button -->
 						<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
 							<a href="#" class="btn btn-primary-soft mb-0">التفاصيل</a>
-							<a href="#" [routerLink]="['/rate-service', 'CGDSUAHA12548']"
-								class="btn btn-primary mb-0">تقييم الخدمة</a>
 						</div>
 					</div>
 					<div class="card-body">
@@ -255,12 +339,12 @@
 							</div>
 
 							<div class="col-sm-6 col-md-4">
-								<span>تاريخ الانتهاء</span>
-								<h6 class="mb-0">Tue 06 Aug 4:00 PM</h6>
+								<span>مدة التنفيذ</span>
+								<h6 class="mb-0">يومان</h6>
 							</div>
 
 							<div class="col-md-4">
-								<span>الميزانية</span>
+								<span>المبلغ</span>
 								<h6 class="mb-0">$125</h6>
 							</div>
 						</div>
@@ -288,8 +372,6 @@
 						<!-- Button -->
 						<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
 							<a href="#" class="btn btn-primary-soft mb-0">التفاصيل</a>
-							<a href="#" [routerLink]="['/rate-service', 'CGDSUAHA12548']"
-							class="btn btn-primary mb-0">تقييم الخدمة</a>
 						</div>
 					</div>
 					<div class="card-body">
@@ -300,12 +382,12 @@
 							</div>
 
 							<div class="col-sm-6 col-md-4">
-								<span>تاريخ الانتهاء</span>
-								<h6 class="mb-0">Tue 06 Aug 4:00 PM</h6>
+								<span>مدة التنفيذ</span>
+								<h6 class="mb-0">يومان</h6>
 							</div>
 
 							<div class="col-md-4">
-								<span>الميزانية</span>
+								<span>المبلغ</span>
 								<h6 class="mb-0">$125</h6>
 							</div>
 						</div>

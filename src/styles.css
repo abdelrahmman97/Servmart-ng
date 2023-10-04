@@ -3661,19 +3661,43 @@ textarea.form-control-lg {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder, .form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating > .form-control::-webkit-input-placeholder,
+.form-floating > .form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder, .form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating > .form-control::-moz-placeholder,
+.form-floating > .form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder, .form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating > .form-control:-ms-input-placeholder,
+.form-floating > .form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder, .form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating > .form-control::-ms-input-placeholder,
+.form-floating > .form-control-plaintext::-ms-input-placeholder {
+	color: transparent;
+}
+
+.form-floating > .form-control::-webkit-input-placeholder,
+.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.form-floating > .form-control::-moz-placeholder,
+.form-floating > .form-control-plaintext::-moz-placeholder {
+	color: transparent;
+}
+
+.form-floating > .form-control:-ms-input-placeholder,
+.form-floating > .form-control-plaintext:-ms-input-placeholder {
+	color: transparent;
+}
+
+.form-floating > .form-control::-ms-input-placeholder,
+.form-floating > .form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
@@ -3729,6 +3753,21 @@ textarea.form-control-lg {
 .form-floating > .form-select ~ label {
 	opacity: 0.65;
 	transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+html[dir="rtl"] .form-floating > .form-control:focus ~ label,
+html[dir="rtl"] .form-floating > .form-control:not(:placeholder-shown) ~ label,
+html[dir="rtl"] .form-floating > .form-control-plaintext ~ label,
+html[dir="rtl"] .form-floating > .form-select ~ label {
+	opacity: 0.65;
+	transform: translateY(-0.5rem) translateX(0.15rem);
+}
+
+html[dir="rtl"] .form-floating > textarea.form-control:focus ~ label,
+html[dir="rtl"] .form-floating > textarea.form-control:not(:placeholder-shown) ~ label {
+	opacity: 0.65;
+	transform: translateY(-3rem) translateX(0.15rem);
+	color: var(--bs-heading-color);
 }
 
 .form-floating > .form-control:-webkit-autofill ~ label {
@@ -5996,6 +6035,11 @@ fieldset:disabled .btn {
 	background-repeat: no-repeat;
 	background-size: var(--bs-accordion-btn-icon-width);
 	transition: var(--bs-accordion-btn-icon-transition);
+}
+
+html[dir="rtl"] .accordion-button::after {
+	margin-left: 0;
+	margin-right: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

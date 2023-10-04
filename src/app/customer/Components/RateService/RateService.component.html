@@ -1,0 +1,87 @@
+<h4 class="mb-3">اسم الطلب او الخدمة</h4>
+
+<div class="card border bg-transparent">
+
+	<div class="card-header bg-transparent border-bottom">
+		<h5 class="card-header-title">تقييم الخدمة</h5>
+	</div>
+
+	<div class="card-body">
+
+		<div class="card border-0 mb-4">
+			<div class="card-header border-0 d-md-flex justify-content-md-between align-items-center">
+				<!-- Service provider details -->
+				<div class="d-flex align-items-center gap-4">
+					<div class="icon-lg bg-light rounded-circle flex-shrink-0">
+						<img src="https://images.placeholders.dev/?width=200&height=200" alt="" class="rounded-circle">
+					</div>
+					<div class="ms-2">
+						<ul class="list-group list-unstyled small p-0 mt-2">
+							<li class="nav-item">
+								<div class="d-flex flex-row gap-3">
+									<h6 class="card-title mb-0">احمد خالد</h6>
+									<span>
+										<i class="fa-solid fa-star"></i>
+										<i class="fa-solid fa-star"></i>
+										<i class="fa-solid fa-star"></i>
+										<i class="fa-duotone fa-star-sharp-half fa-flip-horizontal"></i>
+									</span>
+								</div>
+							</li>
+							<li class="nav-item">
+								<div class="d-flex flex-row gap-4">
+									<span>
+										<i class="fa-duotone fa-briefcase"></i>
+										اسم التصنيف
+									</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Button -->
+				<!-- <div class="mt-2 mt-md-0 d-flex flex-row gap-2">
+					<a href="#" class="btn btn-primary-soft mb-0">تواصل</a>
+					<a href="#" class="btn btn-primary mb-0">قبول العروض</a>
+				</div> -->
+			</div>
+			<!-- rate -->
+			<div class="card-body">
+				<div class="d-flex flex-row justify-content-between">
+					<h6>ترشحه للآخرين</h6>
+					<div class="">
+						<div class="rating-box">
+							<div class="stars">
+								<i class="fs-4 "
+									[ngClass]="[(rate_1_index >= index) ? 'active' : 'fa-duotone fa-star', (mousePosition > 15 && index == rate_1_index) ? 'fa-duotone fa-star-half fa-flip-horizontal' : 'fa-solid fa-star' ]"
+									*ngFor="let item of numberOfStars; let index=index"
+									(click)="setMousePosition($event, index)"
+									(mousemove)="setMousePosition($event, index)" id="{{'rate1_star_'+index}}"></i>
+
+								<!-- (mousemove)="setMousePosition($event)"></i> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex flex-row justify-content-between">
+					<h6>جودة العمل</h6>
+					<div class="">
+					</div>
+				</div>
+				<div class="d-flex flex-row justify-content-between">
+					<h6>احترام موعد التسليم</h6>
+					<div class="">
+					</div>
+				</div>
+				<div class="mt-5">
+					<div class="form-floating">
+						<textarea type="text" class="form-control" rows="3" placeholder=""></textarea>
+						<label for="fullName" class="form-label">أخبر الاخرين عن رأيك</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
