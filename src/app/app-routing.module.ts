@@ -18,8 +18,8 @@ const routes: Routes = [
 		path: "",
 		component: LayoutComponent,
 		children: [
-			{ path: "", loadChildren: () => import( './modules/modules.module' ).then( m => m.ModulesModule ) },
-			{ path: "admin", loadChildren: () => import( './modules/admin/admin.module' ).then( m => m.AdminModule ) },
+			{ path: "", loadChildren: () => import('./modules/modules.module').then(m => m.ModulesModule) },
+			{ path: "admin", loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
 		]
 	},
 
@@ -34,8 +34,8 @@ const routes: Routes = [
 	{ path: '**', component: NotFoundComponent }
 ];
 
-@NgModule( {
-	imports: [RouterModule.forRoot( routes )],
+@NgModule({
+	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule]
-} )
+})
 export class AppRoutingModule { }

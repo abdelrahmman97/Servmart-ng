@@ -1,0 +1,52 @@
+<div class="card bg-light w-100 sticky-top top-1">
+	<!-- Sidebar Content -->
+	<div class="card-body p-3">
+		<!-- Avatar -->
+		<div class="text-center mb-3 d-flex justify-content-center flex-column align-items-center text-truncate">
+			<div class="mb-2">
+				<img class="avatar-img rounded-circle border border-2 border-white d-none d-sm-flex w-100"
+					src="https://images.placeholders.dev/?width=200&height=200" alt="">
+			</div>
+			<a href="#" class="text-reset text-primary-hover small line-clamp-1 d-none d-xl-inline">
+				<h6 class="mb-0 d-none d-xl-inline">Abdelrahman M.</h6>
+			</a>
+			<a href="#" class="text-reset text-primary-hover small line-clamp-1 d-none d-xl-inline">
+				abdelrahman.m1097@gmail.com
+			</a>
+			<hr>
+		</div>
+
+		<!-- Sidebar menu item -->
+		<ul class="nav nav-pills-primary-soft flex-column p-0">
+			<li class="nav-item">
+				<a class="nav-link justify-content-center justify-content-xl-start" href="#" [routerLink]="['requests']"
+					routerLinkActive="active">
+					<i class="fa-duotone fa-ticket text-xl 2xl:text-base"></i>
+					<span class="d-none d-xl-inline">الطلبات</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link justify-content-center justify-content-xl-start" href="#" [routerLink]="['cart']"
+					routerLinkActive="active">
+					<i class="fa-duotone fa-cart-shopping text-xl 2xl:text-base"></i>
+					<span class="d-none d-xl-inline">عربة التسوق</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link justify-content-center justify-content-xl-start" href="#" [routerLink]="['settings']"
+					routerLinkActive="active">
+					<i class="fa-duotone fa-gear text-xl 2xl:text-base"></i>
+					<span class="d-none d-xl-inline">الاعدادت</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link justify-content-center justify-content-xl-start text-danger bg-danger-soft-hover"
+					href="#" href="#" [routerLink]="['logout']">
+					<i class="fa-duotone fa-power-off text-xl 2xl:text-base"></i>
+					<span class="d-none d-xl-inline">خروج</span>
+				</a>
+			</li>
+		</ul>
+
+	</div>
+</div>

@@ -4,40 +4,51 @@
 	<img class="avatar-img rounded-2" src="https://images.placeholders.dev/?width=200&height=200" alt="avatar">
 </a>
 
-<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+<ul class="dropdown-menu dropdown-animation dropdown-menu-start shadow pt-3" aria-labelledby="profileDropdown">
 	<!-- Links -->
 	<li>
 		<a class="dropdown-item" [routerLink]="['profile']" routerLinkActive="">
 			<i class="fa-duotone fa-user"></i>
-			Profile
+			الملف الشخصي
 		</a>
 	</li>
 	<li>
 		<a class="dropdown-item" href="#">
 			<i class="fa-duotone fa-gear"></i>
-			Settings
+			الاعدادات
 		</a>
 	</li>
 	<li>
 		<a class="dropdown-item" href="#">
 			<i class="fa-duotone fa-circle-info"></i>
-			Help Center
+			مركز المساعدات
 		</a>
 	</li>
 	<li><a class="dropdown-item bg-danger-soft-hover" href="#">
 			<i class="fa-duotone fa-power-off"></i>
-			Sign Out
+			خروج
 		</a>
 	</li>
 	<li>
 		<hr class="dropdown-divider">
 	</li>
 
+	<!-- language options -->
+	<li>
+		<div
+			class="nav-pills-primary-soft theme-icon-active d-flex justify-content-between align-items-center p-2 pb-0 gap-2">
+			<span>اللغة:</span>
+			<select class="form-select form-select-sm" aria-label="اللغة" dir="auto">
+				<option class="text-end" value="ar">العربية</option>
+				<option class="text-end" value="en" style="unicode-bidi: bidi-override;direction: ltr;">English</option>
+			</select>
+		</div>
+	</li>
 	<!-- Dark mode options -->
 	<li>
 		<div
 			class="nav-pills-primary-soft theme-icon-active d-flex justify-content-between align-items-center p-2 pb-0">
-			<span>Mode:</span>
+			<span>المظهر:</span>
 			<button type="button" class="btn btn-link nav-link text-primary-hover mb-0 p-0" title="light"
 				data-bs-theme-value="light" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Light">
 				<i class="fa-duotone fa-sun-bright"></i>
