@@ -1,14 +1,16 @@
 import { RequestState } from "../Enums/RequestState.enum";
+import { IRequestMedia } from "./IRequestMedia";
 
 export interface IRequest {
-	ID: number;
-	ClientID: number;
-	MediaID: number;
-	Detailes: string;
-	ExpectedSalary: number;
+	ID?: string;
+	CleintID: string;
+	Details: string;
+	ExpectSalary: number;
 	State: RequestState;
 	StartDate: Date;
 	EndDate: Date;
-	RateValue: number;
-	RateMessage: string
+	RateValue?: number;
+	RateMassage?: string;
+	Media?: IRequestMedia[];
+	// RequestOffer: IRequestOffer[];
 }

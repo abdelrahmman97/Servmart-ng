@@ -1,7 +1,7 @@
 export interface IShop {
-	ID: number;
-	Title: string;
-	Address: string;
-	ShopImage: string;
+	ID?: number;
 	OwnerID: number;
+	Name: string;
+	Address: string;
+	Logo?: string;
 }
