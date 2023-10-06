@@ -1,4 +1,4 @@
 export interface IServiceCategory {
-	ID: number;
-	Category: string;
+	ID: string;
+	Name: string;
 }

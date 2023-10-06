@@ -9,3 +9,9 @@
 .stars i.active {
 	color: #0072F5;
 }
+
+.half {
+	--fa-primary-opacity: 0.4;
+	--fa-secondary-color: #005eff;
+	--fa-secondary-opacity: 1;
+}

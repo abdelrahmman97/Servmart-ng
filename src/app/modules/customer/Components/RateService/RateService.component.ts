@@ -1,42 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-@Component({
+@Component( {
 	selector: 'app-RateService',
 	templateUrl: './RateService.component.html',
 	styleUrls: ['./RateService.component.css']
-})
-export class RateServiceComponent {
+} )
+export class RateServiceComponent implements OnInit {
 
-	// rate_1_index: number = 0;
-	// rate_2_index: number = 0;
-	// rate_3_index: number = 0;
+	@Input() nominateToOthers: number = 0;
+	@Input() workQuality: number = 0;
+	@Input() respectDeliveryTime: number = 0;
 
-	// mousePosition: number = 0;
-	// rect: any;
+	ngOnInit(): void { }
 
-	// setMousePosition1(event: any, index: number) {
-	// 	this.rect = event.target.getBoundingClientRect();
-	// 	this.mousePosition = event.x - this.rect.left;
-	// 	this.setRate1(index);
-	// }
-	// setMousePosition2(event: any, index: number) {
-	// 	this.rect = event.target.getBoundingClientRect();
-	// 	this.mousePosition = event.x - this.rect.left;
-	// 	this.setRate2(index);
-	// }
-	// setMousePosition3(event: any, index: number) {
-	// 	this.rect = event.target.getBoundingClientRect();
-	// 	this.mousePosition = event.x - this.rect.left;
-	// 	this.setRate3(index);
-	// }
-	// createRange(number: number) {
-	// 	// return new Array(number);
-	// 	return new Array(number).fill(0)
-	// 		.map((n, index) => index + 1);
-	// }
-	// numberOfStars = this.createRange(5);
+	nominateToOthersChanged( value: any ) {
+		this.nominateToOthers = value * 2;
+	}
+	workQualityChanged( value: any ) {
+		this.workQuality = value * 2;
+	}
+	respectDeliveryTimeChanged( value: any ) {
+		this.respectDeliveryTime = value * 2;
+	}
 
-	// private setRate1(index: number) { this.rate_1_index = index; }
-	// private setRate2(index: number) { this.rate_2_index = index; }
-	// private setRate3(index: number) { this.rate_3_index = index; }
 }
