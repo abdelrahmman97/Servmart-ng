@@ -6,6 +6,8 @@ import { EaringComponent } from './Components/earing/earing.component';
 import { AddProduectsComponent } from './Components/add-produects/add-produects.component';
 import { RouterModule } from '@angular/router';
 import { SendOffersComponent } from './Components/SendOffers/SendOffers.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddWorkHistoryComponent } from './Components/add-work-history/add-work-history.component';
 
 
 
@@ -15,11 +17,13 @@ import { SendOffersComponent } from './Components/SendOffers/SendOffers.componen
 		RequestListComponent,
 		EaringComponent,
 		AddProduectsComponent,
-		SendOffersComponent
+		SendOffersComponent,
+  		AddWorkHistoryComponent
 	],
 	imports: [
 		CommonModule,
-		RouterModule
+		RouterModule,
+		ReactiveFormsModule
 	]
 })
 export class VendorModule { }

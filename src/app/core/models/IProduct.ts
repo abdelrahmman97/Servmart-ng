@@ -1,13 +1,9 @@
 export interface IProduct {
-	ID?: string;
+	ID?: number;
+	ShopID: number;
+	CategoryID: number;
 	Name: string;
-	Description: string;
-	UnitPrice: number;
-	Stoke: number;
-	CategoryID: string;
-	ShopID: string;
-	// Shop: IShop;
-	// Category: IProductCategory;
-	// ProductMedias: IProductMedia[];
-	// ProductRates: IProductRate[];
+	Discription: string;
+	UnitePrice: number;
+	Stock: number;
 }

@@ -8,7 +8,6 @@ import { VendorModule } from './vendor/vendor.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ServicesProviderModule } from './services-provider/services-provider.module';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { HeaderComponent } from '../core/components/header/header.component';
 import { CoreModule } from '../core/core.module';
 import { ModulesRoutingModule } from './modules-routing.module';
 
@@ -25,7 +24,6 @@ import { ModulesRoutingModule } from './modules-routing.module';
 
 		CoreModule,
 		AdminModule,
-		AuthModule,
 		CustomerModule,
 		VendorModule,
 		ServicesProviderModule,

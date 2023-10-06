@@ -1,0 +1,24 @@
+<h3>إضافة خبرات عمل سابقة</h3>
+<div class="d-flex flex-column justify-content-center col-8">
+    <form class="d-flex flex-column gap-2 mb-3">
+        <label>الوظيفة</label>
+        <input class="form-control" type="text" aria-label="default input example">
+
+        <label>وصف الوظيفة</label>
+        <textarea class="form-control textarea" name="" id="" cols="30" rows="5" autoresize="none"></textarea>
+    </form>
+
+    <div *ngIf="!file" class="FileContainer text-center w-100 d-flex flex-column">
+        <label class="mt-2">إضافة صور العمل</label>
+        <input id="upload_image_logo" class="file" type="file" accept="image/*" multiple (change)="getFile($event)" />
+    </div>
+
+    <div *ngIf="file">
+        <div class="d-flex flex-column">
+            <img [src]="url" class="img-thumbnail w-25 h-25" alt="">
+            <label class="mx-2">file name: {{file.name}}</label>
+        </div>
+        <button class=" btn btn-danger" (click)=" removeFile()">Remove File</button>
+    </div>
+
+</div>
