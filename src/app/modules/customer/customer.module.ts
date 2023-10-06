@@ -9,6 +9,7 @@ import { SeeCustomerRequestsComponent } from './Components/see-customer-requests
 import { RequestOffersComponent } from './Components/RequestOffers/RequestOffers.component';
 import { RateServiceComponent } from './Components/RateService/RateService.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,6 +25,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 	],
 	imports: [
 		CommonModule,
+		FormsModule,
 		RouterModule,
 		SharedModule
 	]

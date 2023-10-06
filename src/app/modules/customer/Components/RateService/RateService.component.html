@@ -20,12 +20,8 @@
 							<li class="nav-item">
 								<div class="d-flex flex-row gap-3">
 									<h6 class="card-title mb-0">احمد خالد</h6>
-									<span>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-duotone fa-star-sharp-half fa-flip-horizontal"></i>
-									</span>
+									<app-rating [numberOfStars]="5" [rating]="6.5" [fontSize]="0.875" color="#747579"
+										[isDisabled]="true"></app-rating>
 								</div>
 							</li>
 							<li class="nav-item">
@@ -49,32 +45,25 @@
 			<!-- rate -->
 			<div class="card-body">
 				<div class="d-flex flex-row justify-content-between">
-					<h6 class="fs-4">ترشحه للآخرين</h6>
+					<h5 class="fs-4"> ترشحه للآخرين</h5>
 					<div class="w-25">
-						<app-Rating [numberOfStars]="5"></app-Rating>
+						<app-rating [numberOfStars]="5" [rating]="3.2" [fontSize]="1.7"
+							(rateChanged)="nominateToOthersChanged($event)"></app-rating>
 					</div>
-				</div>
-				<div class="d-flex flex-row justify-content-between">
-					<h6 class="fs-4">جودة العمل</h6>
-					<div class="w-25">
-						<app-Rating [numberOfStars]="5"></app-Rating>
-						<!-- (mousemove)="setMousePosition($event)"></i> -->
-						<!-- <div class="rating-box">
-							<div class="stars">
-								<i class="fs-4 "
-									[ngClass]="[(rate_2_index >= index2) ? 'active' : 'fa-duotone fa-star', (mousePosition > 15 && index2 == rate_2_index) ? 'fa-duotone fa-star-half fa-flip-horizontal' : 'fa-solid fa-star' ]"
-									*ngFor="let item of numberOfStars; let index2=index"
-									(click)="setMousePosition2($event, index2)"
-									(mousemove)="setMousePosition2($event, index2)" id="{{'rate2_star_'+index2}}"></i>
 
-							</div>
-						</div> -->
+				</div>
+				<div class="d-flex flex-row justify-content-between">
+					<h5 class="fs-4">جودة العمل</h5>
+					<div class="w-25">
+						<app-rating [numberOfStars]="5" [rating]="4.5" [fontSize]="1.7"
+							(rateChanged)="workQualityChanged($event)"></app-rating>
 					</div>
 				</div>
 				<div class="d-flex flex-row justify-content-between">
-					<h6 class="fs-4">احترام موعد التسليم</h6>
+					<h5 class="fs-4">احترام موعد التسليم</h5>
 					<div class="w-25">
-						<app-Rating [numberOfStars]="5"></app-Rating>
+						<app-rating [numberOfStars]="5" [rating]="2" [fontSize]="1.7"
+							(rateChanged)="respectDeliveryTimeChanged($event)"></app-rating>
 					</div>
 				</div>
 				<div class="mt-5">

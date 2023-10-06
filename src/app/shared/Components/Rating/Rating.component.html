@@ -1,9 +1,16 @@
+<!-- <div class="rating-box">
+	<div class="stars">
+		<i class="fs-4 " style="font-size: 100px;" *ngFor="let item of starsNumber; let index='index+1'" (click)="rate($event, index)"
+			[ngClass]="[(rating >= index) ? 'active fa-solid fa-star' : 'fa-duotone fa-star',
+			(mousePosition < 15) && (index == toInt(rating)) ? 'fa-duotone fa-star-half fa-flip-horizontal' : 'fa-solid fa-star']"
+			(mousemove)="rateHover($event, index)" id="{{id+index}}"></i>
+	</div>
+</div> -->
+
 <div class="rating-box">
 	<div class="stars">
-		<i class="fs-4 " *ngFor="let item of starsNumber; let index='index+1'" (click)="setRating($event, index)"
-			[ngClass]="[(rate >= index) ? 'active fa-solid fa-star' : 'fa-duotone fa-star', (mousePosition > 15 && index == rate) ? 'fa-duotone fa-star-half fa-flip-horizontal' : 'fa-solid fa-star' ]"
-			(mousemove)="setRatingHover($event, index)" id="{{id+index}}"></i>
-
-		<!-- (mousemove)="setMousePosition($event)"></i> -->
+		<i (click)="onStarClick($event, star)" [style.color]="color" [style.font-size.em]="fontSize" class="fa-solid fa-star active" *ngFor="let star of getFullStars()"></i>
+		<i (click)="onStarClick($event, star)" [style.color]="color" [style.font-size.em]="fontSize" class="fa-duotone fa-star-half fa-flip-horizontal active" *ngFor="let star of getHalfStars()"></i>
+		<i (click)="onStarClick($event, star)" [style.font-size.em]="fontSize" class="fa-duotone fa-star" *ngFor="let star of getEmptyStars()"></i>
 	</div>
 </div>

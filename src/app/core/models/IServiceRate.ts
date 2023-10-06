@@ -1,4 +1,4 @@
-export interface ServiceRate {
+export interface IServiceRate {
 	ID?: string;
 	ServiceID: string;
 	UserID: string;
