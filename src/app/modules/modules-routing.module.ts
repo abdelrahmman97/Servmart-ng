@@ -5,6 +5,8 @@ import { RequestComponent } from './customer/Components/request/request.componen
 import { RequestOffersComponent } from './customer/Components/RequestOffers/RequestOffers.component';
 import { SendOffersComponent } from './vendor/Components/SendOffers/SendOffers.component';
 import { RateServiceComponent } from './customer/Components/RateService/RateService.component';
+import { AddProduectsComponent } from './vendor/Components/add-produects/add-produects.component';
+import { AddWorkHistoryComponent } from './vendor/Components/add-work-history/add-work-history.component';
 
 
 
@@ -19,9 +21,11 @@ const routes: Routes = [
 	{ path: 'rate-service/:id', component: RateServiceComponent },
 
 	// Vendor Components
-	{ path: 'bids', component: SendOffersComponent },
+	{ path: 'add-product', component: AddProduectsComponent },
+	{ path: 'add-work-history', component: AddWorkHistoryComponent },
 
 	// Service Provider Components
+	{ path: 'bids', component: SendOffersComponent },
 
 ];
 

@@ -1,10 +1,9 @@
 export interface IProduct {
-	ID: number;
+	ID?: number;
 	ShopID: number;
 	CategoryID: number;
 	Name: string;
 	Discription: string;
 	UnitePrice: number;
-	MediaID: number;
 	Stock: number;
 }

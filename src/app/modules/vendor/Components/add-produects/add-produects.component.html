@@ -1,1 +1,138 @@
-<p>add-produects works!</p>
+<div class="page-content mb-5 m-0">
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-3 mb-sm-0">إضافة منتج</h1>
+        <div>
+            <button type="button" (click)="onSubmite()" class="btn btn-primary-soft">ضف</button>
+        </div>
+    </div>
+    <form [formGroup]="reactiveForm">
+        <div class="p-4 row">
+            <div class="col-lg-6 col=md-12 d-flex flex-column">
+                <div class="mb-3">
+                    <div class="col-auto">
+                        <label for="Product" class="col-form-label">اسم المنتج</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" id="Product" class="form-control" formControlName="productName">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="col-auto">
+                        <label for="Product" class="col-form-label">الصنف</label>
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-control" aria-label="Large select example"
+                            formControlName="productCategory">
+                            <option selected disabled>--- select ---</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="col-auto">
+                        <label for="Product" class="col-form-label">الماركة</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" id="brand" class="form-control" title="brand" formControlName="productBrand">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="col-auto">
+                        <label for="Countity" class="col-form-label">الكمية</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" id="Countity" class="form-control" formControlName="productCountity">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="col-auto">
+                        <label for="Price" class="col-form-label">سعر القطعة</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" id="Price" class="form-control" formControlName="productPrice">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Description" class="form-label">وصف المنتج</label>
+                    <textarea class="form-control" id="Description" rows="6"></textarea>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 pt-5">
+
+                <!-- <fieldset class="upload_dropZone text-center   p-4">
+    
+                    <legend class="visually-hidden">Image uploader</legend>
+    
+                    <svg class="upload_svg" width="60" height="60" aria-hidden="true">
+                        <use href="#icon-imageUpload"></use>
+                    </svg>
+    
+                    <p class="small my-2">Drag &amp; Drop The Main Picture</p>
+    
+                    <input id="upload_image_background" data-post-name="image_background"
+                        data-post-url="https://someplace.com/image/uploads/backgrounds/" class="position-absolute invisible"
+                        type="file" multiple accept="image/jpeg, image/png, image/svg+xml" />
+    
+                    <label class="btn btn-upload  " for="upload_image_background">Choose
+                        file(s)</label>
+    
+                    <div class="upload_gallery d-flex flex-wrap justify-content-center gap-3 mb-0">
+                    </div>
+    
+                </fieldset> -->
+
+                <div *ngIf="!file" class="FileContainer text-center">
+                    <label class="mt-2">أضف صور المنتج</label>
+                    <input id="upload_image_logo" class="file" type="file" accept="image/*" multiple
+                        (change)="getFile($event)" />
+                </div>
+
+                <div *ngIf="file">
+                    <div class="d-flex flex-column">
+                        <img [src]="url" class="img-thumbnail w-25 h-25" alt="">
+                        <label class="mx-2">file name: {{file.name}}</label>
+                    </div>
+                    <button class=" btn btn-danger" (click)=" removeFile()">Remove File</button>
+                </div>
+
+
+
+                <!-- <fieldset class="upload_dropZone text-center   p-4">
+    
+                    <legend class="visually-hidden">Image uploader</legend>
+    
+                    <svg class="upload_svg" width="60" height="60" aria-hidden="true">
+                        <use href="#icon-imageUpload"></use>
+                    </svg>
+    
+                    <p class="small my-2">Drag &amp; Drop At Least 5 Pictures</p>
+    
+    
+    
+                    <label class="btn btn-upload  " for="upload_image_logo">Choose file(s)</label>
+    
+                    <div class="upload_gallery d-flex flex-wrap justify-content-center gap-3 mb-0">
+                    </div>
+    
+                </fieldset> -->
+
+                <svg style="display:none">
+                    <defs>
+                        <symbol id="icon-imageUpload" clip-rule="evenodd" viewBox="0 0 96 96">
+                            <path
+                                d="M47 6a21 21 0 0 0-12.3 3.8c-2.7 2.1-4.4 5-4.7 7.1-5.8 1.2-10.3 5.6-10.3 10.6 0 6 5.8 11 13 11h12.6V22.7l-7.1 6.8c-.4.3-.9.5-1.4.5-1 0-2-.8-2-1.7 0-.4.3-.9.6-1.2l10.3-8.8c.3-.4.8-.6 1.3-.6.6 0 1 .2 1.4.6l10.2 8.8c.4.3.6.8.6 1.2 0 1-.9 1.7-2 1.7-.5 0-1-.2-1.3-.5l-7.2-6.8v15.6h14.4c6.1 0 11.2-4.1 11.2-9.4 0-5-4-8.8-9.5-9.4C63.8 11.8 56 5.8 47 6Zm-1.7 42.7V38.4h3.4v10.3c0 .8-.7 1.5-1.7 1.5s-1.7-.7-1.7-1.5Z M27 49c-4 0-7 2-7 6v29c0 3 3 6 6 6h42c3 0 6-3 6-6V55c0-4-3-6-7-6H28Zm41 3c1 0 3 1 3 3v19l-13-6a2 2 0 0 0-2 0L44 79l-10-5a2 2 0 0 0-2 0l-9 7V55c0-2 2-3 4-3h41Z M40 62c0 2-2 4-5 4s-5-2-5-4 2-4 5-4 5 2 5 4Z" />
+                        </symbol>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </form>
+</div>
