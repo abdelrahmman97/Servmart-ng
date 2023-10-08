@@ -6,7 +6,7 @@ import { RequestOffersComponent } from './customer/Components/RequestOffers/Requ
 import { SendOffersComponent } from './vendor/Components/SendOffers/SendOffers.component';
 import { RateServiceComponent } from './customer/Components/RateService/RateService.component';
 import { AddProduectsComponent } from './vendor/Components/add-produects/add-produects.component';
-import { AddWorkHistoryComponent } from './vendor/Components/add-work-history/add-work-history.component';
+import { AddWorkHistoryComponent } from './services-provider/Components/add-work-history/add-work-history.component';
 
 
 
