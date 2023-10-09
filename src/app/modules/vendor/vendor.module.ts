@@ -7,7 +7,7 @@ import { AddProduectsComponent } from './Components/add-produects/add-produects.
 import { RouterModule } from '@angular/router';
 import { SendOffersComponent } from './Components/SendOffers/SendOffers.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AddWorkHistoryComponent } from './Components/add-work-history/add-work-history.component';
+import { AddWorkHistoryComponent } from '../services-provider/Components/add-work-history/add-work-history.component';
 
 
 
@@ -18,7 +18,7 @@ import { AddWorkHistoryComponent } from './Components/add-work-history/add-work-
 		EaringComponent,
 		AddProduectsComponent,
 		SendOffersComponent,
-  		AddWorkHistoryComponent
+		AddWorkHistoryComponent
 	],
 	imports: [
 		CommonModule,
