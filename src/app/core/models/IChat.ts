@@ -1,5 +1,5 @@
 import { IMessage } from "./IMessage";
-import { IRequest } from "./IRequest";
+import { IRequest } from "./irequest";
 import { IUser } from "./IUser";
 
 export interface Chat {

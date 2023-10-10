@@ -1,1 +1,103 @@
-<p>request-list works!</p>
+<div class="col-lg-">
+	<!-- محتواك يأتي هنا -->
+	<div class="page-content mb-5 m-0">
+		<!-- العنوان -->
+		<div class="row">
+			<div class="col-12 mb-4 mb-sm-5">
+				<div class="d-sm-flex justify-content-between align-items-center">
+					<h1 class="h3 mb-3 mb-sm-0">قائمة الطلبات</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row ">
+			<div class="col-xl-12 col-12 mb-5">
+				<div class="card h-100 card-lg">
+
+					<div class="p-6">
+						<div class="row justify-content-between">
+							<div class="col-md-4  mb-2 ">
+								<form class="d-flex" role="search">
+									<input class="form-control" type="search" placeholder="البحث" aria-label="البحث">
+
+								</form>
+							</div>
+							<div class="col-lg-2 col-md-4 ">
+								<select class="form-select form-control " tabindex="-1">
+									<option value="">الحالة</option>
+									<option value="">نجاح</option>
+									<option value="">قيد الانتظار</option>
+									<option value="">ملغاة</option>
+								</select>
+							</div>
+
+						</div>
+					</div>
+					<div class="card-body p-3 ">
+
+						<div class="table-responsive">
+							<table
+								class="table table-centered table-hover table-borderless mb-0 table-with-checkbox text-nowrap">
+								<thead class="bg-light">
+									<tr>
+										<th>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" value="" id="checkAll">
+												<label class="form-check-label" for="checkAll">
+
+												</label>
+											</div>
+										</th>
+										<th>الصورة</th>
+										<th>اسم الطلب</th>
+										<th>العميل</th>
+										<th>التاريخ والوقت</th>
+										<th>الدفع</th>
+										<th>الحالة</th>
+										<th>المبلغ</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody >
+									<tr *ngFor="let Request of requestList">
+
+										<td>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" value="" id="orderOne">
+												<label class="form-check-label" for="orderOne">
+
+												</label>
+											</div>
+										</td>
+										<td>
+											<a href="#!"> <img [src]="" alt=""
+													class="icon-shape icon-md"></a>
+										</td>
+										<td><a href="#" class="text-reset">
+											{{Request.CleintID}} </a>
+										</td>
+										<td>
+											{{Request.Title}}
+										</td>
+
+										<td>
+											{{Request.StartDate}}
+										</td>
+										<td>{{Request.EndDate}}</td>
+
+										<td>
+											<div class="badge bg-success bg-opacity-10 text-success">{{
+												Request.RateValue}}</div>
+										</td>
+										<td>$12.99</td>
+
+
+										<td>
+											<div class="dropdown">
+												<i class="fa-regular fa-ellipsis-vertical" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false"></i>
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="#"><svg
+																xmlns="http://www.w3.org/2000/svg" height="1em"
+																viewBox="0 0 448 512">
+																<path
+																	d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3عذرًا، ولكن لا يمكنني توفير الكود المطلوب بالضبط بدون إضافة أي عناصر إليه. يمكنني مساعدتك في فهم الكود وتوضيحه، أو يمكنك توضيح المشكلة التي تحتاج إلى حلها وسأحاول مساعدتك بأفضل ما أستطيع."></path>

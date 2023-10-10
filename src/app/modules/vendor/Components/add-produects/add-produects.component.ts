@@ -44,7 +44,7 @@ export class AddProduectsComponent implements OnInit {
       ShopID: 1,
     };
     this.addproduct.AddProduct(this.product)
-    console.log(this.addproduct.Products);
+    console.log(this.addproduct.products);
   }
 
   getFile(event: any) {

@@ -1,0 +1,100 @@
+<section class="mt-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<div class="imge">
+					<img [src]="imageAssetUrl" class="w-100 rounded-5" alt="">
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="im col-md-12 mb-1">
+					<div class="iimgss">
+						<img [src]="image1Url" class="im w-100 rounded-4" alt="">
+					</div>
+				</div>
+				<div class="col-md-12 d-flex g-2 w-100">
+					<div class="imgone me-2">
+						<img [src]="image2Url" class="w-100 ms-1 rounded-4" alt="">
+					</div>
+					<div class="imgtwo">
+						<img [src]="image3Url" class="w-100 rounded-4" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="mt-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="text">
+					<p class="fs-2 fw-bold">About This</p>
+					<hr>
+					<p>{{ aboutText }}</p>
+				</div>
+
+				<p class="fs-3 fw-bold">Advantages</p>
+				<span *ngFor="let advantage of advantages">
+					<i class="fas fa-check bg-success rounded-circle text-white p-1"></i> {{ advantage }}
+					<br>
+				</span>
+			</div>
+			<div class="col-md-4">
+				<div class="imgFixed bg-light p-3 rounded-3 mt-3">
+					<div class="textFlex d-flex justify-content-between">
+						<p class="text-secondary fw-bold">Price</p>
+						<p class="text-secondary fw-bold">Contents</p>
+					</div>
+
+					<div class="div">
+						<p class="fs-4 fw-bold">{{ price }}</p>
+						<span class="fs-4 fw-bold"><i class="fas fa-arrow-right"></i> {{ rating }} <i class="fas fa-star" style="color: #e5f505;"></i></span>
+						<p class="fs-4 fw-bold"><i class="fas fa-arrow-right"></i> {{ availability }}</p>
+					</div>
+					<div class="btns text-center">
+						<button class="btn btn-outline-primary text-center w-75">Buy at a discount</button>
+					</div>
+				</div>
+				<div class="div">
+					<img [src]="additionalImageUrl" class="w-50" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="mt-4">
+	<div class="container">
+		<h1>Services provided</h1>
+		<hr>
+		<i class="fa-solid fa-bell-concierge fs-4"></i> <span class="fs-4">Services</span><br>
+		<span *ngFor="let service of services">
+			<i class="fas fa-check bg-success rounded-circle text-white"></i> {{ service }}
+			<br>
+		</span>
+	</div>
+</section>
+
+<section class="mt-4">
+	<div class="container">
+		<h1 class="border-bottom">Customer Review</h1>
+		<div class="row col-lg-8 col-md-12 col-sm-12">
+			<div class="text d-lg-flex d-md-block d-sm-block gap-2 bg-light rounded-4 p-2">
+				<div>
+					<h1>{{ reviewRating }}</h1>
+					<h6>Based on {{ reviewCount }} Reviews</h6>
+					<span id="stars">
+						<i *ngFor="let star of reviewStars" class="fas fa-star" style="color: #e5f505;"></i>
+					</span>
+				</div>
+				<div class="range w-50">
+					<div *ngFor="let progress of reviewProgress" class="progress w-100 mb-2">
+						<!-- <div class="progress-bar" role="progressbar" [style.width.%]="progress""aria-valuenow"="{{ progress }}" aria-valuemin="0" aria-valuemax="100">{{ progress }}%</div>					</div> -->
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { SendOffersComponent } from './Components/SendOffers/SendOffers.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddWorkHistoryComponent } from './Components/add-work-history/add-work-history.component';
+import { ProductListComponent } from './Components/product-list/product-list.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 
@@ -18,7 +20,10 @@ import { AddWorkHistoryComponent } from './Components/add-work-history/add-work-
 		EaringComponent,
 		AddProduectsComponent,
 		SendOffersComponent,
-  		AddWorkHistoryComponent
+		ProductListComponent,
+		ProductDetailsComponent,
+  		AddWorkHistoryComponent,
+
 	],
 	imports: [
 		CommonModule,

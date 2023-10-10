@@ -25,6 +25,7 @@ import { ModulesRoutingModule } from './modules-routing.module';
 		CoreModule,
 		AdminModule,
 		CustomerModule,
+		
 		VendorModule,
 		ServicesProviderModule,
 
