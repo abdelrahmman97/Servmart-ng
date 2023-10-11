@@ -6,12 +6,14 @@ import { RequestOffersComponent } from './customer/Components/RequestOffers/Requ
 import { SendOffersComponent } from './vendor/Components/SendOffers/SendOffers.component';
 import { RateServiceComponent } from './customer/Components/RateService/RateService.component';
 import { AddProduectsComponent } from './vendor/Components/add-produects/add-produects.component';
-import { AddWorkHistoryComponent } from './vendor/Components/add-work-history/add-work-history.component';
 import { ProductListComponent } from './vendor/Components/product-list/product-list.component';
 import { RequestListComponent } from './vendor/Components/request-list/request-list.component';
 import { RequestDetailsComponent } from './vendor/Components/request-details/request-details.component';
 import { SeeCustomerRequestsComponent } from './customer/Components/see-customer-requests/see-customer-requests.component';
 import { ProductDetailsComponent } from './vendor/product-details/product-details.component';
+import { AddWorkHistoryComponent } from './services-provider/Components/add-work-history/add-work-history.component';
+
+
 
 const routes: Routes = [
 
