@@ -25,15 +25,12 @@ const routes: Routes = [
 	{ path: 'requests', component: RequestComponent },
 	{ path: 'offers/:id', component: RequestOffersComponent },
 	{ path: 'rate-service/:id', component: RateServiceComponent },
-      {path:'seecustomer',component:SeeCustomerRequestsComponent},
 	// Vendor Components
 	{ path: 'add-product', component: AddProduectsComponent },
 	{ path: 'add-work-history', component: AddWorkHistoryComponent },
 	{ path:'productlist',component:ProductListComponent},
-	{path:"Orderdetals",component:OrderDetailsComponent},
-	{
-		path:'productsdetails/id',component:ProductDetailsComponent
-	},
+	{path:"Orderdetals/:id",component:OrderDetailsComponent},
+	{path:'productdetails/:id',component:ProductDetailsComponent},
 	{path:"requestlist",component:RequestListComponent} ,
 
 	// Service Provider Compproductsdetailsonents

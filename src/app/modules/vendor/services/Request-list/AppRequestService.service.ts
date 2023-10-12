@@ -18,5 +18,10 @@ export class addRequestService  {
 	getAllUserRequests() {
 		return this.httpClient.get<IRequest[]>( this.baseURL );
 	}
+    gitone(id: number){
+		if(id==0)
+		return false;
+	    return this.requestsList.find(R=>R.ID)
 
+	}
 }
