@@ -1,0 +1,8 @@
+.fs
+    {
+        font-size:20px;
+        direction: rtl;
+    }
+    .lectfs option {
+        text-align: right;
+    }

@@ -1,0 +1,121 @@
+<div class="col-lg-10 fs">
+  <div class="page-content mb-5 m-0">
+      <div class="flex-grow"> <!-- Main Content -->
+          <section class="pb-0 mt-5">
+              <div class="container">
+                <div class="row">
+        
+                  <div class="col-12 text-center fw-bold ">
+                    <h1 class="tit fs">إضافة قائمة جديدة  </h1>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="container mt-2 fs">
+            <!-- Card body START -->
+            <div class="card-body">
+              <h2 class="fs">اختر فئة القائمة </h2>
+        
+              <div class="row g-4 fs">
+                <!-- Choose type -->
+                <div class="col-12 fs">
+                  <label class="form-label fs">*اختر نوع القائمة</label>
+                  <select class="form-select js-choice lectfs">
+                    <option class=" fs"> اختر النوع</option>
+                    <option class="fs">المنتجات</option>
+                    <option >الخدمات</option>
+                   
+                  </select>
+                  <small>المنتجات والخدمات المهنية التي تمتلك عادةً أسلوبًا فريدًا أو موضوعًا يحدد علامتها التجارية وديكورها</small>
+                </div>
+        
+                <!-- Listing Name -->
+                <div class="col-12">
+                  <label class="form-label"> *اسم القائمة</label>
+                  <input class="form-control" type="text" placeholder="أدخل اسم المنتج /الخدمة">
+                  <small>إسم المنتج/نوع المنتج</small>
+                </div>
+        
+                
+        
+                <!-- Short description -->
+                <div class="col-12">
+                  <label class="form-label">*وصف قصير</label>
+                  <textarea class="form-control" rows="2" placeholder="أدخل الكلمات الرئيسية"></textarea>
+                  <div class="col-md-12">
+                    <label class="form-label"> *السعر </label>
+                     <input class="form-control" type="text" placeholder="ادخل السعر المناسب">
+
+                     
+                    
+                  
+        
+     
+             </div>
+                </div>
+               
+              </div>
+            </div>
+            <!-- Card body END -->
+          </div>
+          <div class="container mt-5 fs ">
+        <!-- Card body START -->
+        <div class="card-body">
+          <h4>موقع القائمة</h4>
+        
+          <div class="row g-3">
+           
+        
+            <!-- City -->
+            <div class="col-md-12">
+              <label class="form-label"> *المدينة </label>
+              <input class="form-control" type="text" placeholder="أدخل اسم المدينة">
+            </div>
+        
+            
+        
+            <!-- Street -->
+            <div class="col-12">
+              <label class="form-label"> *الشارع </label>
+              <input class="form-control" type="text" placeholder="أدخل اسم الشارع">
+            </div>
+        
+            <!-- Latitude -->
+            <div class="col-md-6">
+                   <button (click)="toggleDisplay()" id="toggleButton"class= "btn btn-primary">إختر الموقع</button>
+        
+        </div>  
+        
+            </div>
+        
+           
+        
+            <!-- Detailed address -->
+            <div id="hiddenElement"  [style.display]="displayStatus">
+            <div class="col-12">
+              <iframe class="w-100 h-300px grayscale rounded" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d55247.46987356589!2d31.2282952!3d30.066484199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1691640415263!5m2!1sar!2seg" height="500" style="border:0;" aria-hidden="false" tabindex="0"></iframe>	
+            </div>
+          </div>
+        </div>
+        <div class="container mt-5">
+          <div class="mb-3 bg-">
+      <h5>تحميل ملفات</h5>
+            
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label"> لإدخال صور</label>
+            <input class="form-control" type="file" id="formFileMultiple" multiple>
+          </div>
+          
+          <div>
+            <label for="formFileLg" class="form-label"> لإدخال ملفات كبير</label>
+            <input class="form-control form-control-lg" id="formFileLg" type="file">
+          </div>
+          <div class="mb-3">
+            <a href="http://localhost:4200/Adedd" class="btn btn-primary mt-3">التالى</a>
+          </div>
+        </div>
+
+      
+   
+          
+  </div>

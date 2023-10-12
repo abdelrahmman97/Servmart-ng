@@ -12,6 +12,13 @@ import { RequestDetailsComponent } from './vendor/Components/request-details/req
 import { SeeCustomerRequestsComponent } from './customer/Components/see-customer-requests/see-customer-requests.component';
 import { ProductDetailsComponent } from './vendor/product-details/product-details.component';
 import { AddWorkHistoryComponent } from './services-provider/Components/add-work-history/add-work-history.component';
+import { AdeddComponent } from './customer/Components/Adedd/Adedd.component';
+import { ListComponent } from './customer/Components/list/list.component';
+import { DashBordComponent } from './admin/Components/DashBord/DashBord.component';
+import { OrderListComponent } from './admin/Components/order-list/order-list.component';
+import { SidebarComponent } from '../core/components/sidebar/sidebar.component';
+import { NgxChartComponent } from './admin/Components/ngx-chart/ngx-chart.component';
+import { SingelOrderComponent } from './admin/Components/singel-order/singel-order.component';
 
 
 
@@ -25,6 +32,9 @@ const routes: Routes = [
 	{ path: 'offers/:id', component: RequestOffersComponent },
 	{ path: 'rate-service/:id', component: RateServiceComponent },
 	{path: ' ',component:SeeCustomerRequestsComponent  },
+	{path: 'Adedd',component:AdeddComponent  },
+	{path: 'List',component:ListComponent  },
+
 
 	// Vendor Components
 	{ path: 'add-product', component: AddProduectsComponent },
@@ -38,6 +48,13 @@ const routes: Routes = [
 
 	// Service Provider Components
 	{ path: 'bids', component: SendOffersComponent },
+	//Admin
+	{path: 'DashBorde',component:DashBordComponent  },
+	{path: 'Order-List',component:OrderListComponent },
+	{path: 'Singel-Order',component:SingelOrderComponent  },
+	{path: 'chart',component:NgxChartComponent },
+
+
 
 ];
 
