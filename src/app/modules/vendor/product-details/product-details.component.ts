@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AddProductService } from '../services/Product/AppProductService.service';
 
 @Component({
   selector: 'app-product-details',
@@ -6,20 +9,19 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent {
-	@Input() imageAssetUrl: string | undefined;
-	@Input() image1Url: string | undefined;
-	@Input() image2Url: string | undefined;
-	@Input() image3Url: string | undefined;
-	@Input() aboutText: string | undefined;
-	@Input() advantages: string[] | undefined;
-	@Input() price: string | undefined;
-	@Input() rating: string | undefined;
+id:number;
+product:any;
+check:boolean=false;
+constructor(private actic:ActivatedRoute,bs:AddProductService){
+	this.actic.params.subscribe(
+		{
+			next: (value) => { this.id = value['id'];
+		console.log(this.id) },
+})
 
-	@Input() availability: string | undefined;
-	@Input() additionalImageUrl: string | undefined;
-	@Input() services: string[] | undefined;
-	@Input() reviewRating: string | undefined;
-	@Input()reviewCount!: string;
-	@Input() reviewStars: string[] | undefined;
-	@Input() reviewProgress: number[] | undefined;
+this.product=bs.getprofuct(this.id)
+console.log(this.product)
+if(!this.product)
+this.check=true
+}
 }

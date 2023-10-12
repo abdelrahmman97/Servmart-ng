@@ -23,7 +23,11 @@ constructor(private httpclint:HttpClient) {
 gstAll(){
 	return this.httpclint.get<IProduct[]>(this.baseURL);  // get all products
 }
-
+getprofuct(id:number){
+if (id=0)
+return false;
+return this.products.find(p=>p.ID==id)
+}
 
 
 }
