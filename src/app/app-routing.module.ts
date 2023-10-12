@@ -20,13 +20,16 @@ const routes: Routes = [
 		component: LayoutComponent,
 		children: [
 			{ path: "", loadChildren: () => import('./modules/modules.module').then(m => m.ModulesModule) },
-			{ path: "admin", loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
 		]
 	},
 	{
 		path: "auth",
-		component: AdminLayoutComponent,
 		loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+	},
+	{
+		path: "admin",
+		component: AdminLayoutComponent,
+		loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
 	},
 
 	{ path: '**', component: NotFoundComponent }
