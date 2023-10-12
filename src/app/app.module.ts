@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { ModulesModule } from './modules/modules.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { OrderDetailsComponent } from './modules/vendor/Components/order-details/order-details.component';
 
 
 
@@ -14,13 +15,15 @@ import { HttpClientModule } from '@angular/common/http';
 	declarations: [
 		AppComponent,
 
+        OrderDetailsComponent
 
 	],
 	imports: [
 		BrowserModule,
 		HttpClientModule,
 		AppRoutingModule,
-ReactiveFormsModule,
+    ReactiveFormsModule,
+    
 		ModulesModule,
 		CoreModule,
 		SharedModule
