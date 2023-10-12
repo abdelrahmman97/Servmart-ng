@@ -10,24 +10,28 @@ import { ServicesProviderModule } from './services-provider/services-provider.mo
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CoreModule } from '../core/core.module';
 import { ModulesRoutingModule } from './modules-routing.module';
-
-
+import { ShopComponent } from './pages/shop/shop.component';
+import { DetailsComponent } from './pages/details/details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
 		HomePageComponent,
 		ProfileComponent,
+		ShopComponent,
+		DetailsComponent,
 	],
 	imports: [
 		CommonModule,
 		ModulesRoutingModule,
-
+		ReactiveFormsModule,
+		FormsModule,
 		CoreModule,
 		AdminModule,
 		CustomerModule,
+		
 		VendorModule,
 		ServicesProviderModule,
-
-	]
+	],
 })
-export class ModulesModule { }
+export class ModulesModule {}
