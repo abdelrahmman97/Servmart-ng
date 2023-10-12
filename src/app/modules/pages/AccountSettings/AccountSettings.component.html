@@ -1,0 +1,286 @@
+
+<div class="page-content mb-5 m-0">
+  <div class="vstack gap-4">
+
+      <!-- Personal info START -->
+      <div class="card border">
+          <!-- Card header -->
+          <div class="card-header border-bottom">
+              <h4 class="card-header-title">المعلومات الشخصية</h4>
+          </div>
+          <span *ngIf="showsSuccessMessage" class="text-success">&#10004; تم تحديث المعلومات الشخصية بنجاح!</span>
+          <span *ngIf="showeErrorMessage" class="text-danger">&#10008; خطأ في  المعلومات الشخصية </span>
+          <!-- Card body START -->
+          <div class="card-body">
+              <!-- Form START -->
+              <form class="row g-3" [formGroup]="accountForm">
+                  <!-- Profile photo -->
+                  <div class="col-12">
+                      <label class="form-label">ارفع صورة ملقك الشخصى<span
+                              class="text-danger">*</span></label>
+                      <div class="d-flex align-items-center form">
+                          <label class="position-relative me-4" type="file" id="photo" (change)="onFileSelected($event)" accept="image/*"
+                              title="Replace this pic">
+                              <span class="avatar avatar-xl">
+                                  <img id="uploadfile-1-preview"
+                                      class="avatar-img rounded-circle border border-white border-3 shadow"
+                                       style="width: 200px;" *ngIf="accountForm.get('photo').value" [src]="accountForm.get('photo').value">
+                              </span>
+                          </label>
+                          <div class="btn btn-sm btn-primary-soft mb-0 form-group">
+                            <label for="photo" type="button" (click)="selectFile()">تغير</label>
+                            <input class="form-control d-none " type="file" id="photoInput" (change)="onFileSelected($event)" accept="image/*">
+                          </div>
+                          
+                      </div>
+                  </div>
+
+                  <!-- Name -->
+                  <div class="col-md-6 form-group">
+                      <label class="form-label" for="FName">الاسم الاول<span
+                              class="text-danger">*</span></label>
+                      <input type="text" class="form-control" value=""
+                          placeholder="ادخل الاسم الاول" id="FName" formControlName="FName"
+                          [ngClass]="{'is-invalid': accountForm.get('FName').invalid}">
+                          <span *ngIf="accountForm.get('FName').touched && accountForm.get('FName').hasError('required')" class="invalid-feedback">
+                            الاسم الاول مطلوب
+                          </span>
+                          <span *ngIf="accountForm.get('FName').touched && accountForm.get('FName').hasError('minlength')" class="invalid-feedback">
+                            الاسم يجب ألا يقل عن 3 حروف
+                          </span>
+                          <span *ngIf="accountForm.get('FName').touched && accountForm.get('FName').hasError('invalidname')" class="invalid-feedback">
+                            لا يمكن أن يحتوي الاسم على أرقام
+                          </span>
+                          
+                  </div>
+
+                  <!-- Email -->
+                  <div class="col-md-6">
+                      <label class="form-label" for="LName">الاسم الاخير<span
+                              class="text-danger">*</span></label>
+                      <input type="text" class="form-control" value=""
+                          placeholder="ادخل الاسم الاخير" id="LName" formControlName="LName"
+                          [ngClass]="{'is-invalid': accountForm.get('LName').touched && accountForm.get('LName').invalid}">
+                          <span *ngIf="accountForm.get('LName').touched && accountForm.get('LName').hasError('required')" class="invalid-feedback">
+                            الاسم الاخير مطلوب
+                          </span>
+                          <span *ngIf="accountForm.get('LName').touched && accountForm.get('LName').hasError('minlength')" class="invalid-feedback">
+                            لا يجب أن يقل الاسم عن 3 حروف
+                          </span>
+                          <span *ngIf="accountForm.get('LName').touched && accountForm.get('LName').hasError('invalidname')" class="invalid-feedback">
+                            لا يمكن أن يحتوي الاسم على أرقام
+                          </span>
+                          
+                  </div>
+
+                  <!-- Mobile -->
+                  <div class="col-md-6">
+                      <label class="form-label">اسم المستخدم<span
+                              class="text-danger" for="Username">*</span></label>
+                      <input type="text" class="form-control" value=""
+                          placeholder="ادخل اسم المستخدم" id="Username" formControlName="Username"
+                          [ngClass]="{'is-invalid': accountForm.get('Username').touched && accountForm.get('Username').invalid}">
+                          <span *ngIf="accountForm.get('Username').touched && (accountForm.get('Username').hasError('required') || accountForm.get('Username').hasError('minlength'))" class="invalid-feedback">
+                            {{ accountForm.get('Username').hasError('required') ? 'اسم المستخدم مطلوب' : 'خطأ في اسم المستخدم' }}
+                          </span>
+                          
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">رقم الهاتف<span
+                            class="text-danger" for="PhoneNo">*</span></label>
+                    <input type="text" class="form-control" value="222 555 666"
+                        placeholder="ادخل رقم الهاتف" id="PhoneNo" formControlName="PhoneNo"
+                        [ngClass]="{'is-invalid': accountForm.get('PhoneNo').touched && accountForm.get('PhoneNo').invalid}">
+                        <span *ngIf="accountForm.get('PhoneNo').touched && (accountForm.get('PhoneNo').hasError('required') || accountForm.get('PhoneNo').hasError('invalidPhoneNumber'))" class="invalid-feedback">
+                          {{ accountForm.get('PhoneNo').hasError('required') ? 'رقم الهاتف مطلوب' : 'خطأ في رقم الهاتف' }}
+                        </span>
+                        
+                </div>
+                <div class="col-md-12">
+                  <label class="form-label">رقم الهوية<span
+                          class="text-danger" for="SSN">*</span></label>
+                  <input type="text" class="form-control" value="222 555 666"
+                      placeholder="ادخل رقم الهوية" id="SSN" formControlName="SSN"
+                      [ngClass]="{'is-invalid': accountForm.get('SSN').touched && accountForm.get('SSN').invalid}">
+                      <span *ngIf="accountForm.get('SSN').touched && (accountForm.get('SSN').hasError('required') || accountForm.get('SSN').hasError('invalidsnn'))" class="invalid-feedback">
+                        {{ accountForm.get('SSN').hasError('required') ? 'رقم الهوية مطلوب' : 'خطأ في رقم الهوية' }}
+                      </span>
+                      
+              </div>
+                  <!-- Nationality -->
+                  
+                   <!-- Nationality -->
+                   <div class="col-md-6">
+                    <label class="form-label">نوع الحساب<span
+                            class="text-danger" for="RoleID">*</span></label>
+                    <select class="form-select js-choice" id="RoleID" formControlName="RoleID">
+                      <option *ngFor="let work of workoption" >{{work}}</option>
+                                          
+                    </select>
+                </div> 
+                <!-- Nationality -->
+                <div class="col-md-6">
+                    <label class="form-label" >المهنة<span
+                            class="text-danger" for="work">*</span></label>
+                    <select class="form-select js-choice" id="work" formControlName="work">
+                      <option *ngFor="let account of accountoption" >{{account}}</option>
+                    </select>
+                </div>
+
+                  <!-- Date of birth -->
+                  <div class="col-md-6">
+                      <label class="form-label">تاريخ الميلاد<span
+                              class="text-danger" for="Birthday">*</span></label>
+                      <input type="date" class="form-control flatpickr" value="29 Aug 1996"
+                          placeholder="Enter date of birth" data-date-format="d M Y" id="Birthday" formControlName="Birthday"
+                          [ngClass]="{'is-invalid': accountForm.get('Birthday').touched && accountForm.get('Birthday').invalid}">
+                          <span *ngIf="accountForm.get('Birthday').hasError('required') && accountForm.get('Birthday').touched" class="invalid-feedback">     sss                          </span>
+                          <span *ngIf="accountForm.get('Birthday').hasError('futureDate') && accountForm.get('Birthday').touched" class="invalid-feedback">        invalidEmail.
+
+                          </span>
+                  </div>
+
+                  <!-- Gender -->
+                  <div class="col-md-6">
+                      <label class="form-label">النوع<span
+                              class="text-danger">*</span></label>
+                      <div class="d-flex gap-4">
+                          <div class="form-check radio-bg-light">
+                              <input class="form-check-input" type="radio" 
+                               checked="" id="انثى" value="انثى" formControlName="Gender">
+                              <label class="form-check-label" for="flexRadioDefault1" for="انثى">
+                                  انثى
+                              </label>
+                          </div>
+                          <div class="form-check radio-bg-light">
+                              <input class="form-check-input" type="radio" 
+                                  id="ذكر" value="ذكر" formControlName="Gender" >
+                              <label class="form-check-label" for="flexRadioDefault2" for="ذكر">
+                                  ذكر
+                              </label>
+                          </div>
+
+                      </div>
+                  </div>
+
+                  <!-- Address -->
+                  <div class="col-12">
+                      <label class="form-label" for="Address">العنوان</label>
+                      <textarea class="form-control" rows="3"
+                          spellcheck="false" id="Address" formControlName="Address"
+                          [ngClass]="{'is-invalid': accountForm.get('Address').touched && accountForm.get('Address').invalid}"></textarea>
+                          <span *ngIf="accountForm.get('Address').hasError('required') && accountForm.get('Address').touched" class="invalid-feedback">     العنوان مطلوب                          </span>
+
+                        </div>
+
+                  <!-- Button -->
+                  <div class="col-12 text-start">
+                      <button href="#" class="btn btn-primary-soft mb-0" (click)="saveAccount()">حفظ التغيرات</button>
+                  </div>
+              </form>
+              <!-- Form END -->
+          </div>
+          <!-- Card body END -->
+      </div>
+      <!-- Personal info END -->
+
+      <!-- Update email START -->
+      <div class="card border">
+
+          <div class="card-header border-bottom">
+              <h4 class="card-header-title">تحديث البريد الاكترونى </h4>
+              <p class="mb-0">بريد الاكترونى الحالى هو : {{emaiil}}<span
+                      class="text-primary"></span></p>
+    
+          </div>
+          <span *ngIf="showSuccessMessage" class="text-success">&#10004; تم تحديث البريد الإلكتروني بنجاح!</span>
+          <span *ngIf="showErrorMessage" class="text-danger">&#10008; خطأ في البريد الإلكتروني</span>
+          <div class="card-body">
+              <form [formGroup]="emailform">
+                  <label class="form-label" for="email">ادخل البريد الالكترونى الجديد<span
+                          class="text-danger" >*</span></label>
+                  <input type="email" class="form-control" placeholder="ادخل البريد الالكترونى الجديد" id="email" formControlName="email"
+                  [ngClass]="{'is-invalid': emailform.get('email').touched && emailform.get('email').invalid}">
+                  <span *ngIf="emailform.get('email').touched && (emailform.get('email').hasError('required') || emailform.get('email').hasError('invalidEmail'))" class="invalid-feedback">
+                    {{ emailform.get('email').hasError('required') ? 'البريد الالكترونى مطلوب' : 'خطأ في البريد الالكتروني' }}
+                  </span>
+
+                  <div class="text-start mt-3">
+                      <a type="submit" (click)="updateemail()" class="btn btn-primary-soft mb-0">تحديث البريد الكترونى</a>
+                  </div>
+
+              </form>
+          </div>
+      </div>
+      <!-- Update email END -->
+
+      <!-- Update Password START -->
+      <div class="card border">
+          <!-- Card header -->
+          <div class="card-header border-bottom">
+              <h4 class="card-header-title">تحديث كلمة السر</h4>
+              
+          </div>
+          <div>
+            <span *ngIf="showpSuccessMessage" class="text-success">&#10004; تم تحديث  كلمة السر بنجاح!</span>
+            <span *ngIf="showpErrorMessage" class="text-danger">&#10008; خطأ في كلمة السر ;</span>
+          </div>
+          <!-- Card body START -->
+          <form class="card-body" [formGroup]="passform">
+              <!-- Current password -->
+              <div class="mb-3">
+                  <label class="form-label" for="current">كلمة السر الحالية </label>
+                  <div class="input-group">
+                    <input class="form-control fakepassword" placeholder="ادخل كلمة السر الحالية"
+                        [type]="showPassword1 ? 'text' : 'password'" id="current" formControlName="current"
+                        [ngClass]="{'is-invalid': passform.get('current').touched && passform.get('current').invalid}">
+                    <span class="input-group-text p-0 bg-transparent" (click)="showPassword11()">
+                        <i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
+                    </span>
+                    <span *ngIf="passform.get('current').hasError('required') && passform.get('current').touched" class="invalid-feedback">     كلمة السر يجب ان لا تقل عن 8 حروف                         </span>
+
+                </div>
+
+              </div>
+              <!-- New password -->
+              <div class="mb-3">
+                <label class="form-label" for="New"> ادخل كلمة السر الجديدة</label>
+                <div class="input-group">
+                    <input class="form-control fakepassword"  placeholder="ادخل كلمة السر الجديدة"
+                        [type]="showPassword2 ? 'text' : 'password'" id="New" formControlName="New"
+                        [ngClass]="{'is-invalid': passform.get('New').touched && passform.get('New').invalid}">
+                    <span class="input-group-text p-0 bg-transparent" (click)="showPassword22()">
+                        <i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
+                    </span>
+                    <span *ngIf="(passform.get('New').hasError('minlength')||passform.get('New').hasError('required')) && passform.get('New').touched" class="invalid-feedback">     كلمة السر يجب ان لا تقل عن 8 حروف                         </span>
+
+                </div>
+
+            </div>
+              <!-- Confirm -->
+              
+              <div class="mb-3">
+              
+                  <label class="form-label" for="confirm">تاكيد كلمة السر الجديدة</label>
+
+                  <div class="input-group">
+                    <input class="form-control fakepassword" placeholder="ادخل كلمة السر الجديدة"
+                        [type]="showPassword3 ? 'text' : 'password'" id="confirm" formControlName="confirm"
+                        [ngClass]="{'is-invalid': passform.get('confirm').touched && passform.get('confirm').invalid}">
+                    <span class="input-group-text p-0 bg-transparent" (click)="showPassword33()">
+                        <i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
+                    </span>
+                    <span *ngIf="(passform.get('confirm').hasError('invid')||passform.get('confirm').hasError('required')) && passform.get('confirm').touched" class="invalid-feedback">     كلمة السر غير متطابقة                         </span>
+
+                </div>          </div>
+
+              <div class="text-start">
+                  <a (click)="updatepass()" class="btn btn-primary-soft mb-0">تحديث كلمة السر</a>
+              </div>
+          </form>
+          <!-- Card body END -->
+      </div>
+      <!-- Update Password END -->
+  </div>
+  <!-- Your content goes here -->
+</div>

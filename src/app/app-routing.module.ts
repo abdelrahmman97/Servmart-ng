@@ -4,12 +4,14 @@ import { HomePageComponent } from './modules/pages/home-page/home-page.component
 import { LayoutComponent } from './core/components/layout/layout.component';
 import { ProfileComponent } from './modules/pages/profile/profile.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { AccountSettingsComponent } from './modules/pages/AccountSettings/AccountSettings.component';
 
 
 const routes: Routes = [
 	{ path: "", component: HomePageComponent },
 	{ path: "index", component: HomePageComponent },
 	{ path: "home", component: HomePageComponent },
+	// { path: "accountsetting", component: AccountSettingsComponent },
 
 	// { path:"shop", component:ShopComponent},
 	// { path:"about", component:AboutComponent},

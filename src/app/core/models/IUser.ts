@@ -13,4 +13,7 @@ export interface IUser {
 	HashedPassword: string;
 	ProfilePic: string;
 	RoleID: number;
+	work: string;
+	Birthday:Date;
+	Gender: string;
 }

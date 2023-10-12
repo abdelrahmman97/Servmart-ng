@@ -9,6 +9,8 @@ import { SeeCustomerRequestsComponent } from './Components/see-customer-requests
 import { RequestOffersComponent } from './Components/RequestOffers/RequestOffers.component';
 import { RateServiceComponent } from './Components/RateService/RateService.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +27,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 	imports: [
 		CommonModule,
 		RouterModule,
-		SharedModule
+		SharedModule,
+		HttpClientModule,
+		ReactiveFormsModule,
+		FormsModule
 	]
 })
 export class CustomerModule { }
