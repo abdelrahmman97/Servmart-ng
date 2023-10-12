@@ -10,6 +10,7 @@ import { RequestOffersComponent } from './Components/RequestOffers/RequestOffers
 import { RateServiceComponent } from './Components/RateService/RateService.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
 		CommonModule,
 		FormsModule,
 		RouterModule,
-		SharedModule
+		SharedModule,
+		ReactiveFormsModule
 	]
 })
 export class CustomerModule { }
