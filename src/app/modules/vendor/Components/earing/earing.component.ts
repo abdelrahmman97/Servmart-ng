@@ -65,7 +65,7 @@ export class EaringComponent {
        console.log('Received vendors data:', vendors);
  
       this.EarningService.getday().subscribe(
-        (data:number)=> {
+        (data:number)=> { 
            this.day=data}
       )
       this.EarningService.getmonth().subscribe(

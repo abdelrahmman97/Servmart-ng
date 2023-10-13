@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class SearchVendorsComponent {
-
+ 
 
 //   dastaList = [
 //     { FName: 'Ahmed', LName: 'Ali',Address: 'Cairo , Egypt',  ProfilePic: './../assets/images/08.jpg', TotalServices: 5, Rate: 4.3 },

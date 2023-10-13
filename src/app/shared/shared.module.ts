@@ -7,7 +7,7 @@ import { DatePipe } from '@angular/common';
 
 @NgModule({
 	declarations: [
-		RatingComponent,AccountSettingsComponent
+		RatingComponent,AccountSettingsComponent 
 	],
 	imports: [
 		CommonModule,ReactiveFormsModule 

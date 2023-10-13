@@ -14,7 +14,7 @@ export class EarningService {
 
   getData(): Observable<any[]> {
     console.log('Fetching vendors data...');
-
+ 
     return this.http.get<any[]>(this.apiUrl);
   } 
   getday():Observable<number> {

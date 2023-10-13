@@ -5,7 +5,7 @@ import { Serprovider } from '../../Components/search-vendors/serprovider';
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
 export class DataService {
   private apiUrl = 'http://localhost:3000/api/data'; 
 

@@ -1,6 +1,6 @@
        svg#freepik_stories-time-management:not(.animated) .animable {
            opacity: 0;
-       }
+       } 
 
        svg#freepik_stories-time-management.animated #freepik--Clock--inject-131 {
            animation: 1.5s Infinite linear floating;

@@ -6,7 +6,7 @@ import { RequestOffersComponent } from './customer/Components/RequestOffers/Requ
 import { SendOffersComponent } from './vendor/Components/SendOffers/SendOffers.component';
 import { RateServiceComponent } from './customer/Components/RateService/RateService.component';
 import { SearchVendorsComponent } from './customer/Components/search-vendors/search-vendors.component';
-import { EaringComponent } from './vendor/Components/earing/earing.component';
+import { EaringComponent } from './vendor/Components/earing/earing.component'; 
 import { PendingAcountComponent } from './pages/pending-acount/pending-acount.component';
 import { AccountSettingsComponent } from './pages/AccountSettings/AccountSettings.component';
 

@@ -13,7 +13,7 @@ import { SendOffersComponent } from './Components/SendOffers/SendOffers.componen
 	declarations: [
 		RequestDetailsComponent,
 		RequestListComponent,
-		EaringComponent,
+		EaringComponent, 
 		AddProduectsComponent,
 		SendOffersComponent
 	],
