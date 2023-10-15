@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchVendorsComponent } from './search-vendors.component';
-
+ 
 describe('SearchVendorsComponent', () => {
   let component: SearchVendorsComponent;
   let fixture: ComponentFixture<SearchVendorsComponent>;
