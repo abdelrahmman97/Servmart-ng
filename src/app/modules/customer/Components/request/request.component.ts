@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceRequestService } from '../../services/Request/ServiceRequest.service';
-import { IRequest } from 'src/app/core/models/irequest';
+import { IRequest } from 'src/app/core/models/IRequest';
 
 @Component( {
 	selector: 'app-request',
