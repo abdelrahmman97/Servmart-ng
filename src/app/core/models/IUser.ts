@@ -1,5 +1,6 @@
 export interface IUser {
 	ID?: string;
+	// personal info
 	FName: string;
 	LName: string;
 	SSN: string;
@@ -10,4 +11,8 @@ export interface IUser {
 	PasswordHash: string;
 	PasswordSalt: string;
 	ProfilePic: string;
+	RoleID: number;
+	work: string;
+	Birthday:Date;
+	Gender: string;
 }

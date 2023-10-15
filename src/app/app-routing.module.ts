@@ -11,11 +11,15 @@ import { CartComponent } from './modules/customer/Components/cart/cart.component
 import { CheckOutComponent } from './modules/customer/Components/check-out/check-out.component';
 import { AdminLayoutComponent } from './modules/admin/Components/admin-layout/admin-layout.component';
 
+import { AccountSettingsComponent } from './modules/pages/AccountSettings/AccountSettings.component';
+
+
 
 const routes: Routes = [
 	{ path: "", component: HomePageComponent },
 	{ path: "index", component: HomePageComponent },
 	{ path: "home", component: HomePageComponent },
+	// { path: "accountsetting", component: AccountSettingsComponent },
 
 	// { path:"about", component:AboutComponent},
 
