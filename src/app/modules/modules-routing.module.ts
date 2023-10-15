@@ -16,7 +16,8 @@ import { RequestListComponent } from './vendor/Components/request-list/request-l
 import { SearchVendorsComponent } from './customer/Components/search-vendors/search-vendors.component';
 import { EaringComponent } from './vendor/Components/earing/earing.component';
 import { AccountSettingsComponent } from './pages/AccountSettings/AccountSettings.component';
-import { PendingAcountComponent } from './pages/pending-acount/pending-acount.component';
+import { CartComponent } from './customer/Components/cart/cart.component';
+import { PendingAccountComponent } from './pages/pending-account/pending-account.component';
 
 
 
@@ -26,28 +27,30 @@ const routes: Routes = [
 	{ path: 'profile', component: ProfileComponent },
 	{ path: "shop", component: ShopComponent },
 	{ path: "details", component: DetailsComponent },
-	{ path: "acountsetting", component: AccountSettingsComponent },
-	{ path: "pendingacount", component: PendingAcountComponent},
-
+	{ path: "settings", component: AccountSettingsComponent },
+	{ path: "accountUnderReview", component: PendingAccountComponent},
 
 	// Customer Components
 	{ path: 'requests', component: RequestComponent },
 	{ path: 'offers/:id', component: RequestOffersComponent },
-	{ path: 'rate-service/:id', component: RateServiceComponent },
-	{ path: 'servendor', component: SearchVendorsComponent },
+	{ path: 'rateService/:id', component: RateServiceComponent },
+	{ path: 'vendors', component: SearchVendorsComponent },
+	{ path: 'cart', component: CartComponent },
+
 	// Vendor Components
-	{ path: 'add-product', component: AddProduectsComponent },
 	{ path: 'add-work-history', component: AddWorkHistoryComponent },
-	{ path: 'productlist', component: ProductListComponent },
-	{ path: "Orderdetals", component: OrderDetailsComponent },
-	{ path: 'productsdetails/:id', component: ProductDetailsComponent },
+	{ path: "orderdetails", component: OrderDetailsComponent },
 	{ path: "requestlist", component: RequestListComponent },
 	{ path: "earing", component: EaringComponent },
 
-	// Service Provider Compproductsdetailsonents
-	{ path: 'bids', component: SendOffersComponent },
+	{ path: 'add-product', component: AddProduectsComponent },
+	{ path: 'productlist', component: ProductListComponent },
+	{ path: 'product/:id', component: ProductDetailsComponent },
 
-	// Service Provider Components
+	// Service Provider Compproducts
+	{ path: 'bids', component: SendOffersComponent },
+	{ path: 'service/:id', component: DetailsComponent },
+
 
 ];
 

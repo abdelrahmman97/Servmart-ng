@@ -1,23 +1,23 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing'; 
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { PendingAcountComponent } from './pending-acount.component';
+import { PendingAccountComponent } from './pending-account.component';
 
 describe('PendingAcountComponent', () => {
-  let component: PendingAcountComponent;
-  let fixture: ComponentFixture<PendingAcountComponent>;
+  let component: PendingAccountComponent;
+  let fixture: ComponentFixture<PendingAccountComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PendingAcountComponent ]
+      declarations: [ PendingAccountComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PendingAcountComponent);
+    fixture = TestBed.createComponent(PendingAccountComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
