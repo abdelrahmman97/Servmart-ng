@@ -5,20 +5,14 @@
                 <!-- container -->
                 <div class="container">
                     <!-- row -->
-                    <div class="row mb-8">
+                    <div class="row mb-4">
                         <div class="col-md-12">
                             <div class="d-md-flex justify-content-between align-items-center">
                                 <div>
                                     <!-- page header -->
-                                    <h2>تفاصيل الطلب الفردي</h2>
+                                    <h2>تفاصيل الطلب </h2>
                                     <!-- breadcrumb -->
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb mb-0">
-                                            <li class="breadcrumb-item"><a href="#" class="text-inherit"></a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">تفاصيل الطلب الفردي
-                                            </li>
-                                        </ol>
-                                    </nav>
+
                                 </div>
                                 <!-- button -->
                                 <div>
@@ -29,13 +23,13 @@
                     </div>
                     <!-- row -->
                     <div class="row">
-                        <div class="col-xl-12 col-12 mb-5">
+                        <div class="col-xl-12 col-12 ">
                             <!-- card -->
                             <div class="card h-100 card-lg">
                                 <div class="card-body p-6">
                                     <div class="d-md-flex justify-content-between">
                                         <div class="d-flex align-items-center mb-2 mb-md-0">
-                                            <h2 class="mb-0">رقم الطلب: #FC001</h2>
+                                            <h6 class="mb-0">رقم الطلب: {{Request.CleintID}}</h6>
                                             <span class="badge bg-light-warning text-dark-warning ms-2">قيد
                                                 الانتظار</span>
                                         </div>
@@ -62,20 +56,33 @@
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="mb-6">
                                                     <h6>تفاصيل العميل</h6>
-                                                    <p class="mb-1 lh-lg">جون أليكس<br>
-                                                        anderalex@example.com<br>
-                                                        +998 99 22123456</p>
-                                                    <a href="#">عرض الملف الشخصي</a>
+                                                    <p class="mb-1 lh-lg">
+														{{Request.Title}}
+														<br>
+                                                       {{Request.RateValue}}
+													   <br>
+													   {{Request.StartDate}}</p>
+                                                    <a [routerLink]="">عرض الملف الشخصي</a>
                                                 </div>
                                             </div>
                                             <!-- address -->
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="mb-6">
-                                                    <h6>عنوان الشحن</h6>
-                                                    <p class="mb-1 lh-lg">جيرج هارفيل<br>
-                                                        568، سويت أف.<br>
-                                                        أستراليا، 235153 <br>
-                                                        رقم الاتصال +91 99999 12345</p>
+                                                    <h6>
+														{{Request.Status}}
+													</h6>
+                                                    <p class="mb-1 lh-lg">
+														{{Request.ExpectSalary}}<br>
+
+                                                      {{Request.CleintID}}
+														<br>
+                                                       {{Request.EndDate}}
+														<br>
+														{{
+															Request.Details
+														}}
+
+													</p>
                                                 </div>
                                             </div>
                                             <!-- address -->
@@ -95,7 +102,7 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <!-- الجسم -->
-                                                                <tbody>
+                                                                <tbody >
                                                                     <tr>
                                                                         <td>
                                                                             <a href="#" class="text-inherit">
@@ -117,81 +124,7 @@
                                                                         <td>1</td>
                                                                         <td>$18.00</td>
                                                                     </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="#" class="text-inherit">
-                                                                                <div class="d-flex align-items-center">
-                                                                                    <div>
-                                                                                        <img src="Order%20Single%20Dashboard%20-%20FreshCart_files/product-img-2.jpg"
-                                                                                            alt=""
-                                                                                            class="icon-shape icon-lg">
-                                                                                    </div>
-                                                                                    <div class="ms-lg-4 mt-2 mt-lg-0">
-                                                                                        <h5 class="mb-0 h6">
-                                                                                            ناتري تشويس دايجستيف
-                                                                                        </h5>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </a>
-                                                                        </td>
-                                                                        <td><span class="text-body">$24.0</span></td>
-                                                                        <td>1</td>
-                                                                        <td>$24.00</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="#" class="text-inherit">
-                                                                                <div class="d-flex align-items-center">
-                                                                                    <div>
-                                                                                        <img src="Order%20Single%20Dashboard%20-%20FreshCart_files/product-img-3.jpg"
-                                                                                            alt=""
-                                                                                            class="icon-shape icon-lg">
-                                                                                    </div>
-                                                                                    <div class="ms-lg-4 mt-2 mt-lg-0">
-                                                                                        <h5 class="mb-0 h6">
-                                                                                            كادبوري 5 ستار شوكولاتة
-                                                                                        </h5>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </a>
-                                                                        </td>
-                                                                        <td><span class="text-body">$32.0</span></td>
-                                                                        <td>1</td>
-                                                                        <td>$32.0</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="#" class="text-inherit">
-                                                                                <div class="d-flex align-items-center">
-                                                                                    <div>
-                                                                                        <img src="Order%20Single%20Dashboard%20-%20FreshCart_files/product-img-4.jpg"
-                                                                                            alt=""
-                                                                                            class="icon-shape icon-lg">
-                                                                                    </div>
-                                                                                    <div class="ms-lg-4 mt-2 mt-lg-0">
-                                                                                        <h5 class="mb-0 h6">
-                                                                                            بطاطس بنكهة البصل
-                                                                                        </h5>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </a>
-                                                                        </td>
-                                                                        <td><span class="text-body">$3.0</span></td>
-                                                                        <td>2</td>
-                                                                        <td>$6.0</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td class="border-bottom-0 pb-0"></td>
-                                                                        <td class="border-bottom-0 pb-0"></td>
-                                                                        <td colspan="1" class="fw-medium text-dark ">
-                                                                            <!-- النص -->
-                                                                            الإجمالي الفرعي:
-                                                                        </td>
-                                                                        <td class="fw-medium text-dark ">
-                                                                            <!-- النص -->
-                                                                            $80.00
-                                                                        </td>
-                                                                    </tr>
+
                                                                     <tr>
                                                                         <td class="border-bottom-0 pb-0"></td>
                                                                         <td class="border-bottom-0 pb-0"></td>
