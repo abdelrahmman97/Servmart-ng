@@ -1,37 +1,80 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import { CartService } from '../../services/Cart/Cart.service';
+import { ICart, ICartProduct } from 'src/app/core/models/ICart';
 
-@Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
-})
-export class CartComponent {
+@Component( {
+	selector: 'app-cart',
+	templateUrl: './cart.component.html',
+	styleUrls: ['./cart.component.css']
+} )
+export class CartComponent implements OnInit {
 
-  cartArray:any[]=[{id:1,Name: 'John',},{id:2,Name: "John2"},{id:3,Name:"Johan3"}  ]
+	cart: ICart;
+	products: ICartProduct[];
+	totalUnitsPrice: number = 0;
+	totalPrice: number = 0;
+	serviceFee: number = 3;
 
-number;
+	constructor( private cartService: CartService ) { }
 
-showNumber(){
-  this.number*25
-}
-select(id:number) {
-  if(this.cartArray){
+	ngOnInit(): void {
+		this.cartService.GetCart().subscribe( {
+			next: data => {
+				this.cart = data[0] as ICart;
+				this.products = this.cart.Products;
+				this.totalPriceChanged()
+			}
+		} );
+	}
 
-    this.cartArray.find(i=>i.id)==id;
-    this.number*25
-    console.log(this.cartArray.values)
-  } 
-  else{
-    this.cartArray.splice(this.cartArray.indexOf(id), 1);
-  } 
- console.log( this.cartArray)
-}
-remove(){
- this.number=0
-}
-OnInit(){
-  this.showNumber();
-}
+	totalPriceChanged() {
+		this.totalUnitsPrice = 0;
+		this.totalPrice = 0;
+		this.products.forEach( p => this.totalUnitsPrice += ( p.UnitPrice * p.Quantity ) );
+		this.totalPrice = this.serviceFee + this.totalUnitsPrice;
+	}
+
+	remove( product: ICartProduct ) {
+
+		const index = this.products.indexOf( product, 0 );
+		if ( index > -1 ) {
+			this.products.splice( index, 1 );
+			this.cartService.Remove( product.ID ).subscribe( {
+				next: data => {
+					console.log( `deleted`, data );
+					this.totalPriceChanged();
+				},
+				error: error => {
+					console.log( `error`, error );
+					this.totalPriceChanged();
+				}
+			} );
+		}
+	}
+
+	stepUp( product: ICartProduct ) {
+		( product.Quantity != 10 ) ? product.Quantity++ : '';
+		this.totalPriceChanged();
+	}
+	stepDown( product: ICartProduct ) {
+		( product.Quantity != 1 ) ? product.Quantity-- : '';
+		this.totalPriceChanged();
+	}
+
+
+	// select( id: number ) {
+	// 	if ( this.cartArray ) {
+
+	// 		this.cartArray.find( i => i.id ) == id;
+	// 		this.number * 25
+	// 		console.log( this.cartArray.values )
+	// 	}
+	// 	else {
+	// 		this.cartArray.splice( this.cartArray.indexOf( id ), 1 );
+	// 	}
+	// 	console.log( this.cartArray )
+	// }
+
 
 
 

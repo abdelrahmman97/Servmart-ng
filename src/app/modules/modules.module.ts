@@ -29,7 +29,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 		CoreModule,
 		AdminModule,
 		CustomerModule,
-		
+
 		VendorModule,
 		ServicesProviderModule,
 	],

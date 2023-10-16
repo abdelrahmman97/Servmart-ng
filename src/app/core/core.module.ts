@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BottomSidebarComponent } from './components/BottomSidebar/BottomSidebar.component';
+import { CustomCurrencyPipe } from './Pipes/CustomCurrency.pipe';
 
 
 
@@ -25,14 +26,18 @@ import { BottomSidebarComponent } from './components/BottomSidebar/BottomSidebar
 		NotificationComponent,
 		UserDropdownComponent,
 		SidebarComponent,
-		BottomSidebarComponent
+		BottomSidebarComponent,
+
+		// Pipes
+		CustomCurrencyPipe
 	],
 	imports: [
 		CommonModule,
 		RouterModule
 	],
 	exports: [
-		HeaderComponent
+		HeaderComponent,
+		CustomCurrencyPipe
 	]
 })
 export class CoreModule { }

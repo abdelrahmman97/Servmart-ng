@@ -1,183 +1,117 @@
-<div class="pb-9 pb-lg-0">
-
-
-
-
-    <!-- Content -->
-    <div class="container mt-5">
-        <!-- Your content goes here -->
-
-        <div class="row">
-            <div class="d-flex justify-content-between mb-4">
-                <h4 class="card-header-title">عربة التسوق</h4>
-                <div class="d-flex gap-2">
-                    <button class="btn btn-danger-soft">
-                        <i class="fa-duotone fa-trash"></i>
-                       امسح الكل
-                    </button>
-                    <a [routerLink]="['/CheckOut']" class="btn btn-primary-soft">
-                        <i class="fa-duotone fa-cart-circle-check"></i>
-                        Check Out
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Cart Items -->
-            <div class="col-lg-8 col-md-7">
-                <ul class="list-group list-group-flush" *ngFor="let cart of cartArray">
-
-
-                    <li class="list-group-item py-3 px-0 border-bottom">
-                        <div class="align-items-center justify-content-between row">
-                            <!-- item img -->
-                            <div class="col-3 col-md-2">
-                                <img src="https://via.placeholder.com/640x480" class="img-fluid rounded"
-                                    alt="Card image">
-                            </div>
-                            <!-- item details -->
-                            <div class="col-4 col-md-5">
-                                <!-- Title -->
-                                <h5 class="card-title mb-3">
-
-                                    {{cart.Name}}
-
-                                </h5>
-                                <a (click)="remove()" class="btn btn-sm btn-danger-soft" title="Remove from cart">
-                                    <i class="fa-duotone fa-trash"></i>
-                                مسح
-                                </a>
-                            </div>
-                            <!-- item quntity -->
-                            <div class="col-3 col-md-3">
-                                <div class="input-group input-group-sm input-counter">
-                                    <button class="btn btn-group-sm border m-0"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                        <i class="fa-solid fa-minus bg-dark"></i>
-                                    </button>
-                                    <input [(ngModel)]="number" min="1"  [value]="cart.id" type="number" id="quantity" name="quantity"
-                                        class="form-control text-center">
-                                    <button class="btn btn-group-sm border m-0"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
-                                            class="fa-solid fa-plus"></i></button>
-                                </div>
-                            </div>
-                            <!-- item price -->
-                            <div class="col-2 col-md-2 text-lg-end text-start text-end">
-                                <h5 class="fw-bold mb-0">{{number}}</h5>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="d-flex justify-content-between mt-4">
-                    <a [routerLink]="['/shop']" class="btn btn-primary-soft btn-sm">استمرار التصفح</a>
-
-                </div>
-            </div>
-            <!-- Cart Summery -->
-            <div class="col-12 col-lg-4 col-md-5 mt-4 mt-lg-0">
-                <div class="card">
-                    <div class="card-header border-0 pb-0">
-                        <h2 class="h5">Summary</h2>
-                    </div>
-                    <div class="card-body pb-0">
-                        <ul class="list-group list-group-flush border rounded m-0 p-0">
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                                <div class="me-auto">
-                                    <div>Item Subtotal</div>
-
-                                </div>
-                                <span>$75.00</span>
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                                <div class="me-auto">
-                                    <div>Service Fee</div>
-
-                                </div>
-                                <span>$3.00</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                                <div class="me-auto">
-                                    <div class="fw-bold">Subtotal</div>
-
-                                </div>
-                                <span class="fw-bold text-primary">$72.00</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-footer border-0">
-                        <div class="d-grid mb-1">
-                            <button
-                                class="btn btn-primary-soft btn-lg d-flex justify-content-between align-items-center"
-                                type="submit">
-                                Go to Checkout <span class="fw-bold">$72.00</span>
-                            </button>
-                            <p>
-                                <small>By placing your order, you agree to be bound by the Servmart <a
-                                        href="#!">Terms of Service</a> and <a href="#!">Privacy Policy.</a>
-                                </small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Your content goes here -->
-    </div>
-
-    <footer></footer>
-
+<div class="row">
+	<div class="d-flex justify-content-between mb-4">
+		<h4 class="card-header-title">عربة التسوق</h4>
+		<div class="d-flex gap-2">
+			<button class="btn btn-danger-soft">
+				<i class="fa-duotone fa-trash"></i>
+				امسح الكل
+			</button>
+			<a [routerLink]="['/checkout']" class="btn btn-primary-soft">
+				<i class="fa-duotone fa-cart-circle-check"></i>
+				تابع عملية الشراء
+			</a>
+		</div>
+	</div>
 </div>
 
+<div class="row">
+	<!-- Cart Items -->
+	<div class="col-lg-8 col-md-7">
+		<ul class="list-group list-group-flush" *ngFor="let item of products">
+			<li class="list-group-item py-3 px-0 border-bottom">
+				<div class="align-items-center justify-content-between row">
+					<!-- item img -->
+					<div class="col-3 col-md-2">
+						<img src="{{item.Image}}" class="img-fluid rounded" alt="Card image">
+					</div>
+					<!-- item details -->
+					<div class="col-4 col-md-5">
+						<!-- Title -->
+						<h5 class="card-title mb-3 text-truncate">
+							{{item.Name}}
+						</h5>
+						<a (click)="remove(item)" class="btn btn-sm btn-danger-soft" title="حذف من عربة التسوق">
+							<i class="fa-duotone fa-trash"></i>
+							حذف
+						</a>
+					</div>
+					<!-- item quntity -->
+					<div class="col-3 col-md-3">
+						<div class="input-group input-group-sm input-counter">
+							<button class="btn btn-group-sm border m-0 rounded-0 rounded-end bg-light-hover"
+								(click)="stepDown(item)">
+								<i class="fa-solid fa-minus"></i>
+							</button>
+							<input min="1" [value]="item.Quantity" type="number" id="{{item.ID}}" name="quantity"
+								class="form-control border text-center" disabled>
+							<button class="btn btn-group-sm border m-0 rounded-0 rounded-start bg-light-hover"
+								(click)="stepUp(item)">
+								<i class="fa-solid fa-plus"></i>
+							</button>
+						</div>
+					</div>
+					<!-- item price -->
+					<div class="col-2 col-md-2 text-lg-end text-start text-end">
+						<h6 class="fw-bold mb-0">{{item.UnitPrice | CustomCurrency:'ar':false}}</h6>
+						<div class="border-top my-1" *ngIf="item.Quantity!=1">
+							<h6>× {{item.Quantity}}</h6>
+							<h6 class="fw-bold mb-0">
+								{{item.UnitPrice*item.Quantity | CustomCurrency:'ar':false}}</h6>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="d-flex justify-content-between mt-4">
+			<a [routerLink]="['/shop']" class="btn btn-primary-soft btn-sm">استمرار التصفح</a>
+		</div>
 
-<!-- Sidebar for small screens -->
-<div class="bottom-0 d-inline d-lg-none position-fixed w-100">
-    <div class="card w-100 border-bottom-0 rounded-bottom-0 shadow-lg">
-        <!-- Sidebar Content -->
-        <div class="card-body d-flex justify-content-between p-3">
-            <!-- Avatar -->
-            <div class="">
-                <img class="avatar-img rounded-circle border border-2 border-white d-none d-sm-flex "
-                    style="width: 5rem;" src="https://images.placeholders.dev/?width=200&height=200" alt="">
-            </div>
+	</div>
 
-            <!-- Sidebar menu item -->
-            <ul class="flex-row justify-content-between align-items-center ms-5 nav nav-pills-primary-soft w-100">
-                <li class="nav-item">
-                    <a class="nav-link justify-center lg:justify-start active" href="../account-profile.html">
-                        <i class="fa-duotone fa-user text-xl"></i>
-                        <span class="d-none lg:inline-block">Profile</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link justify-center lg:justify-start" href="../account-bookings.html">
-                        <i class="fa-duotone fa-ticket text-xl"></i>
-                        <span class="d-none lg:inline-block">Requests</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link justify-center lg:justify-start" href="../account-travelers.html">
-                        <i class="fa-duotone fa-cart-shopping text-xl"></i>
-                        <span class="d-none lg:inline-block">Cart</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link justify-center lg:justify-start" href="../account-settings.html">
-                        <i class="fa-duotone fa-gear text-xl"></i>
-                        <span class="d-none lg:inline-block">Settings</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link justify-center lg:justify-start text-danger bg-danger-soft-hover" href="#">
-                        <i class="fa-duotone fa-power-off text-xl"></i>
-                        <span class="d-none lg:inline-block">Sign Out</span>
-                    </a>
-                </li>
-            </ul>
+	<!-- Cart Summery -->
+	<div class="col-12 col-lg-4 col-md-5 mt-4 mt-lg-0">
+		<div class="card">
+			<div class="card-header border-0 pb-0">
+				<h2 class="h5">ملخص الطلب</h2>
+			</div>
+			<div class="card-body pb-0">
+				<ul class="list-group list-group-flush border rounded m-0 p-0">
+					<li class="list-group-item d-flex justify-content-between align-items-start">
+						<div class="ms-auto">
+							<div>السلع</div>
+						</div>
+						<span>{{totalUnitsPrice | CustomCurrency:'ar':false}}</span>
+					</li>
 
-        </div>
-    </div>
+					<li class="list-group-item d-flex justify-content-between align-items-start">
+						<div class="ms-auto">
+							<div>رسوم الخدمة</div>
+						</div>
+						<span>{{3 | CustomCurrency:'ar':false}}</span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-start">
+						<div class="ms-auto">
+							<div class="fw-bold">إجمالي المبلغ</div>
+						</div>
+						<span class="fw-bold text-primary">{{totalPrice | CustomCurrency:'ar':false}}</span>
+					</li>
+				</ul>
+			</div>
+			<div class="card-footer border-0">
+				<div class="d-grid mb-1">
+					<!-- <button
+								class="btn btn-primary-soft btn-lg d-flex justify-content-between align-items-center"
+								type="submit">
+								Go to Checkout <span class="fw-bold">$72.00</span>
+							</button> -->
+					<p>
+						<small>
+							من خلال تقديم طلبك، فإنك توافق على الالتزام بشروط الخدمة وسياسة الخصوصية لدى
+							Servmart.
+						</small>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

@@ -11,13 +11,14 @@ import { AddProduectsComponent } from './vendor/Components/add-produects/AddProd
 import { ProductListComponent } from './vendor/Components/product-list/product-list.component';
 import { AddWorkHistoryComponent } from './services-provider/Components/add-work-history/add-work-history.component';
 import { OrderDetailsComponent } from './vendor/Components/order-details/order-details.component';
-import { ProductDetailsComponent } from './vendor/product-details/product-details.component';
+import { ProductDetailsComponent } from './vendor/Components/product-details/product-details.component';
 import { RequestListComponent } from './vendor/Components/request-list/request-list.component';
 import { SearchVendorsComponent } from './customer/Components/search-vendors/search-vendors.component';
 import { EaringComponent } from './vendor/Components/earing/earing.component';
 import { AccountSettingsComponent } from './pages/AccountSettings/AccountSettings.component';
 import { CartComponent } from './customer/Components/cart/cart.component';
 import { PendingAccountComponent } from './pages/pending-account/pending-account.component';
+import { CheckOutComponent } from './customer/Components/check-out/check-out.component';
 
 
 
@@ -36,6 +37,8 @@ const routes: Routes = [
 	{ path: 'rateService/:id', component: RateServiceComponent },
 	{ path: 'vendors', component: SearchVendorsComponent },
 	{ path: 'cart', component: CartComponent },
+	{ path: 'checkout', component: CheckOutComponent },
+
 
 	// Vendor Components
 	{ path: 'add-work-history', component: AddWorkHistoryComponent },

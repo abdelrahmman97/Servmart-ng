@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AddProductService } from '../services/Product/AppProductService.service';
+import { AddProductService } from '../../services/Product/AppProductService.service';
 
 @Component({
   selector: 'app-product-details',

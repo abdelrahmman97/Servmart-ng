@@ -10,13 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { OrderDetailsComponent } from './modules/vendor/Components/order-details/order-details.component';
 
 
-
 @NgModule( {
 	declarations: [
 		AppComponent,
-
 		OrderDetailsComponent
-
 	],
 	imports: [
 		BrowserModule,
@@ -24,9 +21,10 @@ import { OrderDetailsComponent } from './modules/vendor/Components/order-details
 		AppRoutingModule,
 		ReactiveFormsModule,
 
-		ModulesModule,
 		CoreModule,
-		SharedModule
+		SharedModule,
+		ModulesModule,
+
 	],
 	providers: [],
 	bootstrap: [AppComponent]
