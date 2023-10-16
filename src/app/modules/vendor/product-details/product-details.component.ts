@@ -1,27 +1,68 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AddProductService } from '../services/Product/AppProductService.service';
+import { IProduct } from 'src/app/core/models/IProduct';
+import { Product } from '../services/Product/Product';
+
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent {
-id:number;
-product:any;
-check:boolean=false;
-constructor(private actic:ActivatedRoute,bs:AddProductService){
-	this.actic.params.subscribe(
-		{
-			next: (value) => { this.id = value['id'];
-		console.log(this.id) },
-})
+export class ProductDetailsComponent  implements OnInit{
 
-this.product=bs.getprofuct(this.id)
-console.log(this.product)
-if(!this.product)
-this.check=true
-}
-}
+id:number;
+product:IProduct={} as IProduct;
+data:boolean=false;
+
+
+
+
+
+constructor(private actic:ActivatedRoute,http:HttpClient, private productsdetails:AddProductService, private router:Router){
+	this.actic.params.subscribe({
+	next:(prams)=>{
+		this.id=prams["id"]  ;
+
+		console.log(prams)
+
+		this.productsdetails.getprofuct(prams["id"]).subscribe({
+			next:(res)=>{
+				this.product= res [0];
+				console.log(this.product)
+
+			}
+
+		})
+		
+
+		}
+	})}
+	ngOnInit(): void {
+
+		}
+
+
+
+
+
+
+	}
+	// getProducts(){
+	// 	this.productsdetails.getprofuct(this.ProductID).subscribe({
+	// 		next: (result)=>
+	// 		{
+	// 			this.product=result;
+	// 		},
+	// 	error(err) {
+	// 		console.log("Error", err);
+	// 	},
+
+	// 	})
+	// }
+
+
+
+

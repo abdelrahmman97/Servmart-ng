@@ -11,12 +11,17 @@ export class addRequestService  {
 	baseURL = "http://localhost:3000/Request";
 
 	private request?: IRequest = {} as IRequest;
-	private requestsList?: IRequest[] = [];
+
 
 	constructor( private httpClient: HttpClient ) { }
 
 	getAllUserRequests() {
 		return this.httpClient.get<IRequest[]>( this.baseURL );
 	}
+<<<<<<< Updated upstream
+=======
+    gitone(id: number){
+	return this.httpClient.get<IRequest>(`${this.baseURL}?ID=${id}`);
+>>>>>>> Stashed changes
 
 }
