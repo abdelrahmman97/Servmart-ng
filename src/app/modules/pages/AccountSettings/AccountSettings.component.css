@@ -1,0 +1,11 @@
+.is-invalid {
+    border-color: #dc3545;
+  } 
+  .is-matched {
+    border-color: green;
+  }
+  .invalid-feedback {
+    font-size: 12px; /* Set the font size to a small value */
+    padding: 2px 0; /* Add minimal padding to the top and bottom */
+    color: #dc3545;
+  }

@@ -15,7 +15,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 @NgModule({
 	declarations: [
 		RequestListComponent,
-		EaringComponent,
+		EaringComponent, 
 		AddProduectsComponent,
 		ProductListComponent,
 		SendOffersComponent,
