@@ -19,32 +19,87 @@
 		<!-- Sidebar menu item -->
 		<ul class="nav nav-pills-primary-soft flex-column p-0">
 			<li class="nav-item">
-				<a class="nav-link justify-content-center justify-content-xl-start" href="#" [routerLink]="['requests']"
-					routerLinkActive="active">
-					<i class="fa-duotone fa-ticket text-xl 2xl:text-base"></i>
-					<span class="d-none d-xl-inline">الطلبات</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link justify-content-center justify-content-xl-start" href="#" [routerLink]="['cart']"
+				<a class="nav-link justify-content-center justify-content-xl-start" href="#" [routerLink]="['/cart']"
 					routerLinkActive="active">
 					<i class="fa-duotone fa-cart-shopping text-xl 2xl:text-base"></i>
 					<span class="d-none d-xl-inline">عربة التسوق</span>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link justify-content-center justify-content-xl-start" href="#" [routerLink]="['settings']"
-					routerLinkActive="active">
-					<i class="fa-duotone fa-gear text-xl 2xl:text-base"></i>
-					<span class="d-none d-xl-inline">الاعدادت</span>
+				<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
+					data-bs-toggle="collapse" data-bs-target="#customerRequests" aria-expanded="false"
+					aria-controls="customerRequests" routerLinkActive="active"
+					[routerLinkActiveOptions]="{exact: true}">
+					<i class="fa-duotone fa-ticket text-xl 2xl:text-base"></i>
+					<span class="d-none d-xl-inline">طلباتي</span>
 				</a>
+				<div id="customerRequests" class="collapse p-2" data-bs-parent="#sideNavbar">
+					<ul class="nav flex-column list-group pe-0 pe-xl-4">
+						<li class="nav-item">
+							<a class="nav-link with-dot" href="#" [routerLink]="['orderList']"
+								routerLinkActive="active">
+								المنتجات
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link with-dot" href="#" [routerLink]="['requests']" routerLinkActive="active">
+								الخدمات
+							</a>
+						</li>
+					</ul>
+				</div>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link justify-content-center justify-content-xl-start text-danger bg-danger-soft-hover"
-					href="#" href="#" [routerLink]="['logout']">
-					<i class="fa-duotone fa-power-off text-xl 2xl:text-base"></i>
-					<span class="d-none d-xl-inline">خروج</span>
+				<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
+					data-bs-toggle="collapse" data-bs-target="#serviceProvider" aria-expanded="false"
+					aria-controls="serviceProvider" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+					<i class="fa-duotone fa-bolt"></i>
+					<span class="d-none d-xl-inline">الخدمات</span>
 				</a>
+				<div id="serviceProvider" class="collapse p-2" data-bs-parent="#sideNavbar">
+					<ul class="nav flex-column list-group pe-0 pe-xl-4">
+						<li class="nav-item">
+							<a class="nav-link with-dot" href="#" routerLinkActive="active"
+								[routerLink]="['/services']">
+								خدماتي
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link with-dot" href="#" routerLinkActive="active" [routerLink]="['/bids']">
+								عروضي
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link with-dot" href="#" routerLinkActive="active" [routerLink]="['/asd']">
+								الطلبات
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
+					data-bs-toggle="collapse" data-bs-target="#vendor" aria-expanded="false" aria-controls="vendor"
+					routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+					<i class="fa-duotone fa-store"></i>
+					<span class="d-none d-xl-inline">المتجر</span>
+				</a>
+				<div id="vendor" class="collapse p-2" data-bs-parent="#sideNavbar">
+					<ul class="nav flex-column list-group pe-0 pe-xl-4">
+						<li class="nav-item">
+							<a class="nav-link with-dot" href="#" [routerLink]="['/productlist']"
+								routerLinkActive="router-link-active">
+								منتجاتي
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link with-dot" href="#" [routerLink]="['/routePath']"
+								routerLinkActive="router-link-active">
+								الطلبات
+							</a>
+						</li>
+					</ul>
+				</div>
 			</li>
 		</ul>
 

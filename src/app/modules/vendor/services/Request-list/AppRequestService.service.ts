@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 
-import { IRequest } from 'src/app/core/models/irequest';
+import { IRequest } from 'src/app/core/models/IRequest';
 
 import { HttpClient } from '@angular/common/http';
 
@@ -18,10 +18,10 @@ export class addRequestService  {
 	getAllUserRequests() {
 		return this.httpClient.get<IRequest[]>( this.baseURL );
 	}
-<<<<<<< Updated upstream
-=======
+
     gitone(id: number){
 	return this.httpClient.get<IRequest>(`${this.baseURL}?ID=${id}`);
->>>>>>> Stashed changes
 
+
+	}
 }

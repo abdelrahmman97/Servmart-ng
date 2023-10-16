@@ -1,7 +1,7 @@
 
 import { Injectable, OnInit } from '@angular/core';
 
-import { IRequest } from 'src/app/core/models/irequest';
+import { IRequest } from 'src/app/core/models/IRequest';
 
 import { HttpClient } from '@angular/common/http';
 
