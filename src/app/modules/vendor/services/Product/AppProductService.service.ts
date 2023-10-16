@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { IProduct } from 'src/app/core/models/IProduct';
 
 import { HttpClient } from '@angular/common/http';
@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AddProductService {
+	cartData= new EventEmitter<IProduct[]|[]>()
 	AddProduct(product: IProduct) {
 		throw new Error('Method not implemented.');
 	}
@@ -23,11 +24,13 @@ constructor(private httpclint:HttpClient) {
 gstAll(){
 	return this.httpclint.get<IProduct[]>(this.baseURL);  // get all products
 }
-getprofuct(id:number){
-if (id=0)
-return false;
-return this.products.find(p=>p.ID==id)
+getprofuct(id:number)
+{
+	return   this.httpclint.get<IProduct>(`${this.baseURL}?ID=${id}`);    /// get product by id
+
+
 }
+
 
 
 }
