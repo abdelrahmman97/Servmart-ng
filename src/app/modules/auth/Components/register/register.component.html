@@ -1,16 +1,16 @@
 <div class="container">
-	<!-- Your content goes here -->
 
-	<div class="text-center mt-3">
-		<h2 class="text-primary">انشاء حساب</h2>
-		<p class="mb-0 lead">لديك حساب بالفعل !<a href="#" [routerLink]="['/auth/login']"  class="text-primary text-decoration-none lead">
-				تسجيل الدخول</a>
+	<div class="text-center pt-2 mb-5">
+		<h2 class="text-primary">إنشاء حساب</h2>
+		<p class="mb-0 lead">لديك حساب بالفعل !
+			<a href="#" [routerLink]="['/auth/login']" class="text-primary text-decoration-none lead">
+				تسجيل الدخول
+			</a>
 		</p>
 	</div>
 
-	<div class="row justify-content-center my-2 mr-3">
-		<div class="col-lg-6 my-5 align-self-center">
-
+	<div class="row justify-content-center">
+		<div class="col-lg-6 align-self-center">
 			<div class="form-outer">
 				<form action="prevent-submite" [formGroup]="reactiveForm">
 					<div class="page slidepage" *ngIf="step==1">
@@ -118,12 +118,11 @@
 				</form>
 			</div>
 		</div>
-		<div class="col-6 d-none d-xxl-block h-50px">
-			<a href="#">
-				<img class="pb-4" src="assets/SVG/signin.svg" alt="logo">
-			</a>
+		<div class="col-6 d-none d-md-block">
+			<div class="d-flex justify-content-center">
+				<img class="w-75" src="assets/SVG/signin.svg" alt="logo">
+			</div>
 		</div>
 	</div>
 
 </div>
-<!-- Your content goes here -->
