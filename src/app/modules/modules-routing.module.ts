@@ -19,6 +19,7 @@ import { AccountSettingsComponent } from './pages/AccountSettings/AccountSetting
 import { CartComponent } from './customer/Components/cart/cart.component';
 import { PendingAccountComponent } from './pages/pending-account/pending-account.component';
 import { CheckOutComponent } from './customer/Components/check-out/check-out.component';
+import { ServiceProviderSendOfferComponent } from './services-provider/Components/service-provider-send-offer/service-provider-send-offer.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
 	{ path: "details", component: DetailsComponent },
 	{ path: "settings", component: AccountSettingsComponent },
 	{ path: "accountUnderReview", component: PendingAccountComponent},
+	{ path: "earing", component: EaringComponent },
 
 	// Customer Components
 	{ path: 'requests', component: RequestComponent },
@@ -42,17 +44,17 @@ const routes: Routes = [
 
 	// Vendor Components
 	{ path: 'add-work-history', component: AddWorkHistoryComponent },
-	{ path: "orderdetails", component: OrderDetailsComponent },
-	{ path: "requestlist", component: RequestListComponent },
-	{ path: "earing", component: EaringComponent },
+	{ path: "orderDetails/:id", component: OrderDetailsComponent },
+	{ path: "orderList", component: RequestListComponent },
 
 	{ path: 'add-product', component: AddProduectsComponent },
-	{ path: 'productlist', component: ProductListComponent },
+	{ path: 'productList', component: ProductListComponent },
 	{ path: 'product/:id', component: ProductDetailsComponent },
 
 	// Service Provider Compproducts
 	{ path: 'bids', component: SendOffersComponent },
 	{ path: 'service/:id', component: DetailsComponent },
+	{ path: 'sendOffer/:id', component: ServiceProviderSendOfferComponent },
 
 
 ];

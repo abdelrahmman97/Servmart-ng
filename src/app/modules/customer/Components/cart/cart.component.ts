@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
 	constructor( private cartService: CartService ) { }
 
 	ngOnInit(): void {
-		this.cartService.GetCart().subscribe( {
+		this.cartService.GetCart("25ab619a-0828-5f12-8395-034afb685eb3").subscribe( {
 			next: data => {
 				this.cart = data[0] as ICart;
 				this.products = this.cart.Products;
@@ -32,6 +32,9 @@ export class CartComponent implements OnInit {
 		this.totalPrice = 0;
 		this.products.forEach( p => this.totalUnitsPrice += ( p.UnitPrice * p.Quantity ) );
 		this.totalPrice = this.serviceFee + this.totalUnitsPrice;
+		if (this.products) {
+
+		}
 	}
 
 	remove( product: ICartProduct ) {
