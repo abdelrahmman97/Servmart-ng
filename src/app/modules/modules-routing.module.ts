@@ -21,7 +21,7 @@ import { NgxChartComponent } from './admin/Components/ngx-chart/ngx-chart.compon
 import { SingelOrderComponent } from './admin/Components/singel-order/singel-order.component';
 
 
-
+12
 const routes: Routes = [
 
 	// Shared Components
@@ -32,8 +32,6 @@ const routes: Routes = [
 	{ path: 'offers/:id', component: RequestOffersComponent },
 	{ path: 'rate-service/:id', component: RateServiceComponent },
 	{path: ' ',component:SeeCustomerRequestsComponent  },
-	{path: 'Adedd',component:AdeddComponent  },
-	{path: 'List',component:ListComponent  },
 
 
 	// Vendor Components
@@ -49,10 +47,15 @@ const routes: Routes = [
 	// Service Provider Components
 	{ path: 'bids', component: SendOffersComponent },
 	//Admin
+
 	{path: 'DashBorde',component:DashBordComponent  },
 	{path: 'Order-List',component:OrderListComponent },
 	{path: 'Singel-Order',component:SingelOrderComponent  },
 	{path: 'chart',component:NgxChartComponent },
+	{path: 'list',component:ListComponent },
+	{path: 'Adedd',component:AdeddComponent },
+
+
 
 
 

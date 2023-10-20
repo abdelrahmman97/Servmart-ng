@@ -117,91 +117,39 @@
 <!--                        
  -->                            <!-- Content goes here -->
                           
-                          <div class="row ">
-                              <div class="col-xl-12 col-lg-12 col-md-12 col-12 mb-6">
-                                  <div class="card h-100 card-lg">
-                                      <!-- heading -->
-                                      <div class="p-6">
-                                          <h3 class="mb-0 fs-5">Recent Order</h3>
-                                      </div>
-                                      <div class="card-body p-0">
-                                          <!-- table -->
-                                          <div class="table-responsive">
-                                              <table class="table table-centered table-borderless text-nowrap table-hover">
-                                                  <thead class="bg-light">
-                                                      <tr>
-                                                          <th scope="col">Order Number</th>
-                                                          <th scope="col">Product Name</th>
-                                                          <th scope="col">Order Date</th>
-                                                          <th scope="col">Price</th>
-                                                          <th scope="col">Status</th>
-      
-                                                      </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                      <tr>
-      
-                                                          <td>#FC0005</td>
-                                                          <td>Laptop</td>
-                                                          <td>28 March 2023</td>
-                                                          <td>$18.00</td>
-                                                          <td>
-                                                              <span
-                                                                  class=" bg-light-primary text-dark-primary">Shipped</span>
-                                                          </td>
-                                                      </tr>
-                                                      <tr>
-      
-                                                          <td>#FC0004</td>
-                                                          <td>, watch</td>
-                                                          <td>24 March 2023</td>
-                                                          <td>$24.00</td>
-                                                          <td>
-                                                              <span
-                                                                  class=" bg-light-warning text-dark-warning">Pending</span>
-                                                          </td>
-                                                      </tr>
-                                                      <tr>
-      
-                                                          <td>#FC0003</td>
-                                                          <td>TV</td>
-                                                          <td>8 Feb 2023</td>
-                                                          <td>$9.00</td>
-                                                          <td>
-                                                              <span
-                                                                  class="bg-light-danger text-dark-danger">Cancel</span>
-                                                          </td>
-                                                      </tr>
-                                                      <tr>
-      
-                                                          <td>#FC0002</td>
-                                                          <td>Refrigerator</td>
-                                                          <td>20 Jan 2023</td>
-                                                          <td>$12.00</td>
-                                                          <td>
-                                                              <span
-                                                                  class=" bg-light-warning text-dark-warning">Pending</span>
-                                                          </td>
-                                                      </tr>
-                                                      <tr>
-      
-                                                          <td>#FC0001</td>
-                                                          <td> air conditioning</td>
-                                                          <td>14 Jan 2023</td>
-                                                          <td>$8.00</td>
-                                                          <td>
-                                                              <span
-                                                                  class="bg-light-info text-dark-info">Processing</span>
-                                                          </td>
-                                                      </tr>
-                                                  </tbody>
-                                              </table>
+                                          <table  class="table">
+
+                                            <thead>
+                                              <tr>
+                                                <th >ID</th>
+                                                <th >Name</th>
+                                                <th >Image</th>
+                                                <th >Quntaty</th>
+                                                <th >Price</th>
+                                               
+                                          
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr *ngFor="let prd of products">
+                                                <td>{{ prd.ID}}</td>
+                                                <td>{{ prd.Name }}</td>
+                                                <td>{{prd.Descriptoin}}</td>
+                                                <td>{{prd.UnitPrice }}</td>
+                                                <td>{{prd.Stoke }}</td>
+                                                
+
+
+
+                                          
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                      
+                                      
+                                          
+                                        
                                           </div>
                                       </div>
                                   </div>
-                              </div>
-                          </div>
-                  </div>                                    
-              </div>
-          </div>
-  </div>
+                            

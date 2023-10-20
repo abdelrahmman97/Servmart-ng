@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -14,12 +15,14 @@ export class ListComponent  {
   toggleDisplay() {
     this.displayStatus = this.displayStatus === 'none' ? 'block' : 'none';
   }
-  constructor() {
+  constructor(private router : Router) {
 
     
    }
 
   ngOnInit() {
   }
-
+  navigateToOther() {
+    this.router.navigate(['/Adedd']);
+  }
 }
