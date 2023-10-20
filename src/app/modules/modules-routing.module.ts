@@ -17,13 +17,17 @@ import { SearchVendorsComponent } from './customer/Components/search-vendors/sea
 import { EaringComponent } from './vendor/Components/earing/earing.component';
 import { AccountSettingsComponent } from './pages/AccountSettings/AccountSettings.component';
 import { PendingAcountComponent } from './pages/pending-acount/pending-acount.component';
+import { CustomerGuard } from '../shared/gard/CustomerGuard/customer.guard';
+import { VendorGuard } from '../shared/gard/VendorGuard/vendor.guard';
+import { adminGuard } from '../shared/gard/AdminGuard/admin.guard';
+import { serviceproviderGuard } from '../shared/gard/service provider/serviceprovider.guard';
 
 
 
 const routes: Routes = [
 
 	// Shared Components
-	{ path: 'profile', component: ProfileComponent },
+	{ path: 'profile', component: ProfileComponent},
 	{ path: "shop", component: ShopComponent },
 	{ path: "details", component: DetailsComponent },
 	{ path: "acountsetting", component: AccountSettingsComponent },
@@ -31,21 +35,21 @@ const routes: Routes = [
 
 
 	// Customer Components
-	{ path: 'requests', component: RequestComponent },
-	{ path: 'offers/:id', component: RequestOffersComponent },
-	{ path: 'rate-service/:id', component: RateServiceComponent },
-	{ path: 'servendor', component: SearchVendorsComponent },
+	{ path: 'requests', component: RequestComponent,/*canActivate:[CustomerGuard]*/ },
+	{ path: 'offers/:id', component: RequestOffersComponent,/*canActivate:[CustomerGuard]*/ },
+	{ path: 'rate-service/:id', component: RateServiceComponent,/*canActivate:[CustomerGuard]*/ },
+	{ path: 'servendor', component: SearchVendorsComponent,/*canActivate:[CustomerGuard] */},
 	// Vendor Components
-	{ path: 'add-product', component: AddProduectsComponent },
-	{ path: 'add-work-history', component: AddWorkHistoryComponent },
-	{ path: 'productlist', component: ProductListComponent },
-	{ path: "Orderdetals", component: OrderDetailsComponent },
-	{ path: 'productsdetails/:id', component: ProductDetailsComponent },
-	{ path: "requestlist", component: RequestListComponent },
-	{ path: "earing", component: EaringComponent },
+	{ path: 'add-product', component: AddProduectsComponent,/*canActivate:[VendorGuard]*/ },
+	{ path: 'add-work-history', component: AddWorkHistoryComponent,/*canActivate:[VendorGuard] */},
+	{ path: 'productlist', component: ProductListComponent,/*canActivate:[VendorGuard]*/ },
+	{ path: "Orderdetals", component: OrderDetailsComponent,/*canActivate:[VendorGuard] */},
+	{ path: 'productsdetails/:id', component: ProductDetailsComponent,/*canActivate:[VendorGuard] */},
+	{ path: "requestlist", component: RequestListComponent,/*canActivate:[VendorGuard]*/ },
+	{ path: "earing", component: EaringComponent,/*canActivate:[VendorGuard]*/ },
 
 	// Service Provider Compproductsdetailsonents
-	{ path: 'bids', component: SendOffersComponent },
+	{ path: 'bids', component: SendOffersComponent,/*canActivate:[serviceproviderGuard]*/ },
 
 	// Service Provider Components
 
