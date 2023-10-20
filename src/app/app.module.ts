@@ -7,15 +7,11 @@ import { CoreModule } from './core/core.module';
 import { ModulesModule } from './modules/modules.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import { OrderDetailsComponent } from './modules/vendor/Components/order-details/order-details.component';
-
 
 
 @NgModule( {
 	declarations: [
 		AppComponent,
-
-		OrderDetailsComponent
 
 	],
 	imports: [
@@ -24,9 +20,10 @@ import { OrderDetailsComponent } from './modules/vendor/Components/order-details
 		AppRoutingModule,
 		ReactiveFormsModule,
 
-		ModulesModule,
 		CoreModule,
-		SharedModule
+		SharedModule,
+		ModulesModule,
+
 	],
 	providers: [],
 	bootstrap: [AppComponent]
