@@ -7,13 +7,12 @@ import { CoreModule } from './core/core.module';
 import { ModulesModule } from './modules/modules.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import { OrderDetailsComponent } from './modules/vendor/Components/order-details/order-details.component';
 
 
 @NgModule( {
 	declarations: [
 		AppComponent,
-		OrderDetailsComponent
+
 	],
 	imports: [
 		BrowserModule,

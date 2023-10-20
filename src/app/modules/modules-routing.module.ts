@@ -16,9 +16,7 @@ import { RequestListComponent } from './vendor/Components/request-list/request-l
 import { SearchVendorsComponent } from './customer/Components/search-vendors/search-vendors.component';
 import { EaringComponent } from './vendor/Components/earing/earing.component';
 import { AccountSettingsComponent } from './pages/AccountSettings/AccountSettings.component';
-import { CartComponent } from './customer/Components/cart/cart.component';
 import { PendingAccountComponent } from './pages/pending-account/pending-account.component';
-import { CheckOutComponent } from './customer/Components/check-out/check-out.component';
 import { ServiceProviderSendOfferComponent } from './services-provider/Components/service-provider-send-offer/service-provider-send-offer.component';
 
 
@@ -26,7 +24,7 @@ import { ServiceProviderSendOfferComponent } from './services-provider/Component
 const routes: Routes = [
 
 	// Shared Components
-	{ path: 'profile', component: ProfileComponent },
+	{ path: 'profile', component: ProfileComponent},
 	{ path: "shop", component: ShopComponent },
 	{ path: "details", component: DetailsComponent },
 	{ path: "settings", component: AccountSettingsComponent },
@@ -36,13 +34,10 @@ const routes: Routes = [
 	// Customer Components
 	{ path: 'requests', component: RequestComponent },
 	{ path: 'offers/:id', component: RequestOffersComponent },
-	{ path: 'rateService/:id', component: RateServiceComponent },
-	{ path: 'vendors', component: SearchVendorsComponent },
-	{ path: 'cart', component: CartComponent },
-	{ path: 'checkout', component: CheckOutComponent },
-
-
+	{ path: 'rate-service/:id', component: RateServiceComponent },
+	{ path: 'servendor', component: SearchVendorsComponent },
 	// Vendor Components
+	{ path: 'add-product', component: AddProduectsComponent },
 	{ path: 'add-work-history', component: AddWorkHistoryComponent },
 	{ path: "orderDetails/:id", component: OrderDetailsComponent },
 	{ path: "orderList", component: RequestListComponent },
