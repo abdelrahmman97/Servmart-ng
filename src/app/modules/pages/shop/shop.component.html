@@ -1,0 +1,315 @@
+
+<section>
+	<div class="container">
+		<div class="img  mt-5 pb-5 ">
+
+			</div>
+		</div>
+</section>
+
+<section class="fillter">
+	<div class="container">
+		<div class="row mb-2">
+			<div class="gap-1 d-flex justify-content-between">
+				<div class="btnfilter mb-2" id="filterIcon">
+					<button
+						class="btn btn-primary mb-2"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#collapseExample"
+						aria-expanded="false"
+						aria-controls="collapseExample"
+					>
+						<i class="fas fa-sliders-h ms-1"></i>
+						<span>التصنيف</span>
+					</button>
+					<div class="collapse" id="collapseExample">
+						<div class="card card-body bg-light">
+							<div class="tt d-flex gap-2">
+								<div class="formOne col-md-4">
+									<label for="">ادخل اسم المنتج</label>
+									<input
+										[(ngModel)]="SearchInput"
+										type="text"
+										class="form-control"
+									/>
+								</div>
+								<div class="range col-md-4">
+									<label for="customRange3" class="form-label"
+										>السعر</label
+									>
+									<input
+										type="range"
+										class="form-range"
+										name="range"
+										min="0"
+										max="5000"
+										step="50"
+										[(ngModel)]="Price"
+									/>
+									<span> السعر الحالي {{ Price }} ج . م</span>
+								</div>
+								<div class="d-flex  col-md-4  " >
+							<div  *ngFor="let rate of Rate">
+								<button class=" btn btn-outline-primary ms-1 " [value]="rate.value" (click)="click($event)" >{{rate.value}} <i class="fas fa-star"></i></button>
+							</div>
+							
+								</div>
+								
+							</div>
+							<div class="col-12">
+								<div class="form-control-borderless">
+									<label class="form-label">التصنيفات</label>
+									<div class="row g-3">
+										<!-- checkbox -->
+										<div *ngFor="let category of categorylist"
+											class="col-sm-6 col-md-4 col-lg-3 col-xl-2"
+										>
+											<div class="form-check">
+												<label
+													class="form-check-label h6 fw-light mb-0"
+													for="flexCheckDefault"
+												>
+													{{category.Name}}
+												</label>
+												<input
+													class="form-check-input"
+													type="checkbox"
+													[value]="category.id"
+                                                    (change)="select(category.id,$event)"
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								class="text-end align-items-center d-flex justify-content-end mt-3"
+							>
+								<button
+									class="btn btn-danger p-2 ms-1 mb-0"
+									type="button"
+                                    (click)="removeFilter()"
+								>
+									امسح الكل
+								</button>
+								<button
+									class="btn btn-dark mb-0 ms-3"
+									type="button"
+                                    (click)="filter()"
+								>
+									ارسل التصنيف
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="iconFilter" id="iconbtn">
+					<ul class="rounded-1 text-dark">
+						<li class="ms-2">
+							<i
+								id="iconOpen"
+								#iconbt
+								(click)="show()"
+								class="fas fa-list-ul fs-4"
+							></i>
+						</li>
+						<li>
+							<i
+								class="fas fa-th-large fs-4"
+								(click)="close()"
+								id="iconClose"
+							></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- --------------------------------------------sectionThree---------------------------------------------------- -->
+
+<section class="">
+	<div class="container">
+		<div class="d-flex" id="SectionThree">
+			
+			<div
+				class="siteBar d-none col-md-4 mb-2 ms-5 rounded-3 bg-white shadow"
+				id="SiteBar"
+			>
+			<div class="formOne">
+				<label for="">ادخل اسم المنتج</label>
+				<input
+					[(ngModel)]="SearchInput"
+					type="text"
+					class="form-control mt-2"
+				/>
+			</div>
+			<hr>
+				<div class="checkBox">
+					<p class="p-2 fs-3 fw-bold">التصنيفات</p>
+					<div class="form-check" *ngFor="let serv of categorylist">
+						<input
+							class="m-0"
+							type="checkbox"
+							[value]="serv.id"
+							(change)="select(serv.id,$event)"
+							
+						/>
+						<span
+							><label class="" for="flexCheckIndeterminate">
+								{{serv.Name}}
+							</label></span
+						>
+					</div>
+				
+
+					<!-- <a  onclick=myFunction() class="ms-3" id="btnReadMore">See More <i class="fas fa-chevron-down"></i></a> -->
+				</div>
+				<hr />
+				<div class="price">
+					<p class="p-2 fs-3 fw-bold">قائمة الاسعار</p>
+					<div class="range ">
+						<label for="customRange3" class="form-label"
+							>السعر</label
+						>
+						<input
+						
+							type="range"
+							class=" rangesitebar form-range  w-100"
+							name="range"
+							min="0"
+							max="5000"
+							step="50"
+							[(ngModel)]="Price"
+						/>
+						<span> السعر الحالي {{ Price }} ج . م</span>
+					</div>
+			</div>
+				<hr />
+				
+				<hr />
+				<div class="rangStar">
+					<p class="fs-3 fw-bold">التصنيف</p>
+					<div class="star d-flex gap-2 col-md-12">
+				<div *ngFor="let x of Rate">
+					<button 
+					class="btn btn-light rounded-1 btn-outline-primary"
+					for="btn-check-1"
+				[value]="x.value"	(click)="click($event)">{{x.value}} <i class="fas fa-star" ></i
+				></button>
+				</div>
+						
+					</div>
+
+					<div
+						class="text-end align-items-center d-flex justify-content-end mt-3"
+					>
+						<button class="btn btn-outline-danger p-1 ms-1 mb-0" (click)="removeFilter()">
+							مسح الكل
+						</button>
+						<button class="btn btn-outline-primary mb-0 ms-3" (click)="filter()">
+							ارسل التصنيف
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="row gy-3 col-md-12" id="CardGroup">
+				<div
+					class="x col-md-4"
+					name="contentcard"
+					*ngFor="let t of shoplist"
+				>
+					<div class="card p-1 bg-dark p-2 rounded-4">
+						<div class="content" name="elements">
+							<div class="image">
+								<img
+									[src]="t.image"
+									class="card-img-top rounded-4 w-100"
+									alt="..."
+								/>
+							</div>
+
+							<div class="card-body" id="card-body">
+								<div
+									class="icon d-flex justify-content-between"
+								>
+									<div
+										class="star bg-dark text-light p-1 rounded-1"
+									>
+										<i
+											class="fas fa-star"
+											style="color: #faf55a"
+										></i>
+										<span>{{ t.rate }}</span>
+									</div>
+									<div class="save">
+										<i class="far fa-bookmark"></i>
+									</div>
+								</div>
+								<p class="fs-4 fw-bold pt-3">{{ t.Name }}</p>
+
+								<div
+									class="footer d-flex justify-content-between text-success mt-5 pt-4"
+								>
+									<div class="text">
+										<span class="fs-4 fw-bold"
+											>${{ t.price }}</span
+										><span
+											class="text-secondary fs-5"
+										></span>
+									</div>
+									<div class="button">
+										<a
+											[routerLink]="['/details']"
+											class="btn btn-primary"
+											>اظهر المعلومات
+											<i
+												class="fas fa-arrow-right fs-6"
+											></i
+										></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- --------------------------------------------sectionFour---------------------------------------------------- -->
+<section class="number-icon mt-3">
+	<nav aria-label="Page navigation example ">
+		<ul class="pagination d-flex justify-content-center text-dark">
+			<li class="page-item">
+				<a class="page-link"> <i class="fas fa-arrow-left"></i></a>
+			</li>
+			<li class="page-item rounded-4">
+				<a class="page-link" href="#">1</a>
+			</li>
+			<li class="page-item"><a class="page-link b" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item">
+				<a class="page-link"> <i class="fas fa-arrow-right"></i></a>
+			</li>
+		</ul>
+	</nav>
+</section>
+
+<!-- <section>
+<div class="formdata">
+   
+   <form action="" [formGroup]="forms">
+    <label >name</label>
+    <input type="text"  formControlName="iiii">
+    
+   
+    <button type="button" (click)="sub()" >register</button>
+   </form>
+  
+
+</div>
+</section> -->

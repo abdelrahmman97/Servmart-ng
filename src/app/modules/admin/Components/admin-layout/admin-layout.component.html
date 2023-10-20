@@ -1,0 +1,313 @@
+<!-- =============== Navigation ================ -->
+<nav class="navbar navbar-expand-lg p-4 px-2 custom-navbar">
+	<div class="container-fluid">
+		<div class="d-flex justify-content-between align-items-center w-100">
+			<!-- Search | menu toggler -->
+			<div class="d-flex align-items-center">
+				<button class="text-inherit d-block d-xl-none p-0 p-sm-2 me-4 fs-3 btn" type="button"
+					data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+					<i class="fa-duotone fa-bars-sort"></i>
+				</button>
+
+				<!-- Search -->
+				<div class="">
+					<form>
+						<div class="position-relative">
+							<input class="form-control me-1 ps-5" type="search"
+								placeholder="What are you looking for..">
+							<!-- Icon -->
+							<span class="position-absolute top-50 start-0 translate-middle ps-5">
+								<i class="fa-duotone fa-magnifying-glass"></i>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- Profile and Notification -->
+			<ul class="nav flex-row align-items-center list-unstyled ms-xl-auto gap-2">
+				<!-- Notification dropdown START -->
+				<li class="nav-item dropdown">
+					<!-- Notification button -->
+					<a class="nav-notification btn btn-primary-soft p-0 mb-0" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+						<i class="fa-duotone fa-bell"></i>
+					</a>
+					<!-- Notification dote -->
+					<span class="notif-badge animation-blink"></span>
+					<!-- Notification -->
+					<div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md shadow-lg p-0">
+						<div class="card border-0">
+							<!-- Card header -->
+							<div
+								class="card-header bg-transparent d-flex justify-content-between align-items-center border-bottom">
+								<h6 class="m-0">Notifications <span
+										class="badge bg-danger bg-opacity-10 text-danger ms-2">4
+										new</span></h6>
+								<a class="small" href="#">Clear all</a>
+							</div>
+							<!-- Card body START -->
+							<div class="card-body p-0">
+								<ul class="list-group list-group-flush list-unstyled p-2">
+									<!-- Notification item -->
+									<li>
+										<a href="#"
+											class="list-group-item list-group-item-action rounded notif-unread border-0 mb-1 p-3">
+											<h6 class="mb-2">New! Booking flights from New York ✈️</h6>
+											<p class="mb-0 small">Find the flexible ticket on flights around the
+												world. Start searching today</p>
+											<span>Wednesday</span>
+										</a>
+									</li>
+									<!-- Notification item -->
+									<li>
+										<a href="#"
+											class="list-group-item list-group-item-action rounded border-0 mb-1 p-3">
+											<h6 class="mb-2">Sunshine saving are here 🌞 save 30% or more on a
+												stay</h6>
+											<span>15 Nov 2022</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- Card body END -->
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent text-center border-top">
+								<a href="#" class="btn btn-sm btn-link mb-0 p-0">See all incoming activity</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<!-- Profile dropdown -->
+				<li class="nav-item dropdown">
+					<!-- Avatar -->
+					<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button"
+						data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						<img class="avatar-img rounded-2" src="https://images.placeholders.dev/?width=200&height=200"
+							alt="avatar">
+					</a>
+					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
+						aria-labelledby="profileDropdown">
+						<!-- Links -->
+						<li>
+							<a class="dropdown-item" href="#">
+								<i class="fa-duotone fa-gear"></i>
+								Settings
+							</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="#">
+								<i class="fa-duotone fa-circle-info"></i>
+								Help Center
+							</a>
+						</li>
+						<li><a class="dropdown-item bg-danger-soft-hover" href="#">
+								<i class="fa-duotone fa-power-off"></i>
+								Sign Out
+							</a>
+						</li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<!-- Dark mode options -->
+						<li>
+							<div
+								class="nav-pills-primary-soft theme-icon-active d-flex justify-content-between align-items-center p-2 pb-0">
+								<span>Mode:</span>
+								<button type="button" class="btn btn-link nav-link text-primary-hover mb-0 p-0"
+									data-bs-theme-value="light" data-bs-toggle="tooltip" data-bs-placement="top"
+									data-bs-title="Light">
+									<i class="fa-duotone fa-sun-bright"></i>
+								</button>
+								<button type="button" class="btn btn-link nav-link text-primary-hover mb-0 p-0 active"
+									data-bs-theme-value="dark" data-bs-toggle="tooltip" data-bs-placement="top"
+									data-bs-title="Dark">
+									<i class="fa-duotone fa-moon-stars"></i>
+								</button>
+								<button type="button" class="btn btn-link nav-link text-primary-hover mb-0 p-0"
+									data-bs-theme-value="auto" data-bs-toggle="tooltip" data-bs-placement="top"
+									data-bs-title="Auto">
+									<i class="fa-duotone fa-circle-half-stroke"></i>
+								</button>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- ========================= Main ==================== -->
+<div class="main">
+
+	<!-- ========================= Navbar vertical ==================== -->
+	<div class="custom-navbar-vertical d-none d-xl-block">
+		<div class="navbar-vertical overflow-y-hidden border">
+			<a href="/" class="d-flex align-items-center m-4 mb-md-0 me-md-auto text-decoration-none">
+				<img src="./../assets/images/logo.png" class="w-25" alt="Servmart">
+				<h4 class="m-0 p-0">Servmart</h4>
+			</a>
+			<ul class="nav nav-pills-primary-soft flex-column overflow-y-scroll overflow-x-hidden p-4">
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start active" href="#">
+						<i class="fa-duotone fa-house"></i>
+						<span class="d-none d-xl-inline">Dashboard</span>
+					</a>
+				</li>
+				<!-- <li class="nav-item mt-3 mb-3">
+                            <span class="nav-label">Store Managements</span>
+                        </li> -->
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-users"></i>
+						<span class="d-none d-xl-inline">Customers</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
+						data-bs-toggle="collapse" data-bs-target="#vendors" aria-expanded="false"
+						aria-controls="vendors">
+						<i class="fa-duotone fa-store"></i>
+						<span class="d-none d-xl-inline">Vendors</span>
+					</a>
+					<div id="vendors" class="collapse p-2" data-bs-parent="#sideNavbar">
+						<ul class="nav flex-column list-group">
+							<li class="nav-item">
+								<a class="nav-link with-dot" href="#">
+									Services Providers
+								</a>
+							</li>
+							<!-- Nav item -->
+							<li class="nav-item">
+								<a class="nav-link with-dot" href="#">
+									Shops Owner
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-bolt"></i>
+						<span class="d-none d-xl-inline">Services</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-cart-shopping"></i>
+						<span class="d-none d-xl-inline">Products</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-tags"></i>
+						<span class="d-none d-xl-inline">Categories</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-basket-shopping"></i>
+						<span class="d-none d-xl-inline">Orders</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-star-sharp-half"></i>
+						<span class="d-none d-xl-inline">Reviews</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+		<div class="offcanvas-header">
+			<a href="/" class="d-flex align-items-center m-4 mb-md-0 me-md-auto text-decoration-none">
+				<img src="./../assets/images/logo.png" class="w-25" alt="Servmart">
+				<h4 class="m-0 p-0">Servmart</h4>
+			</a>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body overflow-y-scroll">
+			<ul class="nav nav-pills-primary-soft flex-column overflow-y-scroll overflow-x-hidden p-4">
+				<li class="nav-item">
+					<a class="nav-link justify-content-start active" href="#">
+						<i class="fa-duotone fa-house"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<!-- <li class="nav-item mt-3 mb-3">
+                                                <span class="nav-label">Store Managements</span>
+                                            </li> -->
+				<li class="nav-item">
+					<a class="nav-link justify-content-center" href="#">
+						<i class="fa-duotone fa-users"></i>
+						<span>Customers</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center btn-toggle" href="#" data-bs-toggle="collapse"
+						data-bs-target="#vendors" aria-expanded="false" aria-controls="vendors">
+						<i class="fa-duotone fa-store"></i>
+						<span>Vendors</span>
+					</a>
+					<div id="vendors" class="collapse p-2" data-bs-parent="#sideNavbar">
+						<ul class="nav flex-column list-group">
+							<li class="nav-item">
+								<a class="nav-link with-dot" href="#">
+									Services Providers
+								</a>
+							</li>
+							<!-- Nav item -->
+							<li class="nav-item">
+								<a class="nav-link with-dot" href="#">
+									Shops Owner
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center" href="#">
+						<i class="fa-duotone fa-bolt"></i>
+						<span>Services</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center" href="#">
+						<i class="fa-duotone fa-cart-shopping"></i>
+						<span>Products</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center" href="#">
+						<i class="fa-duotone fa-tags"></i>
+						<span>Categories</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center" href="#">
+						<i class="fa-duotone fa-basket-shopping"></i>
+						<span>Orders</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center" href="#">
+						<i class="fa-duotone fa-star-sharp-half"></i>
+						<span>Reviews</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="main-content">
+		<section class="container p-0">
+			<router-outlet></router-outlet>
+		</section>
+	</div>
+
+
+</div>

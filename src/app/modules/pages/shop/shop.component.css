@@ -1,0 +1,96 @@
+.img{
+    background-image: url(../../../../assets/images/ebanner.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    border-radius: 20px;
+
+}
+.x img {
+    height: 40vh !important;
+}
+.y img{
+    width: 100% !important;
+    height: 30vh !important;
+}
+
+
+
+ul{
+  display: grid;
+  grid-template-columns:auto auto auto auto ;
+  gap: 15px;
+ padding: 10px;
+  margin-left: 3px;
+ 
+  
+}
+
+
+
+.btn{
+    background-color: rgba(81, 67, 217, 0.1)!important;
+    border: 1px none !important ;
+    color: #5143d9 !important;
+    transition: 1s;
+}
+.button :hover {
+    background-color: #5143d9 !important;
+    color: #fff !important;
+}
+.card{
+    background-color: #ffffff !important;
+    transition: all;
+    
+}
+
+.card p:hover{
+    color: #5143d9 !important;
+    cursor:pointer !important;
+}
+.number-icon li :hover{
+background-color: #5143d9;
+border: none !important;
+color: #fff;
+}
+
+.number-icon ul li a{
+    text-decoration: none;
+    color: black;
+   
+    border-radius: 10px !important;
+   
+}
+
+.iconFilter ul li{
+    list-style-type: none;
+}
+.iconFilter ul{
+    background-color: rgba(238, 247, 247,0,4);
+    cursor: pointer;
+}
+.siteBar{
+    
+    grid-row: 1;
+    height: 170vh !important;
+    
+    padding: 20px;
+
+}
+
+.btnfilter{
+    width: 110% !important;
+    margin: 0px !important;
+}
+
+
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #5143d9;
+}
+
+
+
