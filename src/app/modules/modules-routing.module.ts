@@ -42,7 +42,7 @@ const routes: Routes = [
 
 	// Vendor Components
 	{ path: 'add-work-history', component: AddWorkHistoryComponent },
-	{ path: "orderdetails", component: OrderDetailsComponent },
+	{ path: "orderdetail/:id", component: OrderDetailsComponent },
 	{ path: "requestlist", component: RequestListComponent },
 	{ path: "earing", component: EaringComponent },
 
