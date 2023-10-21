@@ -10,6 +10,7 @@ import { AddWorkHistoryComponent } from '../services-provider/Components/add-wor
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 import { OrderDetailsComponent } from './Components/order-details/order-details.component';
+import {NgxPaginationModule} from 'ngx-pagination'
 
 
 
@@ -26,7 +27,8 @@ import { OrderDetailsComponent } from './Components/order-details/order-details.
 	imports: [
 		CommonModule,
 		RouterModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		NgxPaginationModule
 	]
 })
 export class VendorModule { }

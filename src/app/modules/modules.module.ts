@@ -13,6 +13,8 @@ import { ModulesRoutingModule } from './modules-routing.module';
 import { ShopComponent } from './pages/shop/shop.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MinLengthPipe } from './pages/min-length.pipe';
+import {NgxPaginationModule} from 'ngx-pagination'
 
 @NgModule({
 	declarations: [
@@ -20,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 		ProfileComponent,
 		ShopComponent,
 		DetailsComponent,
+  MinLengthPipe,
 	],
 	imports: [
 		CommonModule,
@@ -29,7 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 		CoreModule,
 		AdminModule,
 		CustomerModule,
-
+NgxPaginationModule,
 		VendorModule,
 		ServicesProviderModule,
 	],
