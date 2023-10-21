@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
 	constructor( private cartService: CartService ) { }
 
 	ngOnInit(): void {
-		this.cartService.GetCart("25ab619a-0828-5f12-8395-034afb685eb3").subscribe( {
+		this.cartService.GetCart( "25ab619a-0828-5f12-8395-034afb685eb3" ).subscribe( {
 			next: data => {
 				this.cart = data[0] as ICart;
 				this.products = this.cart.Products;
@@ -30,10 +30,12 @@ export class CartComponent implements OnInit {
 	totalPriceChanged() {
 		this.totalUnitsPrice = 0;
 		this.totalPrice = 0;
-		this.products.forEach( p => this.totalUnitsPrice += ( p.UnitPrice * p.Quantity ) );
-		this.totalPrice = this.serviceFee + this.totalUnitsPrice;
-		if (this.products) {
-
+		if ( this.products.length == 0 ) {
+			this.serviceFee = 0;
+		}
+		else {
+			this.products.forEach( p => this.totalUnitsPrice += ( p.UnitPrice * p.Quantity ) );
+			this.totalPrice = this.serviceFee + this.totalUnitsPrice;
 		}
 	}
 
