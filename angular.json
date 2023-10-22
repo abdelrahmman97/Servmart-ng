@@ -32,10 +32,10 @@
 						],
 						"scripts": [
 							"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-							"/src/assets/Lib/Js/lightbox.min.js",
-							"/src/assets/Lib/Js/main.js",
-							"/src/assets/Lib/Js/owl.carousel.min.js",
-							"/src/assets/Lib/Js/wow.min.js"
+							"src/assets/Lib/Js/lightbox.min.js",
+							"src/assets/Lib/Js/main.js",
+							"src/assets/Lib/Js/owl.carousel.min.js",
+							"src/assets/Lib/Js/wow.min.js"
 
 						]
 					},
