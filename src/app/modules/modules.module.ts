@@ -13,6 +13,7 @@ import { ModulesRoutingModule } from './modules-routing.module';
 import { ShopComponent } from './pages/shop/shop.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ServicesComponent } from './pages/services/services.component';
 
 @NgModule({
 	declarations: [
@@ -20,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 		ProfileComponent,
 		ShopComponent,
 		DetailsComponent,
+		ServicesComponent
 	],
 	imports: [
 		CommonModule,
@@ -34,4 +36,4 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 		ServicesProviderModule,
 	],
 })
-export class ModulesModule {}
+export class ModulesModule { }

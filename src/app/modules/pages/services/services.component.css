@@ -1,0 +1,8 @@
+.header-serch-service::before{
+	background-image: url('/assets/images/pablita-man-standing-near-laptop-with-a-hand-holding-job-offer.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: contain;
+	opacity: 0.5;
+	width: 100%;
+}

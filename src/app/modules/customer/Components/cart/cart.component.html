@@ -2,11 +2,12 @@
 	<div class="d-flex justify-content-between mb-4">
 		<h4 class="card-header-title">عربة التسوق</h4>
 		<div class="d-flex gap-2">
-			<button class="btn btn-danger-soft">
+			<button class="btn btn-danger-soft" (click)="emptyCart()" [ngClass]="products.length == 0? 'disabled':''">
 				<i class="fa-duotone fa-trash"></i>
 				امسح الكل
 			</button>
-			<a [routerLink]="['/checkout']" class="btn btn-primary-soft">
+			<a [routerLink]="['/checkout']" class="btn btn-primary-soft"
+				[ngClass]="products.length == 0? 'disabled':''">
 				<i class="fa-duotone fa-cart-circle-check"></i>
 				تابع عملية الشراء
 			</a>
@@ -39,13 +40,13 @@
 					<div class="col-3 col-md-3">
 						<div class="input-group input-group-sm input-counter">
 							<button class="btn btn-group-sm border m-0 rounded-0 rounded-end bg-light-hover"
-								(click)="stepDown(item)">
+								(click)="stepDown(item)" title="add one more">
 								<i class="fa-solid fa-minus"></i>
 							</button>
 							<input min="1" [value]="item.Quantity" type="number" id="{{item.ID}}" name="quantity"
-								class="form-control border text-center" disabled>
+								class="form-control border text-center" disabled title="number of items">
 							<button class="btn btn-group-sm border m-0 rounded-0 rounded-start bg-light-hover"
-								(click)="stepUp(item)">
+								(click)="stepUp(item)" title="remove one more">
 								<i class="fa-solid fa-plus"></i>
 							</button>
 						</div>
