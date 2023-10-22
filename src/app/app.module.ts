@@ -8,14 +8,16 @@ import { ModulesModule } from './modules/modules.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderDetailsComponent } from './modules/vendor/Components/order-details/order-details.component';
-
-
+import { LoadingspinnerComponent } from './loadingspinner/loadingspinner.component';
+import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule( {
 	declarations: [
 		AppComponent,
 
-		OrderDetailsComponent
+		OrderDetailsComponent,
+    LoadingspinnerComponent
 
 	],
 	imports: [
@@ -23,10 +25,11 @@ import { OrderDetailsComponent } from './modules/vendor/Components/order-details
 		HttpClientModule,
 		AppRoutingModule,
 		ReactiveFormsModule,
-
+		BrowserAnimationsModule,
 		ModulesModule,
 		CoreModule,
-		SharedModule
+		SharedModule,
+		NgxSpinnerModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

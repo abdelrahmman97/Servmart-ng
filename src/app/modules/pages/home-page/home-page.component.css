@@ -1,0 +1,10 @@
+.border-0:hover {
+	border-radius: 3px rgb(33, 33, 211);
+
+	transform: scale(1.1);
+}
+.te{
+	display: flex;
+  position: relative;
+  right: 41%;
+}

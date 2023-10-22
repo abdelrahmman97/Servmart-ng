@@ -3,7 +3,6 @@ import { addRequestService } from '../../services/Request-list/AppRequestService
 import { IRequest } from 'src/app/core/models/IRequest';
 
 
-
 @Component({
   selector: 'app-request-list',
   templateUrl: './request-list.component.html',
@@ -12,6 +11,8 @@ import { IRequest } from 'src/app/core/models/IRequest';
 export class RequestListComponent  implements OnInit{
 	isThereError: boolean = false;
 	errorMessage: string = "";
+	p: Number = 1;
+	count: Number = 2;
 
 	requestList: IRequest[] = [];
 	constructor( private serviceRequest: addRequestService  ) { }

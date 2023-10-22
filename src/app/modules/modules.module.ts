@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminModule } from './admin/admin.module';
-import { AuthModule } from './auth/auth.module';
 import { CustomerModule } from './customer/customer.module';
 import { VendorModule } from './vendor/vendor.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -13,6 +12,7 @@ import { ModulesRoutingModule } from './modules-routing.module';
 import { ShopComponent } from './pages/shop/shop.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
 	declarations: [
@@ -26,10 +26,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 		ModulesRoutingModule,
 		ReactiveFormsModule,
 		FormsModule,
+
 		CoreModule,
 		AdminModule,
 		CustomerModule,
-		
+        NgxPaginationModule,
 		VendorModule,
 		ServicesProviderModule,
 	],

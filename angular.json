@@ -22,10 +22,21 @@
 						"styles": [
 							"src/styles.css",
 							"src/assets/fontawesome/css/all.min.css",
-							"src/assets/fontawesome/css/duotone.min.css"
+							"src/assets/fontawesome/css/duotone.min.css",
+							"node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+							"src/assets/Lib/Css/lightbox.min.css",
+							"src/assets/Lib/Css/animate.min.css",
+							"src/assets/Lib/Css/owl.carousel.min.css"
+
+
 						],
 						"scripts": [
-							"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+							"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+							"/src/assets/Lib/Js/lightbox.min.js",
+							"/src/assets/Lib/Js/main.js",
+							"/src/assets/Lib/Js/owl.carousel.min.js",
+							"/src/assets/Lib/Js/wow.min.js"
+
 						]
 					},
 					"configurations": {
