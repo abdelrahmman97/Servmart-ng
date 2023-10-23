@@ -12,6 +12,7 @@ import { IRequest } from 'src/app/core/models/IRequest';
 export class RequestListComponent implements OnInit {
 	isThereError: boolean = false;
 	errorMessage: string = "";
+	P=1;
 
 	requestList: IRequest[] = [];
 	constructor( private serviceRequest: addRequestService ) { }

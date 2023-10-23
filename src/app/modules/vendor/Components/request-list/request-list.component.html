@@ -58,7 +58,7 @@
 									</tr>
 								</thead>
 								<tbody >
-									<tr *ngFor="let Request of requestList">
+									<tr *ngFor="let Request of requestList|paginate: { itemsPerPage: 10, currentPage: P }">
 
 										<td>
 											<div class="form-check">
@@ -104,5 +104,12 @@
 			</div>
 		</div>
 	</div>
+
+
+	<section class="number-icon mt-3">
+		<nav aria-label="Page navigation example " class="text-center">
+			<pagination-controls (pageChange)="P=$event"></pagination-controls>
+		</nav>
+	</section>
 </div>
 

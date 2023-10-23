@@ -134,7 +134,7 @@
 		<div class="d-flex" id="SectionThree">
 			
 			<div
-				class="siteBar d-none col-md-4 mb-2 ms-5 rounded-3 bg-white shadow"
+				class="siteBar d-none col-lg-4 col-md-3 mb-2 ms-2 rounded-3 bg-white shadow"
 				id="SiteBar"
 			>
 			<div class="formOne">
@@ -191,10 +191,10 @@
 				<hr />
 				<div class="rangStar">
 					<p class="fs-3 fw-bold">التصنيف</p>
-					<div class="star d-flex gap-2 col-md-12">
-				<div *ngFor="let x of Rate">
+					<div class="star d-flex gap-2 col-lg-6 col-md-4 ">
+				<div class="bg-dark col-lg-4 col-md-5"  *ngFor="let x of Rate">
 					<button 
-					class="btn btn-light rounded-1 btn-outline-primary"
+					class="btn btn-light rounded-1 btn-outline-primary b"
 					for="btn-check-1"
 				[value]="x.value"	(click)="click($event)">{{x.value}} <i class="fas fa-star" ></i
 				></button>
@@ -215,101 +215,49 @@
 				</div>
 			</div>
 
-			<div class="row gy-3 col-md-12" id="CardGroup">
-				<div
-					class="x col-md-4"
-					name="contentcard"
-					*ngFor="let t of shoplist"
-				>
-					<div class="card p-1 bg-dark p-2 rounded-4">
-						<div class="content" name="elements">
-							<div class="image">
-								<img
-									[src]="t.image"
-									class="card-img-top rounded-4 w-100"
-									alt="..."
-								/>
-							</div>
-
-							<div class="card-body" id="card-body">
-								<div
-									class="icon d-flex justify-content-between"
-								>
-									<div
-										class="star bg-dark text-light p-1 rounded-1"
-									>
-										<i
-											class="fas fa-star"
-											style="color: #faf55a"
-										></i>
-										<span>{{ t.rate }}</span>
-									</div>
-									<div class="save">
-										<i class="far fa-bookmark"></i>
-									</div>
+			<div class="row gy-3 col-lg-12 col-md-9 p-4" id="CardGroup">
+				<div class="x col-lg-4 col-md-12 col-sm-12  "  name="contentcard" *ngFor="let t of shoplist|paginate: { itemsPerPage: 9, currentPage: P }" >
+					<div class="content bg-light  shadow-3 rounded-2 p-2" name="elements" >
+						<div class="image">
+							<img src="../../../../assets/images/images (2).jpeg" class="p-2 rounded-4" alt="..." />
+						</div>
+						<div class="card-body">
+							<div class="icon d-flex justify-content-between  ps-2 pe-2">
+								<div class="star bg-dark text-light p-1 rounded-1">
+									<i class="fas fa-star" style="color: #faf55a"></i>
+									<span>{{ t.Rate }}</span>
 								</div>
-								<p class="fs-4 fw-bold pt-3">{{ t.Name }}</p>
-
-								<div
-									class="footer d-flex justify-content-between text-success mt-5 pt-4"
-								>
-									<div class="text">
-										<span class="fs-4 fw-bold"
-											>${{ t.price }}</span
-										><span
-											class="text-secondary fs-5"
-										></span>
-									</div>
-									<div class="button">
-										<a
-											[routerLink]="['/details']"
-											class="btn btn-primary"
-											>اظهر المعلومات
-											<i
-												class="fas fa-arrow-right fs-6"
-											></i
-										></a>
-									</div>
+								<div class="save">
+									<i class="far fa-bookmark"></i>
+								</div>
+							</div>
+							
+								<h5 class="card-title pe-4">{{ t.Title|minLength:7 }}</h5>
+							<p class="card-text pe-3">
+								{{t.Discription|minLength:20}}
+							</p>
+							
+							<div class="footer d-flex justify-content-between text-success ">
+								<div class="text ">
+									<span class="fs-4 fw-bold">${{ t.ExpectedSalary }}</span><span class="text-secondary fs-5"></span>
+								</div>
+								<div class="button col-7">
+									<a [routerLink]="['/details']" class="btn btn-primary ">اظهر المعلومات
+										<i class="fas fa-arrow-right fs-6"></i></a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+</div>
 		</div>
 	</div>
 </section>
 
 <!-- --------------------------------------------sectionFour---------------------------------------------------- -->
 <section class="number-icon mt-3">
-	<nav aria-label="Page navigation example ">
-		<ul class="pagination d-flex justify-content-center text-dark">
-			<li class="page-item">
-				<a class="page-link"> <i class="fas fa-arrow-left"></i></a>
-			</li>
-			<li class="page-item rounded-4">
-				<a class="page-link" href="#">1</a>
-			</li>
-			<li class="page-item"><a class="page-link b" href="#">2</a></li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item">
-				<a class="page-link"> <i class="fas fa-arrow-right"></i></a>
-			</li>
-		</ul>
+	<nav aria-label="Page navigation example " class="text-center">
+		<pagination-controls (pageChange)="P=$event"></pagination-controls>
 	</nav>
 </section>
 
-<!-- <section>
-<div class="formdata">
-   
-   <form action="" [formGroup]="forms">
-    <label >name</label>
-    <input type="text"  formControlName="iiii">
-    
-   
-    <button type="button" (click)="sub()" >register</button>
-   </form>
-  
-
-</div>
-</section> -->
