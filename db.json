@@ -603,7 +603,7 @@
       "Title": "Assistant Manager",
       "Discription": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero.",
       "Rate": 9,
-      "ExpectedSalary": "667.87",
+      "ExpectedSalary": "667",
       "CategoryID": "1fd48674-61f9-4f91-b88c-0532bea16a4e",
       "ProviderID": "51464508-933e-443a-8499-b46653867c61"
     },
@@ -612,7 +612,7 @@
       "Title": "Teacher",
       "Discription": "Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
       "Rate": 5,
-      "ExpectedSalary": "751.69",
+      "ExpectedSalary": "751",
       "CategoryID": "0090f886-3dca-46e4-a7b6-15747a7384e6",
       "ProviderID": "181d0acd-b1ea-45b5-b6a0-24c4ea2ca74e"
     },
@@ -621,7 +621,7 @@
       "Title": "Software Test Engineer I",
       "Discription": "Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
       "Rate": 10,
-      "ExpectedSalary": "998.98",
+      "ExpectedSalary": "998",
       "CategoryID": "86199a91-b4fb-4f0d-bf21-5c0f10f01120",
       "ProviderID": "539b0aff-587f-4ad8-99a4-386a2d6bdaf0"
     },
@@ -630,7 +630,7 @@
       "Title": "Software Engineer III",
       "Discription": "Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.",
       "Rate": 3,
-      "ExpectedSalary": "904.36",
+      "ExpectedSalary": "904",
       "CategoryID": "bffdaa2e-e4e0-4ca2-ae6e-19007413cd98",
       "ProviderID": "beed8d3c-3496-40e4-8224-5fe98f59eb29"
     },
@@ -639,7 +639,7 @@
       "Title": "Junior Executive",
       "Discription": "Ut tellus.",
       "Rate": 10,
-      "ExpectedSalary": "343.36",
+      "ExpectedSalary": "343",
       "CategoryID": "67c573a2-404c-4f58-9b42-5cda02452555",
       "ProviderID": "a74269f0-278e-4208-bd5f-643ffc567816"
     },
@@ -648,7 +648,7 @@
       "Title": "Executive Secretary",
       "Discription": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
       "Rate": 1,
-      "ExpectedSalary": "283.11",
+      "ExpectedSalary": "283",
       "CategoryID": "98171dc2-5c99-4b37-8351-739c132adbb0",
       "ProviderID": "40ececed-fab6-4077-81a0-fe42a1b4e057"
     },
@@ -657,7 +657,7 @@
       "Title": "Chief Design Engineer",
       "Discription": "Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
       "Rate": 10,
-      "ExpectedSalary": "553.39",
+      "ExpectedSalary": "553",
       "CategoryID": "e06e8d8b-aa65-4d75-8bea-79fe264e43bb",
       "ProviderID": "e5cc1eb2-4d18-4adb-a860-f55c331d768e"
     },
@@ -666,7 +666,7 @@
       "Title": "Account Coordinator",
       "Discription": "Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
       "Rate": 3,
-      "ExpectedSalary": "276.05",
+      "ExpectedSalary": "276",
       "CategoryID": "d131df01-de55-4cf5-9fcf-7080d54be4a0",
       "ProviderID": "13ef59aa-7a52-449f-b1d9-bdc9e5b51a95"
     },
@@ -675,7 +675,7 @@
       "Title": "Assistant Professor",
       "Discription": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.",
       "Rate": 2,
-      "ExpectedSalary": "942.53",
+      "ExpectedSalary": "942",
       "CategoryID": "8984bf61-216a-41ce-8adf-8c29b0740acc",
       "ProviderID": "37e07ceb-bc58-4f79-87c3-9017d4199ee0"
     },
@@ -684,7 +684,7 @@
       "Title": "Mechanical Systems Engineer",
       "Discription": "Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
       "Rate": 4,
-      "ExpectedSalary": "394.12",
+      "ExpectedSalary": "394",
       "CategoryID": "5d6af84f-6a89-4c1c-a9be-6f85eb6846a2",
       "ProviderID": "7a6e9adc-88e0-41c7-b909-748687ecfd14"
     }

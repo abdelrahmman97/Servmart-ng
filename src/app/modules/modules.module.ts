@@ -13,8 +13,11 @@ import { ModulesRoutingModule } from './modules-routing.module';
 import { ShopComponent } from './pages/shop/shop.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MinLengthPipe } from './pages/min-length.pipe';
+import { NgxPaginationModule } from 'ngx-pagination'
 import { ServicesComponent } from './pages/services/services.component';
 import { SharedModule } from '../shared/shared.module';
+
 
 @NgModule({
 	declarations: [
@@ -22,6 +25,7 @@ import { SharedModule } from '../shared/shared.module';
 		ProfileComponent,
 		ShopComponent,
 		DetailsComponent,
+		MinLengthPipe,
 		ServicesComponent
 	],
 	imports: [
@@ -32,8 +36,8 @@ import { SharedModule } from '../shared/shared.module';
 		CoreModule,
 		AdminModule,
 		CustomerModule,
+		NgxPaginationModule,
 		SharedModule,
-
 		VendorModule,
 		ServicesProviderModule,
 	],
