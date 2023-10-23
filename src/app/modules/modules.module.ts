@@ -14,10 +14,9 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServicesComponent } from './pages/services/services.component';
-import { RatingComponent } from '../shared/Components/Rating/Rating.component';
 import { SharedModule } from '../shared/shared.module';
 
-@NgModule( {
+@NgModule({
 	declarations: [
 		HomePageComponent,
 		ProfileComponent,
@@ -38,5 +37,5 @@ import { SharedModule } from '../shared/shared.module';
 		VendorModule,
 		ServicesProviderModule,
 	],
-} )
+})
 export class ModulesModule { }
