@@ -3701,6 +3701,22 @@ textarea.form-control-lg {
 	color: transparent;
 }
 
+.form-floating > .form-control::-webkit-input-placeholder, .form-floating > .form-control-plaintext::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.form-floating > .form-control::-moz-placeholder, .form-floating > .form-control-plaintext::-moz-placeholder {
+	color: transparent;
+}
+
+.form-floating > .form-control:-ms-input-placeholder, .form-floating > .form-control-plaintext:-ms-input-placeholder {
+	color: transparent;
+}
+
+.form-floating > .form-control::-ms-input-placeholder, .form-floating > .form-control-plaintext::-ms-input-placeholder {
+	color: transparent;
+}
+
 .form-floating > .form-control::placeholder,
 .form-floating > .form-control-plaintext::placeholder {
 	color: transparent;
@@ -18748,6 +18764,12 @@ html[dir="rtl"] .accordion-button::after {
   padding-right: 0;
 }
 */
+
+.bg-primary-soft {
+	color: var(--bs-primary);
+	background-color: rgba(81, 67, 217, 0.1);
+}
+
 .btn-primary-soft {
 	color: var(--bs-primary);
 	background-color: rgba(81, 67, 217, 0.1);

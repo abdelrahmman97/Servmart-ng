@@ -21,6 +21,7 @@ import { ServiceProviderSendOfferComponent } from './services-provider/Component
 import { CartComponent } from './customer/Components/cart/cart.component';
 import { CheckOutComponent } from './customer/Components/check-out/check-out.component';
 import { authGuard } from '../shared/guards/AuthGuard/auth.guard';
+import { ServicesComponent } from './pages/services/services.component';
 
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
 	{ path: "earning", component: EaringComponent, canActivate: [authGuard] },
 	{ path: 'cart', component: CartComponent, canActivate: [authGuard] },
 	{ path: 'checkout', component: CheckOutComponent, canActivate: [authGuard] },
+	{ path: 'services', component: ServicesComponent, canActivate: [authGuard] },
 
 	// Customer Components
 	{ path: 'requests', component: RequestComponent, canActivate: [authGuard] },
@@ -58,8 +60,8 @@ const routes: Routes = [
 
 ];
 
-@NgModule( {
-	imports: [RouterModule.forChild( routes )],
+@NgModule({
+	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule]
-} )
+})
 export class ModulesRoutingModule { }

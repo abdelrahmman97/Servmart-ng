@@ -15,14 +15,19 @@ import { DetailsComponent } from './pages/details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MinLengthPipe } from './pages/min-length.pipe';
 import {NgxPaginationModule} from 'ngx-pagination'
+import { ServicesComponent } from './pages/services/services.component';
+import { RatingComponent } from '../shared/Components/Rating/Rating.component';
+import { SharedModule } from '../shared/shared.module';
 
-@NgModule({
+
+@NgModule( {
 	declarations: [
 		HomePageComponent,
 		ProfileComponent,
 		ShopComponent,
 		DetailsComponent,
-  MinLengthPipe,
+    MinLengthPipe,
+		ServicesComponent
 	],
 	imports: [
 		CommonModule,
@@ -32,9 +37,10 @@ import {NgxPaginationModule} from 'ngx-pagination'
 		CoreModule,
 		AdminModule,
 		CustomerModule,
-NgxPaginationModule,
+    NgxPaginationModule,
+		SharedModule,
 		VendorModule,
 		ServicesProviderModule,
 	],
-})
-export class ModulesModule {}
+} )
+export class ModulesModule { }
