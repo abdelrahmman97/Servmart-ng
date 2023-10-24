@@ -58,7 +58,7 @@
 									</tr>
 								</thead>
 								<tbody >
-									<tr *ngFor="let Request of requestList">
+									<tr *ngFor="let Request of requestList|paginate: { itemsPerPage: 10, currentPage: P }">
 
 										<td>
 											<div class="form-check">
@@ -92,15 +92,34 @@
 
 
 										<td>
+<<<<<<< HEAD
 										   <button class="btn btn-outline-primary btn-sm" [routerLink]="['/OrderDetails',Request.ID]">
 											<i class="fa-thin fa-eye fa-xl"></i></button>
 										</td>
 								</tbody></table>
+=======
+										   <a class="text-primary-emphasis" [routerLink]="['/orderdetail',Request.ID]">
+											<i class="fa-thin fa-eye fa-xl"></i></a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+>>>>>>> origin/main
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
+
+
+	<section class="number-icon mt-3">
+		<nav aria-label="Page navigation example " class="text-center">
+			<pagination-controls (pageChange)="P=$event"></pagination-controls>
+		</nav>
+	</section>
+>>>>>>> origin/main
 </div>
 

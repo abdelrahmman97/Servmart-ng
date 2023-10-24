@@ -13,28 +13,28 @@
 
 					<!-- Nav item - Home -->
 					<li class="nav-item">
-						<a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">
+						<a class="nav-link flex-nowrap" [routerLink]="['/home']" routerLinkActive="active">
 							<i class="fa-duotone fa-house-chimney"></i> الرئيسية
 						</a>
 					</li>
 
 					<!-- Nav item - Services -->
 					<li class="nav-item">
-						<a class="nav-link" [routerLink]="['/services']" routerLinkActive="active">
+						<a class="nav-link flex-nowrap" [routerLink]="['/services']" routerLinkActive="active">
 							<i class="fa-duotone fa-sparkles"></i> الخدمات
 						</a>
 					</li>
 
 					<!-- Nav item Store -->
 					<li class="nav-item ">
-						<a class="nav-link" [routerLink]="['/shop']" routerLinkActive="active">
+						<a class="nav-link flex-nowrap" [routerLink]="['/shop']" routerLinkActive="active">
 							<i class="fa-duotone fa-store"></i> المتجر
 						</a>
 					</li>
 
 					<!-- Nav item Vendors -->
 					<li class="nav-item ">
-						<a class="nav-link" [routerLink]="['/vendors']" routerLinkActive="active">
+						<a class="nav-link flex-nowrap" [routerLink]="['/vendors']" routerLinkActive="active">
 							<i class="fa-duotone fa-users"></i> مقدمي الخدمات
 						</a>
 					</li>
@@ -68,17 +68,41 @@
 							</ul>
 						</div>
 					</li>
+
+					<li>
+						<div class="d-flex d-md-none flex-nowrap login-register" *ngIf="!isUserLoggedIn()">
+							<a class="nav-link flex-nowrap" [routerLink]="['/auth/login']">
+								<i class="fa-duotone fa-arrow-right-to-bracket me-2"></i>
+								Login
+							</a>
+							<a class="nav-link flex-nowrap" [routerLink]="['/auth/register']">
+								<i class="fa-duotone fa-user-plus me-2"></i>
+								Register
+							</a>
+						</div>
+					</li>
 				</ul>
 			</div>
 
 			<!-- Search -->
-			<app-nav-search class="w-25"></app-nav-search>
+			<app-nav-search></app-nav-search>
 
 			<!-- Profile and Notification -->
 			<ul class="nav flex-row align-items-center list-unstyled ms-xl-auto gap-2">
 
 				<!-- show/hide menu button -->
-				<li class="nav-item">
+				<li class="nav-item d-flex">
+					<div class="navbar-nav nav-pills-primary-soft flex-row gap-2 d-md-flex d-none" *ngIf="!isUserLoggedIn()">
+						<a class="nav-link btn-primary-soft d-flex flex-nowrap" [routerLink]="['/auth/login']">
+							<i class="fa-duotone fa-arrow-right-to-bracket me-2"></i>
+							Login
+						</a>
+						<a class="nav-link btn-primary-soft d-flex flex-nowrap" [routerLink]="['/auth/register']">
+							<i class="fa-duotone fa-user-plus me-2"></i>
+							Register
+						</a>
+					</div>
+
 					<button class="navbar-toggler ms-auto ms-sm-0 p-0 p-sm-2" type="button" data-bs-toggle="collapse"
 						data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
 						aria-label="Toggle navigation">
@@ -89,18 +113,34 @@
 						</span>
 						<!-- <span class="d-none d-sm-inline-block small">Menu</span> -->
 					</button>
+
 				</li>
+
 				<!-- Notification dropdown START -->
-				<li class="nav-item dropdown">
+				<li class="nav-item dropdown" *ngIf="isUserLoggedIn()">
 					<app-notification></app-notification>
 				</li>
 
 				<!-- Profile dropdown -->
-				<li class="nav-item dropdown">
+				<li class="nav-item dropdown" *ngIf="isUserLoggedIn()">
 					<app-user-dropdown></app-user-dropdown>
 				</li>
 
 			</ul>
+
+			<!-- Login & Register -->
+			<!-- <ul class="navbar-nav nav-pills-primary-soft text-center me-auto d-none d-sm-flex"
+				*ngIf="!isUserLoggedIn()">
+				<li class="nav-item">
+					<a class="nav-link btn-primary-soft d-flex flex-nowrap" [routerLink]="['/auth/login']">
+						<i class="fa-duotone fa-arrow-right-to-bracket"></i>Login</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link btn-primary-soft d-flex flex-nowrap" [routerLink]="['/auth/register']">
+						<i class="fa-duotone fa-user-plus"></i>Register</a>
+				</li>
+			</ul> -->
 
 		</div>
 	</nav>

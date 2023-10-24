@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { AddProductService } from '../services/Product/AppProductService.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AddProductService } from '../../services/Product/AppProductService.service';
 import { IProduct } from 'src/app/core/models/IProduct';
-import { Product } from '../services/Product/Product';
-
 
 @Component({
   selector: 'app-product-details',
@@ -13,7 +11,7 @@ import { Product } from '../services/Product/Product';
 })
 export class ProductDetailsComponent  implements OnInit{
 
-id:number;
+id:number=0;
 product:IProduct={} as IProduct;
 data:boolean=false;
 
@@ -36,7 +34,7 @@ constructor(private actic:ActivatedRoute,http:HttpClient, private productsdetail
 			}
 
 		})
-		
+
 
 		}
 	})}

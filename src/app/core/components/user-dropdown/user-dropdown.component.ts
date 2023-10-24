@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 import { PreferredThemeService } from 'src/app/shared/services/PreferredTheme.service';
 
 @Component( {
@@ -9,12 +10,16 @@ import { PreferredThemeService } from 'src/app/shared/services/PreferredTheme.se
 export class UserDropdownComponent {
 
 	selectedTheme: string = "";
-	constructor( private theme: PreferredThemeService ) {
+	constructor( private auth: AuthService, private theme: PreferredThemeService ) {
 		this.selectedTheme = theme.getPreferredTheme();
 	}
 
 	togglePreferredThemeMode( selectedTheme: string ) {
 		this.selectedTheme = selectedTheme;
 		this.theme.setTheme( selectedTheme );
+	}
+
+	logOut() {
+		this.auth.logOut();
 	}
 }

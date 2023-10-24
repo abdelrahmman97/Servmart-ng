@@ -10,24 +10,26 @@ import { RateServiceComponent } from './Components/RateService/RateService.compo
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from "../../core/core.module";
 
 
 
 @NgModule({
-	declarations: [
-		CheckOutComponent,
-		CartComponent,
-		RequestComponent,
-		SearchVendorsComponent,
-		RequestOffersComponent,
-		RateServiceComponent
-	],
-	imports: [
-		CommonModule,
-		FormsModule,
-		RouterModule,
-		SharedModule,
-		ReactiveFormsModule
-	]
+    declarations: [
+        CheckOutComponent,
+        CartComponent,
+        RequestComponent,
+        SearchVendorsComponent,
+        RequestOffersComponent,
+        RateServiceComponent
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        RouterModule,
+        SharedModule,
+		ReactiveFormsModule,
+		CoreModule
+    ]
 })
 export class CustomerModule { }

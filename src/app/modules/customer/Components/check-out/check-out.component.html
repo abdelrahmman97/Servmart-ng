@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="d-flex justify-content-between mb-4">
-		<h4 class="card-header-title">الدفع</h4>
+		<h4 class="card-header-title">إتمام عملية الشراء</h4>
 		<div class="d-flex gap-2">
 			<button class="btn btn-danger-soft" (click)="cansel()">
 				<i class="fa-duotone fa-trash"></i>
@@ -17,12 +17,11 @@
 	<div class="col-lg-7 col-md-12">
 		<hr class="mt-0">
 		<div class="accordion accordion-flush" id="accordionFlushExample">
-			<!-- item 1 -->
 			<form class="row g-3" [formGroup]="vaildition" (ngSubmit)="show()">
 				<div class="accordion-item py-4">
 
 					<div class="d-flex justify-content-between align-items-center">
-						<a href="#" class="fs-5 fw-medium text-inherit" data-bs-toggle="collapse"
+						<a href="#" class="fs-5 fw-medium text-inherit mb-4 d-flex align-items-center gap-3" data-bs-toggle="collapse"
 							data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
 							<i class="fa-duotone fa-location-dot"></i>
 							اضف العنوان
@@ -89,7 +88,7 @@
 								</div>
 							</div>
 
-							<div class="mt-5 d-flex justify-content-end">
+							<div class="mt-5 d-flex justify-content-end gap-4">
 								<a href="#" class="btn btn-primary-soft ms-2 collapsed" data-bs-toggle="collapse"
 									data-bs-target="#flush-collapseTwo" aria-expanded="false"
 									aria-controls="flush-collapseTwo">التالي</a>
@@ -102,7 +101,7 @@
 				<!-- item 2 -->
 				<div class="accordion-item py-4">
 
-					<a href="#" class="fs-5 fw-medium text-inherit" data-bs-toggle="collapse"
+					<a href="#" class="fs-5 fw-medium text-inherit mb-4 d-flex align-items-center gap-3" data-bs-toggle="collapse"
 						data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
 						<i class="fa-duotone fa-circle-info"></i>
 						تفاصيل الخدمة
@@ -114,10 +113,10 @@
 							<label for="DeliveryInstructions" class="form-label sr-only">
 								تفاصيل الخدمة</label>
 							<textarea class="form-control" formControlName="textera" id="DeliveryInstructions" rows="3"
-								placeholder="Write delivery instructions "></textarea>
-							<p class="form-text">أضف تعليمات حول الطريقة التي تريد بها طلبك
+								placeholder="تفاصبل اخري"></textarea>
+							<p class="form-text">أضف تعليمات حول الطريقة التي تريد بها استلام طلبك
 							</p>
-							<div class="mt-5 d-flex justify-content-end">
+							<div class="mt-5 d-flex justify-content-end gap-4">
 								<a href="#" class="btn btn-secondary-soft collapsed" data-bs-toggle="collapse"
 									data-bs-target="#flush-collapseOne" aria-expanded="false"
 									aria-controls="flush-collapseOne">السابق</a>
@@ -132,7 +131,7 @@
 				<!-- item 3 -->
 				<div class="accordion-item py-4">
 
-					<a href="#" class="fs-5 fw-medium text-inherit" data-bs-toggle="collapse"
+					<a href="#" class="fs-5 fw-medium text-inherit mb-4 d-flex align-items-center gap-3" data-bs-toggle="collapse"
 						data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
 						<i class="fa-duotone fa-money-check-dollar"></i>
 						طريقة الدفع
@@ -147,7 +146,7 @@
 									<!-- card body -->
 									<div class="card-body p-6">
 										<div class="d-flex mb-4">
-											<div class="form-check ">
+											<div class="form-check ms-4">
 												<!-- input -->
 												<input class="form-check-input" type="radio" name="flexRadioDefault"
 													id="creditdebitcard">
@@ -156,10 +155,7 @@
 											</div>
 											<div>
 												<h5 class="mb-1 h6"> بطاقة الائتمان / الخصم</h5>
-												<p class="mb-0 small"> التحويل الامن للاموال باستخدام حساب البنك
-
-
-												</p>
+												<p class="mb-0 small"> التحويل الامن للاموال باستخدام حساب البنك</p>
 											</div>
 										</div>
 										<div class="row g-2">
@@ -208,7 +204,7 @@
 									<div class="card-body p-6">
 										<!-- check input -->
 										<div class="d-flex">
-											<div class="form-check">
+											<div class="form-check ms-4">
 												<input class="form-check-input" type="radio" name="flexRadioDefault"
 													id="cashonDelivery">
 												<label class="form-check-label ms-2" for="cashonDelivery">
@@ -224,7 +220,7 @@
 									</div>
 								</div>
 								<!-- Button -->
-								<div class="mt-5 d-flex justify-content-end">
+								<div class="mt-5 d-flex justify-content-end gap-4">
 									<a href="#" class="btn btn-secondary-soft collapsed" data-bs-toggle="collapse"
 										data-bs-target="#flush-collapseTwo" aria-expanded="false"
 										aria-controls="flush-collapseTwo">السابق</a>
@@ -247,8 +243,7 @@
 			<div class="card">
 
 				<div class="card-header border-0 pb-0">
-					<h5 class="">
-						تفاصيل الطلب</h5>
+					<h5 class="">تفاصيل الطلب</h5>
 				</div>
 
 				<div class="card-body pb-0">
@@ -258,7 +253,7 @@
 						<li class="list-group-item" *ngFor="let li of Arrayli">
 							<div class="row align-items-center">
 								<div class="col-3">
-									<img src="../../../../../assets/images/logo.png" alt="Ecommerce"
+									<img src="/assets/images/logo.png" alt="Ecommerce"
 										class="img-fluid rounded">
 								</div>
 								<div class="col-5">
@@ -268,7 +263,7 @@
 									<span>{{li.id}}</span>
 								</div>
 								<div class="col-3 text-lg-end text-start text-md-end">
-									<span class="fw-bold">${{li.salary}}</span>
+									<span class="fw-bold">{{li.salary | CustomCurrency:'ar':false}}</span>
 								</div>
 							</div>
 
@@ -284,24 +279,20 @@
 						<li class="list-group-item px-4 py-3">
 							<div class="d-flex align-items-center justify-content-between   mb-2">
 								<div>
-									Item Subtotal
-
+									اجمالي السلع
 								</div>
 								<div class="fw-bold">
-									$70.00
-
+									{{75 | CustomCurrency:'ar':false}}
 								</div>
 
 							</div>
 							<div class="d-flex align-items-center justify-content-between  ">
 								<div>
-									Service Fee <i class="feather-icon icon-info text-muted" data-bs-toggle="tooltip"
-										aria-label="Default tooltip" data-bs-original-title="Default tooltip"></i>
-
+									رسوم الخدمة
+									<!-- <i class="fa-duotone fa-circle-info"></i> -->
 								</div>
 								<div class="fw-bold">
-									$3.00
-
+									{{3 | CustomCurrency:'ar':false}}
 								</div>
 
 							</div>
@@ -309,8 +300,8 @@
 						</li>
 						<li class="list-group-item px-4 py-3">
 							<div class="d-flex align-items-center justify-content-between fw-bold">
-								<div>Subtotal</div>
-								<div class="text-primary">$73.00</div>
+								<div>إجمالي المبلغ</div>
+								<div class="text-primary">{{78 | CustomCurrency:'ar':false}}</div>
 							</div>
 						</li>
 

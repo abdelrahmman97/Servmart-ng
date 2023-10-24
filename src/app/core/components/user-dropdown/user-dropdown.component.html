@@ -13,7 +13,7 @@
 		</a>
 	</li>
 	<li>
-		<a class="dropdown-item" [routerLink]="['/settings']" routerLinkActive="" >
+		<a class="dropdown-item" [routerLink]="['/settings']" routerLinkActive="">
 			<i class="fa-duotone fa-gear"></i>
 			الاعدادات
 		</a>
@@ -24,7 +24,8 @@
 			مركز المساعدات
 		</a>
 	</li>
-	<li><a class="dropdown-item bg-danger-soft-hover" [routerLink]="['/logout']" routerLinkActive="" >
+	<li>
+		<a class="dropdown-item bg-danger-soft-hover btn" (click)="logOut()">
 			<i class="fa-duotone fa-power-off"></i>
 			خروج
 		</a>

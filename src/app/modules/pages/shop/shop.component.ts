@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IService } from 'src/app/core/models/IService';
+import { ServicesService } from '../services.service';
 
 @Component({
 	selector: 'app-shop',
@@ -10,7 +12,7 @@ export class ShopComponent {
 	SearchInput = '';
 	Price = 300;
 	rates = 0;
-
+P=1
 
 
 	
@@ -29,71 +31,35 @@ export class ShopComponent {
 		{ id: 10, Name: 'اداوات كهربية' },
 	];
 	SelectedCategory: any[] = [];
-	shoplist: any[] = [
-		{
-			id: 1,
-			Name: 'خدمة الكهرباء',
-			image: '../../assets/images/Electricity service.jpeg',
-			rate: 4.5,
-			price: 750,
-		},
-		{
-			id: 2,
-			Name: 'خدمة الماء',
-			image: '../../assets/images/water.jpeg',
-			rate: 4,
-			price: 550,
-		},
-		{
-			id: 3,
-			Name: 'خدمة التنظيف',
-			image: '../../assets/images/clean.jpeg',
-			rate: 4.1,
-			price: 650,
-		},
-		{
-			id: 4,
-			Name: 'خدمة التصليح',
-			image: '../../assets/images/reapir.jpeg',
-			rate: 4,
-			price: 450,
-		},
-		{
-			id: 5,
-			Name: 'خدمة الالوان',
-			image: '../../assets/images/color.jpeg',
-			rate: 3.9,
-			price: 250,
-		},
-		{
-			id: 6,
-			Name: 'خدمة  الاثاث',
-			image: '../../assets/images/download.jpeg',
-			rate: 3.6,
-			price: 850,
-		},
-		{
-			id: 7,
-			Name: 'خدمة الالكترونيات',
-			image: '../../assets/images/images (2).jpeg',
-			rate: 4.8,
-			price: 150,
-		},
-		{
-			id: 8,
-			Name: 'خدمة العمالة',
-			image: '../../assets/images/lober.jpeg',
-			rate: 3.7,
-			price: 350,
-		},
-		{
-			id: 9,
-			Name: 'خدمة الدهانات',
-			image: '../../assets/images/paints.jpeg',
-			rate: 3.3,
-			price: 350,
-		},
-	];
+	shoplist: IService[] =[]
+
+	constructor(public get:ServicesService){
+
+		get.getServices().subscribe(services =>{
+			this.shoplist = services as IService[];
+			console.log(this.shoplist)
+		})
+		
+	}
+
+	// shop(){
+	// 	this.shoplist.gstAll().subscribe({
+	// 		next:data=>{
+	// 			this.shoplist= data as IShop[];
+	// 			console.log(this.shoplist)
+	
+	
+	
+	// 		  },
+	// 		  error:(err)=>{
+	// 			 this.isThereError=true;
+	// 			 this.errorMessage=" عفوآ لايوجد اى منتجات "
+	// 						  console.error("عفوآ لايوجد اى منتجات ")
+	// 		  }
+	// 	   })
+	// }
+		
+
 	select(id: any,ev :any) {
     if(ev.target.checked){
 
@@ -134,11 +100,11 @@ export class ShopComponent {
 		var elements = document.getElementsByName('elements');
 		var filter = document.getElementById('filterIcon');
 		Sitebar?.classList.remove('d-none');
-		GroupCard?.classList.remove('col-md-12');
-		GroupCard?.classList.add('col-md-8');
+		GroupCard?.classList.remove('col-lg-12');
+		GroupCard?.classList.add('col-lg-8');
 		contentcard?.forEach((i) => {
-			i.classList.remove('col-md-4');
-			i.classList.add('col-md-12');
+			i.classList.remove('col-lg-4');
+			i.classList.add('col-lg-12');
 			i.classList.replace('x', 'y');
 		});
 		elements?.forEach((i) => {
@@ -156,11 +122,11 @@ export class ShopComponent {
 		var filter = document.getElementById('filterIcon');
 		var x = document.getElementById('X');
 		Sitebar?.classList.add('d-none');
-		GroupCard?.classList.remove('col-md-8');
-		GroupCard?.classList.add('col-md-12');
+		GroupCard?.classList.remove('col-lg-8');
+		GroupCard?.classList.add('col-lg-12');
 		contentcard?.forEach((i) => {
-			i.classList.add('col-md-4');
-			i.classList.remove('col-md-12');
+			i.classList.add('col-lg-4');
+			i.classList.remove('col-lg-12');
 		});
 		elements?.forEach((i) => {
 			i.classList.remove('d-flex');

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { LoginService } from '../../services/login/login.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth/Auth.service';
 
 @Component( {
 	selector: 'app-login',
@@ -13,7 +13,7 @@ export class LoginComponent {
 	user: any;
 	loginForm: FormGroup;
 
-	constructor( private loginService: LoginService, private router: Router ) { }
+	constructor( private authService: AuthService ) { }
 
 	ngOnInit(): void {
 		this.loginForm = new FormGroup( {
@@ -30,19 +30,6 @@ export class LoginComponent {
 		console.log( "onSubmit: ", this.user );
 		console.log( "onSubmit: ", this.loginForm.value );
 
-		this.loginService.login( this.user ).subscribe(
-			{
-				next: data => {
-					this.user = data[0];
-					console.log( this.user );
-					// localStorage.setItem( "token", JSON.stringify( this.user.token ) );
-					this.loginService.setCookie( "SESSIONID", this.user.token, 365 );
-					this.router.navigate( ['/profile'] );
-				},
-				error: error => {
-					console.log( error );
-				}
-			}
-		);
+		this.authService.login( this.user )
 	}
 }

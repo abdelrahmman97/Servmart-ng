@@ -1,14 +1,15 @@
-<div class="container py-5 w-100">
-	<div class="text-center">
+<div class="container">
+
+	<div class="text-center pt-4 mb-5">
 		<h2 class="text-primary">تسجيل الدخول</h2>
-		<p class="mb-0 lead">ليس لديك حساب؟<a href="#" [routerLink]="['/auth/register']"
-				class="text-primary text-decoration-none lead">
+		<p class="mb-0 lead">ليس لديك حساب؟
+			<a href="#" [routerLink]="['/auth/register']" class="text-primary text-decoration-none lead">
 				إنشاء حساب جديد
 			</a>
 		</p>
 	</div>
 
-	<div class="row justify-content-center px-5 pr-3">
+	<div class="row justify-content-center">
 		<div class="col-lg-6 py-5 align-self-center">
 			<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 				<div class="form-floating my-5">
@@ -28,10 +29,11 @@
 				</div>
 			</form>
 		</div>
-		<div class="col-6 d-none d-xxl-block h-50px">
-			<a href="#">
-				<img class="pb-4" src="assets/SVG/signin.svg" alt="logo">
-			</a>
+		<div class="col-6 d-none d-md-block">
+			<div class="d-flex justify-content-center">
+				<img class="w-75" src="assets/SVG/signin.svg" alt="logo">
+			</div>
 		</div>
 	</div>
+
 </div>

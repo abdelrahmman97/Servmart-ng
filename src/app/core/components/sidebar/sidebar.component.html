@@ -19,6 +19,13 @@
 		<!-- Sidebar menu item -->
 		<ul class="nav nav-pills-primary-soft flex-column p-0">
 			<li class="nav-item">
+				<a class="nav-link justify-content-center justify-content-xl-start" href="#" [routerLink]="['/addRequest']"
+					routerLinkActive="active">
+					<i class="fa-duotone fa-cart-shopping text-xl 2xl:text-base"></i>
+					<span class="d-none d-xl-inline">أضف طلب</span>
+				</a>
+			</li>
+			<li class="nav-item">
 				<a class="nav-link justify-content-center justify-content-xl-start" href="#" [routerLink]="['/cart']"
 					routerLinkActive="active">
 					<i class="fa-duotone fa-cart-shopping text-xl 2xl:text-base"></i>
@@ -87,13 +94,19 @@
 				<div id="vendor" class="collapse p-2" data-bs-parent="#sideNavbar">
 					<ul class="nav flex-column list-group pe-0 pe-xl-4">
 						<li class="nav-item">
-							<a class="nav-link with-dot" href="#" [routerLink]="['/productlist']"
+							<a class="nav-link with-dot" href="#" [routerLink]="['/addProduct']"
+								routerLinkActive="router-link-active">
+								أضف منتج
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link with-dot" href="#" [routerLink]="['/productList']"
 								routerLinkActive="router-link-active">
 								منتجاتي
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link with-dot" href="#" [routerLink]="['/routePath']"
+							<a class="nav-link with-dot" href="#" [routerLink]="['/orderList']"
 								routerLinkActive="router-link-active">
 								الطلبات
 							</a>

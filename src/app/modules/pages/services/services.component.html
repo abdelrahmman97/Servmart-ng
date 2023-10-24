@@ -1,0 +1,465 @@
+<div class="row">
+
+	<div class="col-9 col-md-9 col-sm-12">
+
+		<!-- Intro & Search -->
+		<div class="searvices-intro-card w-100">
+
+			<div class="card searvices-intro-card-title bg-primary-soft p-4">
+				<div class="card-header bg-transparent border-0 p-0 col-8 col-sm-12">
+					<p class="fs-4">وظائف قد تنال إعجابك</p>
+					<p class="fs-6">هنا ستجد الخدمات التي يطلبها المستخدمون</p>
+				</div>
+				<div class="card-body border-0 p-0 col-8 col-sm-12">
+					<div class="d-flex flex-row gap-3 align-items-center">
+						<button class="btn btn-primary-soft col-4">ابحث</button>
+						<input class="form-control col" ype="search" name="searchService" id="searchService"
+							title="searchSer">
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="d-block d-md-none pt-4">
+			<div class="card p-3">
+				<div class="d-flex flex-column gap-3">
+
+					<div class="d-flex flex-row justify-content-between align-items-baseline">
+						<p class="fs-4 fw-bold ">فلتر</p>
+						<button class="btn btn-danger-soft">حذف</button>
+					</div>
+
+					<div>
+						<div class="d-flex flex-column justify-content-around accordion-item">
+							<div class="row">
+								<div class="col">
+									<p>الموقع</p>
+									<div class="d-flex flex-column gap-2">
+										<select class="form-select" aria-label="Default select example">
+											<option class="text-end" selected>المحافظة</option>
+											<option class="text-end" value="1">القاهرة</option>
+											<option class="text-end" value="2">الأقصر</option>
+											<option class="text-end" value="3">أسوان</option>
+										</select>
+										<select class="form-select" aria-label="Default select example">
+											<option class="text-end" selected>المركز</option>
+											<option class="text-end" value="1">القاهرة</option>
+											<option class="text-end" value="2">الأقصر</option>
+											<option class="text-end" value="3">أسوان</option>
+										</select>
+									</div>
+								</div>
+								<div class="col">
+									<p>المهنة</p>
+									<div>
+										<select class="form-select" aria-label="Default select example">
+											<option class="text-end" selected>التصنيف</option>
+											<option class="text-end" value="1">سباك</option>
+											<option class="text-end" value="2">نجار</option>
+											<option class="text-end" value="3">شيف</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col">
+									<p>تقييم العملاء</p>
+									<ul class="d-flex flex-row flex-wrap gap-1 list-unstyled m-0 p-0">
+										<li class="list-item">
+											<input type="checkbox" class="btn-check" id="btn-check-9">
+											<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+												for="btn-check-9">
+												3+
+											</label>
+										</li>
+										<li class="list-item">
+											<input type="checkbox" class="btn-check" id="btn-check-10">
+											<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+												for="btn-check-10">
+												3.5+
+											</label>
+										</li>
+										<li class="list-item">
+											<input type="checkbox" class="btn-check" id="btn-check-11">
+											<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+												for="btn-check-11">
+												4+
+											</label>
+										</li>
+										<li class="list-item">
+											<input type="checkbox" class="btn-check" id="btn-check-12">
+											<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+												for="btn-check-12">
+												4.5+
+											</label>
+										</li>
+									</ul>
+								</div>
+								<div class="col">
+									<p>السعر</p>
+									<div class="d-flex flex-column gap-2">
+										<div class="row g-0 align-items-center">
+											<label class="col-3" for="priceFrom">من</label>
+											<input type="number" name="priceFrom" id="priceFrom" value="0"
+												class="col form-control form-control-sm">
+										</div>
+										<div class="row g-0 align-items-center">
+											<label class="col-3" for="priceTo">حتي</label>
+											<input type="number" name="priceTo" id="priceTo" value="0"
+												class="col form-control form-control-sm">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="accordion" id="accordionFiter">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingOne">
+					<div class="d-flex flex-row justify-content-between align-items-baseline">
+						<p class="fs-4 fw-bold ">فلتر</p>
+						<div>
+							<button class="btn btn-danger-soft">حذف</button>
+							<button class="btn btn-primary-soft" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							</button>
+						</div>
+					</div>
+				</h2>
+				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+					data-bs-parent="#accordionFiter">
+					<div class="accordion-body">
+						<div class="d-flex flex-column justify-content-around accordion-item">
+							<div class="row">
+								<div class="col">
+									<p>الموقع</p>
+									<div class="d-flex flex-column gap-2">
+										<select class="form-select" aria-label="Default select example">
+											<option class="text-end" selected>المحافظة</option>
+											<option class="text-end" value="1">القاهرة</option>
+											<option class="text-end" value="2">الأقصر</option>
+											<option class="text-end" value="3">أسوان</option>
+										</select>
+										<select class="form-select" aria-label="Default select example">
+											<option class="text-end" selected>المركز</option>
+											<option class="text-end" value="1">القاهرة</option>
+											<option class="text-end" value="2">الأقصر</option>
+											<option class="text-end" value="3">أسوان</option>
+										</select>
+									</div>
+								</div>
+								<div class="col">
+									<p>المهنة</p>
+									<div>
+										<select class="form-select" aria-label="Default select example">
+											<option class="text-end" selected>التصنيف</option>
+											<option class="text-end" value="1">سباك</option>
+											<option class="text-end" value="2">نجار</option>
+											<option class="text-end" value="3">شيف</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col">
+									<p>تقييم العملاء</p>
+									<ul class="d-flex flex-row flex-wrap gap-1 list-unstyled m-0 p-0">
+										<li class="list-item">
+											<input type="checkbox" class="btn-check" id="btn-check-9">
+											<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+												for="btn-check-9">
+												3+
+											</label>
+										</li>
+										<li class="list-item">
+											<input type="checkbox" class="btn-check" id="btn-check-10">
+											<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+												for="btn-check-10">
+												3.5+
+											</label>
+										</li>
+										<li class="list-item">
+											<input type="checkbox" class="btn-check" id="btn-check-11">
+											<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+												for="btn-check-11">
+												4+
+											</label>
+										</li>
+										<li class="list-item">
+											<input type="checkbox" class="btn-check" id="btn-check-12">
+											<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+												for="btn-check-12">
+												4.5+
+											</label>
+										</li>
+									</ul>
+								</div>
+								<div class="col">
+									<p>السعر</p>
+									<div class="d-flex flex-column gap-2">
+										<div class="row g-0 align-items-center">
+											<label class="col-3" for="priceFrom">من</label>
+											<input type="number" name="priceFrom" id="priceFrom" value="0"
+												class="col form-control form-control-sm">
+										</div>
+										<div class="row g-0 align-items-center">
+											<label class="col-3" for="priceTo">حتي</label>
+											<input type="number" name="priceTo" id="priceTo" value="0"
+												class="col form-control form-control-sm">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="d-flex flex-column pt-4 pb-sm-8 pb-md-3 gap-4">
+
+			<div class="card p-4">
+				<div class="row g-0">
+					<div class="col-md-3">
+						<img src="https://dummyimage.com/300x300" class="card-img rounded-2" alt="">
+					</div>
+					<div class="col">
+						<div class="d-flex flex-column gap-1 px-3">
+							<h5 class="card-title">
+								<a href="#">
+									عنوان الخدمة
+								</a>
+							</h5>
+							<div class="">
+								<p class="mb-1">
+									<i class="bi bi-geo-alt me-2"></i>
+									العنوان
+								</p>
+								<div class="d-flex flex-row gap-3">
+									<p class="m-0">125$</p>
+									<p class="m-0"> 3 أيام</p>
+								</div>
+							</div>
+							<div class="row g-0">
+								<p class="line-clamp-3">
+									وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف
+									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
+									وصف الخدمة وصف الخدمة وصف الخدمة
+									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
+									وصف الخدمة وصف الخدمة وصف الخدمة
+									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
+									وصف الخدمة وصف الخدمة وصف الخدمة
+								</p>
+							</div>
+							<div class="row g-0">
+								مند 14 ساعة
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 text-start">
+						<button class="btn btn-primary-soft">ارسال عرض</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="card p-4">
+				<div class="row g-0">
+					<div class="col-md-3">
+						<img src="https://dummyimage.com/300x300" class="card-img rounded-2" alt="">
+					</div>
+					<div class="col">
+						<div class="d-flex flex-column gap-1 px-3">
+							<h5 class="card-title">
+								<a href="#">
+									عنوان الخدمة
+								</a>
+							</h5>
+							<div class="">
+								<p class="mb-1">
+									<i class="bi bi-geo-alt me-2"></i>
+									العنوان
+								</p>
+								<div class="d-flex flex-row gap-3">
+									<p class="m-0">125$</p>
+									<p class="m-0"> 3 أيام</p>
+								</div>
+							</div>
+							<div class="row g-0">
+								<p class="line-clamp-3">
+									وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف
+									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
+									وصف الخدمة وصف الخدمة وصف الخدمة
+									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
+									وصف الخدمة وصف الخدمة وصف الخدمة
+									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
+									وصف الخدمة وصف الخدمة وصف الخدمة
+								</p>
+							</div>
+							<div class="row g-0">
+								مند 14 ساعة
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 text-start">
+						<button class="btn btn-primary-soft">ارسال عرض</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="card p-4">
+				<div class="row g-0">
+					<div class="col-md-3">
+						<img src="https://dummyimage.com/300x300" class="card-img rounded-2" alt="">
+					</div>
+					<div class="col">
+						<div class="d-flex flex-column gap-1 px-3">
+							<h5 class="card-title">
+								<a href="#">
+									عنوان الخدمة
+								</a>
+							</h5>
+							<div class="">
+								<p class="mb-1">
+									<i class="bi bi-geo-alt me-2"></i>
+									العنوان
+								</p>
+								<div class="d-flex flex-row gap-3">
+									<p class="m-0">125$</p>
+									<p class="m-0"> 3 أيام</p>
+								</div>
+							</div>
+							<div class="row g-0">
+								<p class="line-clamp-3">
+									وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف
+									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
+									وصف الخدمة وصف الخدمة وصف الخدمة
+									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
+									وصف الخدمة وصف الخدمة وصف الخدمة
+									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
+									وصف الخدمة وصف الخدمة وصف الخدمة
+								</p>
+							</div>
+							<div class="row g-0">
+								مند 14 ساعة
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 text-start">
+						<button class="btn btn-primary-soft">ارسال عرض</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="col-3 col-md-3 d-none d-md-block sticky-top z-0">
+		<div class="sticky-top top-1">
+			<div class="card p-3">
+				<div class="d-flex flex-column gap-3">
+
+					<div class="d-flex flex-row justify-content-between align-items-baseline">
+						<p class="fs-4 fw-bold ">فلتر</p>
+						<button class="btn btn-danger-soft">حذف</button>
+					</div>
+
+					<div class="d-flex flex-column gap-2">
+
+						<div>
+							<p>الموقع</p>
+							<div class="d-flex flex-column gap-2">
+								<select class="form-select" aria-label="Default select example">
+									<option class="text-end" selected>المحافظة</option>
+									<option class="text-end" value="1">القاهرة</option>
+									<option class="text-end" value="2">الأقصر</option>
+									<option class="text-end" value="3">أسوان</option>
+								</select>
+								<select class="form-select" aria-label="Default select example">
+									<option class="text-end" selected>المركز</option>
+									<option class="text-end" value="1">القاهرة</option>
+									<option class="text-end" value="2">الأقصر</option>
+									<option class="text-end" value="3">أسوان</option>
+								</select>
+							</div>
+						</div>
+						<hr>
+
+						<div>
+							<p>المهنة</p>
+							<div>
+								<select class="form-select" aria-label="Default select example">
+									<option class="text-end" selected>التصنيف</option>
+									<option class="text-end" value="1">سباك</option>
+									<option class="text-end" value="2">نجار</option>
+									<option class="text-end" value="3">شيف</option>
+								</select>
+							</div>
+						</div>
+						<hr>
+
+						<div>
+							<p>تقييم العملاء</p>
+							<ul class="d-flex flex-row flex-wrap gap-1 list-unstyled m-0 p-0">
+								<li class="list-item">
+									<input type="checkbox" class="btn-check" id="btn-check-9">
+									<label class="btn btn-primary-soft btn-primary-soft-check btn-sm" for="btn-check-9">
+										3+
+									</label>
+								</li>
+								<li class="list-item">
+									<input type="checkbox" class="btn-check" id="btn-check-10">
+									<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+										for="btn-check-10">
+										3.5+
+									</label>
+								</li>
+								<li class="list-item">
+									<input type="checkbox" class="btn-check" id="btn-check-11">
+									<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+										for="btn-check-11">
+										4+
+									</label>
+								</li>
+								<li class="list-item">
+									<input type="checkbox" class="btn-check" id="btn-check-12">
+									<label class="btn btn-primary-soft btn-primary-soft-check btn-sm"
+										for="btn-check-12">
+										4.5+
+									</label>
+								</li>
+							</ul>
+						</div>
+						<hr>
+
+						<div>
+							<p>السعر</p>
+							<div class="d-flex flex-column gap-2">
+								<div class="row g-0 align-items-center">
+									<label class="col-3" for="priceFrom">من</label>
+									<input type="number" name="priceFrom" id="priceFrom" value="0"
+										class="col form-control form-control-sm">
+								</div>
+								<div class="row g-0 align-items-center">
+									<label class="col-3" for="priceTo">حتي</label>
+									<input type="number" name="priceTo" id="priceTo" value="0"
+										class="col form-control form-control-sm">
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

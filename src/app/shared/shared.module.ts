@@ -17,8 +17,7 @@ import { DatePipe } from '@angular/common';
 	],
 	exports: [
 		RatingComponent,
-		RatingComponent, 
-		
+
 	],
 	providers:[
 		DatePipe

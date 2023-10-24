@@ -3,10 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './modules/pages/home-page/home-page.component';
 import { LayoutComponent } from './core/components/layout/layout.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
-import { ShopComponent } from './modules/pages/shop/shop.component';
-import { DetailsComponent } from './modules/pages/details/details.component';
-
-import { CheckOutComponent } from './modules/customer/Components/check-out/check-out.component';
 import { AdminLayoutComponent } from './modules/admin/Components/admin-layout/admin-layout.component';
 
 
