@@ -8,13 +8,11 @@ import { SendOffersComponent } from './Components/SendOffers/SendOffers.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddWorkHistoryComponent } from '../services-provider/Components/add-work-history/add-work-history.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
-<<<<<<< HEAD
-=======
+
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 import { OrderDetailsComponent } from './Components/order-details/order-details.component';
 import {NgxPaginationModule} from 'ngx-pagination'
 
->>>>>>> origin/main
 
 
 @NgModule({
@@ -25,11 +23,7 @@ import {NgxPaginationModule} from 'ngx-pagination'
 		ProductListComponent,
 		SendOffersComponent,
   		AddWorkHistoryComponent,
-<<<<<<< HEAD
-
-=======
 		OrderDetailsComponent
->>>>>>> origin/main
 	],
 	imports: [
 		CommonModule,

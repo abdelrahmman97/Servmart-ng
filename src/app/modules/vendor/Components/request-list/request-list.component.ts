@@ -3,29 +3,18 @@ import { addRequestService } from '../../services/Request-list/AppRequestService
 import { IRequest } from 'src/app/core/models/IRequest';
 
 
-<<<<<<< HEAD
 @Component({
   selector: 'app-request-list',
   templateUrl: './request-list.component.html',
   styleUrls: ['./request-list.component.css']
 })
-export class RequestListComponent  implements OnInit{
-	isThereError: boolean = false;
-	errorMessage: string = "";
-	p: Number = 1;
-	count: Number = 2;
-=======
 
-@Component( {
-	selector: 'app-request-list',
-	templateUrl: './request-list.component.html',
-	styleUrls: ['./request-list.component.css']
-} )
+
+
 export class RequestListComponent implements OnInit {
 	isThereError: boolean = false;
 	errorMessage: string = "";
 	P=1;
->>>>>>> origin/main
 
 	requestList: IRequest[] = [];
 	constructor( private serviceRequest: addRequestService ) { }
@@ -47,11 +36,13 @@ export class RequestListComponent implements OnInit {
 		);
 
 	}
-
-
-
-
 }
+
+
+
+
+
+
 
 
 
