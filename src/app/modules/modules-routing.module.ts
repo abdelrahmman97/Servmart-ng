@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { RequestComponent } from './customer/Components/request/request.component';
+import { CustomerRequestsListComponent } from './customer/Components/customer-requests-list/customer-requests-list.component';
 import { RequestOffersComponent } from './customer/Components/RequestOffers/RequestOffers.component';
 import { SendOffersComponent } from './vendor/Components/SendOffers/SendOffers.component';
 import { RateServiceComponent } from './customer/Components/RateService/RateService.component';
@@ -39,7 +39,7 @@ const routes: Routes = [
 	{ path: 'services', component: ServicesComponent, canActivate: [authGuard] },
 
 	// Customer Components
-	{ path: 'requests', component: RequestComponent, canActivate: [authGuard] },
+	{ path: 'myRequests', component: CustomerRequestsListComponent, canActivate: [authGuard] },
 	{ path: 'offers/:id', component: RequestOffersComponent, canActivate: [authGuard] },
 	{ path: 'rateService/:id', component: RateServiceComponent, canActivate: [authGuard] },
 	{ path: 'vendors', component: SearchVendorsComponent },

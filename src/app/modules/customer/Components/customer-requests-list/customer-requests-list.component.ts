@@ -4,10 +4,10 @@ import { IRequest } from 'src/app/core/models/IRequest';
 
 @Component( {
 	selector: 'app-request',
-	templateUrl: './request.component.html',
-	styleUrls: ['./request.component.css']
+	templateUrl: './customer-requests-list.component.html',
+	styleUrls: ['./customer-requests-list.component.css']
 } )
-export class RequestComponent implements OnInit {
+export class CustomerRequestsListComponent implements OnInit {
 
 
 	isThereError: boolean = false;
