@@ -777,7 +777,7 @@
 			"Name": "Ice Cream - Strawberry",
 			"Descriptoin": "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
 			"UnitPrice ": "$105.04",
-			"Stoke": 975,
+			"Stock": 975,
 			"CategoryID": "5f46fab7-8ecd-46ef-93af-4522d9faa919",
 			"ShopID": "a5a244b8-36f4-4152-ad8f-1176dce27dfa"
 		},
@@ -786,7 +786,7 @@
 			"Name": "Sauce - Marinara",
 			"Descriptoin": "Integer a nibh. In quis justo.",
 			"UnitPrice ": "$682.90",
-			"Stoke": 783,
+			"Stock": 783,
 			"CategoryID": "821a8e28-df5d-43c3-a8ee-8830096866cb",
 			"ShopID": "6e3f7fcc-1a47-48b5-8de6-1ab07efc04da"
 		},
@@ -795,7 +795,7 @@
 			"Name": "Soup - Knorr, Ministrone",
 			"Descriptoin": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
 			"UnitPrice ": "$158.50",
-			"Stoke": 511,
+			"Stock": 511,
 			"CategoryID": "34472c30-fca9-423a-b4c8-27114778c3fc",
 			"ShopID": "b1b8b7fc-c2ed-49a1-87ce-653cbfcdb60b"
 		},
@@ -804,7 +804,7 @@
 			"Name": "Wine - Magnotta - Red, Baco",
 			"Descriptoin": "Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
 			"UnitPrice ": "$496.73",
-			"Stoke": 386,
+			"Stock": 386,
 			"CategoryID": "84b020fd-ada6-4bd6-ae83-263f7117a9bf",
 			"ShopID": "9bd0de6d-6412-407c-9073-df5757b005a4"
 		},
@@ -813,7 +813,7 @@
 			"Name": "Potatoes - Peeled",
 			"Descriptoin": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
 			"UnitPrice ": "$182.89",
-			"Stoke": 683,
+			"Stock": 683,
 			"CategoryID": "56ef7662-4443-4e70-acee-84502bdd9197",
 			"ShopID": "1b8ac75a-5069-4c31-93e9-9cfd88ef3c8e"
 		},
@@ -822,7 +822,7 @@
 			"Name": "Rosemary - Dry",
 			"Descriptoin": "Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
 			"UnitPrice ": "$49.86",
-			"Stoke": 252,
+			"Stock": 252,
 			"CategoryID": "1b7b324d-27a3-47f1-a243-030ea1785b83",
 			"ShopID": "a33fe248-9bd9-4fc3-b324-c0710aa6551b"
 		},
@@ -831,7 +831,7 @@
 			"Name": "Beer - Sleemans Cream Ale",
 			"Descriptoin": "Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.",
 			"UnitPrice ": "$221.51",
-			"Stoke": 46,
+			"Stock": 46,
 			"CategoryID": "4ac2acb6-49f0-4ef7-96c7-1ab83d5f71f9",
 			"ShopID": "d0b8a7fe-e09f-423c-acdf-646e7b58b964"
 		},
@@ -840,7 +840,7 @@
 			"Name": "Wine - Magnotta - Pinot Gris Sr",
 			"Descriptoin": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
 			"UnitPrice ": "$478.29",
-			"Stoke": 972,
+			"Stock": 972,
 			"CategoryID": "9c5e3194-7256-45ed-ac81-243084161068",
 			"ShopID": "c8ccd1b2-b400-449c-9978-bd5fd51f378a"
 		},
@@ -849,7 +849,7 @@
 			"Name": "Flour Pastry Super Fine",
 			"Descriptoin": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
 			"UnitPrice ": "$86.22",
-			"Stoke": 545,
+			"Stock": 545,
 			"CategoryID": "b59907e9-f7b9-4009-a17d-9853664bbcc5",
 			"ShopID": "bac60bc0-562a-431d-82c5-5dd2fcfadbe8"
 		},
@@ -858,7 +858,7 @@
 			"Name": "Beer - Creemore",
 			"Descriptoin": "Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.",
 			"UnitPrice ": "$94.84",
-			"Stoke": 60,
+			"Stock": 60,
 			"CategoryID": "11611c01-ea6b-4f97-9728-f8029b45b3e5",
 			"ShopID": "4d01b7e2-71a9-492c-9da3-ba05b58b340e"
 		}
