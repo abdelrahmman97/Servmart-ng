@@ -14,7 +14,7 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MinLengthPipe } from './pages/min-length.pipe';
-import { NgxPaginationModule } from 'ngx-pagination'
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ServicesComponent } from './pages/services/services.component';
 import { SharedModule } from '../shared/shared.module';
 
