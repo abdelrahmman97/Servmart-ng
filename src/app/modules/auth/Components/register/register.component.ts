@@ -33,17 +33,14 @@ export class RegisterComponent implements OnInit {
 
 	onSubmit() {
 		this.user = {
-			"id": Math.round( Math.random() * 10 ),
 			"Email": this.registerForm.get( 'Email' )!.value,
 			"Username": this.registerForm.get( 'Username' )!.value,
 			"Password": this.registerForm.get( 'Password' )!.value,
-			"ConfirmPassword": this.registerForm.get( 'ConfirmPassword' )!.value,
-			"FirstName": this.registerForm.get( 'FirstName' )!.value,
-			"LastName": this.registerForm.get( 'LastName' )!.value,
-			"Phone": this.registerForm.get( 'Phone' )!.value,
+			"FName": this.registerForm.get( 'FirstName' )!.value,
+			"LName": this.registerForm.get( 'LastName' )!.value,
+			"phoneNumber": this.registerForm.get( 'Phone' )!.value,
 			"SSN": this.registerForm.get( 'SSN' )!.value,
-			"AccountType": this.registerForm.get( 'AccountType' )!.value,
-			"Specialization": this.registerForm.get( 'Specialization' )!.value
+			"Role": this.registerForm.get( 'AccountType' )!.value,
 		}
 		console.log( this.user );
 		this.authService.register( this.user );

@@ -22,7 +22,7 @@ export class AuthService {
 		this.authClient.login( user ).subscribe(
 			( token ) => {
 				let data = token as any;
-				localStorage.setItem( this.tokenKey, JSON.stringify( data[0].token ) )
+				localStorage.setItem( this.tokenKey, JSON.stringify( data.Token ) )
 				this.router.navigate( ['/'] );
 				console.log( token );
 			},
