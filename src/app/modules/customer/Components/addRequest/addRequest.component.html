@@ -14,7 +14,7 @@
 						<div class="card-header">
 							<div class="d-flex justify-content-between align-items-center">
 								<p href="#" class="fs-5 fw-medium text-inherit mb-0 d-flex align-items-center gap-3">
-									<i class="fa-duotone fa-location-dot"></i>
+									<i class="fa-duotone fa-file-pen"></i>
 									تفاصيل الخدمة
 								</p>
 
@@ -56,7 +56,7 @@
 						<div class="card-header">
 							<div class="d-flex justify-content-between align-items-center">
 								<p href="#" class="fs-5 fw-medium text-inherit mb-0 d-flex align-items-center gap-3">
-									<i class="fa-duotone fa-location-dot"></i>
+									<i class="fa-duotone fa-sack-dollar"></i>
 									الميزانية والمدة
 								</p>
 
@@ -134,7 +134,7 @@
 						<div class="card-header">
 							<div class="d-flex justify-content-between align-items-center">
 								<p href="#" class="fs-5 fw-medium text-inherit mb-0 d-flex align-items-center gap-3">
-									<i class="fa-duotone fa-location-dot"></i>
+									<i class="fa-duotone fa-photo-film"></i>
 									اضف بعض المرفقات
 								</p>
 
@@ -147,27 +147,38 @@
 
 						<div class="card-body">
 
+							<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="error">
+								<button type="button" class="btn-close" data-bs-dismiss="alert"
+									aria-label="Close"></button>
+								يمكنك ان تضيف الي 5 صورة فقط
+							</div>
+
+
 							<div class="mb-3">
 								<label for="formImages" class="form-label">صور</label>
 								<input class="form-control" type="file" id="formImages" accept="image/*" multiple
-									(change)="onFileChange($event)" formControlName="images">
-								<small>يمكنك ان تضيف من 5 الي 20 صورة</small>
+									(change)="onImagesChange($event)" formControlName="images">
+								<small>يمكنك ان تضيف الي 5 صورة</small>
 							</div>
 
 							<div *ngIf="uploadedImages.length != 0">
-								<div class="grid">
-									<div class="g-col-4" *ngFor="let image of uploadedImages">
-										<img  [src]="image" class="img-thumbnail w-25 h-25" alt="">
+								<div class="d-flex flex-row align-items-start flex-wrap">
+									<div class="ms-2 d-flex flex-column" *ngFor="let image of uploadedImages">
+										<img [src]="image" class="img-thumbnail " alt=""
+											style="width: 100px; height: 100px;">
+										<button class="btn btn-danger-soft btn-sm"
+											(click)="removeImage(image)">remove</button>
 									</div>
 								</div>
 							</div>
 
 							<div class="mb-3">
-								<label for="formImages" class="form-label">فيديو</label>
-								<input class="form-control" type="file" id="formImages" accept="video/*" multiple
-									formControlName="video">
+								<label for="formVideo" class="form-label">فيديو</label>
+								<input class="form-control" type="file" id="formVideo" accept="video/*" multiple
+									(change)="onVideoChange($event)" formControlName="video">
 								<small>يمكنك ان تضيف فيديو واحد لا يتعدي الدقيقتين</small>
 							</div>
+
 
 						</div>
 
