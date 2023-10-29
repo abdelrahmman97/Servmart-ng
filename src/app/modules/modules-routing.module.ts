@@ -23,6 +23,7 @@ import { CheckOutComponent } from './customer/Components/check-out/check-out.com
 import { authGuard } from '../shared/guards/AuthGuard/auth.guard';
 import { ServicesComponent } from './pages/services/services.component';
 import { AddRequestComponent } from './customer/Components/addRequest/addRequest.component';
+import { RequestOrdersComponent } from './services-provider/Components/requestOrders/requestOrders.component';
 
 
 
@@ -58,12 +59,13 @@ const routes: Routes = [
 	{ path: 'bids', component: SendOffersComponent, canActivate: [authGuard] },
 	{ path: 'service/:id', component: DetailsComponent },
 	{ path: 'sendOffer/:id', component: ServiceProviderSendOfferComponent, canActivate: [authGuard] },
+	{ path: 'requestsOrders', component: RequestOrdersComponent, canActivate: [authGuard] },
 
 
 ];
 
-@NgModule( {
-	imports: [RouterModule.forChild( routes )],
+@NgModule({
+	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule]
-} )
+})
 export class ModulesRoutingModule { }

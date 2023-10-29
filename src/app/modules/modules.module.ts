@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminModule } from './admin/admin.module';
-import { AuthModule } from './auth/auth.module';
 import { CustomerModule } from './customer/customer.module';
 import { VendorModule } from './vendor/vendor.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
