@@ -24,11 +24,9 @@ export class LoginComponent {
 
 	onSubmit() {
 		this.user = {
-			"email": this.loginForm.controls['email'].value,
-			"password": this.loginForm.controls['password'].value,
-		}
-		console.log( "onSubmit: ", this.user );
-		console.log( "onSubmit: ", this.loginForm.value );
+			"Email": this.loginForm.controls['email'].value,
+			"Password": this.loginForm.controls['password'].value,
+		}		
 
 		this.authService.login( this.user )
 	}

@@ -12,10 +12,11 @@ export class AuthenticationClient {
 
 	login( user: IUserLogIn ) {
 		// return this.http.post( `${environment.apiUrl}/login`, user );
-		return this.http.get( `${environment.apiUrl}/login?email=${user.email}&password=${user.password}` );
+		return this.http.post( `${environment.apiUrl}/User/login`, user );
 	}
 
+	///api/User/register
 	register( user: IUserRegister ) {
-		return this.http.post( `${environment.apiUrl}/register`, user );
+		return this.http.post( `${environment.apiUrl}/User/register`, user );
 	}
 }
