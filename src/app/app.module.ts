@@ -35,6 +35,7 @@ import { TokenInterceptor } from './modules/auth/helpers/token.interceptor';
 		NgxSpinnerModule,
 		CoreModule,
 		SharedModule,
+
 		ModulesModule,
 		MatProgressBarModule
 

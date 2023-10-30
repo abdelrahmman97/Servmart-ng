@@ -14,7 +14,6 @@ import { BottomSidebarComponent } from './components/BottomSidebar/BottomSidebar
 import { CustomCurrencyPipe } from './Pipes/CustomCurrency.pipe';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
-import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -30,7 +29,7 @@ import { FooterComponent } from './components/footer/footer.component';
 		UserDropdownComponent,
 		SidebarComponent,
 		BottomSidebarComponent,
-		FooterComponent,
+
 
 		// Pipes
 		CustomCurrencyPipe,
