@@ -37,6 +37,7 @@ import { CustomCurrencyPipe } from './Pipes/CustomCurrency.pipe';
 	],
 	exports: [
 		HeaderComponent,
+		UserDropdownComponent,
 		CustomCurrencyPipe
 	]
 })

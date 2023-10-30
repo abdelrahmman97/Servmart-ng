@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct } from 'src/app/core/models/IProduct';
+import { IProduct } from 'src/app/core/models/Product/IProduct';
 import { AddProductService } from '../../services/Product/AppProductService.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class ProductListComponent  implements OnInit{
 	errorMessage: string = "";
 	productlist:IProduct[]=[]
 	constructor(private ProductsService: AddProductService ){
-		
+
 	}
 	ngOnInit(): void {
        this.ProductsService.gstAll().subscribe({

@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { IProduct } from 'src/app/core/models/IProduct';
+import { IProduct } from 'src/app/core/models/Product/IProduct';
 
 import { HttpClient } from '@angular/common/http';
 
