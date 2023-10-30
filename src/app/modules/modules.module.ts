@@ -25,7 +25,7 @@ import { FooterComponent } from '../core/components/footer/footer.component';
 		DetailsComponent,
 		MinLengthPipe,
 		ServicesComponent,
-		FooterComponent
+		FooterComponent 
 
 
 	],
