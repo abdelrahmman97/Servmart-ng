@@ -7,13 +7,13 @@ import { IUser } from 'src/app/core/models/IUser';
 } )
 export class LoginService {
 
-	private baseURL = "http://localhost:3000/User";
+	private baseURL = "https://localhost:7013/api/User/login";
 
 	constructor( private http: HttpClient ) { }
 
 	login( user: any ) {
-		// return this.http.post<IUser>( this.baseURL, user );
-		return this.http.get( this.baseURL + `?PasswordHash=${user.password}&Email=${user.email}` );
+		 return this.http.post<IUser>( this.baseURL, user );
+		//return this.http.get( this.baseURL + `?PasswordHash=${user.password}&Email=${user.email}` );
 	}
 
 	getUserByToken( token: string ) {
