@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatProgressBarModule} from '@angular/material/progress-bar'
 
 import { LayoutComponent } from './components/layout/layout.component';
 import { NavSearchComponent } from './components/nav-search/nav-search.component';
@@ -11,7 +12,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BottomSidebarComponent } from './components/BottomSidebar/BottomSidebar.component';
 import { CustomCurrencyPipe } from './Pipes/CustomCurrency.pipe';
-
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -27,13 +30,18 @@ import { CustomCurrencyPipe } from './Pipes/CustomCurrency.pipe';
 		UserDropdownComponent,
 		SidebarComponent,
 		BottomSidebarComponent,
+		FooterComponent,
 
 		// Pipes
-		CustomCurrencyPipe
+		CustomCurrencyPipe,
+
 	],
 	imports: [
 		CommonModule,
-		RouterModule
+		RouterModule,
+		MatProgressBarModule,
+		LoadingBarHttpClientModule,
+		LoadingBarRouterModule
 	],
 	exports: [
 		HeaderComponent,

@@ -46,7 +46,7 @@ const routes: Routes = [
 
 	// Vendor Components
 	{ path: 'addProduct', component: AddProduectsComponent, canActivate: [authGuard] },
-	{ path: 'addWorkHistory', component: AddWorkHistoryComponent, canActivate: [authGuard] },
+	{ path: ' ', component: AddWorkHistoryComponent, canActivate: [authGuard] },
 	{ path: "orderDetails/:id", component: OrderDetailsComponent, canActivate: [authGuard] },
 	{ path: "orderList", component: RequestListComponent, canActivate: [authGuard] },
 	{ path: 'productList', component: ProductListComponent, canActivate: [authGuard] },

@@ -17,6 +17,7 @@ export class RequestListComponent implements OnInit {
 	P=1;
 
 	requestList: IRequest[] = [];
+Request: any;
 	constructor( private serviceRequest: addRequestService ) { }
 
 	ngOnInit(): void {

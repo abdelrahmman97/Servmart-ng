@@ -12,6 +12,7 @@ import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HTTP_INTERCEPTORS,} from '@angular/common/http';
 import { TokenInterceptor } from './modules/auth/helpers/token.interceptor';
+ import { MatProgressBarModule} from '@angular/material/progress-bar'
 
 
 @NgModule( {
@@ -35,6 +36,7 @@ import { TokenInterceptor } from './modules/auth/helpers/token.interceptor';
 		CoreModule,
 		SharedModule,
 		ModulesModule,
+		MatProgressBarModule
 
 	],
 	providers: [

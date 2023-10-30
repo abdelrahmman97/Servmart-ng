@@ -15,7 +15,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { MinLengthPipe } from './pages/min-length.pipe';
 import { ServicesComponent } from './pages/services/services.component';
 import { SharedModule } from '../shared/shared.module';
-
+import { FooterComponent } from '../core/components/footer/footer.component';
 
 @NgModule({
 	declarations: [
@@ -24,7 +24,10 @@ import { SharedModule } from '../shared/shared.module';
 		ShopComponent,
 		DetailsComponent,
 		MinLengthPipe,
-		ServicesComponent
+		ServicesComponent,
+		FooterComponent
+
+
 	],
 	imports: [
 		CommonModule,

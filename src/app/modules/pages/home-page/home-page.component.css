@@ -1,6 +1,6 @@
 .border-0:hover {
-	border-radius: 3px rgb(33, 33, 211);
-
+	border-radius:3px solid blue;
+      transition-duration: 2s ;
 	transform: scale(1.1);
 }
 .te{
@@ -8,3 +8,11 @@
   position: relative;
   right: 41%;
 }
+#box1:hover
+{
+}
+/* .div:hover{
+    transform: scale(1.0);
+	opacity: 1;
+    transition: opacity 4s ease 0s;
+} */
