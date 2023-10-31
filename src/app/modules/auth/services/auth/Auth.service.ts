@@ -68,6 +68,14 @@ export class AuthService {
 		return this.isLoggedIn() ? localStorage.getItem(this.tokenKey) : null;
 	}
 
+	getUsername() {
+		const user = JSON.parse(localStorage.getItem("servmart.auth"));
+		return user.userName;
+	}
+	getProfilePic() {
+		const user = JSON.parse(localStorage.getItem("servmart.auth"));
+		return user.userName;
+	}
 
 	// UPDATE - user type check
 
