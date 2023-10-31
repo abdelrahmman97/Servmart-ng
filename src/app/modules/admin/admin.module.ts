@@ -6,6 +6,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { OrderListComponent } from './Components/order-list/order-list.component';
 import { SingleOrderComponent } from './Components/single-order/single-order.component';
+import { NgxChartComponent } from './Components/ngx-chart/ngx-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 
@@ -15,11 +17,13 @@ import { SingleOrderComponent } from './Components/single-order/single-order.com
 		DashboardComponent,
 		OrderListComponent,
 		SingleOrderComponent,
+		NgxChartComponent
 	],
 	imports: [
 		CommonModule,
 		RouterModule,
 		AdminRoutingModule,
+		NgxChartsModule
 	]
 } )
 export class AdminModule { }

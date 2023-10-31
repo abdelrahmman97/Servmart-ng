@@ -8,23 +8,23 @@ import { ModulesModule } from './modules/modules.module';
 import { SharedModule } from './shared/shared.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './modules/auth/helpers/token.interceptor';
-import {NgxPaginationModule} from 'ngx-pagination'
+import { NgxPaginationModule } from 'ngx-pagination'
 
 
 @NgModule( {
 	declarations: [
 		AppComponent,
-
 	],
 	imports: [
 		BrowserModule,
 		HttpClientModule,
 		AppRoutingModule,
 		ReactiveFormsModule,
-NgxPaginationModule,
+		NgxPaginationModule,
 		CoreModule,
 		SharedModule,
 		ModulesModule,
+
 
 	],
 	providers: [
