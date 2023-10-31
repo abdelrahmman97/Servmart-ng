@@ -18,6 +18,11 @@ export class ServiceRequestService {
 	getAllUserRequests() {
 		return this.httpClient.get<IRequest[]>( this.baseURL );
 	}
+	
+
+
+
+
 
 	// getRequestCategory( name: string ): string {
 	// 	const category = this.CategoriesList.find( item => item.name == name );
