@@ -11,7 +11,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 
-@NgModule( {
+@NgModule({
 	declarations: [
 		AdminLayoutComponent,
 		DashboardComponent,
@@ -25,5 +25,5 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 		AdminRoutingModule,
 		NgxChartsModule
 	]
-} )
+})
 export class AdminModule { }

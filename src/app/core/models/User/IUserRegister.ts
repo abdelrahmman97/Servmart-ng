@@ -6,5 +6,5 @@ export interface IUserRegister {
 	LName: string;
 	phoneNumber: string;
 	SSN: string;
-	Role: string;
+	Role: string[];
 }

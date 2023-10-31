@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BottomSidebarComponent } from './components/BottomSidebar/BottomSidebar.component';
 import { CustomCurrencyPipe } from './Pipes/CustomCurrency.pipe';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -27,6 +28,7 @@ import { CustomCurrencyPipe } from './Pipes/CustomCurrency.pipe';
 		UserDropdownComponent,
 		SidebarComponent,
 		BottomSidebarComponent,
+		FooterComponent,
 
 		// Pipes
 		CustomCurrencyPipe
@@ -38,6 +40,7 @@ import { CustomCurrencyPipe } from './Pipes/CustomCurrency.pipe';
 	exports: [
 		HeaderComponent,
 		UserDropdownComponent,
+		FooterComponent,
 		CustomCurrencyPipe
 	]
 })

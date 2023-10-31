@@ -9,21 +9,20 @@
 			</div>
 			<span *ngIf="showsSuccessMessage" class="text-success">&#10004; تم تحديث المعلومات الشخصية بنجاح!</span>
 			<span *ngIf="showeErrorMessage" class="text-danger">&#10008; خطأ في المعلومات الشخصية </span>
-			<!-- Card body START -->
+
 			<div class="card-body">
-				<!-- Form START -->
-				<form class="row g-3" [formGroup]="accountForm">
+
+				<form class="row g-3" [formGroup]="userInfoForm">
 					<!-- Profile photo -->
 					<div class="col-12">
 						<label class="form-label">ارفع صورة ملقك الشخصى<span class="text-danger">*</span></label>
 						<div class="d-flex align-items-center form">
-							<label class="position-relative me-4" type="file" id="photo"
-								(change)="onFileSelected($event)" accept="image/*" title="Replace this pic">
+							<label class="position-relative ms-4 border rounded-circle" type="file" id="photo"
+								(change)="onFileSelected($event)" accept="image/*" title="user image">
 								<span class="avatar avatar-xl">
-									<img id="uploadfile-1-preview border"
-										class="avatar-img rounded-circle border border-white border-3 shadow"
-										style="width: 200px;" *ngIf="accountForm.get('photo').value"
-										[src]="accountForm.get('photo').value">
+									<img id="uploadfile-1-preview" class="avatar-img rounded-circle shadow"
+										style="width: 200px;" *ngIf="userInfoForm.get('photo').value"
+										[src]="userInfoForm.get('photo').value">
 								</span>
 							</label>
 							<div class="btn btn-sm btn-primary-soft mb-0 form-group">
@@ -40,17 +39,19 @@
 						<label class="form-label" for="FName">الاسم الاول<span class="text-danger">*</span></label>
 						<input type="text" class="form-control" value="" placeholder="ادخل الاسم الاول" id="FName"
 							formControlName="FName"
-							[ngClass]="{'is-invalid': accountForm.get('FName').touched && accountForm.get('FName').invalid}">
-						<span *ngIf="accountForm.get('FName').touched && accountForm.get('FName').hasError('required')"
+							[ngClass]="{'is-invalid': userInfoForm.get('FName').touched && userInfoForm.get('FName').invalid}">
+						<span
+							*ngIf="userInfoForm.get('FName').touched && userInfoForm.get('FName').hasError('required')"
 							class="invalid-feedback">
 							الاسم الاول مطلوب
 						</span>
-						<span *ngIf="accountForm.get('FName').touched && accountForm.get('FName').hasError('minlength')"
+						<span
+							*ngIf="userInfoForm.get('FName').touched && userInfoForm.get('FName').hasError('minlength')"
 							class="invalid-feedback">
 							الاسم يجب ألا يقل عن 3 حروف
 						</span>
 						<span
-							*ngIf="accountForm.get('FName').touched && accountForm.get('FName').hasError('invalidname')"
+							*ngIf="userInfoForm.get('FName').touched && userInfoForm.get('FName').hasError('invalidname')"
 							class="invalid-feedback">
 							لا يمكن أن يحتوي الاسم على أرقام
 						</span>
@@ -62,17 +63,19 @@
 						<label class="form-label" for="LName">الاسم الاخير<span class="text-danger">*</span></label>
 						<input type="text" class="form-control" value="" placeholder="ادخل الاسم الاخير" id="LName"
 							formControlName="LName"
-							[ngClass]="{'is-invalid': accountForm.get('LName').touched && accountForm.get('LName').invalid}">
-						<span *ngIf="accountForm.get('LName').touched && accountForm.get('LName').hasError('required')"
+							[ngClass]="{'is-invalid': userInfoForm.get('LName').touched && userInfoForm.get('LName').invalid}">
+						<span
+							*ngIf="userInfoForm.get('LName').touched && userInfoForm.get('LName').hasError('required')"
 							class="invalid-feedback">
 							الاسم الاخير مطلوب
 						</span>
-						<span *ngIf="accountForm.get('LName').touched && accountForm.get('LName').hasError('minlength')"
+						<span
+							*ngIf="userInfoForm.get('LName').touched && userInfoForm.get('LName').hasError('minlength')"
 							class="invalid-feedback">
 							لا يجب أن يقل الاسم عن 3 حروف
 						</span>
 						<span
-							*ngIf="accountForm.get('LName').touched && accountForm.get('LName').hasError('invalidname')"
+							*ngIf="userInfoForm.get('LName').touched && userInfoForm.get('LName').hasError('invalidname')"
 							class="invalid-feedback">
 							لا يمكن أن يحتوي الاسم على أرقام
 						</span>
@@ -84,11 +87,11 @@
 						<label class="form-label">اسم المستخدم<span class="text-danger" for="Username">*</span></label>
 						<input type="text" class="form-control" value="" placeholder="ادخل اسم المستخدم" id="Username"
 							formControlName="Username"
-							[ngClass]="{'is-invalid': accountForm.get('Username').touched && accountForm.get('Username').invalid}">
+							[ngClass]="{'is-invalid': userInfoForm.get('Username').touched && userInfoForm.get('Username').invalid}">
 						<span
-							*ngIf="accountForm.get('Username').touched && (accountForm.get('Username').hasError('required') || accountForm.get('Username').hasError('minlength'))"
+							*ngIf="userInfoForm.get('Username').touched && (userInfoForm.get('Username').hasError('required') || userInfoForm.get('Username').hasError('minlength'))"
 							class="invalid-feedback">
-							{{ accountForm.get('Username').hasError('required') ? 'اسم المستخدم مطلوب' : 'خطأ في اسم المستخدم' }}
+							{{ userInfoForm.get('Username').hasError('required') ? 'اسم المستخدم مطلوب' : 'خطأ في اسم المستخدم' }}
 						</span>
 
 					</div>
@@ -98,11 +101,11 @@
 						<label class="form-label">رقم الهاتف<span class="text-danger" for="PhoneNo">*</span></label>
 						<input type="text" class="form-control" value="222 555 666" placeholder="ادخل رقم الهاتف"
 							id="PhoneNo" formControlName="PhoneNo"
-							[ngClass]="{'is-invalid': accountForm.get('PhoneNo').touched && accountForm.get('PhoneNo').invalid}">
+							[ngClass]="{'is-invalid': userInfoForm.get('PhoneNo').touched && userInfoForm.get('PhoneNo').invalid}">
 						<span
-							*ngIf="accountForm.get('PhoneNo').touched && (accountForm.get('PhoneNo').hasError('required') || accountForm.get('PhoneNo').hasError('invalidPhoneNumber'))"
+							*ngIf="userInfoForm.get('PhoneNo').touched && (userInfoForm.get('PhoneNo').hasError('required') || userInfoForm.get('PhoneNo').hasError('invalidPhoneNumber'))"
 							class="invalid-feedback">
-							{{ accountForm.get('PhoneNo').hasError('required') ? 'رقم الهاتف مطلوب' : 'خطأ في رقم الهاتف' }}
+							{{ userInfoForm.get('PhoneNo').hasError('required') ? 'رقم الهاتف مطلوب' : 'خطأ في رقم الهاتف' }}
 						</span>
 
 					</div>
@@ -112,11 +115,11 @@
 						<label class="form-label">رقم الهوية<span class="text-danger" for="SSN">*</span></label>
 						<input type="text" class="form-control" value="222 555 666" placeholder="ادخل رقم الهوية"
 							id="SSN" formControlName="SSN"
-							[ngClass]="{'is-invalid': accountForm.get('SSN').touched && accountForm.get('SSN').invalid}">
+							[ngClass]="{'is-invalid': userInfoForm.get('SSN').touched && userInfoForm.get('SSN').invalid}">
 						<span
-							*ngIf="accountForm.get('SSN').touched && (accountForm.get('SSN').hasError('required') || accountForm.get('SSN').hasError('invalidsnn'))"
+							*ngIf="userInfoForm.get('SSN').touched && (userInfoForm.get('SSN').hasError('required') || userInfoForm.get('SSN').hasError('invalidsnn'))"
 							class="invalid-feedback">
-							{{ accountForm.get('SSN').hasError('required') ? 'رقم الهوية مطلوب' : 'خطأ في رقم الهوية' }}
+							{{ userInfoForm.get('SSN').hasError('required') ? 'رقم الهوية مطلوب' : 'خطأ في رقم الهوية' }}
 						</span>
 
 					</div>
@@ -127,12 +130,12 @@
 						<input type="date" class="form-control flatpickr" value="29 Aug 1996"
 							placeholder="Enter date of birth" data-date-format="d M Y" id="Birthday"
 							formControlName="Birthday"
-							[ngClass]="{'is-invalid': accountForm.get('Birthday').touched && accountForm.get('Birthday').invalid}">
+							[ngClass]="{'is-invalid': userInfoForm.get('Birthday').touched && userInfoForm.get('Birthday').invalid}">
 						<span
-							*ngIf="accountForm.get('Birthday').hasError('required') && accountForm.get('Birthday').touched"
+							*ngIf="userInfoForm.get('Birthday').hasError('required') && userInfoForm.get('Birthday').touched"
 							class="invalid-feedback"> sss </span>
 						<span
-							*ngIf="accountForm.get('Birthday').hasError('futureDate') && accountForm.get('Birthday').touched"
+							*ngIf="userInfoForm.get('Birthday').hasError('futureDate') && userInfoForm.get('Birthday').touched"
 							class="invalid-feedback"> invalidEmail.
 
 						</span>
@@ -165,9 +168,9 @@
 						<label class="form-label" for="Address">العنوان</label>
 						<textarea class="form-control" rows="3" spellcheck="false" id="Address"
 							formControlName="Address"
-							[ngClass]="{'is-invalid': accountForm.get('Address').touched && accountForm.get('Address').invalid}"></textarea>
+							[ngClass]="{'is-invalid': userInfoForm.get('Address').touched && userInfoForm.get('Address').invalid}"></textarea>
 						<span
-							*ngIf="accountForm.get('Address').hasError('required') && accountForm.get('Address').touched"
+							*ngIf="userInfoForm.get('Address').hasError('required') && userInfoForm.get('Address').touched"
 							class="invalid-feedback"> العنوان مطلوب </span>
 
 					</div>
@@ -177,24 +180,25 @@
 						<button href="#" class="btn btn-primary-soft mb-0" (click)="saveAccount()">حفظ التغيرات</button>
 					</div>
 				</form>
-				<!-- Form END -->
-			</div>
-			<!-- Card body END -->
-		</div>
-		<!-- Personal info END -->
 
+			</div>
+
+		</div>
 
 		<div class="card border">
 			<div class="card-header">
 				<h4 class="card-header-title">تحديث نوع الحساب</h4>
 			</div>
+			<span *ngIf="showaSuccessMessage" class="text-success">&#10004; تم تحديث بنجاح!</span>
+			<span *ngIf="showaErrorMessage" class="text-danger">&#10008; حدث خطأ اثناء التحديث</span>
 			<div class="card-body">
-				<form>
+
+				<form [formGroup]="accountTypeForm">
 					<div class="row">
 
 						<div class="col-md-6">
-							<label class="form-label">نوع الحساب<span class="text-danger" for="RoleID">*</span></label>
-							<select class="form-select js-choice" id="RoleID" formControlName="RoleID">
+							<label class="form-label">نوع الحساب<span class="text-danger" for="role">*</span></label>
+							<select class="form-select js-choice" id="role" formControlName="role">
 								<option *ngFor="let work of workoption">{{work}}</option>
 							</select>
 						</div>
@@ -206,8 +210,15 @@
 							</select>
 						</div>
 
+						<div class="col-12 text-start mt-3">
+							<button href="#" class="btn btn-primary-soft mb-0" (click)="updateSettings()">
+								حفظ التغيرات
+							</button>
+						</div>
+
 					</div>
 				</form>
+
 			</div>
 		</div>
 
@@ -242,11 +253,11 @@
 				</form>
 			</div>
 		</div>
-		<!-- Update email END -->
 
-		<!-- Update Password START -->
+
+
 		<div class="card border">
-			<!-- Card header -->
+
 			<div class="card-header border-bottom">
 				<h4 class="card-header-title">تحديث كلمة السر</h4>
 
@@ -255,16 +266,16 @@
 				<span *ngIf="showpSuccessMessage" class="text-success">&#10004; تم تحديث كلمة السر بنجاح!</span>
 				<span *ngIf="showpErrorMessage" class="text-danger">&#10008; خطأ في كلمة السر ;</span>
 			</div>
-			<!-- Card body START -->
+
 			<form class="card-body" [formGroup]="passform">
 				<!-- Current password -->
 				<div class="mb-3">
 					<label class="form-label" for="current">كلمة السر الحالية </label>
 					<div class="input-group">
 						<input class="form-control fakepassword" placeholder="ادخل كلمة السر الحالية"
-							[type]="showPassword1 ? 'text' : 'password'" id="current" formControlName="current"
+							[type]="showPassword ? 'text' : 'password'" id="current" formControlName="current"
 							[ngClass]="{'is-invalid': passform.get('current').touched && passform.get('current').invalid}">
-						<span class="input-group-text p-0 bg-transparent" (click)="showPassword11()">
+						<span class="input-group-text p-0 bg-transparent" (click)="showPassword=!showPassword">
 							<i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
 						</span>
 						<span *ngIf="passform.get('current').hasError('required') && passform.get('current').touched"
@@ -277,9 +288,9 @@
 					<label class="form-label" for="New"> ادخل كلمة السر الجديدة</label>
 					<div class="input-group">
 						<input class="form-control fakepassword" placeholder="ادخل كلمة السر الجديدة"
-							[type]="showPassword2 ? 'text' : 'password'" id="New" formControlName="New"
+							[type]="showPassword ? 'text' : 'password'" id="New" formControlName="New"
 							[ngClass]="{'is-invalid': passform.get('New').touched && passform.get('New').invalid}">
-						<span class="input-group-text p-0 bg-transparent" (click)="showPassword22()">
+						<span class="input-group-text p-0 bg-transparent" (click)="showPassword=!showPassword">
 							<i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
 						</span>
 						<span
@@ -297,9 +308,9 @@
 
 					<div class="input-group">
 						<input class="form-control fakepassword" placeholder="ادخل كلمة السر الجديدة"
-							[type]="showPassword3 ? 'text' : 'password'" id="confirm" formControlName="confirm"
+							[type]="showPassword ? 'text' : 'password'" id="confirm" formControlName="confirm"
 							[ngClass]="{'is-invalid': passform.get('confirm').touched && passform.get('confirm').invalid}">
-						<span class="input-group-text p-0 bg-transparent" (click)="showPassword33()">
+						<span class="input-group-text p-0 bg-transparent" (click)="showPassword=!showPassword">
 							<i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
 						</span>
 						<span
@@ -313,9 +324,9 @@
 					<a (click)="updatepass()" class="btn btn-primary-soft mb-0">تحديث كلمة السر</a>
 				</div>
 			</form>
-			<!-- Card body END -->
+
 		</div>
-		<!-- Update Password END -->
+
 	</div>
-	<!-- Your content goes here -->
+
 </div>
