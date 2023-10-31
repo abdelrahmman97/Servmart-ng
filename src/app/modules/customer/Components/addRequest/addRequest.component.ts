@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IRequest } from 'src/app/core/models/IRequest';
 
 @Component({
 	selector: 'app-addRequest',
@@ -10,7 +11,13 @@ import { Router } from '@angular/router';
 })
 export class AddRequestComponent implements OnInit {
 
-	constructor(private router: Router, private http: HttpClient) { }
+
+     IRequest!:IRequest;
+	FromBuilder: any;
+
+
+
+	constructor(private router: Router, private http: HttpClient, FromBuilder:FormBuilder) { }
 
 
 	step: number = 1;
@@ -26,7 +33,30 @@ export class AddRequestComponent implements OnInit {
 			images: new FormControl(''),
 			video: new FormControl('')
 		});
+	 this.initForm();
 	}
+	initForm() {
+		this.AddRequestForm = this.FromBuilder.group({
+		
+		  title: ['', Validators.required],
+		  details: ['', Validators.required],
+		  expectSalary: ['', Validators.required],
+		  status: ['', Validators.required],
+		  startDate: ['', Validators.required],
+		  endDate: ['', Validators.required],
+		  rateValue: ['', Validators.required],
+		  rateMessage: ['']
+		});
+	  }
+	  submitForm() {
+		if (this.AddRequestForm.valid) {
+		  // Perform the desired action with the form data
+		  console.log(this.AddRequestForm.value);
+		}
+	  }
+
+
+
 
 	onImagesChange(event: any) {
 		this.error = false;
