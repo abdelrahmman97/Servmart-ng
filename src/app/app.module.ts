@@ -9,9 +9,10 @@ import { SharedModule } from './shared/shared.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './modules/auth/helpers/token.interceptor';
 import { NgxPaginationModule } from 'ngx-pagination'
+import { ToastNoAnimationModule } from 'ngx-toastr';
 
 
-@NgModule( {
+@NgModule({
 	declarations: [
 		AppComponent,
 	],
@@ -25,11 +26,17 @@ import { NgxPaginationModule } from 'ngx-pagination'
 		SharedModule,
 		ModulesModule,
 
-
+		ToastNoAnimationModule.forRoot(
+			{
+				timeOut: 10000,
+				positionClass: 'toast-bottom-right',
+				preventDuplicates: true,
+			}
+		),
 	],
 	providers: [
 		{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
 	],
 	bootstrap: [AppComponent]
-} )
+})
 export class AppModule { }
