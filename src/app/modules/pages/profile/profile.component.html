@@ -146,234 +146,51 @@
 				<div class="card-body">
 					<div class="row gy-4">
 						<!-- project example -->
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" *ngFor="let item of items">
 							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
+								<img [src]="transform(item.file.fileContents)"
 									class="card-img-top" alt="...">
 								<div class="card-body">
 									<div class="d-flex flex-column">
 										<h5 class="card-title">
-											عنوان المشروع
+											{{item.title}}
 										</h5>
 										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
+											
+											{{item.categoryName}}
+
 										</span>
 									</div>
 									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										Recusandae nihil molestiae itaque dignissimos nam
-										deleniti
-										laudantium doloribus voluptates odio velit? Ullam,
-										dignissimos
-										architecto? Est dolore, voluptatibus laudantium dolorem
-										esse
-										minus?
+										{{item.discription}}
+
 									</p>
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body">
-									<div class="d-flex flex-column">
-										<h5 class="card-title">
-											عنوان المشروع
-										</h5>
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										In,
-										voluptas obcaecati necessitatibus eaque, veritatis
-										quidem
-										consequatur vel perspiciatis commodi dolor ullam
-										cupiditate
-										ut
-										atque, sint maiores eligendi at hic dicta?
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body">
-									<div class="d-flex flex-column">
-										<h5 class="card-title">
-											عنوان المشروع
-										</h5>
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										In,
-										voluptas obcaecati necessitatibus eaque, veritatis
-										quidem
-										consequatur vel perspiciatis commodi dolor ullam
-										cupiditate
-										ut
-										atque, sint maiores eligendi at hic dicta?
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body">
-									<div class="d-flex flex-column">
-										<h5 class="card-title">
-											عنوان المشروع
-										</h5>
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										In,
-										voluptas obcaecati necessitatibus eaque, veritatis
-										quidem
-										consequatur vel perspiciatis commodi dolor ullam
-										cupiditate
-										ut
-										atque, sint maiores eligendi at hic dicta?
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body">
-									<div class="d-flex flex-column">
-										<h5 class="card-title">
-											عنوان المشروع
-										</h5>
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										In,
-										voluptas obcaecati necessitatibus eaque, veritatis
-										quidem
-										consequatur vel perspiciatis commodi dolor ullam
-										cupiditate
-										ut
-										atque, sint maiores eligendi at hic dicta?
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body">
-									<div class="d-flex flex-column">
-										<h5 class="card-title">
-											عنوان المشروع
-										</h5>
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										In,
-										voluptas obcaecati necessitatibus eaque, veritatis
-										quidem
-										consequatur vel perspiciatis commodi dolor ullam
-										cupiditate
-										ut
-										atque, sint maiores eligendi at hic dicta?
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body">
-									<div class="d-flex flex-column">
-										<h5 class="card-title">
-											عنوان المشروع
-										</h5>
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										In,
-										voluptas obcaecati necessitatibus eaque, veritatis
-										quidem
-										consequatur vel perspiciatis commodi dolor ullam
-										cupiditate
-										ut
-										atque, sint maiores eligendi at hic dicta?
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body">
-									<div class="d-flex flex-column">
-										<h5 class="card-title">
-											عنوان المشروع
-										</h5>
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										In,
-										voluptas obcaecati necessitatibus eaque, veritatis
-										quidem
-										consequatur vel perspiciatis commodi dolor ullam
-										cupiditate
-										ut
-										atque, sint maiores eligendi at hic dicta?
-									</p>
-								</div>
-							</div>
-						</div>
+					
 					</div>
 				</div>
 			</div>
 		</div>
+		    <div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4">
+
+        <p class="mb-sm-0 text-center text-sm-start"></p>
+
+        <nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
+            <ul class="pagination pagination-sm pagination-primary-soft mb-0">
+                <li class="page-item z-0">
+                    <button class="page-link" [disabled]="currentPage == 1" (click)="onPreviousClick()">السابق</button>
+                </li>
+                <li class="page-item z-0 " *ngFor="let pageNumber of getPageNumbers()">
+                    <button class="page-link" [class]="pageNumber == currentPage? 'active' :''" (click)="onPageChange(pageNumber)" [disabled]="pageNumber == currentPage">{{pageNumber}}</button>
+                </li>
+                <li class="page-item z-0">
+                    <button class="page-link" [disabled]="currentPage == totalPages" (click)="onNextClick()">التالي</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
 	</section>
 
 	<!-- services section -->

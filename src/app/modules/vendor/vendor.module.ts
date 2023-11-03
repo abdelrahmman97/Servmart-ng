@@ -21,7 +21,8 @@ import {NgxPaginationModule} from 'ngx-pagination'
 		ProductListComponent,
 		SendOffersComponent,
   		AddWorkHistoryComponent,
-		OrderDetailsComponent
+		OrderDetailsComponent,
+		RequestListComponent
 	],
 	imports: [
 		CommonModule,
