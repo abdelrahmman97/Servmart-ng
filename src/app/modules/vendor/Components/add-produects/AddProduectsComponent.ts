@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AddProductService } from '../../services/Product/AppProductService.service';
-import { IProduct } from 'src/app/core/models/IProduct';
+import { IProduct } from 'src/app/core/models/Product/IProduct';
 
 
 @Component({

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AddProductService } from '../../services/Product/AppProductService.service';
-import { IProduct } from 'src/app/core/models/IProduct';
+import { IProduct } from 'src/app/core/models/Product/IProduct';
 
 @Component({
   selector: 'app-product-details',

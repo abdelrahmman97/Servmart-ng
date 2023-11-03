@@ -1,35 +1,39 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/Auth.service';
+import { ToastrService } from 'ngx-toastr';
 
-@Component( {
+@Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.css']
-} )
+})
 export class LoginComponent {
 
 	user: any;
 	loginForm: FormGroup;
 
-	constructor( private authService: AuthService ) { }
+	constructor(private authService: AuthService, private toastr: ToastrService) { }
 
 	ngOnInit(): void {
-		this.loginForm = new FormGroup( {
-			email: new FormControl(),
-			password: new FormControl()
-		} );
+		this.loginForm = new FormGroup({
+			email: new FormControl(null, [Validators.required]),
+			password: new FormControl(null, [Validators.required]),
+		});
 	}
 
 	onSubmit() {
 		this.user = {
-			"email": this.loginForm.controls['email'].value,
-			"password": this.loginForm.controls['password'].value,
+			"Email": this.loginForm.controls['email'].value,
+			"Password": this.loginForm.controls['password'].value,
 		}
-		console.log( "onSubmit: ", this.user );
-		console.log( "onSubmit: ", this.loginForm.value );
 
-		this.authService.login( this.user )
+		if (this.loginForm.invalid) {
+			this.toastr.error("برجاء ادخال بريد الكتروني صالح وكملة مرور صحيحة", "خطأ")
+			return;
+		}
+
+		this.authService.login(this.user)
 	}
 }

@@ -1,7 +1,8 @@
 <!-- =============== Navigation ================ -->
-<nav class="navbar navbar-expand-lg p-4 px-2 custom-navbar">
+<nav class="navbar navbar-expand-lg p-4 px-2 custom-navbar border-bottom">
 	<div class="container-fluid">
 		<div class="d-flex justify-content-between align-items-center w-100">
+
 			<!-- Search | menu toggler -->
 			<div class="d-flex align-items-center">
 				<button class="text-inherit d-block d-xl-none p-0 p-sm-2 me-4 fs-3 btn" type="button"
@@ -23,8 +24,10 @@
 					</form>
 				</div>
 			</div>
+
 			<!-- Profile and Notification -->
-			<ul class="nav flex-row align-items-center list-unstyled ms-xl-auto gap-2">
+			<ul class="nav flex-row align-items-center list-unstyled me-xl-auto gap-2">
+
 				<!-- Notification dropdown START -->
 				<li class="nav-item dropdown">
 					<!-- Notification button -->
@@ -35,7 +38,8 @@
 					<!-- Notification dote -->
 					<span class="notif-badge animation-blink"></span>
 					<!-- Notification -->
-					<div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md shadow-lg p-0">
+					<div
+						class="dropdown-menu dropdown-animation dropdown-menu-start dropdown-menu-size-md shadow-lg p-0">
 						<div class="card border-0">
 							<!-- Card header -->
 							<div
@@ -77,6 +81,7 @@
 						</div>
 					</div>
 				</li>
+
 				<!-- Profile dropdown -->
 				<li class="nav-item dropdown">
 					<!-- Avatar -->
@@ -86,7 +91,7 @@
 						<img class="avatar-img rounded-2" src="https://images.placeholders.dev/?width=200&height=200"
 							alt="avatar">
 					</a>
-					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
+					<ul class="dropdown-menu dropdown-animation dropdown-menu-start shadow pt-3"
 						aria-labelledby="profileDropdown">
 						<!-- Links -->
 						<li>
@@ -133,7 +138,9 @@
 						</li>
 					</ul>
 				</li>
+
 			</ul>
+
 		</div>
 	</div>
 </nav>
@@ -141,173 +148,177 @@
 <!-- ========================= Main ==================== -->
 <div class="main">
 
-	<!-- ========================= Navbar vertical ==================== -->
-	<div class="custom-navbar-vertical d-none d-xl-block">
-		<div class="navbar-vertical overflow-y-hidden border">
-			<a href="/" class="d-flex align-items-center m-4 mb-md-0 me-md-auto text-decoration-none">
-				<img src="./../assets/images/logo.png" class="w-25" alt="Servmart">
-				<h4 class="m-0 p-0">Servmart</h4>
-			</a>
-			<ul class="nav nav-pills-primary-soft flex-column overflow-y-scroll overflow-x-hidden p-4">
-				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start active" href="#">
-						<i class="fa-duotone fa-house"></i>
-						<span class="d-none d-xl-inline">Dashboard</span>
-					</a>
-				</li>
-				<!-- <li class="nav-item mt-3 mb-3">
-                            <span class="nav-label">Store Managements</span>
-                        </li> -->
-				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
-						<i class="fa-duotone fa-users"></i>
-						<span class="d-none d-xl-inline">Customers</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
-						data-bs-toggle="collapse" data-bs-target="#vendors" aria-expanded="false"
-						aria-controls="vendors">
-						<i class="fa-duotone fa-store"></i>
-						<span class="d-none d-xl-inline">Vendors</span>
-					</a>
-					<div id="vendors" class="collapse p-2" data-bs-parent="#sideNavbar">
-						<ul class="nav flex-column list-group">
-							<li class="nav-item">
-								<a class="nav-link with-dot" href="#">
-									Services Providers
-								</a>
-							</li>
-							<!-- Nav item -->
-							<li class="nav-item">
-								<a class="nav-link with-dot" href="#">
-									Shops Owner
-								</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
-						<i class="fa-duotone fa-bolt"></i>
-						<span class="d-none d-xl-inline">Services</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
-						<i class="fa-duotone fa-cart-shopping"></i>
-						<span class="d-none d-xl-inline">Products</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
-						<i class="fa-duotone fa-tags"></i>
-						<span class="d-none d-xl-inline">Categories</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
-						<i class="fa-duotone fa-basket-shopping"></i>
-						<span class="d-none d-xl-inline">Orders</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
-						<i class="fa-duotone fa-star-sharp-half"></i>
-						<span class="d-none d-xl-inline">Reviews</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-
-
-	<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-		<div class="offcanvas-header">
-			<a href="/" class="d-flex align-items-center m-4 mb-md-0 me-md-auto text-decoration-none">
-				<img src="./../assets/images/logo.png" class="w-25" alt="Servmart">
-				<h4 class="m-0 p-0">Servmart</h4>
-			</a>
-			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-		</div>
-		<div class="offcanvas-body overflow-y-scroll">
-			<ul class="nav nav-pills-primary-soft flex-column overflow-y-scroll overflow-x-hidden p-4">
-				<li class="nav-item">
-					<a class="nav-link justify-content-start active" href="#">
-						<i class="fa-duotone fa-house"></i>
-						<span>Dashboard</span>
-					</a>
-				</li>
-				<!-- <li class="nav-item mt-3 mb-3">
-                                                <span class="nav-label">Store Managements</span>
-                                            </li> -->
-				<li class="nav-item">
-					<a class="nav-link justify-content-center" href="#">
-						<i class="fa-duotone fa-users"></i>
-						<span>Customers</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center btn-toggle" href="#" data-bs-toggle="collapse"
-						data-bs-target="#vendors" aria-expanded="false" aria-controls="vendors">
-						<i class="fa-duotone fa-store"></i>
-						<span>Vendors</span>
-					</a>
-					<div id="vendors" class="collapse p-2" data-bs-parent="#sideNavbar">
-						<ul class="nav flex-column list-group">
-							<li class="nav-item">
-								<a class="nav-link with-dot" href="#">
-									Services Providers
-								</a>
-							</li>
-							<!-- Nav item -->
-							<li class="nav-item">
-								<a class="nav-link with-dot" href="#">
-									Shops Owner
-								</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center" href="#">
-						<i class="fa-duotone fa-bolt"></i>
-						<span>Services</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center" href="#">
-						<i class="fa-duotone fa-cart-shopping"></i>
-						<span>Products</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center" href="#">
-						<i class="fa-duotone fa-tags"></i>
-						<span>Categories</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center" href="#">
-						<i class="fa-duotone fa-basket-shopping"></i>
-						<span>Orders</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center" href="#">
-						<i class="fa-duotone fa-star-sharp-half"></i>
-						<span>Reviews</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-
 	<div class="main-content">
 		<section class="container p-0">
 			<router-outlet></router-outlet>
 		</section>
 	</div>
 
+	<!-- ========================= Navbar vertical ==================== -->
+	<div class="custom-navbar-vertical d-none d-xl-block">
+		<div class="navbar-vertical overflow-y-hidden border">
+			<a href="/" class="d-flex align-items-center m-4 mb-md-0 me-md-auto text-decoration-none">
+				<!-- <img src="./../assets/images/logo.png" class="w-25" alt="Servmart"> -->
+				<h4 class="m-0 p-0">Servmart</h4>
+			</a>
+			<ul class="nav nav-pills-primary-soft flex-column flex-nowrap overflow-y-auto overflow-x-hidden p-4">
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" [routerLink]="['/dashboard']"
+						routerLinkActive="active">
+						<i class="fa-duotone fa-house"></i>
+						<span class="d-none d-xl-inline">لوحة التحكم الرئيسية</span>
+					</a>
+				</li>
+				<!-- <li class="nav-item mt-3 mb-3">
+		                            <span class="nav-label">Store Managements</span>
+		                        </li> -->
+				<!-- <li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-users"></i>
+						<span class="d-none d-xl-inline">العملاء</span>
+					</a>
+				</li> -->
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
+						data-bs-toggle="collapse" data-bs-target="#vendors" aria-expanded="false"
+						aria-controls="vendors">
+						<i class="fa-duotone fa-users"></i>
+						<span class="d-none d-xl-inline">المستخدمين</span>
+					</a>
+					<div id="vendors" class="collapse p-2" data-bs-parent="#sideNavbar">
+						<ul class="nav flex-column list-group">
+							<li class="nav-item">
+								<a class="nav-link with-dot" href="#">
+									العملاء
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link with-dot" href="#">
+									مقدمي الخدمات
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link with-dot" href="#">
+									البائعين
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-bolt"></i>
+						<span class="d-none d-xl-inline">الخدمات</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-cart-shopping"></i>
+						<span class="d-none d-xl-inline">المنتجات</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-tags"></i>
+						<span class="d-none d-xl-inline">تصنيفات المنتجات</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-basket-shopping"></i>
+						<span class="d-none d-xl-inline">الطلبات</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+						<i class="fa-duotone fa-star-sharp-half"></i>
+						<span class="d-none d-xl-inline">المراجعات</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+		<div class="offcanvas-header">
+			<a href="/" class="d-flex align-items-center m-4 mb-md-0 me-md-auto text-decoration-none">
+				<!-- <img src="./../assets/images/logo.png" class="w-25" alt="Servmart"> -->
+				<h4 class="m-0 p-0">Servmart</h4>
+			</a>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body overflow-y-auto p-0">
+			<ul class="nav nav-pills-primary-soft flex-column p-4">
+				<li class="nav-item">
+					<a class="nav-link justify-content-start" [routerLink]="['/dashboard']" routerLinkActive="active" >
+						<i class="fa-duotone fa-house"></i>
+						<span>لوحة التحكم الرئيسية</span>
+					</a>
+				</li>
+				<!-- <li class="nav-item">
+					<a class="nav-link justify-content-center" href="#">
+						<i class="fa-duotone fa-users"></i>
+						<span>العملاء</span>
+					</a>
+				</li> -->
+				<li class="nav-item">
+					<a class="nav-link justify-content-start btn-toggle" href="#" data-bs-toggle="collapse"
+						data-bs-target="#vendors" aria-expanded="false" aria-controls="vendors">
+						<i class="fa-duotone fa-users"></i>
+						<span>المستخدمين</span>
+					</a>
+					<div id="vendors" class="collapse p-2" data-bs-parent="#sideNavbar">
+						<ul class="nav flex-column list-group">
+							<li class="nav-item">
+								<a class="nav-link with-dot" href="#">
+									العملاء
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link with-dot" href="#">
+									مقدمي الخدمات
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link with-dot" href="#">
+									البائعين
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-start" href="#">
+						<i class="fa-duotone fa-bolt"></i>
+						<span>الخدمات</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-start" href="#">
+						<i class="fa-duotone fa-cart-shopping"></i>
+						<span>المنتجات</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-start" href="#">
+						<i class="fa-duotone fa-tags"></i>
+						<span>تصنيفات المنتجات</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-start" href="#">
+						<i class="fa-duotone fa-basket-shopping"></i>
+						<span>الطلبات</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link justify-content-start" href="#">
+						<i class="fa-duotone fa-star-sharp-half"></i>
+						<span>المراجعات</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 
 </div>

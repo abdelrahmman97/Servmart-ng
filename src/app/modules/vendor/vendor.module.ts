@@ -6,10 +6,9 @@ import { AddProduectsComponent } from './Components/add-produects/AddProduectsCo
 import { RouterModule } from '@angular/router';
 import { SendOffersComponent } from './Components/SendOffers/SendOffers.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AddWorkHistoryComponent } from '../services-provider/Components/add-work-history/add-work-history.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { OrderDetailsComponent } from './Components/order-details/order-details.component';
-import {NgxPaginationModule} from 'ngx-pagination'
+import { NgxPaginationModule } from 'ngx-pagination'
 
 
 
@@ -20,9 +19,9 @@ import {NgxPaginationModule} from 'ngx-pagination'
 		AddProduectsComponent,
 		ProductListComponent,
 		SendOffersComponent,
-  		AddWorkHistoryComponent,
 		OrderDetailsComponent,
-		RequestListComponent
+		RequestListComponent,
+		OrderDetailsComponent
 	],
 	imports: [
 		CommonModule,

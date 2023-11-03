@@ -1,64 +1,110 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth/Auth.service';
 import { IUserRegister } from 'src/app/core/models/User/IUserRegister';
+import { ToastrService } from 'ngx-toastr';
 
-@Component( {
+@Component({
 	selector: 'app-register',
 	templateUrl: './register.component.html',
 	styleUrls: ['./register.component.css']
-} )
+})
 export class RegisterComponent implements OnInit {
 
 	registerForm!: FormGroup;
 	user!: IUserRegister;
 
-	constructor( private authService: AuthService ) { }
+	constructor(private authService: AuthService, private toastr: ToastrService, private fb: FormBuilder) { }
 
 	ngOnInit(): void {
-		this.registerForm = new FormGroup( {
-			Email: new FormControl( '', Validators.required ),
-			Username: new FormControl( '', Validators.required ),
-			Password: new FormControl( '', Validators.required ),
-			ConfirmPassword: new FormControl( '', Validators.required ),
-			FirstName: new FormControl( '', Validators.required ),
-			LastName: new FormControl( '', Validators.required ),
-			Phone: new FormControl( '', Validators.required ),
-			SSN: new FormControl( '', Validators.required ),
-			AccountType: new FormControl( '', Validators.required ),
-			Specialization: new FormControl( '', Validators.required ),
-		} );
+		this.registerForm = this.fb.group({
+			Email: ['', [Validators.required, (control: any) => {
+				const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+				const isValid = emailPattern.test(control.value);
+				if (control.value == '') {
+					return Validators.required;
+				}
+				else {
+					return isValid ? null : { invalidEmail: true };
+				}
+			}]],
+			Username: ['', [Validators.required]],
+			Password: ['', [Validators.required, Validators.minLength(8)]],
+			ConfirmPassword: ['', [Validators.required]],
+			FirstName: ['', [Validators.required]],
+			LastName: ['', [Validators.required]],
+			Phone: ['', [Validators.required, (control: any) => {
+				const phoneNumberPattern = /^01[0-2,5]\d{1,8}$/;
+				const isValid = phoneNumberPattern.test(control.value);
+				if (control.value == '') {
+					return Validators.required;
+				}
+				else {
+					return isValid ? null : { invalidPhoneNumber: true };
+				}
+			}]],
+			SSN: ['', [Validators.required, (control: any) => {
+				const ssnpattern = /^([1-9]{1})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})[0-9]{3}([0-9]{1})[0-9]{1}$/;
+				const isValid = ssnpattern.test(control.value);
+				if (control.value == '') {
+					return Validators.required;
+				} else {
+					return isValid ? null : { invalidsnn: true };
+				}
+			}]],
+			AccountType: ['', [Validators.required]],
+			Specialization: [''],
+		},
+			{
+				validator: this.ConfirmedValidator('Password', 'ConfirmPassword'),
+			}
+		);
+	}
+
+	ConfirmedValidator(controlName: string, matchingControlName: string) {
+		return (formGroup: FormGroup) => {
+			const control = formGroup.controls[controlName];
+			const matchingControl = formGroup.controls[matchingControlName];
+			if (
+				matchingControl.errors &&
+				!matchingControl.errors['confirmedValidator']
+			) {
+				return;
+			}
+			if (control.value !== matchingControl.value) {
+				matchingControl.setErrors({ confirmedValidator: true });
+			} else {
+				matchingControl.setErrors(null);
+			}
+		};
 	}
 
 	onSubmit() {
 		this.user = {
-			"id": Math.round( Math.random() * 10 ),
-			"Email": this.registerForm.get( 'Email' )!.value,
-			"Username": this.registerForm.get( 'Username' )!.value,
-			"Password": this.registerForm.get( 'Password' )!.value,
-			"ConfirmPassword": this.registerForm.get( 'ConfirmPassword' )!.value,
-			"FirstName": this.registerForm.get( 'FirstName' )!.value,
-			"LastName": this.registerForm.get( 'LastName' )!.value,
-			"Phone": this.registerForm.get( 'Phone' )!.value,
-			"SSN": this.registerForm.get( 'SSN' )!.value,
-			"AccountType": this.registerForm.get( 'AccountType' )!.value,
-			"Specialization": this.registerForm.get( 'Specialization' )!.value
+			"Email": this.registerForm.get('Email')!.value,
+			"Username": this.registerForm.get('Username')!.value,
+			"Password": this.registerForm.get('Password')!.value,
+			"FName": this.registerForm.get('FirstName')!.value,
+			"LName": this.registerForm.get('LastName')!.value,
+			"phoneNumber": this.registerForm.get('Phone')!.value,
+			"SSN": this.registerForm.get('SSN')!.value,
+			"Role": [this.registerForm.get('AccountType')!.value],
 		}
-		console.log( this.user );
-		this.authService.register( this.user );
-	}
 
+		console.log(this.user);
+		console.log(this.registerForm.value);
+		if (this.registerForm.invalid) {
+			console.log(this.registerForm.invalid);
+			this.toastr.error("برجاء التأكد من صحة البيانات المدخلة", "خطأ")
+			return;
+		}
+
+		this.authService.register(this.user);
+	}
 
 	step: number = 1;
-
-	incresseStep() {
-		this.step += 1
-	}
-	decresseStep() {
-		this.step -= 1
-	}
-
-
+	incresseStep() { this.step += 1 }
+	decresseStep() { this.step -= 1 }
 
 }
+

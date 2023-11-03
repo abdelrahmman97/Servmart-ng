@@ -441,7 +441,7 @@ code {
 	word-wrap: break-word;
 }
 
-a > code {
+a>code {
 	color: inherit;
 }
 
@@ -583,7 +583,7 @@ legend {
 	}
 }
 
-legend + * {
+legend+* {
 	clear: left;
 }
 
@@ -753,7 +753,7 @@ progress {
 	font-size: 1.25rem;
 }
 
-.blockquote > :last-child {
+.blockquote> :last-child {
 	margin-bottom: 0;
 }
 
@@ -872,7 +872,7 @@ progress {
 	margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 
-.row > * {
+.row>* {
 	flex-shrink: 0;
 	width: 100%;
 	max-width: 100%;
@@ -885,37 +885,37 @@ progress {
 	flex: 1 0 0%;
 }
 
-.row-cols-auto > * {
+.row-cols-auto>* {
 	flex: 0 0 auto;
 	width: auto;
 }
 
-.row-cols-1 > * {
+.row-cols-1>* {
 	flex: 0 0 auto;
 	width: 100%;
 }
 
-.row-cols-2 > * {
+.row-cols-2>* {
 	flex: 0 0 auto;
 	width: 50%;
 }
 
-.row-cols-3 > * {
+.row-cols-3>* {
 	flex: 0 0 auto;
 	width: 33.3333333333%;
 }
 
-.row-cols-4 > * {
+.row-cols-4>* {
 	flex: 0 0 auto;
 	width: 25%;
 }
 
-.row-cols-5 > * {
+.row-cols-5>* {
 	flex: 0 0 auto;
 	width: 20%;
 }
 
-.row-cols-6 > * {
+.row-cols-6>* {
 	flex: 0 0 auto;
 	width: 16.6666666667%;
 }
@@ -1134,37 +1134,37 @@ progress {
 		flex: 1 0 0%;
 	}
 
-	.row-cols-sm-auto > * {
+	.row-cols-sm-auto>* {
 		flex: 0 0 auto;
 		width: auto;
 	}
 
-	.row-cols-sm-1 > * {
+	.row-cols-sm-1>* {
 		flex: 0 0 auto;
 		width: 100%;
 	}
 
-	.row-cols-sm-2 > * {
+	.row-cols-sm-2>* {
 		flex: 0 0 auto;
 		width: 50%;
 	}
 
-	.row-cols-sm-3 > * {
+	.row-cols-sm-3>* {
 		flex: 0 0 auto;
 		width: 33.3333333333%;
 	}
 
-	.row-cols-sm-4 > * {
+	.row-cols-sm-4>* {
 		flex: 0 0 auto;
 		width: 25%;
 	}
 
-	.row-cols-sm-5 > * {
+	.row-cols-sm-5>* {
 		flex: 0 0 auto;
 		width: 20%;
 	}
 
-	.row-cols-sm-6 > * {
+	.row-cols-sm-6>* {
 		flex: 0 0 auto;
 		width: 16.6666666667%;
 	}
@@ -1388,37 +1388,37 @@ progress {
 		flex: 1 0 0%;
 	}
 
-	.row-cols-md-auto > * {
+	.row-cols-md-auto>* {
 		flex: 0 0 auto;
 		width: auto;
 	}
 
-	.row-cols-md-1 > * {
+	.row-cols-md-1>* {
 		flex: 0 0 auto;
 		width: 100%;
 	}
 
-	.row-cols-md-2 > * {
+	.row-cols-md-2>* {
 		flex: 0 0 auto;
 		width: 50%;
 	}
 
-	.row-cols-md-3 > * {
+	.row-cols-md-3>* {
 		flex: 0 0 auto;
 		width: 33.3333333333%;
 	}
 
-	.row-cols-md-4 > * {
+	.row-cols-md-4>* {
 		flex: 0 0 auto;
 		width: 25%;
 	}
 
-	.row-cols-md-5 > * {
+	.row-cols-md-5>* {
 		flex: 0 0 auto;
 		width: 20%;
 	}
 
-	.row-cols-md-6 > * {
+	.row-cols-md-6>* {
 		flex: 0 0 auto;
 		width: 16.6666666667%;
 	}
@@ -1642,37 +1642,37 @@ progress {
 		flex: 1 0 0%;
 	}
 
-	.row-cols-lg-auto > * {
+	.row-cols-lg-auto>* {
 		flex: 0 0 auto;
 		width: auto;
 	}
 
-	.row-cols-lg-1 > * {
+	.row-cols-lg-1>* {
 		flex: 0 0 auto;
 		width: 100%;
 	}
 
-	.row-cols-lg-2 > * {
+	.row-cols-lg-2>* {
 		flex: 0 0 auto;
 		width: 50%;
 	}
 
-	.row-cols-lg-3 > * {
+	.row-cols-lg-3>* {
 		flex: 0 0 auto;
 		width: 33.3333333333%;
 	}
 
-	.row-cols-lg-4 > * {
+	.row-cols-lg-4>* {
 		flex: 0 0 auto;
 		width: 25%;
 	}
 
-	.row-cols-lg-5 > * {
+	.row-cols-lg-5>* {
 		flex: 0 0 auto;
 		width: 20%;
 	}
 
-	.row-cols-lg-6 > * {
+	.row-cols-lg-6>* {
 		flex: 0 0 auto;
 		width: 16.6666666667%;
 	}
@@ -1896,37 +1896,37 @@ progress {
 		flex: 1 0 0%;
 	}
 
-	.row-cols-xl-auto > * {
+	.row-cols-xl-auto>* {
 		flex: 0 0 auto;
 		width: auto;
 	}
 
-	.row-cols-xl-1 > * {
+	.row-cols-xl-1>* {
 		flex: 0 0 auto;
 		width: 100%;
 	}
 
-	.row-cols-xl-2 > * {
+	.row-cols-xl-2>* {
 		flex: 0 0 auto;
 		width: 50%;
 	}
 
-	.row-cols-xl-3 > * {
+	.row-cols-xl-3>* {
 		flex: 0 0 auto;
 		width: 33.3333333333%;
 	}
 
-	.row-cols-xl-4 > * {
+	.row-cols-xl-4>* {
 		flex: 0 0 auto;
 		width: 25%;
 	}
 
-	.row-cols-xl-5 > * {
+	.row-cols-xl-5>* {
 		flex: 0 0 auto;
 		width: 20%;
 	}
 
-	.row-cols-xl-6 > * {
+	.row-cols-xl-6>* {
 		flex: 0 0 auto;
 		width: 16.6666666667%;
 	}
@@ -2150,37 +2150,37 @@ progress {
 		flex: 1 0 0%;
 	}
 
-	.row-cols-xxl-auto > * {
+	.row-cols-xxl-auto>* {
 		flex: 0 0 auto;
 		width: auto;
 	}
 
-	.row-cols-xxl-1 > * {
+	.row-cols-xxl-1>* {
 		flex: 0 0 auto;
 		width: 100%;
 	}
 
-	.row-cols-xxl-2 > * {
+	.row-cols-xxl-2>* {
 		flex: 0 0 auto;
 		width: 50%;
 	}
 
-	.row-cols-xxl-3 > * {
+	.row-cols-xxl-3>* {
 		flex: 0 0 auto;
 		width: 33.3333333333%;
 	}
 
-	.row-cols-xxl-4 > * {
+	.row-cols-xxl-4>* {
 		flex: 0 0 auto;
 		width: 25%;
 	}
 
-	.row-cols-xxl-5 > * {
+	.row-cols-xxl-5>* {
 		flex: 0 0 auto;
 		width: 20%;
 	}
 
-	.row-cols-xxl-6 > * {
+	.row-cols-xxl-6>* {
 		flex: 0 0 auto;
 		width: 16.6666666667%;
 	}
@@ -2417,18 +2417,18 @@ progress {
 	border-color: var(--bs-table-border-color);
 }
 
-.table > :not(caption) > * > * {
+.table> :not(caption)>*>* {
 	padding: 1rem 0.5rem;
 	background-color: var(--bs-table-bg);
 	border-bottom-width: var(--bs-border-width);
 	box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }
 
-.table > tbody {
+.table>tbody {
 	vertical-align: inherit;
 }
 
-.table > thead {
+.table>thead {
 	vertical-align: bottom;
 }
 
@@ -2440,32 +2440,32 @@ progress {
 	caption-side: top;
 }
 
-.table-sm > :not(caption) > * > * {
+.table-sm> :not(caption)>*>* {
 	padding: 0.25rem 0.25rem;
 }
 
-.table-bordered > :not(caption) > * {
+.table-bordered> :not(caption)>* {
 	border-width: var(--bs-border-width) 0;
 }
 
-.table-bordered > :not(caption) > * > * {
+.table-bordered> :not(caption)>*>* {
 	border-width: 0 var(--bs-border-width);
 }
 
-.table-borderless > :not(caption) > * > * {
+.table-borderless> :not(caption)>*>* {
 	border-bottom-width: 0;
 }
 
-.table-borderless > :not(:first-child) {
+.table-borderless> :not(:first-child) {
 	border-top-width: 0;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) > * {
+.table-striped>tbody>tr:nth-of-type(odd)>* {
 	--bs-table-accent-bg: var(--bs-table-striped-bg);
 	color: var(--bs-table-striped-color);
 }
 
-.table-striped-columns > :not(caption) > tr > :nth-child(even) {
+.table-striped-columns> :not(caption)>tr> :nth-child(even) {
 	--bs-table-accent-bg: var(--bs-table-striped-bg);
 	color: var(--bs-table-striped-color);
 }
@@ -2475,7 +2475,7 @@ progress {
 	color: var(--bs-table-active-color);
 }
 
-.table-hover > tbody > tr:hover > * {
+.table-hover>tbody>tr:hover>* {
 	--bs-table-accent-bg: var(--bs-table-hover-bg);
 	color: var(--bs-table-hover-color);
 }
@@ -3018,8 +3018,8 @@ textarea.form-control-lg {
 	opacity: 0.5;
 }
 
-.form-check-input[disabled] ~ .form-check-label,
-.form-check-input:disabled ~ .form-check-label {
+.form-check-input[disabled]~.form-check-label,
+.form-check-input:disabled~.form-check-label {
 	cursor: default;
 	opacity: 0.5;
 }
@@ -3074,8 +3074,8 @@ textarea.form-control-lg {
 	pointer-events: none;
 }
 
-.btn-check[disabled] + .btn,
-.btn-check:disabled + .btn {
+.btn-check[disabled]+.btn,
+.btn-check:disabled+.btn {
 	pointer-events: none;
 	-webkit-filter: none;
 	filter: none;
@@ -3206,14 +3206,14 @@ textarea.form-control-lg {
 	border-radius: 0.5rem;
 }
 
-.form-floating > .form-control,
-.form-floating > .form-control-plaintext,
-.form-floating > .form-select {
+.form-floating>.form-control,
+.form-floating>.form-control-plaintext,
+.form-floating>.form-select {
 	height: calc(3.5rem + calc(var(--bs-border-width) * 2));
 	line-height: 1.25;
 }
 
-.form-floating > label {
+.form-floating>label {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -3231,571 +3231,615 @@ textarea.form-control-lg {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.form-floating > label {
+	.form-floating>label {
 		transition: none;
 	}
 }
 
-.form-floating > .form-control,
-.form-floating > .form-control-plaintext {
+.form-floating>.form-control,
+.form-floating>.form-control-plaintext {
 	padding: 1rem 0.75rem;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder,
-.form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder,
-.form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder,
-.form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder,
-.form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-webkit-input-placeholder, .form-floating > .form-control-plaintext::-webkit-input-placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-moz-placeholder, .form-floating > .form-control-plaintext::-moz-placeholder {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:-ms-input-placeholder, .form-floating > .form-control-plaintext:-ms-input-placeholder {
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::-ms-input-placeholder, .form-floating > .form-control-plaintext::-ms-input-placeholder {
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control::placeholder,
-.form-floating > .form-control-plaintext::placeholder {
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
 	color: transparent;
 }
 
-.form-floating > .form-control:not(:-moz-placeholder-shown),
-.form-floating > .form-control-plaintext:not(:-moz-placeholder-shown) {
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control::-webkit-input-placeholder,
+.form-floating>.form-control-plaintext::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control::-moz-placeholder,
+.form-floating>.form-control-plaintext::-moz-placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control:-ms-input-placeholder,
+.form-floating>.form-control-plaintext:-ms-input-placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control::-ms-input-placeholder,
+.form-floating>.form-control-plaintext::-ms-input-placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control::placeholder,
+.form-floating>.form-control-plaintext::placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control:not(:-moz-placeholder-shown),
+.form-floating>.form-control-plaintext:not(:-moz-placeholder-shown) {
 	padding-top: 1.625rem;
 	padding-bottom: 0.625rem;
 }
 
-.form-floating > .form-control:not(:-ms-input-placeholder),
-.form-floating > .form-control-plaintext:not(:-ms-input-placeholder) {
+.form-floating>.form-control:not(:-ms-input-placeholder),
+.form-floating>.form-control-plaintext:not(:-ms-input-placeholder) {
 	padding-top: 1.625rem;
 	padding-bottom: 0.625rem;
 }
 
-.form-floating > .form-control:focus,
-.form-floating > .form-control:not(:placeholder-shown),
-.form-floating > .form-control-plaintext:focus,
-.form-floating > .form-control-plaintext:not(:placeholder-shown) {
+.form-floating>.form-control:focus,
+.form-floating>.form-control:not(:placeholder-shown),
+.form-floating>.form-control-plaintext:focus,
+.form-floating>.form-control-plaintext:not(:placeholder-shown) {
 	padding-top: 1.625rem;
 	padding-bottom: 0.625rem;
 }
 
-.form-floating > .form-control:-webkit-autofill,
-.form-floating > .form-control-plaintext:-webkit-autofill {
+.form-floating>.form-control:-webkit-autofill,
+.form-floating>.form-control-plaintext:-webkit-autofill {
 	padding-top: 1.625rem;
 	padding-bottom: 0.625rem;
 }
 
-.form-floating > .form-select {
+.form-floating>.form-select {
 	padding-top: 1.625rem;
 	padding-bottom: 0.625rem;
 }
 
-.form-floating > .form-control:not(:-moz-placeholder-shown) ~ label {
+.form-floating>.form-control:not(:-moz-placeholder-shown)~label {
 	opacity: 0.65;
 	transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 
-.form-floating > .form-control:not(:-ms-input-placeholder) ~ label {
+.form-floating>.form-control:not(:-ms-input-placeholder)~label {
 	opacity: 0.65;
 	transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 
-.form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label,
-.form-floating > .form-control-plaintext ~ label,
-.form-floating > .form-select ~ label {
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-control-plaintext~label,
+.form-floating>.form-select~label {
 	opacity: 0.65;
 	transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 
-html[dir="rtl"] .form-floating > .form-control:focus ~ label,
-html[dir="rtl"] .form-floating > .form-control:not(:placeholder-shown) ~ label,
-html[dir="rtl"] .form-floating > .form-control-plaintext ~ label,
-html[dir="rtl"] .form-floating > .form-select ~ label {
+html[dir="rtl"] .form-floating>.form-control:focus~label,
+html[dir="rtl"] .form-floating>.form-control:not(:placeholder-shown)~label,
+html[dir="rtl"] .form-floating>.form-control-plaintext~label,
+html[dir="rtl"] .form-floating>.form-select~label {
 	opacity: 0.65;
 	transform: translateY(-0.5rem) translateX(0.15rem);
 }
 
-html[dir="rtl"] .form-floating > textarea.form-control:focus ~ label,
-html[dir="rtl"] .form-floating > textarea.form-control:not(:placeholder-shown) ~ label {
+html[dir="rtl"] .form-floating>textarea.form-control:focus~label,
+html[dir="rtl"] .form-floating>textarea.form-control:not(:placeholder-shown)~label {
 	opacity: 0.65;
 	transform: translateY(-3rem) translateX(0.15rem);
 	color: var(--bs-heading-color);
 }
 
-.form-floating > .form-control:-webkit-autofill ~ label {
+.form-floating>.form-control:-webkit-autofill~label {
 	opacity: 0.65;
 	transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 
-.form-floating > .form-control-plaintext ~ label {
+.form-floating>.form-control-plaintext~label {
 	border-width: 1px 0;
 }
 
-.form-floating > .form-control:disabled ~ label {
+.form-floating>.form-control:disabled~label {
 	color: #6c757d;
 }
 
@@ -3807,18 +3851,18 @@ html[dir="rtl"] .form-floating > textarea.form-control:not(:placeholder-shown) ~
 	width: 100%;
 }
 
-.input-group > .form-control,
-.input-group > .form-select,
-.input-group > .form-floating {
+.input-group>.form-control,
+.input-group>.form-select,
+.input-group>.form-floating {
 	position: relative;
 	flex: 1 1 auto;
 	width: 1%;
 	min-width: 0;
 }
 
-.input-group > .form-control:focus,
-.input-group > .form-select:focus,
-.input-group > .form-floating:focus-within {
+.input-group>.form-control:focus,
+.input-group>.form-select:focus,
+.input-group>.form-floating:focus-within {
 	z-index: 5;
 }
 
@@ -3846,53 +3890,53 @@ html[dir="rtl"] .form-floating > textarea.form-control:not(:placeholder-shown) ~
 	border-radius: 0.5rem;
 }
 
-.input-group-lg > .form-control,
-.input-group-lg > .form-select,
-.input-group-lg > .input-group-text,
-.input-group-lg > .btn {
+.input-group-lg>.form-control,
+.input-group-lg>.form-select,
+.input-group-lg>.input-group-text,
+.input-group-lg>.btn {
 	padding: 0.8rem 1.5rem;
 	font-size: 1rem;
 	border-radius: 1rem;
 }
 
-.input-group-sm > .form-control,
-.input-group-sm > .form-select,
-.input-group-sm > .input-group-text,
-.input-group-sm > .btn {
+.input-group-sm>.form-control,
+.input-group-sm>.form-select,
+.input-group-sm>.input-group-text,
+.input-group-sm>.btn {
 	padding: 0.4rem 0.8rem;
 	font-size: 0.8125rem;
 	border-radius: 0.4rem;
 }
 
-.input-group-lg > .form-select,
-.input-group-sm > .form-select {
+.input-group-lg>.form-select,
+.input-group-sm>.form-select {
 	padding-right: 3.25rem;
 }
 
-.input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
-.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3),
-.input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-control,
-.input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select {
+.input-group:not(.has-validation)> :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3),
+.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,
+.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-.input-group.has-validation > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
-.input-group.has-validation > .dropdown-toggle:nth-last-child(n+4),
-.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-control,
-.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-select {
+.input-group.has-validation> :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
+.input-group.has-validation>.dropdown-toggle:nth-last-child(n+4),
+.input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-control,
+.input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-select {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
 	margin-left: -1px;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
 
-.input-group > .form-floating:not(:first-child) > .form-control,
-.input-group > .form-floating:not(:first-child) > .form-select {
+.input-group>.form-floating:not(:first-child)>.form-control,
+.input-group>.form-floating:not(:first-child)>.form-select {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -3919,10 +3963,10 @@ html[dir="rtl"] .form-floating > textarea.form-control:not(:placeholder-shown) ~
 	border-radius: var(--bs-border-radius);
 }
 
-.was-validated :valid ~ .valid-feedback,
-.was-validated :valid ~ .valid-tooltip,
-.is-valid ~ .valid-feedback,
-.is-valid ~ .valid-tooltip {
+.was-validated :valid~.valid-feedback,
+.was-validated :valid~.valid-tooltip,
+.is-valid~.valid-feedback,
+.is-valid~.valid-tooltip {
 	display: block;
 }
 
@@ -3989,21 +4033,21 @@ textarea.form-control.is-valid {
 	box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.25);
 }
 
-.was-validated .form-check-input:valid ~ .form-check-label,
-.form-check-input.is-valid ~ .form-check-label {
+.was-validated .form-check-input:valid~.form-check-label,
+.form-check-input.is-valid~.form-check-label {
 	color: var(--bs-success-text);
 }
 
-.form-check-inline .form-check-input ~ .valid-feedback {
+.form-check-inline .form-check-input~.valid-feedback {
 	margin-left: 0.5em;
 }
 
-.was-validated .input-group > .form-control:not(:focus):valid,
-.input-group > .form-control:not(:focus).is-valid,
-.was-validated .input-group > .form-select:not(:focus):valid,
-.input-group > .form-select:not(:focus).is-valid,
-.was-validated .input-group > .form-floating:not(:focus-within):valid,
-.input-group > .form-floating:not(:focus-within).is-valid {
+.was-validated .input-group>.form-control:not(:focus):valid,
+.input-group>.form-control:not(:focus).is-valid,
+.was-validated .input-group>.form-select:not(:focus):valid,
+.input-group>.form-select:not(:focus).is-valid,
+.was-validated .input-group>.form-floating:not(:focus-within):valid,
+.input-group>.form-floating:not(:focus-within).is-valid {
 	z-index: 3;
 }
 
@@ -4029,10 +4073,10 @@ textarea.form-control.is-valid {
 	border-radius: var(--bs-border-radius);
 }
 
-.was-validated :invalid ~ .invalid-feedback,
-.was-validated :invalid ~ .invalid-tooltip,
-.is-invalid ~ .invalid-feedback,
-.is-invalid ~ .invalid-tooltip {
+.was-validated :invalid~.invalid-feedback,
+.was-validated :invalid~.invalid-tooltip,
+.is-invalid~.invalid-feedback,
+.is-invalid~.invalid-tooltip {
 	display: block;
 }
 
@@ -4099,21 +4143,21 @@ textarea.form-control.is-invalid {
 	box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
 }
 
-.was-validated .form-check-input:invalid ~ .form-check-label,
-.form-check-input.is-invalid ~ .form-check-label {
+.was-validated .form-check-input:invalid~.form-check-label,
+.form-check-input.is-invalid~.form-check-label {
 	color: var(--bs-danger-text);
 }
 
-.form-check-inline .form-check-input ~ .invalid-feedback {
+.form-check-inline .form-check-input~.invalid-feedback {
 	margin-left: 0.5em;
 }
 
-.was-validated .input-group > .form-control:not(:focus):invalid,
-.input-group > .form-control:not(:focus).is-invalid,
-.was-validated .input-group > .form-select:not(:focus):invalid,
-.input-group > .form-select:not(:focus).is-invalid,
-.was-validated .input-group > .form-floating:not(:focus-within):invalid,
-.input-group > .form-floating:not(:focus-within).is-invalid {
+.was-validated .input-group>.form-control:not(:focus):invalid,
+.input-group>.form-control:not(:focus).is-invalid,
+.was-validated .input-group>.form-select:not(:focus):invalid,
+.input-group>.form-select:not(:focus).is-invalid,
+.was-validated .input-group>.form-floating:not(:focus-within):invalid,
+.input-group>.form-floating:not(:focus-within).is-invalid {
 	z-index: 4;
 }
 
@@ -4165,7 +4209,7 @@ textarea.form-control.is-invalid {
 	border-color: var(--bs-btn-hover-border-color);
 }
 
-.btn-check + .btn:hover {
+.btn-check+.btn:hover {
 	color: var(--bs-btn-color);
 	background-color: var(--bs-btn-bg);
 	border-color: var(--bs-btn-border-color);
@@ -4179,14 +4223,14 @@ textarea.form-control.is-invalid {
 	box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
-.btn-check:focus-visible + .btn {
+.btn-check:focus-visible+.btn {
 	border-color: var(--bs-btn-hover-border-color);
 	outline: 0;
 	box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
-.btn-check:checked + .btn,
-:not(.btn-check) + .btn:active,
+.btn-check:checked+.btn,
+:not(.btn-check)+.btn:active,
 .btn:first-child:active,
 .btn.active,
 .btn.show {
@@ -4195,8 +4239,8 @@ textarea.form-control.is-invalid {
 	border-color: var(--bs-btn-active-border-color);
 }
 
-.btn-check:checked + .btn:focus-visible,
-:not(.btn-check) + .btn:active:focus-visible,
+.btn-check:checked+.btn:focus-visible,
+:not(.btn-check)+.btn:active:focus-visible,
 .btn:first-child:active:focus-visible,
 .btn.active:focus-visible,
 .btn.show:focus-visible {
@@ -4612,7 +4656,7 @@ fieldset:disabled .btn {
 }
 
 .btn-lg,
-.btn-group-lg > .btn {
+.btn-group-lg>.btn {
 	--bs-btn-padding-y: 0.8rem;
 	--bs-btn-padding-x: 1.5rem;
 	--bs-btn-font-size: 1rem;
@@ -4620,7 +4664,7 @@ fieldset:disabled .btn {
 }
 
 .btn-sm,
-.btn-group-sm > .btn {
+.btn-group-sm>.btn {
 	--bs-btn-padding-y: 0.4rem;
 	--bs-btn-padding-x: 0.8rem;
 	--bs-btn-font-size: 0.8125rem;
@@ -5037,24 +5081,24 @@ fieldset:disabled .btn {
 	vertical-align: middle;
 }
 
-.btn-group > .btn,
-.btn-group-vertical > .btn {
+.btn-group>.btn,
+.btn-group-vertical>.btn {
 	position: relative;
 	flex: 1 1 auto;
 }
 
-.btn-group > .btn-check:checked + .btn,
-.btn-group > .btn-check:focus + .btn,
-.btn-group > .btn:hover,
-.btn-group > .btn:focus,
-.btn-group > .btn:active,
-.btn-group > .btn.active,
-.btn-group-vertical > .btn-check:checked + .btn,
-.btn-group-vertical > .btn-check:focus + .btn,
-.btn-group-vertical > .btn:hover,
-.btn-group-vertical > .btn:focus,
-.btn-group-vertical > .btn:active,
-.btn-group-vertical > .btn.active {
+.btn-group>.btn-check:checked+.btn,
+.btn-group>.btn-check:focus+.btn,
+.btn-group>.btn:hover,
+.btn-group>.btn:focus,
+.btn-group>.btn:active,
+.btn-group>.btn.active,
+.btn-group-vertical>.btn-check:checked+.btn,
+.btn-group-vertical>.btn-check:focus+.btn,
+.btn-group-vertical>.btn:hover,
+.btn-group-vertical>.btn:focus,
+.btn-group-vertical>.btn:active,
+.btn-group-vertical>.btn.active {
 	z-index: 1;
 }
 
@@ -5072,21 +5116,21 @@ fieldset:disabled .btn {
 	border-radius: 0.5rem;
 }
 
-.btn-group > :not(.btn-check:first-child) + .btn,
-.btn-group > .btn-group:not(:first-child) {
+.btn-group> :not(.btn-check:first-child)+.btn,
+.btn-group>.btn-group:not(:first-child) {
 	margin-left: -1px;
 }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn.dropdown-toggle-split:first-child,
-.btn-group > .btn-group:not(:last-child) > .btn {
+.btn-group>.btn:not(:last-child):not(.dropdown-toggle),
+.btn-group>.btn.dropdown-toggle-split:first-child,
+.btn-group>.btn-group:not(:last-child)>.btn {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-.btn-group > .btn:nth-child(n+3),
-.btn-group > :not(.btn-check) + .btn,
-.btn-group > .btn-group:not(:first-child) > .btn {
+.btn-group>.btn:nth-child(n+3),
+.btn-group> :not(.btn-check)+.btn,
+.btn-group>.btn-group:not(:first-child)>.btn {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -5106,14 +5150,14 @@ fieldset:disabled .btn {
 	margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split,
-.btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm+.dropdown-toggle-split,
+.btn-group-sm>.btn+.dropdown-toggle-split {
 	padding-right: 0.6rem;
 	padding-left: 0.6rem;
 }
 
-.btn-lg + .dropdown-toggle-split,
-.btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg+.dropdown-toggle-split,
+.btn-group-lg>.btn+.dropdown-toggle-split {
 	padding-right: 1.125rem;
 	padding-left: 1.125rem;
 }
@@ -5124,24 +5168,24 @@ fieldset:disabled .btn {
 	justify-content: center;
 }
 
-.btn-group-vertical > .btn,
-.btn-group-vertical > .btn-group {
+.btn-group-vertical>.btn,
+.btn-group-vertical>.btn-group {
 	width: 100%;
 }
 
-.btn-group-vertical > .btn:not(:first-child),
-.btn-group-vertical > .btn-group:not(:first-child) {
+.btn-group-vertical>.btn:not(:first-child),
+.btn-group-vertical>.btn-group:not(:first-child) {
 	margin-top: -1px;
 }
 
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group-vertical > .btn-group:not(:last-child) > .btn {
+.btn-group-vertical>.btn:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical>.btn-group:not(:last-child)>.btn {
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn ~ .btn,
-.btn-group-vertical > .btn-group:not(:first-child) > .btn {
+.btn-group-vertical>.btn~.btn,
+.btn-group-vertical>.btn-group:not(:first-child)>.btn {
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
@@ -5254,18 +5298,18 @@ fieldset:disabled .btn {
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
 	color: var(--bs-nav-pills-link-active-color);
 	background-color: var(--bs-nav-pills-link-active-bg);
 }
 
-.nav-fill > .nav-link,
+.nav-fill>.nav-link,
 .nav-fill .nav-item {
 	flex: 1 1 auto;
 	text-align: center;
 }
 
-.nav-justified > .nav-link,
+.nav-justified>.nav-link,
 .nav-justified .nav-item {
 	flex-basis: 0;
 	flex-grow: 1;
@@ -5277,11 +5321,11 @@ fieldset:disabled .btn {
 	width: 100%;
 }
 
-.tab-content > .tab-pane {
+.tab-content>.tab-pane {
 	display: none;
 }
 
-.tab-content > .active {
+.tab-content>.active {
 	display: block;
 }
 
@@ -5314,13 +5358,13 @@ fieldset:disabled .btn {
 	padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
 }
 
-.navbar > .container,
-.navbar > .container-fluid,
-.navbar > .container-sm,
-.navbar > .container-md,
-.navbar > .container-lg,
-.navbar > .container-xl,
-.navbar > .container-xxl {
+.navbar>.container,
+.navbar>.container-fluid,
+.navbar>.container-sm,
+.navbar>.container-md,
+.navbar>.container-lg,
+.navbar>.container-xl,
+.navbar>.container-xxl {
 	display: flex;
 	flex-wrap: inherit;
 	align-items: center;
@@ -5355,7 +5399,7 @@ fieldset:disabled .btn {
 	list-style: none;
 }
 
-.navbar-nav .show > .nav-link,
+.navbar-nav .show>.nav-link,
 .navbar-nav .nav-link.active {
 	color: var(--bs-navbar-active-color);
 }
@@ -5812,30 +5856,30 @@ fieldset:disabled .btn {
 	border-radius: var(--bs-card-border-radius);
 }
 
-.card > hr {
+.card>hr {
 	margin-right: 0;
 	margin-left: 0;
 }
 
-.card > .list-group {
+.card>.list-group {
 	border-top: inherit;
 	border-bottom: inherit;
 }
 
-.card > .list-group:first-child {
+.card>.list-group:first-child {
 	border-top-width: 0;
 	border-top-left-radius: var(--bs-card-inner-border-radius);
 	border-top-right-radius: var(--bs-card-inner-border-radius);
 }
 
-.card > .list-group:last-child {
+.card>.list-group:last-child {
 	border-bottom-width: 0;
 	border-bottom-right-radius: var(--bs-card-inner-border-radius);
 	border-bottom-left-radius: var(--bs-card-inner-border-radius);
 }
 
-.card > .card-header + .list-group,
-.card > .list-group + .card-footer {
+.card>.card-header+.list-group,
+.card>.list-group+.card-footer {
 	border-top: 0;
 }
 
@@ -5860,7 +5904,7 @@ fieldset:disabled .btn {
 	margin-bottom: 0;
 }
 
-.card-link + .card-link {
+.card-link+.card-link {
 	margin-left: var(--bs-card-spacer-x);
 }
 
@@ -5932,7 +5976,7 @@ fieldset:disabled .btn {
 	border-bottom-left-radius: var(--bs-card-inner-border-radius);
 }
 
-.card-group > .card {
+.card-group>.card {
 	margin-bottom: var(--bs-card-group-margin);
 }
 
@@ -5942,43 +5986,43 @@ fieldset:disabled .btn {
 		flex-flow: row wrap;
 	}
 
-	.card-group > .card {
+	.card-group>.card {
 		flex: 1 0 0%;
 		margin-bottom: 0;
 	}
 
-	.card-group > .card + .card {
+	.card-group>.card+.card {
 		margin-left: 0;
 		border-left: 0;
 	}
 
-	.card-group > .card:not(:last-child) {
+	.card-group>.card:not(:last-child) {
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
 	}
 
-	.card-group > .card:not(:last-child) .card-img-top,
-	.card-group > .card:not(:last-child) .card-header {
+	.card-group>.card:not(:last-child) .card-img-top,
+	.card-group>.card:not(:last-child) .card-header {
 		border-top-right-radius: 0;
 	}
 
-	.card-group > .card:not(:last-child) .card-img-bottom,
-	.card-group > .card:not(:last-child) .card-footer {
+	.card-group>.card:not(:last-child) .card-img-bottom,
+	.card-group>.card:not(:last-child) .card-footer {
 		border-bottom-right-radius: 0;
 	}
 
-	.card-group > .card:not(:first-child) {
+	.card-group>.card:not(:first-child) {
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
 	}
 
-	.card-group > .card:not(:first-child) .card-img-top,
-	.card-group > .card:not(:first-child) .card-header {
+	.card-group>.card:not(:first-child) .card-img-top,
+	.card-group>.card:not(:first-child) .card-header {
 		border-top-left-radius: 0;
 	}
 
-	.card-group > .card:not(:first-child) .card-img-bottom,
-	.card-group > .card:not(:first-child) .card-footer {
+	.card-group>.card:not(:first-child) .card-img-bottom,
+	.card-group>.card:not(:first-child) .card-footer {
 		border-bottom-left-radius: 0;
 	}
 }
@@ -6166,11 +6210,11 @@ html[dir="rtl"] .accordion-button::after {
 	border-radius: var(--bs-breadcrumb-border-radius);
 }
 
-.breadcrumb-item + .breadcrumb-item {
+.breadcrumb-item+.breadcrumb-item {
 	padding-left: var(--bs-breadcrumb-item-padding-x);
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
 	float: left;
 	padding-right: var(--bs-breadcrumb-item-padding-x);
 	color: var(--bs-breadcrumb-divider-color);
@@ -6242,7 +6286,7 @@ html[dir="rtl"] .accordion-button::after {
 }
 
 .page-link.active,
-.active > .page-link {
+.active>.page-link {
 	z-index: 3;
 	color: var(--bs-pagination-active-color);
 	background-color: var(--bs-pagination-active-bg);
@@ -6250,7 +6294,7 @@ html[dir="rtl"] .accordion-button::after {
 }
 
 .page-link.disabled,
-.disabled > .page-link {
+.disabled>.page-link {
 	color: var(--bs-pagination-disabled-color);
 	pointer-events: none;
 	background-color: var(--bs-pagination-disabled-bg);
@@ -6477,11 +6521,11 @@ html[dir="rtl"] .accordion-button::after {
 	background-size: var(--bs-progress-height) var(--bs-progress-height);
 }
 
-.progress-stacked > .progress {
+.progress-stacked>.progress {
 	overflow: visible;
 }
 
-.progress-stacked > .progress > .progress-bar {
+.progress-stacked>.progress>.progress-bar {
 	width: 100%;
 }
 
@@ -6527,7 +6571,7 @@ html[dir="rtl"] .accordion-button::after {
 	counter-reset: section;
 }
 
-.list-group-numbered > .list-group-item::before {
+.list-group-numbered>.list-group-item::before {
 	content: counters(section, ".") ". ";
 	counter-increment: section;
 }
@@ -6584,11 +6628,11 @@ html[dir="rtl"] .accordion-button::after {
 	border-color: var(--bs-list-group-active-border-color);
 }
 
-.list-group-item + .list-group-item {
+.list-group-item+.list-group-item {
 	border-top-width: 0;
 }
 
-.list-group-item + .list-group-item.active {
+.list-group-item+.list-group-item.active {
 	margin-top: calc(-1 * var(--bs-list-group-border-width));
 	border-top-width: var(--bs-list-group-border-width);
 }
@@ -6597,26 +6641,26 @@ html[dir="rtl"] .accordion-button::after {
 	flex-direction: row;
 }
 
-.list-group-horizontal > .list-group-item:first-child:not(:last-child) {
+.list-group-horizontal>.list-group-item:first-child:not(:last-child) {
 	border-bottom-left-radius: var(--bs-list-group-border-radius);
 	border-top-right-radius: 0;
 }
 
-.list-group-horizontal > .list-group-item:last-child:not(:first-child) {
+.list-group-horizontal>.list-group-item:last-child:not(:first-child) {
 	border-top-right-radius: var(--bs-list-group-border-radius);
 	border-bottom-left-radius: 0;
 }
 
-.list-group-horizontal > .list-group-item.active {
+.list-group-horizontal>.list-group-item.active {
 	margin-top: 0;
 }
 
-.list-group-horizontal > .list-group-item + .list-group-item {
+.list-group-horizontal>.list-group-item+.list-group-item {
 	border-top-width: var(--bs-list-group-border-width);
 	border-left-width: 0;
 }
 
-.list-group-horizontal > .list-group-item + .list-group-item.active {
+.list-group-horizontal>.list-group-item+.list-group-item.active {
 	margin-left: calc(-1 * var(--bs-list-group-border-width));
 	border-left-width: var(--bs-list-group-border-width);
 }
@@ -6626,26 +6670,26 @@ html[dir="rtl"] .accordion-button::after {
 		flex-direction: row;
 	}
 
-	.list-group-horizontal-sm > .list-group-item:first-child:not(:last-child) {
+	.list-group-horizontal-sm>.list-group-item:first-child:not(:last-child) {
 		border-bottom-left-radius: var(--bs-list-group-border-radius);
 		border-top-right-radius: 0;
 	}
 
-	.list-group-horizontal-sm > .list-group-item:last-child:not(:first-child) {
+	.list-group-horizontal-sm>.list-group-item:last-child:not(:first-child) {
 		border-top-right-radius: var(--bs-list-group-border-radius);
 		border-bottom-left-radius: 0;
 	}
 
-	.list-group-horizontal-sm > .list-group-item.active {
+	.list-group-horizontal-sm>.list-group-item.active {
 		margin-top: 0;
 	}
 
-	.list-group-horizontal-sm > .list-group-item + .list-group-item {
+	.list-group-horizontal-sm>.list-group-item+.list-group-item {
 		border-top-width: var(--bs-list-group-border-width);
 		border-left-width: 0;
 	}
 
-	.list-group-horizontal-sm > .list-group-item + .list-group-item.active {
+	.list-group-horizontal-sm>.list-group-item+.list-group-item.active {
 		margin-left: calc(-1 * var(--bs-list-group-border-width));
 		border-left-width: var(--bs-list-group-border-width);
 	}
@@ -6656,26 +6700,26 @@ html[dir="rtl"] .accordion-button::after {
 		flex-direction: row;
 	}
 
-	.list-group-horizontal-md > .list-group-item:first-child:not(:last-child) {
+	.list-group-horizontal-md>.list-group-item:first-child:not(:last-child) {
 		border-bottom-left-radius: var(--bs-list-group-border-radius);
 		border-top-right-radius: 0;
 	}
 
-	.list-group-horizontal-md > .list-group-item:last-child:not(:first-child) {
+	.list-group-horizontal-md>.list-group-item:last-child:not(:first-child) {
 		border-top-right-radius: var(--bs-list-group-border-radius);
 		border-bottom-left-radius: 0;
 	}
 
-	.list-group-horizontal-md > .list-group-item.active {
+	.list-group-horizontal-md>.list-group-item.active {
 		margin-top: 0;
 	}
 
-	.list-group-horizontal-md > .list-group-item + .list-group-item {
+	.list-group-horizontal-md>.list-group-item+.list-group-item {
 		border-top-width: var(--bs-list-group-border-width);
 		border-left-width: 0;
 	}
 
-	.list-group-horizontal-md > .list-group-item + .list-group-item.active {
+	.list-group-horizontal-md>.list-group-item+.list-group-item.active {
 		margin-left: calc(-1 * var(--bs-list-group-border-width));
 		border-left-width: var(--bs-list-group-border-width);
 	}
@@ -6686,26 +6730,26 @@ html[dir="rtl"] .accordion-button::after {
 		flex-direction: row;
 	}
 
-	.list-group-horizontal-lg > .list-group-item:first-child:not(:last-child) {
+	.list-group-horizontal-lg>.list-group-item:first-child:not(:last-child) {
 		border-bottom-left-radius: var(--bs-list-group-border-radius);
 		border-top-right-radius: 0;
 	}
 
-	.list-group-horizontal-lg > .list-group-item:last-child:not(:first-child) {
+	.list-group-horizontal-lg>.list-group-item:last-child:not(:first-child) {
 		border-top-right-radius: var(--bs-list-group-border-radius);
 		border-bottom-left-radius: 0;
 	}
 
-	.list-group-horizontal-lg > .list-group-item.active {
+	.list-group-horizontal-lg>.list-group-item.active {
 		margin-top: 0;
 	}
 
-	.list-group-horizontal-lg > .list-group-item + .list-group-item {
+	.list-group-horizontal-lg>.list-group-item+.list-group-item {
 		border-top-width: var(--bs-list-group-border-width);
 		border-left-width: 0;
 	}
 
-	.list-group-horizontal-lg > .list-group-item + .list-group-item.active {
+	.list-group-horizontal-lg>.list-group-item+.list-group-item.active {
 		margin-left: calc(-1 * var(--bs-list-group-border-width));
 		border-left-width: var(--bs-list-group-border-width);
 	}
@@ -6716,26 +6760,26 @@ html[dir="rtl"] .accordion-button::after {
 		flex-direction: row;
 	}
 
-	.list-group-horizontal-xl > .list-group-item:first-child:not(:last-child) {
+	.list-group-horizontal-xl>.list-group-item:first-child:not(:last-child) {
 		border-bottom-left-radius: var(--bs-list-group-border-radius);
 		border-top-right-radius: 0;
 	}
 
-	.list-group-horizontal-xl > .list-group-item:last-child:not(:first-child) {
+	.list-group-horizontal-xl>.list-group-item:last-child:not(:first-child) {
 		border-top-right-radius: var(--bs-list-group-border-radius);
 		border-bottom-left-radius: 0;
 	}
 
-	.list-group-horizontal-xl > .list-group-item.active {
+	.list-group-horizontal-xl>.list-group-item.active {
 		margin-top: 0;
 	}
 
-	.list-group-horizontal-xl > .list-group-item + .list-group-item {
+	.list-group-horizontal-xl>.list-group-item+.list-group-item {
 		border-top-width: var(--bs-list-group-border-width);
 		border-left-width: 0;
 	}
 
-	.list-group-horizontal-xl > .list-group-item + .list-group-item.active {
+	.list-group-horizontal-xl>.list-group-item+.list-group-item.active {
 		margin-left: calc(-1 * var(--bs-list-group-border-width));
 		border-left-width: var(--bs-list-group-border-width);
 	}
@@ -6746,26 +6790,26 @@ html[dir="rtl"] .accordion-button::after {
 		flex-direction: row;
 	}
 
-	.list-group-horizontal-xxl > .list-group-item:first-child:not(:last-child) {
+	.list-group-horizontal-xxl>.list-group-item:first-child:not(:last-child) {
 		border-bottom-left-radius: var(--bs-list-group-border-radius);
 		border-top-right-radius: 0;
 	}
 
-	.list-group-horizontal-xxl > .list-group-item:last-child:not(:first-child) {
+	.list-group-horizontal-xxl>.list-group-item:last-child:not(:first-child) {
 		border-top-right-radius: var(--bs-list-group-border-radius);
 		border-bottom-left-radius: 0;
 	}
 
-	.list-group-horizontal-xxl > .list-group-item.active {
+	.list-group-horizontal-xxl>.list-group-item.active {
 		margin-top: 0;
 	}
 
-	.list-group-horizontal-xxl > .list-group-item + .list-group-item {
+	.list-group-horizontal-xxl>.list-group-item+.list-group-item {
 		border-top-width: var(--bs-list-group-border-width);
 		border-left-width: 0;
 	}
 
-	.list-group-horizontal-xxl > .list-group-item + .list-group-item.active {
+	.list-group-horizontal-xxl>.list-group-item+.list-group-item.active {
 		margin-left: calc(-1 * var(--bs-list-group-border-width));
 		border-left-width: var(--bs-list-group-border-width);
 	}
@@ -6775,11 +6819,11 @@ html[dir="rtl"] .accordion-button::after {
 	border-radius: 0;
 }
 
-.list-group-flush > .list-group-item {
+.list-group-flush>.list-group-item {
 	border-width: 0 0 var(--bs-list-group-border-width);
 }
 
-.list-group-flush > .list-group-item:last-child {
+.list-group-flush>.list-group-item:last-child {
 	border-bottom-width: 0;
 }
 
@@ -7080,7 +7124,7 @@ html[dir="rtl"] .accordion-button::after {
 	pointer-events: none;
 }
 
-.toast-container > :not(:last-child) {
+.toast-container> :not(:last-child) {
 	margin-bottom: var(--bs-toast-spacing);
 }
 
@@ -7260,7 +7304,7 @@ html[dir="rtl"] .accordion-button::after {
 	border-bottom-left-radius: var(--bs-modal-inner-border-radius);
 }
 
-.modal-footer > * {
+.modal-footer>* {
 	margin: calc(var(--bs-modal-footer-gap) * 0.5);
 }
 
@@ -7617,78 +7661,78 @@ html[dir="rtl"] .accordion-button::after {
 	border-width: 0;
 }
 
-.bs-popover-top > .popover-arrow,
-.bs-popover-auto[data-popper-placement^=top] > .popover-arrow {
+.bs-popover-top>.popover-arrow,
+.bs-popover-auto[data-popper-placement^=top]>.popover-arrow {
 	bottom: calc(-1 * (var(--bs-popover-arrow-height)) - var(--bs-popover-border-width));
 }
 
-.bs-popover-top > .popover-arrow::before,
-.bs-popover-auto[data-popper-placement^=top] > .popover-arrow::before,
-.bs-popover-top > .popover-arrow::after,
-.bs-popover-auto[data-popper-placement^=top] > .popover-arrow::after {
+.bs-popover-top>.popover-arrow::before,
+.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::before,
+.bs-popover-top>.popover-arrow::after,
+.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::after {
 	border-width: var(--bs-popover-arrow-height) calc(var(--bs-popover-arrow-width) * 0.5) 0;
 }
 
-.bs-popover-top > .popover-arrow::before,
-.bs-popover-auto[data-popper-placement^=top] > .popover-arrow::before {
+.bs-popover-top>.popover-arrow::before,
+.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::before {
 	bottom: 0;
 	border-top-color: var(--bs-popover-arrow-border);
 }
 
-.bs-popover-top > .popover-arrow::after,
-.bs-popover-auto[data-popper-placement^=top] > .popover-arrow::after {
+.bs-popover-top>.popover-arrow::after,
+.bs-popover-auto[data-popper-placement^=top]>.popover-arrow::after {
 	bottom: var(--bs-popover-border-width);
 	border-top-color: var(--bs-popover-bg);
 }
 
 /* rtl:begin:ignore */
-.bs-popover-end > .popover-arrow,
-.bs-popover-auto[data-popper-placement^=right] > .popover-arrow {
+.bs-popover-end>.popover-arrow,
+.bs-popover-auto[data-popper-placement^=right]>.popover-arrow {
 	left: calc(-1 * (var(--bs-popover-arrow-height)) - var(--bs-popover-border-width));
 	width: var(--bs-popover-arrow-height);
 	height: var(--bs-popover-arrow-width);
 }
 
-.bs-popover-end > .popover-arrow::before,
-.bs-popover-auto[data-popper-placement^=right] > .popover-arrow::before,
-.bs-popover-end > .popover-arrow::after,
-.bs-popover-auto[data-popper-placement^=right] > .popover-arrow::after {
+.bs-popover-end>.popover-arrow::before,
+.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::before,
+.bs-popover-end>.popover-arrow::after,
+.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::after {
 	border-width: calc(var(--bs-popover-arrow-width) * 0.5) var(--bs-popover-arrow-height) calc(var(--bs-popover-arrow-width) * 0.5) 0;
 }
 
-.bs-popover-end > .popover-arrow::before,
-.bs-popover-auto[data-popper-placement^=right] > .popover-arrow::before {
+.bs-popover-end>.popover-arrow::before,
+.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::before {
 	left: 0;
 	border-right-color: var(--bs-popover-arrow-border);
 }
 
-.bs-popover-end > .popover-arrow::after,
-.bs-popover-auto[data-popper-placement^=right] > .popover-arrow::after {
+.bs-popover-end>.popover-arrow::after,
+.bs-popover-auto[data-popper-placement^=right]>.popover-arrow::after {
 	left: var(--bs-popover-border-width);
 	border-right-color: var(--bs-popover-bg);
 }
 
 /* rtl:end:ignore */
-.bs-popover-bottom > .popover-arrow,
-.bs-popover-auto[data-popper-placement^=bottom] > .popover-arrow {
+.bs-popover-bottom>.popover-arrow,
+.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow {
 	top: calc(-1 * (var(--bs-popover-arrow-height)) - var(--bs-popover-border-width));
 }
 
-.bs-popover-bottom > .popover-arrow::before,
-.bs-popover-auto[data-popper-placement^=bottom] > .popover-arrow::before,
-.bs-popover-bottom > .popover-arrow::after,
-.bs-popover-auto[data-popper-placement^=bottom] > .popover-arrow::after {
+.bs-popover-bottom>.popover-arrow::before,
+.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::before,
+.bs-popover-bottom>.popover-arrow::after,
+.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::after {
 	border-width: 0 calc(var(--bs-popover-arrow-width) * 0.5) var(--bs-popover-arrow-height);
 }
 
-.bs-popover-bottom > .popover-arrow::before,
-.bs-popover-auto[data-popper-placement^=bottom] > .popover-arrow::before {
+.bs-popover-bottom>.popover-arrow::before,
+.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::before {
 	top: 0;
 	border-bottom-color: var(--bs-popover-arrow-border);
 }
 
-.bs-popover-bottom > .popover-arrow::after,
-.bs-popover-auto[data-popper-placement^=bottom] > .popover-arrow::after {
+.bs-popover-bottom>.popover-arrow::after,
+.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::after {
 	top: var(--bs-popover-border-width);
 	border-bottom-color: var(--bs-popover-bg);
 }
@@ -7706,28 +7750,28 @@ html[dir="rtl"] .accordion-button::after {
 }
 
 /* rtl:begin:ignore */
-.bs-popover-start > .popover-arrow,
-.bs-popover-auto[data-popper-placement^=left] > .popover-arrow {
+.bs-popover-start>.popover-arrow,
+.bs-popover-auto[data-popper-placement^=left]>.popover-arrow {
 	right: calc(-1 * (var(--bs-popover-arrow-height)) - var(--bs-popover-border-width));
 	width: var(--bs-popover-arrow-height);
 	height: var(--bs-popover-arrow-width);
 }
 
-.bs-popover-start > .popover-arrow::before,
-.bs-popover-auto[data-popper-placement^=left] > .popover-arrow::before,
-.bs-popover-start > .popover-arrow::after,
-.bs-popover-auto[data-popper-placement^=left] > .popover-arrow::after {
+.bs-popover-start>.popover-arrow::before,
+.bs-popover-auto[data-popper-placement^=left]>.popover-arrow::before,
+.bs-popover-start>.popover-arrow::after,
+.bs-popover-auto[data-popper-placement^=left]>.popover-arrow::after {
 	border-width: calc(var(--bs-popover-arrow-width) * 0.5) 0 calc(var(--bs-popover-arrow-width) * 0.5) var(--bs-popover-arrow-height);
 }
 
-.bs-popover-start > .popover-arrow::before,
-.bs-popover-auto[data-popper-placement^=left] > .popover-arrow::before {
+.bs-popover-start>.popover-arrow::before,
+.bs-popover-auto[data-popper-placement^=left]>.popover-arrow::before {
 	right: 0;
 	border-left-color: var(--bs-popover-arrow-border);
 }
 
-.bs-popover-start > .popover-arrow::after,
-.bs-popover-auto[data-popper-placement^=left] > .popover-arrow::after {
+.bs-popover-start>.popover-arrow::after,
+.bs-popover-auto[data-popper-placement^=left]>.popover-arrow::after {
 	right: var(--bs-popover-border-width);
 	border-left-color: var(--bs-popover-bg);
 }
@@ -8959,7 +9003,7 @@ html[dir="rtl"] .accordion-button::after {
 	content: "";
 }
 
-.ratio > * {
+.ratio>* {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -18621,7 +18665,7 @@ html[dir="rtl"] .accordion-button::after {
 	color: var(--bs-gray-400);
 }
 
-.breadcrumb.breadcrumb-dots .breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb.breadcrumb-dots .breadcrumb-item+.breadcrumb-item::before {
 	content: "•";
 	font-size: 22px;
 	line-height: 0;
@@ -18706,7 +18750,7 @@ html[dir="rtl"] .accordion-button::after {
 	color: #0A2239;
 }
 
-.btn-check:checked + .btn-outline-light {
+.btn-check:checked+.btn-outline-light {
 	background: #96969a;
 	border-color: #96969a;
 	color: #0A2239;
@@ -18730,21 +18774,21 @@ html[dir="rtl"] .accordion-button::after {
 }
 
 .btn-round.btn-lg,
-.btn-group-lg > .btn-round.btn {
+.btn-group-lg>.btn-round.btn {
 	height: 55px;
 	width: 55px;
 	line-height: 55px;
 }
 
 .btn-round.btn-sm,
-.btn-group-sm > .btn-round.btn {
+.btn-group-sm>.btn-round.btn {
 	height: 32px;
 	width: 32px;
 	line-height: 30px;
 }
 
 .btn-round.btn-sm i,
-.btn-group-sm > .btn-round.btn i {
+.btn-group-sm>.btn-round.btn i {
 	font-size: 0.6rem;
 }
 
@@ -18919,17 +18963,17 @@ html[dir="rtl"] .accordion-button::after {
 	color: var(--bs-primary);
 }
 
-.btn-check:active + .btn-primary-soft-check,
-.btn-check:checked + .btn-primary-soft-check,
+.btn-check:active+.btn-primary-soft-check,
+.btn-check:checked+.btn-primary-soft-check,
 .btn-primary-soft-check.active,
 .btn-primary-soft-check:active,
-.show > .btn-primary-soft-check.dropdown-toggle {
+.show>.btn-primary-soft-check.dropdown-toggle {
 	background-color: rgba(var(--bs-primary-rgb), 0.2);
 	color: var(--bs-primary);
 	border: 1px solid var(--bs-primary);
 }
 
-.btn-check:focus + .btn,
+.btn-check:focus+.btn,
 .btn-round-shadow:focus {
 	box-shadow: none;
 }
@@ -18938,16 +18982,16 @@ html[dir="rtl"] .accordion-button::after {
 	border: 1px solid transparent !important;
 }
 
-.btn-check:active + .btn-dark-bg-check,
-.btn-check:checked + .btn-dark-bg-check,
+.btn-check:active+.btn-dark-bg-check,
+.btn-check:checked+.btn-dark-bg-check,
 .btn-dark-bg-check.active,
 .btn-dark-bg-check:active,
-.show > .btn-dark-bg-check.dropdown-toggle {
+.show>.btn-dark-bg-check.dropdown-toggle {
 	background-color: #0A2239;
 	color: #fff;
 }
 
-.btn-check:focus + .btn,
+.btn-check:focus+.btn,
 .btn-round-shadow:focus {
 	box-shadow: none;
 }
@@ -19005,11 +19049,11 @@ html[dir="rtl"] .accordion-button::after {
 	border: 1px solid var(--bs-primary);
 }
 
-.btn-check:active + .btn-primary-check,
-.btn-check:checked + .btn-primary-check,
+.btn-check:active+.btn-primary-check,
+.btn-check:checked+.btn-primary-check,
 .btn-primary-check.active,
 .btn-primary-check:active,
-.show > .btn-primary-check.dropdown-toggle {
+.show>.btn-primary-check.dropdown-toggle {
 	background-color: var(--bs-primary);
 	color: #fff;
 	border: 1px solid var(--bs-primary);
@@ -19424,7 +19468,7 @@ a.badge:hover {
 	color: inherit;
 }
 
-.nav.nav-divider .nav-item + .nav-item:before {
+.nav.nav-divider .nav-item+.nav-item:before {
 	content: "•";
 	color: inherit;
 	padding-left: 0.65rem;
@@ -19475,7 +19519,7 @@ a.badge:hover {
 }
 
 .nav-pills-dark .nav-link.active,
-.nav-pills-dark .show > .nav-link {
+.nav-pills-dark .show>.nav-link {
 	color: #fff;
 	background-color: #0A2239;
 }
@@ -19565,7 +19609,7 @@ a.badge:hover {
 		width: auto;
 	}
 
-	.navbar-expand-sm .navbar-nav .dropdown > .dropdown-menu {
+	.navbar-expand-sm .navbar-nav .dropdown>.dropdown-menu {
 		top: 120%;
 		visibility: hidden;
 		opacity: 0;
@@ -19573,7 +19617,7 @@ a.badge:hover {
 		transition: all 0.1s ease-in-out;
 	}
 
-	.navbar-expand-sm .navbar-nav .dropdown:hover > .dropdown-menu {
+	.navbar-expand-sm .navbar-nav .dropdown:hover>.dropdown-menu {
 		display: block;
 		top: 100%;
 		visibility: visible;
@@ -19581,14 +19625,14 @@ a.badge:hover {
 		transition: all 0.3s ease-in-out;
 	}
 
-	.navbar-expand-sm .navbar-nav .dropdown .dropdown-submenu > .dropdown-menu {
+	.navbar-expand-sm .navbar-nav .dropdown .dropdown-submenu>.dropdown-menu {
 		visibility: hidden;
 		opacity: 0;
 		display: block;
 		transition: all 0.1s ease-in-out;
 	}
 
-	.navbar-expand-sm .navbar-nav .dropdown .dropdown-submenu:hover > .dropdown-menu {
+	.navbar-expand-sm .navbar-nav .dropdown .dropdown-submenu:hover>.dropdown-menu {
 		display: block;
 		visibility: visible;
 		opacity: 1;
@@ -19597,15 +19641,15 @@ a.badge:hover {
 		margin-left: 0.5rem;
 	}
 
-	.navbar-expand-sm .navbar-nav .dropdown .dropdown-submenu.dropstart:hover > .dropdown-menu {
+	.navbar-expand-sm .navbar-nav .dropdown .dropdown-submenu.dropstart:hover>.dropdown-menu {
 		margin-right: 0.5rem;
 	}
 
-	.navbar-expand-sm .navbar-nav .dropdown > .dropdown-toggle:active {
+	.navbar-expand-sm .navbar-nav .dropdown>.dropdown-toggle:active {
 		pointer-events: none;
 	}
 
-	.navbar-expand-sm .navbar-nav.nav-active-line .show > .nav-link,
+	.navbar-expand-sm .navbar-nav.nav-active-line .show>.nav-link,
 	.navbar-expand-sm .navbar-nav.nav-active-line .nav-link.active {
 		color: var(--bs-navbar-active-color);
 		border-bottom: 2px solid var(--bs-primary);
@@ -19636,7 +19680,7 @@ a.badge:hover {
 		box-shadow: none !important;
 	}
 
-	.navbar-expand-sm .dropdown-menu-shadow-stacked .dropdown-menu > * {
+	.navbar-expand-sm .dropdown-menu-shadow-stacked .dropdown-menu>* {
 		z-index: 1;
 		position: relative;
 	}
@@ -19699,7 +19743,7 @@ a.badge:hover {
 		color: var(--bs-nav-link-hover-color);
 	}
 
-	.navbar-expand-sm .navbar-nav .nav-item > .dropdown-menu .dropdown-submenu .dropdown-menu {
+	.navbar-expand-sm .navbar-nav .nav-item>.dropdown-menu .dropdown-submenu .dropdown-menu {
 		background: rgba(var(--bs-gray-700), 0.5) !important;
 	}
 
@@ -19743,7 +19787,7 @@ a.badge:hover {
 		padding: 0.25rem 0;
 	}
 
-	.navbar-expand-sm .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu {
+	.navbar-expand-sm .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu {
 		background: transparent;
 		padding: 0;
 		box-shadow: none;
@@ -19752,8 +19796,8 @@ a.badge:hover {
 		margin-left: 8px;
 	}
 
-	.navbar-expand-sm .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item.active,
-	.navbar-expand-sm .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item:hover {
+	.navbar-expand-sm .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item.active,
+	.navbar-expand-sm .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item:hover {
 		background: none !important;
 	}
 }
@@ -19794,7 +19838,7 @@ a.badge:hover {
 		width: auto;
 	}
 
-	.navbar-expand-md .navbar-nav .dropdown > .dropdown-menu {
+	.navbar-expand-md .navbar-nav .dropdown>.dropdown-menu {
 		top: 120%;
 		visibility: hidden;
 		opacity: 0;
@@ -19802,7 +19846,7 @@ a.badge:hover {
 		transition: all 0.1s ease-in-out;
 	}
 
-	.navbar-expand-md .navbar-nav .dropdown:hover > .dropdown-menu {
+	.navbar-expand-md .navbar-nav .dropdown:hover>.dropdown-menu {
 		display: block;
 		top: 100%;
 		visibility: visible;
@@ -19810,14 +19854,14 @@ a.badge:hover {
 		transition: all 0.3s ease-in-out;
 	}
 
-	.navbar-expand-md .navbar-nav .dropdown .dropdown-submenu > .dropdown-menu {
+	.navbar-expand-md .navbar-nav .dropdown .dropdown-submenu>.dropdown-menu {
 		visibility: hidden;
 		opacity: 0;
 		display: block;
 		transition: all 0.1s ease-in-out;
 	}
 
-	.navbar-expand-md .navbar-nav .dropdown .dropdown-submenu:hover > .dropdown-menu {
+	.navbar-expand-md .navbar-nav .dropdown .dropdown-submenu:hover>.dropdown-menu {
 		display: block;
 		visibility: visible;
 		opacity: 1;
@@ -19826,15 +19870,15 @@ a.badge:hover {
 		margin-left: 0.5rem;
 	}
 
-	.navbar-expand-md .navbar-nav .dropdown .dropdown-submenu.dropstart:hover > .dropdown-menu {
+	.navbar-expand-md .navbar-nav .dropdown .dropdown-submenu.dropstart:hover>.dropdown-menu {
 		margin-right: 0.5rem;
 	}
 
-	.navbar-expand-md .navbar-nav .dropdown > .dropdown-toggle:active {
+	.navbar-expand-md .navbar-nav .dropdown>.dropdown-toggle:active {
 		pointer-events: none;
 	}
 
-	.navbar-expand-md .navbar-nav.nav-active-line .show > .nav-link,
+	.navbar-expand-md .navbar-nav.nav-active-line .show>.nav-link,
 	.navbar-expand-md .navbar-nav.nav-active-line .nav-link.active {
 		color: var(--bs-navbar-active-color);
 		border-bottom: 2px solid var(--bs-primary);
@@ -19865,7 +19909,7 @@ a.badge:hover {
 		box-shadow: none !important;
 	}
 
-	.navbar-expand-md .dropdown-menu-shadow-stacked .dropdown-menu > * {
+	.navbar-expand-md .dropdown-menu-shadow-stacked .dropdown-menu>* {
 		z-index: 1;
 		position: relative;
 	}
@@ -19928,7 +19972,7 @@ a.badge:hover {
 		color: var(--bs-nav-link-hover-color);
 	}
 
-	.navbar-expand-md .navbar-nav .nav-item > .dropdown-menu .dropdown-submenu .dropdown-menu {
+	.navbar-expand-md .navbar-nav .nav-item>.dropdown-menu .dropdown-submenu .dropdown-menu {
 		background: rgba(var(--bs-gray-700), 0.5) !important;
 	}
 
@@ -19972,7 +20016,7 @@ a.badge:hover {
 		padding: 0.25rem 0;
 	}
 
-	.navbar-expand-md .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu {
+	.navbar-expand-md .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu {
 		background: transparent;
 		padding: 0;
 		box-shadow: none;
@@ -19981,8 +20025,8 @@ a.badge:hover {
 		margin-left: 8px;
 	}
 
-	.navbar-expand-md .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item.active,
-	.navbar-expand-md .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item:hover {
+	.navbar-expand-md .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item.active,
+	.navbar-expand-md .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item:hover {
 		background: none !important;
 	}
 }
@@ -20023,7 +20067,7 @@ a.badge:hover {
 		width: auto;
 	}
 
-	.navbar-expand-lg .navbar-nav .dropdown > .dropdown-menu {
+	.navbar-expand-lg .navbar-nav .dropdown>.dropdown-menu {
 		top: 120%;
 		visibility: hidden;
 		opacity: 0;
@@ -20031,7 +20075,7 @@ a.badge:hover {
 		transition: all 0.1s ease-in-out;
 	}
 
-	.navbar-expand-lg .navbar-nav .dropdown:hover > .dropdown-menu {
+	.navbar-expand-lg .navbar-nav .dropdown:hover>.dropdown-menu {
 		display: block;
 		top: 100%;
 		visibility: visible;
@@ -20039,14 +20083,14 @@ a.badge:hover {
 		transition: all 0.3s ease-in-out;
 	}
 
-	.navbar-expand-lg .navbar-nav .dropdown .dropdown-submenu > .dropdown-menu {
+	.navbar-expand-lg .navbar-nav .dropdown .dropdown-submenu>.dropdown-menu {
 		visibility: hidden;
 		opacity: 0;
 		display: block;
 		transition: all 0.1s ease-in-out;
 	}
 
-	.navbar-expand-lg .navbar-nav .dropdown .dropdown-submenu:hover > .dropdown-menu {
+	.navbar-expand-lg .navbar-nav .dropdown .dropdown-submenu:hover>.dropdown-menu {
 		display: block;
 		visibility: visible;
 		opacity: 1;
@@ -20055,15 +20099,15 @@ a.badge:hover {
 		margin-left: 0.5rem;
 	}
 
-	.navbar-expand-lg .navbar-nav .dropdown .dropdown-submenu.dropstart:hover > .dropdown-menu {
+	.navbar-expand-lg .navbar-nav .dropdown .dropdown-submenu.dropstart:hover>.dropdown-menu {
 		margin-right: 0.5rem;
 	}
 
-	.navbar-expand-lg .navbar-nav .dropdown > .dropdown-toggle:active {
+	.navbar-expand-lg .navbar-nav .dropdown>.dropdown-toggle:active {
 		pointer-events: none;
 	}
 
-	.navbar-expand-lg .navbar-nav.nav-active-line .show > .nav-link,
+	.navbar-expand-lg .navbar-nav.nav-active-line .show>.nav-link,
 	.navbar-expand-lg .navbar-nav.nav-active-line .nav-link.active {
 		color: var(--bs-navbar-active-color);
 		border-bottom: 2px solid var(--bs-primary);
@@ -20094,7 +20138,7 @@ a.badge:hover {
 		box-shadow: none !important;
 	}
 
-	.navbar-expand-lg .dropdown-menu-shadow-stacked .dropdown-menu > * {
+	.navbar-expand-lg .dropdown-menu-shadow-stacked .dropdown-menu>* {
 		z-index: 1;
 		position: relative;
 	}
@@ -20157,7 +20201,7 @@ a.badge:hover {
 		color: var(--bs-nav-link-hover-color);
 	}
 
-	.navbar-expand-lg .navbar-nav .nav-item > .dropdown-menu .dropdown-submenu .dropdown-menu {
+	.navbar-expand-lg .navbar-nav .nav-item>.dropdown-menu .dropdown-submenu .dropdown-menu {
 		background: rgba(var(--bs-gray-700), 0.5) !important;
 	}
 
@@ -20201,7 +20245,7 @@ a.badge:hover {
 		padding: 0.25rem 0;
 	}
 
-	.navbar-expand-lg .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu {
+	.navbar-expand-lg .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu {
 		background: transparent;
 		padding: 0;
 		box-shadow: none;
@@ -20210,8 +20254,8 @@ a.badge:hover {
 		margin-left: 8px;
 	}
 
-	.navbar-expand-lg .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item.active,
-	.navbar-expand-lg .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item:hover {
+	.navbar-expand-lg .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item.active,
+	.navbar-expand-lg .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item:hover {
 		background: none !important;
 	}
 }
@@ -20252,7 +20296,7 @@ a.badge:hover {
 		width: auto;
 	}
 
-	.navbar-expand-xl .navbar-nav .dropdown > .dropdown-menu {
+	.navbar-expand-xl .navbar-nav .dropdown>.dropdown-menu {
 		top: 120%;
 		visibility: hidden;
 		opacity: 0;
@@ -20260,7 +20304,7 @@ a.badge:hover {
 		transition: all 0.1s ease-in-out;
 	}
 
-	.navbar-expand-xl .navbar-nav .dropdown:hover > .dropdown-menu {
+	.navbar-expand-xl .navbar-nav .dropdown:hover>.dropdown-menu {
 		display: block;
 		top: 100%;
 		visibility: visible;
@@ -20268,14 +20312,14 @@ a.badge:hover {
 		transition: all 0.3s ease-in-out;
 	}
 
-	.navbar-expand-xl .navbar-nav .dropdown .dropdown-submenu > .dropdown-menu {
+	.navbar-expand-xl .navbar-nav .dropdown .dropdown-submenu>.dropdown-menu {
 		visibility: hidden;
 		opacity: 0;
 		display: block;
 		transition: all 0.1s ease-in-out;
 	}
 
-	.navbar-expand-xl .navbar-nav .dropdown .dropdown-submenu:hover > .dropdown-menu {
+	.navbar-expand-xl .navbar-nav .dropdown .dropdown-submenu:hover>.dropdown-menu {
 		display: block;
 		visibility: visible;
 		opacity: 1;
@@ -20284,15 +20328,15 @@ a.badge:hover {
 		margin-left: 0.5rem;
 	}
 
-	.navbar-expand-xl .navbar-nav .dropdown .dropdown-submenu.dropstart:hover > .dropdown-menu {
+	.navbar-expand-xl .navbar-nav .dropdown .dropdown-submenu.dropstart:hover>.dropdown-menu {
 		margin-right: 0.5rem;
 	}
 
-	.navbar-expand-xl .navbar-nav .dropdown > .dropdown-toggle:active {
+	.navbar-expand-xl .navbar-nav .dropdown>.dropdown-toggle:active {
 		pointer-events: none;
 	}
 
-	.navbar-expand-xl .navbar-nav.nav-active-line .show > .nav-link,
+	.navbar-expand-xl .navbar-nav.nav-active-line .show>.nav-link,
 	.navbar-expand-xl .navbar-nav.nav-active-line .nav-link.active {
 		color: var(--bs-navbar-active-color);
 		border-bottom: 2px solid var(--bs-primary);
@@ -20323,7 +20367,7 @@ a.badge:hover {
 		box-shadow: none !important;
 	}
 
-	.navbar-expand-xl .dropdown-menu-shadow-stacked .dropdown-menu > * {
+	.navbar-expand-xl .dropdown-menu-shadow-stacked .dropdown-menu>* {
 		z-index: 1;
 		position: relative;
 	}
@@ -20386,7 +20430,7 @@ a.badge:hover {
 		color: var(--bs-nav-link-hover-color);
 	}
 
-	.navbar-expand-xl .navbar-nav .nav-item > .dropdown-menu .dropdown-submenu .dropdown-menu {
+	.navbar-expand-xl .navbar-nav .nav-item>.dropdown-menu .dropdown-submenu .dropdown-menu {
 		background: rgba(var(--bs-gray-700), 0.5) !important;
 	}
 
@@ -20430,7 +20474,7 @@ a.badge:hover {
 		padding: 0.25rem 0;
 	}
 
-	.navbar-expand-xl .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu {
+	.navbar-expand-xl .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu {
 		background: transparent;
 		padding: 0;
 		box-shadow: none;
@@ -20439,8 +20483,8 @@ a.badge:hover {
 		margin-left: 8px;
 	}
 
-	.navbar-expand-xl .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item.active,
-	.navbar-expand-xl .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item:hover {
+	.navbar-expand-xl .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item.active,
+	.navbar-expand-xl .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item:hover {
 		background: none !important;
 	}
 }
@@ -20481,7 +20525,7 @@ a.badge:hover {
 		width: auto;
 	}
 
-	.navbar-expand-xxl .navbar-nav .dropdown > .dropdown-menu {
+	.navbar-expand-xxl .navbar-nav .dropdown>.dropdown-menu {
 		top: 120%;
 		visibility: hidden;
 		opacity: 0;
@@ -20489,7 +20533,7 @@ a.badge:hover {
 		transition: all 0.1s ease-in-out;
 	}
 
-	.navbar-expand-xxl .navbar-nav .dropdown:hover > .dropdown-menu {
+	.navbar-expand-xxl .navbar-nav .dropdown:hover>.dropdown-menu {
 		display: block;
 		top: 100%;
 		visibility: visible;
@@ -20497,14 +20541,14 @@ a.badge:hover {
 		transition: all 0.3s ease-in-out;
 	}
 
-	.navbar-expand-xxl .navbar-nav .dropdown .dropdown-submenu > .dropdown-menu {
+	.navbar-expand-xxl .navbar-nav .dropdown .dropdown-submenu>.dropdown-menu {
 		visibility: hidden;
 		opacity: 0;
 		display: block;
 		transition: all 0.1s ease-in-out;
 	}
 
-	.navbar-expand-xxl .navbar-nav .dropdown .dropdown-submenu:hover > .dropdown-menu {
+	.navbar-expand-xxl .navbar-nav .dropdown .dropdown-submenu:hover>.dropdown-menu {
 		display: block;
 		visibility: visible;
 		opacity: 1;
@@ -20513,15 +20557,15 @@ a.badge:hover {
 		margin-left: 0.5rem;
 	}
 
-	.navbar-expand-xxl .navbar-nav .dropdown .dropdown-submenu.dropstart:hover > .dropdown-menu {
+	.navbar-expand-xxl .navbar-nav .dropdown .dropdown-submenu.dropstart:hover>.dropdown-menu {
 		margin-right: 0.5rem;
 	}
 
-	.navbar-expand-xxl .navbar-nav .dropdown > .dropdown-toggle:active {
+	.navbar-expand-xxl .navbar-nav .dropdown>.dropdown-toggle:active {
 		pointer-events: none;
 	}
 
-	.navbar-expand-xxl .navbar-nav.nav-active-line .show > .nav-link,
+	.navbar-expand-xxl .navbar-nav.nav-active-line .show>.nav-link,
 	.navbar-expand-xxl .navbar-nav.nav-active-line .nav-link.active {
 		color: var(--bs-navbar-active-color);
 		border-bottom: 2px solid var(--bs-primary);
@@ -20552,7 +20596,7 @@ a.badge:hover {
 		box-shadow: none !important;
 	}
 
-	.navbar-expand-xxl .dropdown-menu-shadow-stacked .dropdown-menu > * {
+	.navbar-expand-xxl .dropdown-menu-shadow-stacked .dropdown-menu>* {
 		z-index: 1;
 		position: relative;
 	}
@@ -20615,7 +20659,7 @@ a.badge:hover {
 		color: var(--bs-nav-link-hover-color);
 	}
 
-	.navbar-expand-xxl .navbar-nav .nav-item > .dropdown-menu .dropdown-submenu .dropdown-menu {
+	.navbar-expand-xxl .navbar-nav .nav-item>.dropdown-menu .dropdown-submenu .dropdown-menu {
 		background: rgba(var(--bs-gray-700), 0.5) !important;
 	}
 
@@ -20659,7 +20703,7 @@ a.badge:hover {
 		padding: 0.25rem 0;
 	}
 
-	.navbar-expand-xxl .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu {
+	.navbar-expand-xxl .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu {
 		background: transparent;
 		padding: 0;
 		box-shadow: none;
@@ -20668,8 +20712,8 @@ a.badge:hover {
 		margin-left: 8px;
 	}
 
-	.navbar-expand-xxl .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item.active,
-	.navbar-expand-xxl .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item:hover {
+	.navbar-expand-xxl .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item.active,
+	.navbar-expand-xxl .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item:hover {
 		background: none !important;
 	}
 }
@@ -20709,7 +20753,7 @@ a.badge:hover {
 	width: auto;
 }
 
-.navbar-expand .navbar-nav .dropdown > .dropdown-menu {
+.navbar-expand .navbar-nav .dropdown>.dropdown-menu {
 	top: 120%;
 	visibility: hidden;
 	opacity: 0;
@@ -20717,7 +20761,7 @@ a.badge:hover {
 	transition: all 0.1s ease-in-out;
 }
 
-.navbar-expand .navbar-nav .dropdown:hover > .dropdown-menu {
+.navbar-expand .navbar-nav .dropdown:hover>.dropdown-menu {
 	display: block;
 	top: 100%;
 	visibility: visible;
@@ -20725,14 +20769,14 @@ a.badge:hover {
 	transition: all 0.3s ease-in-out;
 }
 
-.navbar-expand .navbar-nav .dropdown .dropdown-submenu > .dropdown-menu {
+.navbar-expand .navbar-nav .dropdown .dropdown-submenu>.dropdown-menu {
 	visibility: hidden;
 	opacity: 0;
 	display: block;
 	transition: all 0.1s ease-in-out;
 }
 
-.navbar-expand .navbar-nav .dropdown .dropdown-submenu:hover > .dropdown-menu {
+.navbar-expand .navbar-nav .dropdown .dropdown-submenu:hover>.dropdown-menu {
 	display: block;
 	visibility: visible;
 	opacity: 1;
@@ -20741,15 +20785,15 @@ a.badge:hover {
 	margin-left: 0.5rem;
 }
 
-.navbar-expand .navbar-nav .dropdown .dropdown-submenu.dropstart:hover > .dropdown-menu {
+.navbar-expand .navbar-nav .dropdown .dropdown-submenu.dropstart:hover>.dropdown-menu {
 	margin-right: 0.5rem;
 }
 
-.navbar-expand .navbar-nav .dropdown > .dropdown-toggle:active {
+.navbar-expand .navbar-nav .dropdown>.dropdown-toggle:active {
 	pointer-events: none;
 }
 
-.navbar-expand .navbar-nav.nav-active-line .show > .nav-link,
+.navbar-expand .navbar-nav.nav-active-line .show>.nav-link,
 .navbar-expand .navbar-nav.nav-active-line .nav-link.active {
 	color: var(--bs-navbar-active-color);
 	border-bottom: 2px solid var(--bs-primary);
@@ -20780,7 +20824,7 @@ a.badge:hover {
 	box-shadow: none !important;
 }
 
-.navbar-expand .dropdown-menu-shadow-stacked .dropdown-menu > * {
+.navbar-expand .dropdown-menu-shadow-stacked .dropdown-menu>* {
 	z-index: 1;
 	position: relative;
 }
@@ -20841,7 +20885,7 @@ a.badge:hover {
 	color: var(--bs-nav-link-hover-color);
 }
 
-.navbar-expand .navbar-nav .nav-item > .dropdown-menu .dropdown-submenu .dropdown-menu {
+.navbar-expand .navbar-nav .nav-item>.dropdown-menu .dropdown-submenu .dropdown-menu {
 	background: rgba(var(--bs-gray-700), 0.5) !important;
 }
 
@@ -20885,7 +20929,7 @@ a.badge:hover {
 	padding: 0.25rem 0;
 }
 
-.navbar-expand .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu {
+.navbar-expand .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu {
 	background: transparent;
 	padding: 0;
 	box-shadow: none;
@@ -20894,8 +20938,8 @@ a.badge:hover {
 	margin-left: 8px;
 }
 
-.navbar-expand .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item.active,
-.navbar-expand .navbar-nav.navbar-offcanvas-menu .nav-item > .dropdown-menu .dropdown-item:hover {
+.navbar-expand .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item.active,
+.navbar-expand .navbar-nav.navbar-offcanvas-menu .nav-item>.dropdown-menu .dropdown-item:hover {
 	background: none !important;
 }
 
@@ -21228,33 +21272,33 @@ a {
 	transition: all 0.3s ease-in-out;
 }
 
-h1 > a,
-h2 > a,
-h3 > a,
-h4 > a,
-h5 > a,
-h6 > a,
-.h1 > a,
-.h2 > a,
-.h3 > a,
-.h4 > a,
-.h5 > a,
-.h6 > a {
+h1>a,
+h2>a,
+h3>a,
+h4>a,
+h5>a,
+h6>a,
+.h1>a,
+.h2>a,
+.h3>a,
+.h4>a,
+.h5>a,
+.h6>a {
 	color: var(--bs-gray-900);
 }
 
-h1 > a:hover,
-h2 > a:hover,
-h3 > a:hover,
-h4 > a:hover,
-h5 > a:hover,
-h6 > a:hover,
-.h1 > a:hover,
-.h2 > a:hover,
-.h3 > a:hover,
-.h4 > a:hover,
-.h5 > a:hover,
-.h6 > a:hover {
+h1>a:hover,
+h2>a:hover,
+h3>a:hover,
+h4>a:hover,
+h5>a:hover,
+h6>a:hover,
+.h1>a:hover,
+.h2>a:hover,
+.h3>a:hover,
+.h4>a:hover,
+.h5>a:hover,
+.h6>a:hover {
 	color: var(--bs-primary);
 }
 
@@ -22099,11 +22143,11 @@ body.dashboard main {
 	display: flex;
 }
 
-.avatar-group > li {
+.avatar-group>li {
 	position: relative;
 }
 
-.avatar-group > li:not(:last-child) {
+.avatar-group>li:not(:last-child) {
 	margin-right: -0.8rem;
 }
 
@@ -22292,7 +22336,7 @@ body.dashboard main {
 	width: auto;
 }
 
-.sidebar.navbar-expand-sm .sidebar-content .navbar-nav > .nav-item > .nav-link[data-bs-toggle=collapse][aria-expanded=true] {
+.sidebar.navbar-expand-sm .sidebar-content .navbar-nav>.nav-item>.nav-link[data-bs-toggle=collapse][aria-expanded=true] {
 	color: var(--bs-primary);
 	background-color: rgba(var(--bs-primary-rgb), 0.1);
 	border-radius: 0.5rem;
@@ -22435,7 +22479,7 @@ body.dashboard main {
 	width: auto;
 }
 
-.sidebar.navbar-expand-md .sidebar-content .navbar-nav > .nav-item > .nav-link[data-bs-toggle=collapse][aria-expanded=true] {
+.sidebar.navbar-expand-md .sidebar-content .navbar-nav>.nav-item>.nav-link[data-bs-toggle=collapse][aria-expanded=true] {
 	color: var(--bs-primary);
 	background-color: rgba(var(--bs-primary-rgb), 0.1);
 	border-radius: 0.5rem;
@@ -22578,7 +22622,7 @@ body.dashboard main {
 	width: auto;
 }
 
-.sidebar.navbar-expand-lg .sidebar-content .navbar-nav > .nav-item > .nav-link[data-bs-toggle=collapse][aria-expanded=true] {
+.sidebar.navbar-expand-lg .sidebar-content .navbar-nav>.nav-item>.nav-link[data-bs-toggle=collapse][aria-expanded=true] {
 	color: var(--bs-primary);
 	background-color: rgba(var(--bs-primary-rgb), 0.1);
 	border-radius: 0.5rem;
@@ -22721,7 +22765,7 @@ body.dashboard main {
 	width: auto;
 }
 
-.sidebar.navbar-expand-xl .sidebar-content .navbar-nav > .nav-item > .nav-link[data-bs-toggle=collapse][aria-expanded=true] {
+.sidebar.navbar-expand-xl .sidebar-content .navbar-nav>.nav-item>.nav-link[data-bs-toggle=collapse][aria-expanded=true] {
 	color: var(--bs-primary);
 	background-color: rgba(var(--bs-primary-rgb), 0.1);
 	border-radius: 0.5rem;
@@ -22864,7 +22908,7 @@ body.dashboard main {
 	width: auto;
 }
 
-.sidebar.navbar-expand-xxl .sidebar-content .navbar-nav > .nav-item > .nav-link[data-bs-toggle=collapse][aria-expanded=true] {
+.sidebar.navbar-expand-xxl .sidebar-content .navbar-nav>.nav-item>.nav-link[data-bs-toggle=collapse][aria-expanded=true] {
 	color: var(--bs-primary);
 	background-color: rgba(var(--bs-primary-rgb), 0.1);
 	border-radius: 0.5rem;
@@ -23022,7 +23066,7 @@ body.dashboard main {
 	width: auto;
 }
 
-.sidebar.navbar-expand .sidebar-content .navbar-nav > .nav-item > .nav-link[data-bs-toggle=collapse][aria-expanded=true] {
+.sidebar.navbar-expand .sidebar-content .navbar-nav>.nav-item>.nav-link[data-bs-toggle=collapse][aria-expanded=true] {
 	color: var(--bs-primary);
 	background-color: rgba(var(--bs-primary-rgb), 0.1);
 	border-radius: 0.5rem;
@@ -23408,8 +23452,8 @@ html[dir=rtl] .choices,
 html[dir=rtl] select option,
 html[dir=rtl] .choices__input {
 	direction: rtl;
-	unicode-bidi: bidi-override;
-	text-align: left;
+	/* unicode-bidi: bidi-override; */
+	text-align: right;
 }
 
 [dir=rtl] .choices__list--dropdown .choices__item--selectable {
@@ -23443,11 +23487,11 @@ html[dir=rtl] .choices__input {
 	border-bottom-left-radius: 0 !important;
 }
 
-.choices[data-type*=select-one] .choices__list > .choices__list > .choices__item--selectable {
+.choices[data-type*=select-one] .choices__list>.choices__list>.choices__item--selectable {
 	padding-right: 0px;
 }
 
-.choices[data-type*=select-one] .choices__list > .choices__list > .choices__item--selectable::after {
+.choices[data-type*=select-one] .choices__list>.choices__list>.choices__item--selectable::after {
 	display: none;
 }
 
@@ -23877,12 +23921,12 @@ html[dir=rtl] .choices__input {
 	margin-top: 10px;
 }
 
-.splide-thumb > .splide__track > .splide__list > .splide__slide.is-active {
+.splide-thumb>.splide__track>.splide__list>.splide__slide.is-active {
 	box-shadow: 0px 0px 0px 5px inset var(--bs-primary);
 	border: none;
 }
 
-.splide--nav > .splide__track > .splide__list > .splide__slide {
+.splide--nav>.splide__track>.splide__list>.splide__slide {
 	border-radius: 5px;
 	border: none;
 }
@@ -24089,9 +24133,9 @@ span.flatpickr-weekday,
 	box-shadow: -5px 0 0 var(--bs-light), 5px 0 0 var(--bs-light);
 }
 
-.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),
-.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)),
-.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
+.flatpickr-day.selected.startRange+.endRange:not(:nth-child(7n+1)),
+.flatpickr-day.startRange.startRange+.endRange:not(:nth-child(7n+1)),
+.flatpickr-day.endRange.startRange+.endRange:not(:nth-child(7n+1)) {
 	box-shadow: -10px 0 0 var(--bs-primary);
 }
 
@@ -24417,7 +24461,7 @@ span.flatpickr-weekday,
 	box-shadow: none !important;
 }
 
-[data-bs-theme=dark] .navbar-nav .dropdown .dropdown-submenu:hover > .dropdown-menu {
+[data-bs-theme=dark] .navbar-nav .dropdown .dropdown-submenu:hover>.dropdown-menu {
 	box-shadow: none;
 }
 
@@ -24543,4 +24587,72 @@ span.flatpickr-weekday,
 
 .h-75px {
 	height: 75px;
+}
+
+html[dir=rtl] select {
+	padding: .375rem .75rem .375rem 2.25rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--bs-body-color);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: var(--bs-body-bg);
+	background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
+	background-repeat: no-repeat;
+	background-position: left .75rem center;
+	background-size: 16px 12px;
+	border: var(--bs-border-width) solid var(--bs-border-color);
+	border-radius: var(--bs-border-radius);
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+html[dir=rtl] .input-group:not(.has-validation)> :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
+html[dir=rtl] .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3),
+html[dir=rtl] .input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,
+html[dir=rtl] .input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select {
+	border-radius: var(--bs-border-radius);
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+html[dir=rtl] .input-group.has-validation> :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
+html[dir=rtl] .input-group.has-validation>.dropdown-toggle:nth-last-child(n+4),
+html[dir=rtl] .input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-control,
+html[dir=rtl] .input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-select {
+	border-radius: var(--bs-border-radius);
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+html[dir=rtl] .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+	border-radius: var(--bs-border-radius);
+	margin-right: calc(var(--bs-border-width) * -1);
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+html[dir=rtl] .input-group>.form-floating:not(:first-child)>.form-control,
+html[dir=rtl] .input-group>.form-floating:not(:first-child)>.form-select {
+	border-radius: var(--bs-border-radius);
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+
+html[dir=rtl] .was-validated .form-control:invalid,
+.form-control.is-invalid {
+	border-color: var(--bs-danger);
+	padding-right: calc(1.5em + 0.75rem);
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-position: left calc(0.375em + 0.1875rem) center;
+	background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+html[dir=rtl] .was-validated textarea.form-control:invalid,
+textarea.form-control.is-invalid {
+	padding-right: calc(1.5em + 0.75rem);
+	background-position: top calc(0.375em + 0.1875rem) left calc(0.375em + 0.1875rem);
 }

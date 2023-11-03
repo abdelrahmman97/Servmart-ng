@@ -11,6 +11,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from "../../core/core.module";
+import { AddRequestComponent } from './Components/addRequest/addRequest.component';
 
 
 
@@ -21,7 +22,8 @@ import { CoreModule } from "../../core/core.module";
 		CustomerRequestsListComponent,
         SearchVendorsComponent,
         RequestOffersComponent,
-        RateServiceComponent
+		RateServiceComponent,
+		AddRequestComponent
     ],
     imports: [
         CommonModule,
