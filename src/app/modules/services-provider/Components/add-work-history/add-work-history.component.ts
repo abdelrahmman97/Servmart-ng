@@ -35,14 +35,6 @@ export class AddWorkHistoryComponent {
 			}
 		);
 	}
-	removeFil() {
-		if (this.workHistoryForm.valid) {
-			console.log(this.workHistoryForm.value)
-		}
-	}
-
-
-
 
 	getFile(event: any) {
 		this.file = event.target.files[0];
