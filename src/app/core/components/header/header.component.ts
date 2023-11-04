@@ -8,11 +8,7 @@ import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 })
 export class HeaderComponent {
 
-	username: string;
-	profilePic: string;
 	constructor(private auth: AuthService) {
-		this.username = auth.getUsername();
-		this.profilePic = auth.getProfilePic();
 	}
 
 	isUserLoggedIn() {

@@ -5,13 +5,13 @@
 		<div class="text-center mb-3 d-flex justify-content-center flex-column align-items-center text-truncate">
 			<div class="mb-2">
 				<img class="avatar-img rounded-circle border border-2 border-white d-none d-sm-flex w-100"
-					src="https://images.placeholders.dev/?width=200&height=200" alt="">
+					[src]="user.profilePic" alt="{{user.userName}} profile picture" title="{{user.userName}}">
 			</div>
 			<a href="#" class="text-reset text-primary-hover small line-clamp-1 d-none d-xl-inline">
-				<h6 class="mb-0 d-none d-xl-inline">Abdelrahman M.</h6>
+				<h6 class="mb-0 d-none d-xl-inline">{{userFullName}}</h6>
 			</a>
 			<a href="#" class="text-reset text-primary-hover small line-clamp-1 d-none d-xl-inline">
-				abdelrahman.m1097@gmail.com
+				{{user.email}}
 			</a>
 			<hr>
 		</div>

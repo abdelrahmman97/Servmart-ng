@@ -48,6 +48,9 @@ export class AuthService {
 			(data) => {
 				localStorage.setItem(this.AuthModel, JSON.stringify(data));
 				this.router.navigate(['/']);
+			},
+			(error) => {
+				this.toastr.error(error.error, "خطأ")
 			}
 		);
 	}
@@ -72,24 +75,16 @@ export class AuthService {
 		return this.isLoggedIn() ? user.token : null;
 	}
 
-	getUsername() {
+	getUser() {
 		let user = JSON.parse(localStorage.getItem(this.AuthModel));
 		if (user != null) {
-			return user.userName;
+			return user;
 		}
 		else {
 			return null;
 		}
 	}
-	getProfilePic() {
-		let user = JSON.parse(localStorage.getItem(this.AuthModel));
-		if (user != null) {
-			return user.profilePic;
-		}
-		else {
-			return null;
-		}
-	}
+
 
 	// UPDATE - user type check
 

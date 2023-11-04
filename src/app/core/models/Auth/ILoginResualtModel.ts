@@ -1,7 +1,11 @@
 export interface ILoginResualtModel {
-	Token: string;
-	ExpiresOn: string;
-	Role: string[];
-	ProfilePic: string;
-	UserName: string;
+	token: string;
+	expiresOn: string;
+	role: string[];
+	userName: string;
+	profilePic: string;
+	email?: any;
+	fName: string;
+	lName: string;
+	userID: string;
 }

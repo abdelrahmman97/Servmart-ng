@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PreferredThemeService } from './shared/services/PreferredTheme.service';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
 	selector: 'app-root',
@@ -15,14 +16,14 @@ export class AppComponent {
 	// TODO => create alert to notify the user when loose internt connection
 	public onlineOffline: boolean = navigator.onLine;
 
-	constructor(private theme: PreferredThemeService, private router: Router) {
+	constructor(private toastr: ToastrService, private theme: PreferredThemeService, private router: Router) {
 		// theme.load();
-		// this.router.events.subscribe(
-		// 	( e ) => {
-		// 		let event = e as RouterEvent;
-		// 		this.navigationInterceptor( event );
-		// 	}
-		// );
+		this.router.events.subscribe(
+			(e) => {
+				let event = e as RouterEvent;
+				this.navigationInterceptor(event);
+			}
+		);
 	}
 
 	navigationInterceptor(event: RouterEvent): void {

@@ -130,7 +130,7 @@
 							</select>
 						</div>
 						<div class="mb-3" id="genre"
-							*ngIf="registerForm.get('AccountType').touched && registerForm.get('AccountType').value !='Customer' && registerForm.get('AccountType').value !='' ">
+							*ngIf="registerForm.get('AccountType').value !='Customer' && registerForm.get('AccountType').value !='' ">
 							<label for="Specialization" class="label">التخصص</label>
 							<select class="form-select" id="Specialization" formControlName="Specialization">
 								<option class="text-end" value="Blumber">سباك</option>
