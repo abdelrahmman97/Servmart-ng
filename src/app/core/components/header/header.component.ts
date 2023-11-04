@@ -12,7 +12,7 @@ export class HeaderComponent {
 	profilePic: string;
 	constructor(private auth: AuthService) {
 		this.username = auth.getUsername();
-		this.profilePic = auth.getProfilePic()
+		this.profilePic = auth.getProfilePic();
 	}
 
 	isUserLoggedIn() {

@@ -12,7 +12,6 @@ import { ILoginResualtModel } from 'src/app/core/models/Auth/ILoginResualtModel'
 })
 export class AuthService {
 
-	private tokenKey = 'token';
 	private AuthModel = 'servmart.auth';
 
 	constructor
@@ -27,7 +26,6 @@ export class AuthService {
 			(data) => {
 				let model = data as ILoginResualtModel;
 				localStorage.setItem(this.AuthModel, JSON.stringify(model))
-				localStorage.setItem(this.tokenKey, JSON.stringify(model.Token))
 				this.router.navigate(['/']);
 				console.log(model);
 			},
@@ -47,8 +45,8 @@ export class AuthService {
 
 	register(user: IUserRegister): void {
 		this.authClient.register(user).subscribe(
-			(token) => {
-				localStorage.setItem(this.tokenKey, JSON.stringify(token));
+			(data) => {
+				localStorage.setItem(this.AuthModel, JSON.stringify(data));
 				this.router.navigate(['/']);
 			}
 		);
@@ -60,21 +58,37 @@ export class AuthService {
 	}
 
 	isLoggedIn(): boolean {
-		let token = localStorage.getItem(this.tokenKey);
-		return token != null && token.length > 0;
+		let user = JSON.parse(localStorage.getItem(this.AuthModel));
+		if (user != null) {
+			return user.token != null && user.token.length > 0;
+		}
+		else {
+			return null;
+		}
 	}
 
 	getToken() {
-		return this.isLoggedIn() ? localStorage.getItem(this.tokenKey) : null;
+		let user = JSON.parse(localStorage.getItem(this.AuthModel));
+		return this.isLoggedIn() ? user.token : null;
 	}
 
 	getUsername() {
-		const user = JSON.parse(localStorage.getItem("servmart.auth"));
-		return user.userName;
+		let user = JSON.parse(localStorage.getItem(this.AuthModel));
+		if (user != null) {
+			return user.userName;
+		}
+		else {
+			return null;
+		}
 	}
 	getProfilePic() {
-		const user = JSON.parse(localStorage.getItem("servmart.auth"));
-		return user.userName;
+		let user = JSON.parse(localStorage.getItem(this.AuthModel));
+		if (user != null) {
+			return user.profilePic;
+		}
+		else {
+			return null;
+		}
 	}
 
 	// UPDATE - user type check

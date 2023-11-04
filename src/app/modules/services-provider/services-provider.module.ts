@@ -12,14 +12,6 @@ import { CoreModule } from 'src/app/core/core.module';
 
 
 @NgModule({
-  declarations: [
-    
-  ],
-  imports: [
-    CommonModule,ReactiveFormsModule
-  ],
-  providers: [ServiceService],
-
 	declarations: [
 		AddWorkHistoryComponent,
 		ServiceProviderSendOfferComponent,
@@ -33,6 +25,7 @@ import { CoreModule } from 'src/app/core/core.module';
 		SharedModule,
 		ReactiveFormsModule,
 		CoreModule
-	]
+	],
+	providers: [ServiceService],
 })
 export class ServicesProviderModule { }

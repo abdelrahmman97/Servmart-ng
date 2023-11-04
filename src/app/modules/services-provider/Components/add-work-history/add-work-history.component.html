@@ -1,4 +1,67 @@
 <<<<<<< HEAD
+<<<<<<< HEAD <div class="d-flex justify-content-between align-items-center">
+	<h3>إضافة خبرات عمل سابقة</h3>
+	<button class="btn btn-primary" (click)="removeFile()">إضافة</button>
+	</div>
+	<div class="d-flex flex-column justify-content-center">
+		<form [formGroup]="workHistoryForm" class="d-flex flex-column gap-2 mb-3">
+			<label>اسم الخدمة</label>
+			<input formControlName="jobTitle" class="form-control" type="text" aria-label="default input example"
+				[ngClass]="{'is-invalid': workHistoryForm.get('jobTitle').touched && workHistoryForm.get('jobTitle').invalid}">
+			<span
+				*ngIf="workHistoryForm.get('jobTitle').touched && workHistoryForm.get('jobTitle').hasError('required')"
+				class="invalid-feedback">
+				اسم الخدمة مطلوب
+			</span>
+			<div class="mb-3">
+				<div class="col-auto">
+					<label for="Product" class="col-form-label">الصنف</label>
+				</div>
+				<div class="col-auto">
+					<select formControlName="productCategory" class="form-control" aria-label="Large select example"
+						[ngClass]="{'is-invalid': workHistoryForm.get('productCategory').touched && workHistoryForm.get('productCategory').invalid}">
+						<span
+							*ngIf="workHistoryForm.get('productCategory').touched && workHistoryForm.get('productCategory').hasError('required')"
+							class="invalid-feedback">
+							الصنف مطلوب
+						</span>
+						<option selected disabled>--- select ---</option>
+						<option *ngFor="let item of values" value={{item.id}}>{{item.name}}</option>
+					</select>
+				</div>
+			</div>
+			<label>وصف الخدمة</label>
+			<textarea formControlName="jobDescription" class="form-control textarea" name="" id="" cols="30" rows="5"
+				autoresize="none"
+				[ngClass]="{'is-invalid': workHistoryForm.get('jobDescription').touched && workHistoryForm.get('jobDescription').invalid}"></textarea>
+			<span
+				*ngIf="workHistoryForm.get('jobDescription').touched && workHistoryForm.get('jobDescription').hasError('required')"
+				class="invalid-feedback">
+				وصف الخدمة مطلوب
+			</span>
+
+
+
+			<div *ngIf="!file" class="FileContainer text-center w-100 d-flex flex-column">
+				<label class="mt-2">إضافة صور العمل</label>
+				<input formControlName="file" class="form-control" id="upload_image_logo" class="file" type="file"
+					accept="image/*" multiple (change)="getFile($event)"
+					[ngClass]="{'is-invalid': workHistoryForm.get('file').touched && workHistoryForm.get('file').invalid}">
+				<span *ngIf="workHistoryForm.get('file').touched && workHistoryForm.get('file').hasError('required')"
+					class="invalid-feedback">
+					صورة الخدمة مطلوبة
+				</span>
+			</div>
+		</form>
+		<div *ngIf="file">
+			<div class="d-flex flex-column">
+				<img [src]="url" class="img-thumbnail w-25 h-25" alt="">
+				<label class="mx-2">file name: {{file.name}}</label>
+			</div>
+			<button class=" btn btn-danger" (click)=" removeFile()">Remove File</button>
+		</div>
+=======
+<<<<<<< HEAD
 <div class="d-flex justify-content-between align-items-center">
     <h3>إضافة خبرات عمل سابقة</h3>
     <button class="btn btn-primary" (click)="removeFil()">إضافة</button>
@@ -51,3 +114,4 @@
         </div>
         <button class=" btn btn-danger" (click)=" removeFile()">Remove File</button>
     </div>
+>>>>>>> 324dc4213fda9753f6f6ebe90022da893d78c056
