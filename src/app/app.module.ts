@@ -10,6 +10,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './modules/auth/helpers/token.interceptor';
 import { NgxPaginationModule } from 'ngx-pagination'
 import { ToastNoAnimationModule } from 'ngx-toastr';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 
 @NgModule({
@@ -33,6 +34,9 @@ import { ToastNoAnimationModule } from 'ngx-toastr';
 				preventDuplicates: true,
 			}
 		),
+
+		// for ngx loading bar
+		LoadingBarHttpClientModule,
 	],
 	providers: [
 		{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
