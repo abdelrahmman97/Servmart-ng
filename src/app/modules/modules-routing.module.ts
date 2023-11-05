@@ -20,52 +20,52 @@ import { PendingAccountComponent } from './pages/pending-account/pending-account
 import { ServiceProviderSendOfferComponent } from './services-provider/Components/service-provider-send-offer/service-provider-send-offer.component';
 import { CartComponent } from './customer/Components/cart/cart.component';
 import { CheckOutComponent } from './customer/Components/check-out/check-out.component';
-import { authGuard } from '../shared/guards/AuthGuard/auth.guard';
 import { ServicesComponent } from './pages/services/services.component';
 import { AddRequestComponent } from './customer/Components/addRequest/addRequest.component';
 import { RequestOrdersComponent } from './services-provider/Components/requestOrders/requestOrders.component';
+import { userLogedInGuard } from '../shared/guards/userLogedInGuard/user-loged-in.guard';
 
 
 
 const routes: Routes = [
 
 	// Shared Components
-	{ path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
+	{ path: 'profile', component: ProfileComponent, canActivate: [ userLogedInGuard ] },
 	{ path: "shop", component: ShopComponent },
 	{ path: "details", component: DetailsComponent },
-	{ path: "settings", component: AccountSettingsComponent, canActivate: [authGuard] },
-	{ path: "accountUnderReview", component: PendingAccountComponent, canActivate: [authGuard] },
-	{ path: "earning", component: EaringComponent, canActivate: [authGuard] },
-	{ path: 'cart', component: CartComponent, canActivate: [authGuard] },
-	{ path: 'checkout', component: CheckOutComponent, canActivate: [authGuard] },
-	{ path: 'services', component: ServicesComponent, canActivate: [authGuard] },
+	{ path: "settings", component: AccountSettingsComponent, canActivate: [ userLogedInGuard ] },
+	{ path: "accountUnderReview", component: PendingAccountComponent, canActivate: [ userLogedInGuard ] },
+	{ path: "earning", component: EaringComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'cart', component: CartComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'checkout', component: CheckOutComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'services', component: ServicesComponent, canActivate: [ userLogedInGuard ] },
 
 	// Customer Components
-	{ path: 'myRequests', component: CustomerRequestsListComponent, canActivate: [authGuard] },
-	{ path: 'offers/:id', component: RequestOffersComponent, canActivate: [authGuard] },
-	{ path: 'rateService/:id', component: RateServiceComponent, canActivate: [authGuard] },
+	{ path: 'myRequests', component: CustomerRequestsListComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'offers/:id', component: RequestOffersComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'rateService/:id', component: RateServiceComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'vendors', component: SearchVendorsComponent },
-	{ path: 'addRequest', component: AddRequestComponent, canActivate: [authGuard] },
+	{ path: 'addRequest', component: AddRequestComponent, canActivate: [ userLogedInGuard ] },
 
 	// Vendor Components
-	{ path: 'addProduct', component: AddProduectsComponent, canActivate: [authGuard] },
-	{ path: 'addWorkHistory', component: AddWorkHistoryComponent, canActivate: [authGuard] },
-	{ path: "orderDetails/:id", component: OrderDetailsComponent, canActivate: [authGuard] },
-	{ path: "orderList", component: RequestListComponent, canActivate: [authGuard] },
-	{ path: 'productList', component: ProductListComponent, canActivate: [authGuard] },
+	{ path: 'addProduct', component: AddProduectsComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'addWorkHistory', component: AddWorkHistoryComponent, canActivate: [ userLogedInGuard ] },
+	{ path: "orderDetails/:id", component: OrderDetailsComponent, canActivate: [ userLogedInGuard ] },
+	{ path: "orderList", component: RequestListComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'productList', component: ProductListComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'product/:id', component: ProductDetailsComponent },
 
 	// Service Provider Compproducts
-	{ path: 'bids', component: SendOffersComponent, canActivate: [authGuard] },
+	{ path: 'bids', component: SendOffersComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'service/:id', component: DetailsComponent },
-	{ path: 'sendOffer/:id', component: ServiceProviderSendOfferComponent, canActivate: [authGuard] },
-	{ path: 'requestsOrders', component: RequestOrdersComponent, canActivate: [authGuard] },
+	{ path: 'sendOffer/:id', component: ServiceProviderSendOfferComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'requestsOrders', component: RequestOrdersComponent, canActivate: [ userLogedInGuard ] },
 
 
 ];
 
-@NgModule({
-	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule]
-})
+@NgModule( {
+	imports: [ RouterModule.forChild( routes ) ],
+	exports: [ RouterModule ]
+} )
 export class ModulesRoutingModule { }

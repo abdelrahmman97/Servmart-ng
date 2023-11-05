@@ -6,6 +6,7 @@ import { IUserLogIn } from 'src/app/core/models/User/IUserLogIn';
 import { IUserRegister } from 'src/app/core/models/User/IUserRegister';
 import { ToastrService } from 'ngx-toastr';
 import { ILoginResualtModel } from 'src/app/core/models/Auth/ILoginResualtModel';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -13,21 +14,26 @@ import { ILoginResualtModel } from 'src/app/core/models/Auth/ILoginResualtModel'
 export class AuthService {
 
 	private AuthModel = 'servmart.auth';
+	private userSubject: BehaviorSubject<ILoginResualtModel | null>;
+	public user: Observable<ILoginResualtModel | null>;
 
 	constructor
 		(
 			private authClient: AuthenticationClient,
 			private router: Router,
 			private toastr: ToastrService
-		) { }
+		) {
+		this.userSubject = new BehaviorSubject(this.getUserFromLocalStorage()!);
+		this.user = this.userSubject.asObservable();
+	}
 
 	login(user: IUserLogIn): void {
 		this.authClient.login(user).subscribe(
 			(data) => {
-				let model = data as ILoginResualtModel;
-				localStorage.setItem(this.AuthModel, JSON.stringify(model))
+				localStorage.setItem(this.AuthModel, JSON.stringify(data))
+				this.userSubject.next(data as ILoginResualtModel);
 				this.router.navigate(['/']);
-				console.log(model);
+				console.log(data);
 			},
 			(error) => {
 				let msg = "لقد حدث خطأ غير معروف";
@@ -57,6 +63,7 @@ export class AuthService {
 
 	logOut() {
 		localStorage.removeItem(this.AuthModel);
+		this.userSubject.next(null);
 		this.router.navigate(['/auth/login']);
 	}
 
@@ -75,15 +82,10 @@ export class AuthService {
 		return this.isLoggedIn() ? user.token : null;
 	}
 
-	getUser() {
-		let user = JSON.parse(localStorage.getItem(this.AuthModel));
-		if (user != null) {
-			return user;
-		}
-		else {
-			return null;
-		}
-	}
+	getUser = () => this.userSubject.value;
+
+	private getUserFromLocalStorage = () => JSON.parse(localStorage.getItem(this.AuthModel));
+
 
 
 	// UPDATE - user type check

@@ -70,7 +70,7 @@
 					</li>
 
 					<li>
-						<div class="d-flex d-md-none flex-nowrap login-register" *ngIf="!isUserLoggedIn()">
+						<div class="d-flex d-md-none flex-nowrap login-register" *ngIf="!user">
 							<a class="nav-link flex-nowrap" [routerLink]="['/auth/login']">
 								<i class="fa-duotone fa-arrow-right-to-bracket me-2"></i>
 								Login
@@ -92,7 +92,7 @@
 
 				<!-- show/hide menu button -->
 				<li class="nav-item d-flex">
-					<div class="navbar-nav nav-pills-primary-soft flex-row gap-2 d-md-flex d-none" *ngIf="!isUserLoggedIn()">
+					<div class="navbar-nav nav-pills-primary-soft flex-row gap-2 d-md-flex d-none" *ngIf="!user">
 						<a class="nav-link btn-primary-soft d-flex flex-nowrap" [routerLink]="['/auth/login']">
 							<i class="fa-duotone fa-arrow-right-to-bracket me-2"></i>
 							Login
@@ -117,12 +117,12 @@
 				</li>
 
 				<!-- Notification dropdown START -->
-				<li class="nav-item dropdown" *ngIf="isUserLoggedIn()">
+				<li class="nav-item dropdown" *ngIf="user">
 					<app-notification></app-notification>
 				</li>
 
 				<!-- Profile dropdown -->
-				<li class="nav-item dropdown" *ngIf="isUserLoggedIn()">
+				<li class="nav-item dropdown" *ngIf="user">
 					<app-user-dropdown></app-user-dropdown>
 				</li>
 
@@ -130,7 +130,7 @@
 
 			<!-- Login & Register -->
 			<!-- <ul class="navbar-nav nav-pills-primary-soft text-center me-auto d-none d-sm-flex"
-				*ngIf="!isUserLoggedIn()">
+				*ngIf="!user">
 				<li class="nav-item">
 					<a class="nav-link btn-primary-soft d-flex flex-nowrap" [routerLink]="['/auth/login']">
 						<i class="fa-duotone fa-arrow-right-to-bracket"></i>Login</a>

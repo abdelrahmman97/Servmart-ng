@@ -15,7 +15,6 @@ export class UserDropdownComponent {
 	selectedTheme: string = "";
 	constructor(private auth: AuthService, private theme: PreferredThemeService) {
 		this.selectedTheme = theme.getPreferredTheme();
-
 		this.user = auth.getUser();
 	}
 

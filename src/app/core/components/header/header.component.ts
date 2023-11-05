@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
+import { ILoginResualtModel } from '../../models/Auth/ILoginResualtModel';
 
 @Component({
 	selector: 'app-header',
@@ -8,10 +9,9 @@ import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 })
 export class HeaderComponent {
 
+	user?: ILoginResualtModel | null = null;
 	constructor(private auth: AuthService) {
+		this.auth.user.subscribe(x => this.user = x);
 	}
 
-	isUserLoggedIn() {
-		return this.auth.isLoggedIn();
-	}
 }
