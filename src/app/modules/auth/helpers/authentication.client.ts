@@ -13,9 +13,7 @@ export class AuthenticationClient {
 
 	login( user: IUserLogIn ) {
 		// return this.http.post( `${environment.apiUrl}/login`, user );
-		return this.http.post( `${environment.apiUrl}/Auth/login`, user ).pipe(
-			catchError( this.handleError )
-		);
+		return this.http.post( `${environment.apiUrl}/Auth/login`, user );
 	}
 
 	///api/User/register
@@ -23,8 +21,8 @@ export class AuthenticationClient {
 		return this.http.post( `${environment.apiUrl}/Auth/register`, user );
 	}
 
-	private handleError( error: HttpErrorResponse ) {
-		console.error( 'API error:', error );
-		return throwError( 'الرجاء التحقق من اتصال الانترنت الخاص بك.' );
-	}
+	// private handleError( error: HttpErrorResponse ) {
+	// 	console.error( 'API error:', error );
+	// 	return throwError( 'الرجاء التحقق من اتصال الانترنت الخاص بك.' );
+	// }
 }
