@@ -11,9 +11,10 @@ export class userLogedInGuard implements CanActivate {
 
 	canActivate ( route: ActivatedRouteSnapshot, state: RouterStateSnapshot ): boolean {
 		const user = this.authService.getUser();
-		if ( !user ) {
-			this.router.navigate( [ '/auth/login' ] );
+		if ( user ) {
+			return true;
 		}
-		return true;
+		this.router.navigate( ['/auth/login'] );
+		return false;
 	}
 };
