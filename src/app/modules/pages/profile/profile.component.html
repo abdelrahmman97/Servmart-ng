@@ -30,7 +30,7 @@
 							<li> <a class="dropdown-item" href="#">تبليغ</a></li>
 						</ul>
 					</div>
-					<a href="#" class="btn btn-primary-soft mb-0">
+					<a href="#" class="btn btn-primary-soft mb-0" *ngIf="!isCustomer">
 						<i class="fa-duotone fa-handshake"></i> وظفني
 					</a>
 				</div>
@@ -148,15 +148,14 @@
 						<!-- project example -->
 						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" *ngFor="let item of items">
 							<div class="card">
-								<img [src]="transform(item.file.fileContents)"
-									class="card-img-top" alt="...">
+								<img [src]="transform(item.file.fileContents)" class="card-img-top" alt="...">
 								<div class="card-body">
 									<div class="d-flex flex-column">
 										<h5 class="card-title">
 											{{item.title}}
 										</h5>
 										<span>
-											
+
 											{{item.categoryName}}
 
 										</span>
@@ -168,29 +167,33 @@
 								</div>
 							</div>
 						</div>
-					
+
 					</div>
 				</div>
 			</div>
 		</div>
-		    <div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4">
+		<div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4">
 
-        <p class="mb-sm-0 text-center text-sm-start"></p>
+			<p class="mb-sm-0 text-center text-sm-start"></p>
 
-        <nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
-            <ul class="pagination pagination-sm pagination-primary-soft mb-0">
-                <li class="page-item z-0">
-                    <button class="page-link" [disabled]="currentPage == 1" (click)="onPreviousClick()">السابق</button>
-                </li>
-                <li class="page-item z-0 " *ngFor="let pageNumber of getPageNumbers()">
-                    <button class="page-link" [class]="pageNumber == currentPage? 'active' :''" (click)="onPageChange(pageNumber)" [disabled]="pageNumber == currentPage">{{pageNumber}}</button>
-                </li>
-                <li class="page-item z-0">
-                    <button class="page-link" [disabled]="currentPage == totalPages" (click)="onNextClick()">التالي</button>
-                </li>
-            </ul>
-        </nav>
-    </div>
+			<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
+				<ul class="pagination pagination-sm pagination-primary-soft mb-0">
+					<li class="page-item z-0">
+						<button class="page-link" [disabled]="currentPage == 1"
+							(click)="onPreviousClick()">السابق</button>
+					</li>
+					<li class="page-item z-0 " *ngFor="let pageNumber of getPageNumbers()">
+						<button class="page-link" [class]="pageNumber == currentPage? 'active' :''"
+							(click)="onPageChange(pageNumber)"
+							[disabled]="pageNumber == currentPage">{{pageNumber}}</button>
+					</li>
+					<li class="page-item z-0">
+						<button class="page-link" [disabled]="currentPage == totalPages"
+							(click)="onNextClick()">التالي</button>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</section>
 
 	<!-- services section -->

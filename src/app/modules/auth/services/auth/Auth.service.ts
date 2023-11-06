@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationClient } from '../../helpers/authentication.client';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { IUserLogIn } from 'src/app/core/models/User/IUserLogIn';
 import { IUserRegister } from 'src/app/core/models/User/IUserRegister';
 import { ToastrService } from 'ngx-toastr';
 import { ILoginResualtModel } from 'src/app/core/models/Auth/ILoginResualtModel';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Role } from 'src/app/core/Enums/Role.enum';
 
 @Injectable( {
 	providedIn: 'root'
@@ -86,36 +86,31 @@ export class AuthService {
 
 	private getUserFromLocalStorage = () => JSON.parse( localStorage.getItem( this.AuthModel ) );
 
-
-
-	// UPDATE - user type check
+	// Cehck user type ============================================================================
 
 	isCustomer(): boolean {
-
-		const item = localStorage.getItem( 'Role' );
-		if ( JSON.parse( item ) == 0 )
+		if ( this.getUser().role.includes( Role.Customer ) )
 			return true;
 		else
 			return false;
-
 	}
+
 	isVendor(): boolean {
-		const item = localStorage.getItem( 'Role' );
-		if ( JSON.parse( item ) == 1 )
+		if ( this.getUser().role.includes( Role.Vendor ) )
 			return true;
 		else
 			return false;
 	}
+
 	isAdmin(): boolean {
-		const item = localStorage.getItem( 'Role' );
-		if ( JSON.parse( item ) == 3 )
+		if ( this.getUser().role.includes( Role.Admin ) )
 			return true;
 		else
 			return false;
 	}
-	isserviceprovider(): boolean {
-		const item = localStorage.getItem( 'Role' );
-		if ( JSON.parse( item ) == 2 )
+
+	isServiceProvider(): boolean {
+		if ( this.getUser().role.includes( Role.ServiceProvider ) )
 			return true;
 		else
 			return false;

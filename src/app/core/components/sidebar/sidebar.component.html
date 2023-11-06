@@ -57,7 +57,7 @@
 					</ul>
 				</div>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item" *ngIf="isServiceProvider">
 				<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
 					data-bs-toggle="collapse" data-bs-target="#serviceProvider" aria-expanded="false"
 					aria-controls="serviceProvider" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -86,7 +86,7 @@
 					</ul>
 				</div>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item" *ngIf="isVendor">
 				<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
 					data-bs-toggle="collapse" data-bs-target="#vendor" aria-expanded="false" aria-controls="vendor"
 					routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
