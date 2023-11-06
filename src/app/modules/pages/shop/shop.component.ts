@@ -12,10 +12,10 @@ export class ShopComponent {
 	SearchInput = '';
 	Price = 300;
 	rates = 0;
-P=1
+    P=1
 
 
-	
+
 
 	Rate:any[]=[{id:1,value:1},{id:2,value:2},{id:3,value:3},{id:4,value:4},{id:5,value:5}]
 	categorylist: any[] = [
@@ -39,7 +39,7 @@ P=1
 			this.shoplist = services as IService[];
 			console.log(this.shoplist)
 		})
-		
+
 	}
 
 	// shop(){
@@ -47,9 +47,9 @@ P=1
 	// 		next:data=>{
 	// 			this.shoplist= data as IShop[];
 	// 			console.log(this.shoplist)
-	
-	
-	
+
+
+
 	// 		  },
 	// 		  error:(err)=>{
 	// 			 this.isThereError=true;
@@ -58,7 +58,7 @@ P=1
 	// 		  }
 	// 	   })
 	// }
-		
+
 
 	select(id: any,ev :any) {
     if(ev.target.checked){
@@ -68,7 +68,7 @@ P=1
     else{
 
       this.SelectedCategory.splice(this.SelectedCategory.indexOf(id), 1);
-    } 
+    }
 
    console.log( this.SelectedCategory)
 	}
@@ -78,19 +78,19 @@ P=1
     this.SearchInput =""
     this.rates=0
   }
- 
+
   click( event:any){
 	if(event.target){
 
 		console.log(event.target.value)
-		
+
 	}
   }
   filter(){
     console.log(this.SelectedCategory)
     console.log(this.Price)
     console.log(this.SearchInput)
-   
+
   }
 	show(): void {
 		var GroupCard = document.getElementById('CardGroup');
