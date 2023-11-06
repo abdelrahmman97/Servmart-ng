@@ -32,7 +32,7 @@ const routes: Routes = [
 	// Shared Components
 	{ path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
 	{ path: "shop", component: ShopComponent },
-	{ path: "details", component: DetailsComponent },
+	{ path: "details/:productID", component: DetailsComponent },
 	{ path: "settings", component: AccountSettingsComponent, canActivate: [authGuard] },
 	{ path: "accountUnderReview", component: PendingAccountComponent, canActivate: [authGuard] },
 	{ path: "earning", component: EaringComponent, canActivate: [authGuard] },

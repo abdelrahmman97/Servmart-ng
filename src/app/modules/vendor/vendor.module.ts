@@ -18,6 +18,7 @@ import { NgxPaginationModule } from 'ngx-pagination'
 		RequestListComponent,
 		EaringComponent,
 		AddProduectsComponent,
+		
 		ProductListComponent,
 		SendOffersComponent,
 		OrderDetailsComponent

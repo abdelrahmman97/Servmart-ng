@@ -3,21 +3,21 @@
         <div class="row ">
             <div class="col-md-7">
                 <div class="imge ">
-                    <img src="../../../../assets/images/image-asset.jpeg" class="w-100 rounded-5" alt="">
+                    <img [src]="product.picsURL[0]" class="w-100 rounded-5" alt="">
                 </div>
             </div>
             <div class="col-md-5  ">
                 <div class="im col-md-12 mb-1">
                     <div class="iimgss  ">
-                        <img src="../../../../assets/images/images (2).jpeg" class="im w-100  rounded-4" alt="">
+                        <img [src]="product.picsURL[1]" class="im w-100  rounded-4" alt="">
                     </div>
                 </div>
                 <div class="col-md-12 d-flex g-2 w-100 ">
                     <div class="imgone me-2">
-                        <img src="../../../../assets/images/images (3).jpeg" class="w-100 ms-1 rounded-4" alt="">
+                        <img [src]="product.picsURL[2]" class="w-100 ms-1 rounded-4" alt="">
                     </div>
                     <div class="imgtwo">
-                        <img src="../../../../assets/images/images.jpg" class="w-100 rounded-4" alt="">
+                        <img [src]="product.picsURL[3]" class="w-100 rounded-4" alt="">
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="text">
                         <p class="fs-2 fw-bold">عن المنتج</p>
                         <hr>
-                       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis est, at odio consectetur voluptatum distinctio possimus nostrum eius provident illo accusantium incidunt temporibus, quam consequatur? Explicabo doloribus ipsa voluptate quisquam. Accusamus voluptatum, ut iusto perferendis ipsam rerum debitis laudantium nisi ipsum accusantium atque! Quae, atque. Error voluptates deserunt culpa, quis modi quibusdam aspernatur optio doloremque neque rem amet cumque voluptate, pariatur placeat molestias doloribus incidunt ullam. Expedita autem iste nulla inventore molestias itaque nostrum illo voluptatem perspiciatis numquam corrupti asperiores saepe sapiente, repellat atque illum eaque tempore cum corporis animi nesciunt. Nobis quos consectetur praesentium quam expedita consequuntur exercitationem optio!</p>
+                       <p>{{product.description}}</p>
                     </div>
 
                     <p class="fs-3 fw-bold">مزايا المنتج</p>
@@ -53,8 +53,8 @@
                         </div>
 
                         <div class="div">
-                            <P class="fs-4 fw-bold">$3000</P>
-                            <span class="fs-4 fw-bold"><i class="fas fa-arrow-right"></i> 4.0 <i class="fas fa-star" style="color: #e5f505;"></i><i class="fas fa-star" style="color: #e5f505;"></i><i class="fas fa-star" style="color: #e5f505;"></i><i class="fas fa-star" style="color: #e5f505;"></i></span>
+                            <P class="fs-4 fw-bold">${{product.unitPrice}}</P>
+                            <span class="fs-4 fw-bold"><i class="fas fa-arrow-right"></i> 4.0 <i class="fas fa-star" style="color: #e5f505;"></i></span>
                             <P class="fs-4 fw-bold"><i class="fas fa-arrow-right"></i> متاح</P>
 
                         </div>
@@ -134,12 +134,12 @@
     <section >
         <div class="container">
             <div class="row col-8">
-               <form >
+               <!-- <form >
                 <textarea class="form-control " formControlName="textArea" type="text" name="" id="" cols="25" rows="5"></textarea>
 
                     <button class="btn btn-outline-primary mt-2 "  type="submit">ارسل التعليق <i class="fa-solid fa-arrow-right" style="color: #bcccf0;"></i></button>
 
-               </form>
+               </form> -->
             </div>
 
         </div>
@@ -150,33 +150,33 @@
         <div class="container">
             <h3>خدمات مماثلة</h3>
          <div class="row">
-            <div class="x col-lg-4 col-md-12 col-sm-12  "  name="contentcard" *ngFor="let t of detilslist" >
+            <div class="x col-lg-4 col-md-12 col-sm-12  "  name="contentcard" *ngFor="let t of AllProduct" >
                 <div class="content bg-light rounded-2 p-2" name="elements" >
-                    <div class="image">
-                        <img src="../../../../assets/images/images (2).jpeg" class="p-2 rounded-4" alt="..." />
+                    <div class="image" *ngFor="let m of t.picsURL.slice(0,1)" >
+                        <img [src]="m" class="p-2 rounded-4" alt="..." />
                     </div>
                     <div class="card-body">
                         <div class="icon d-flex justify-content-between  ps-2 pe-2">
                             <div class="star bg-dark text-light p-1 rounded-1">
                                 <i class="fas fa-star" style="color: #faf55a"></i>
-                                <span>{{ t.Rate }}</span>
+                                <span>4</span>
                             </div>
                             <div class="save">
                                 <i class="far fa-bookmark"></i>
                             </div>
                         </div>
                         
-                            <h5 class="card-title pe-4">{{ t.Title|minLength:7 }}</h5>
+                            <h5 class="card-title pe-4">{{ t.productName|minLength:7 }}</h5>
                         <p class="card-text pe-3">
-                            {{t.Discription|minLength:20}}
+                            {{t.description|minLength:20}}
                         </p>
                         
                         <div class="footer d-flex justify-content-between text-success ">
                             <div class="text ">
-                                <span class="fs-4 fw-bold">${{ t.ExpectedSalary }}</span><span class="text-secondary fs-5"></span>
+                                <span class="fs-4 fw-bold">${{ t.unitPrice }}</span><span class="text-secondary fs-5"></span>
                             </div>
                             <div class="button col-7">
-                                <a [routerLink]="['/details']" class="btn btn-primary ">اظهر المعلومات
+                                <a [routerLink]="['/details',t.productID]" class="btn btn-primary ">اظهر المعلومات
                                     <i class="fas fa-arrow-right fs-6"></i></a>
                             </div>
                         </div>

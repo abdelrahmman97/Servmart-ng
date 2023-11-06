@@ -2,20 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IService } from 'src/app/core/models/IService';
 import { ServicesService } from '../services.service';
+import { IProduct } from 'src/app/core/models/IProduct';
 
 @Component({
 	selector: 'app-shop',
 	templateUrl: './shop.component.html',
 	styleUrls: ['./shop.component.css'],
 })
-export class ShopComponent {
+export class ShopComponent implements OnInit {
 	SearchInput = '';
 	Price = 300;
 	rates = 0;
 P=1
-
-
-	
 
 	Rate:any[]=[{id:1,value:1},{id:2,value:2},{id:3,value:3},{id:4,value:4},{id:5,value:5}]
 	categorylist: any[] = [
@@ -31,34 +29,24 @@ P=1
 		{ id: 10, Name: 'اداوات كهربية' },
 	];
 	SelectedCategory: any[] = [];
-	shoplist: IService[] =[]
+	shoplist: IProduct[] =[]
 
 	constructor(public get:ServicesService){
 
-		get.getServices().subscribe(services =>{
-			this.shoplist = services as IService[];
-			console.log(this.shoplist)
-		})
 		
+		}
+	ngOnInit(): void {
+		this.GetProduct();
 	}
-
-	// shop(){
-	// 	this.shoplist.gstAll().subscribe({
-	// 		next:data=>{
-	// 			this.shoplist= data as IShop[];
-	// 			console.log(this.shoplist)
-	
-	
-	
-	// 		  },
-	// 		  error:(err)=>{
-	// 			 this.isThereError=true;
-	// 			 this.errorMessage=" عفوآ لايوجد اى منتجات "
-	// 						  console.error("عفوآ لايوجد اى منتجات ")
-	// 		  }
-	// 	   })
-	// }
 		
+	
+
+	GetProduct(){
+this.get.GetProduct().subscribe(i=>{
+this.shoplist=i as IProduct[]
+console.log(this.shoplist)
+})
+	}
 
 	select(id: any,ev :any) {
     if(ev.target.checked){
