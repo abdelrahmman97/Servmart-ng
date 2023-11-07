@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
 	showConfirmPassword: boolean = false;
 
 	constructor( private authService: AuthService, private toastr: ToastrService, private fb: FormBuilder, private router: Router ) {
-		if ( this.authService.getUser() ) {
+		if ( this.authService.getUserValue() ) {
 			this.router.navigate( ['/'] );
 		}
 	}

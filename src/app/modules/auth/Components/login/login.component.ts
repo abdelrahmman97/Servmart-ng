@@ -15,7 +15,7 @@ export class LoginComponent {
 	loginForm: FormGroup;
 
 	constructor( private authService: AuthService, private toastr: ToastrService, private router: Router ) {
-		if ( this.authService.getUser() ) {
+		if ( this.authService.getUserValue() ) {
 			this.router.navigate( ['/'] );
 		}
 	}

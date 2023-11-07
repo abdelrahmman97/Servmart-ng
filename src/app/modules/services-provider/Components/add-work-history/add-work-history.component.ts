@@ -8,8 +8,6 @@ import { ServiceService } from '../../services/service.service';
 	styleUrls: ['./add-work-history.component.css']
 })
 export class AddWorkHistoryComponent {
-
-
 	file: File;
 	url: any;
 	msg = "";
