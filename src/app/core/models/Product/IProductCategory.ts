@@ -1,4 +1,4 @@
 export interface IProductCategory {
-	ID: number;
-	Name: string;
+	id: number;
+	catagory: string;
 }

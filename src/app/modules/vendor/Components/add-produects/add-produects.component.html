@@ -10,10 +10,10 @@
             <div class="col-lg-6 col=md-12 d-flex flex-column">
                 <div class="mb-3">
                     <div class="col-auto">
-                        <label for="Product" class="col-form-label">اسم المنتج</label>
+                        <label for="ProductName" class="col-form-label">اسم المنتج</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" id="Product" class="form-control" formControlName="productName">
+                        <input type="text" id="Product" class="form-control" formControlName="ProductName">
                     </div>
                 </div>
 
@@ -23,45 +23,36 @@
                     </div>
                     <div class="col-auto">
                         <select class="form-control" aria-label="Large select example"
-                            formControlName="productCategory">
-                            <option selected disabled>--- select ---</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            formControlName="CategoryID" >
+                            <option  *ngFor="let cat of catgory"  [value]="cat.id" >{{cat.catagory}}</option>
+                           
                         </select>
                     </div>
                 </div>
 
+              
+
                 <div class="mb-3">
                     <div class="col-auto">
-                        <label for="Product" class="col-form-label">الماركة</label>
+                        <label for="Stoke" class="col-form-label">الكمية</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" id="brand" class="form-control" title="brand" formControlName="productBrand">
+                        <input type="number" id="Countity" class="form-control" formControlName="Stoke">
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <div class="col-auto">
-                        <label for="Countity" class="col-form-label">الكمية</label>
+                        <label for="UnitPrice" class="col-form-label">سعر القطعة</label>
                     </div>
                     <div class="col-auto">
-                        <input type="number" id="Countity" class="form-control" formControlName="productCountity">
+                        <input type="number" id="Price" class="form-control" formControlName="UnitPrice">
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <div class="col-auto">
-                        <label for="Price" class="col-form-label">سعر القطعة</label>
-                    </div>
-                    <div class="col-auto">
-                        <input type="number" id="Price" class="form-control" formControlName="productPrice">
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="Description" class="form-label">وصف المنتج</label>
-                    <textarea class="form-control" id="Description" rows="6"></textarea>
+                    <label for="Description" class="form-label" >وصف المنتج</label>
+                    <textarea class="form-control" id="Description" formControlName="Description" rows="6"></textarea>
                 </div>
             </div>
 
@@ -90,8 +81,8 @@
                 </fieldset> -->
 
                 <div *ngIf="!file" class="FileContainer text-center">
-                    <label class="mt-2">أضف صور المنتج</label>
-                    <input id="upload_image_logo" class="file" type="file" accept="image/*" multiple
+                    <label class="mt-2" >أضف صور المنتج</label>
+                    <input id="upload_image_logo" multiple class="file" type="file" accept="image/*" multiple
                         (change)="getFile($event)" />
                 </div>
 
