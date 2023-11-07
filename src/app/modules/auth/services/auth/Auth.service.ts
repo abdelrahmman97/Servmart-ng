@@ -86,7 +86,7 @@ export class AuthService {
 	getUserValue = () => this.userSubject.value;
 
 	getRole() {
-		return this.userSubject.value.role;
+		return this.isLoggedIn() ? this.userSubject.value.role: [];
 	}
 
 	private getUserFromLocalStorage = () => JSON.parse( localStorage.getItem( this.AuthModel ) );
