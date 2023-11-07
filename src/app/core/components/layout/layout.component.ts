@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 export class LayoutComponent {
 	user: ILoginResualtModel;
 	constructor ( private auth: AuthService ) {
-		this.user = auth.getUser();
+		this.user = auth.getUserValue();
 	}
 
 }

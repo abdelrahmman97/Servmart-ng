@@ -6,7 +6,12 @@ import { IUser } from 'src/app/core/models/IUser';
 import { DatePipe } from '@angular/common';
 import { Role } from 'src/app/core/Enums/Role.enum';
 import { ToastrService } from 'ngx-toastr';
-
+import { IUserInfo } from 'src/app/core/models/User/AcountSting/IUserInfo';
+import { IEmailchang } from 'src/app/core/models/User/AcountSting/IUserChangEmail';
+import { IUserRole } from 'src/app/core/models/User/AcountSting/IRoleUserChang';
+import { Changpassword } from 'src/app/core/models/User/AcountSting/IUserPassword';
+import { AuthService } from '../../auth/services/auth/Auth.service';
+import { ILoginResualtModel } from 'src/app/core/models/Auth/ILoginResualtModel';
 @Component({
 	selector: 'app-AccountSettings',
 	templateUrl: './AccountSettings.component.html',
@@ -17,19 +22,21 @@ export class AccountSettingsComponent {
 	emailform: FormGroup;
 	passform: FormGroup;
 	accountTypeForm: FormGroup;
-
+	userInfo: IUserInfo;
 
 	workoption: string[] = ['عام', 'بائع', 'مقدم خدمات', 'ادمن'];
 	accountoption: string[] = ['سباك', 'كهربائى', 'اخرى'];
 	personalInfo: IUser;
+	ChangPassword: Changpassword;
+	UserRole: IUserRole;
+	ChageEmail: IEmailchang;
+	userData = new FormData();
+
 	current: any;
 
-	constructor(private toastr: ToastrService,
-		private formBuilder: FormBuilder, private datePipe: DatePipe,
-		private AcountService: AcountService) {
+	constructor(private auth: AuthService, private toastr: ToastrService, private formBuilder: FormBuilder, private datePipe: DatePipe, private AcountService: AcountService) {
 
 		this.userInfoForm = this.formBuilder.group({
-			photo: ['', []],
 			FName: ['', [Validators.required, Validators.minLength(3),
 			(control: any) => {
 				const namepattern = /^[a-zA-Z\u0600-\u06FF\s]+$/;
@@ -72,7 +79,7 @@ export class AccountSettingsComponent {
 					return isValid ? null : { invalidsnn: true };
 				}
 			}]],
-			Birthday: [null, [Validators.required,
+			DOB: [null, [Validators.required,
 			(control: any) => {
 				const selectedDate = new Date(control.value);
 				const currentDate = new Date();
@@ -91,7 +98,9 @@ export class AccountSettingsComponent {
 				};
 			}]],
 			Address: [null, [Validators.required]],
-			Gender: [null]
+			Gender: [null],
+			Email: auth.getUserValue().email,
+			ProfilePic:['']
 		});
 
 		this.accountTypeForm = this.formBuilder.group({
@@ -102,7 +111,8 @@ export class AccountSettingsComponent {
 		this.emailform = this.formBuilder.group({
 			email: [null, [Validators.required,
 			(control: any) => {
-				const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+				let emailPattern;
+				emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 				const isValid = emailPattern.test(control.value);
 				if (control.value == '') {
 					return Validators.required;
@@ -132,6 +142,23 @@ export class AccountSettingsComponent {
 				}
 			}]],
 		});
+
+	}
+	onSubmitUserInfo() {
+		for (const key in this.userInfoForm.controls) {
+			this.userData.append(key, this.userInfoForm.controls[key].value)
+		}
+		console.log(this.userInfo)
+		this.AcountService.UpdateUserInfo(this.userData).subscribe(
+			data => {
+				this.auth.getUserSubject().next(data as ILoginResualtModel)
+				console.log("user updated successfully");
+			},
+			error => {
+				console.log(error);
+			}
+		);
+		console.log('asdasd');
 	}
 
 
@@ -150,13 +177,13 @@ export class AccountSettingsComponent {
 
 	ngOnInit() {
 		this.AcountService.getData().subscribe(data => {
-			this.personalInfo = data;
+			this.personalInfo = data as IUser;
 			this.emaiil = this.personalInfo.Email
-			this.password = this.personalInfo.PasswordHash
+			// this.password = this.ChangPassword.Newpassword
 			// Set the initial values of the form controls
 			this.userInfoForm.patchValue({
-				work: this.personalInfo.work,
-				RoleID: this.getStatusString(this.personalInfo.Roles),
+				// work: this.personalInfo.work,
+				// RoleID: this.getStatusString(this.UserRole.Role),
 				FName: this.personalInfo.FName,
 				photo: this.personalInfo.ProfilePic,
 				LName: this.personalInfo.LName,
@@ -165,12 +192,13 @@ export class AccountSettingsComponent {
 				Address: this.personalInfo.Address,
 				Birthday: this.datePipe.transform(this.personalInfo.Birthday, 'yyyy-MM-dd'),
 				PhoneNo: this.personalInfo.PhoneNo,
-				Gender: this.personalInfo.Gender
+				Gender: this.personalInfo.Gender,
 			});
 		});
+
 	}
 
-	getStatusString( Roles: string[] ): string[] {
+	getStatusString(Roles: string[]): string[] {
 
 		// switch (statusCode) {
 		// 	case Role.Customer:
@@ -199,6 +227,7 @@ export class AccountSettingsComponent {
 			};
 			reader.readAsDataURL(file);
 		}
+		this.userData.append("ProfilePic", <File>file)
 	}
 	showsSuccessMessage = false;
 	showeErrorMessage = false;

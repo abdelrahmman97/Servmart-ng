@@ -25,6 +25,7 @@ import { CoreModule } from 'src/app/core/core.module';
 		RouterModule,
 		SharedModule,
 		ReactiveFormsModule,
+		
 		CoreModule
 	],
 	providers: [ServiceService],

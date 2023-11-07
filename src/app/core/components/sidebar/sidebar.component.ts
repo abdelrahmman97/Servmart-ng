@@ -12,7 +12,7 @@ export class SidebarComponent {
 	user: ILoginResualtModel;
 	userFullName: string;
 	constructor( private auth: AuthService ) {
-		this.user = auth.getUser();
+		this.user = auth.getUserValue();
 		this.userFullName = `${this.user.fName} ${this.user.lName.charAt( 0 )}.`;
 	}
 

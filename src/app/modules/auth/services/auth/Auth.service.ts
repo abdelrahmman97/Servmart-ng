@@ -42,7 +42,8 @@ export class AuthService {
 				else {
 					msg = error.statusText;
 				}
-				this.toastr.error( msg, "خطأ" )
+				console.log(error);
+				this.toastr.error( error, "خطأ" )
 				return error;
 			}
 		);
@@ -68,49 +69,53 @@ export class AuthService {
 	}
 
 	isLoggedIn(): boolean {
-		let user = JSON.parse( localStorage.getItem( this.AuthModel ) );
-		if ( user != null ) {
-			return user.token != null && user.token.length > 0;
+		if ( this.userSubject.value != null ) {
+			return this.userSubject.value.token != null && this.userSubject.value.token.length > 0;
 		}
 		else {
-			return null;
+			return false;
 		}
 	}
 
 	getToken() {
-		let user = JSON.parse( localStorage.getItem( this.AuthModel ) );
-		return this.isLoggedIn() ? user.token : null;
+		return this.isLoggedIn() ? this.userSubject.value.token : null;
 	}
 
-	getUser = () => this.userSubject.value;
+	getUserSubject = () => this.userSubject;
+	getUser = () => this.userSubject.asObservable();
+	getUserValue = () => this.userSubject.value;
+
+	getRole() {
+		return this.userSubject.value.role;
+	}
 
 	private getUserFromLocalStorage = () => JSON.parse( localStorage.getItem( this.AuthModel ) );
 
 	// Cehck user type ============================================================================
 
 	isCustomer(): boolean {
-		if ( this.getUser().role.includes( Role.Customer ) )
+		if ( this.getRole().includes( Role.Customer ) )
 			return true;
 		else
 			return false;
 	}
 
 	isVendor(): boolean {
-		if ( this.getUser().role.includes( Role.Vendor ) )
+		if ( this.getRole().includes( Role.Vendor ) )
 			return true;
 		else
 			return false;
 	}
 
 	isAdmin(): boolean {
-		if ( this.getUser().role.includes( Role.Admin ) )
+		if ( this.getRole().includes( Role.Admin ) )
 			return true;
 		else
 			return false;
 	}
 
 	isServiceProvider(): boolean {
-		if ( this.getUser().role.includes( Role.ServiceProvider ) )
+		if ( this.getRole().includes( Role.ServiceProvider ) )
 			return true;
 		else
 			return false;
