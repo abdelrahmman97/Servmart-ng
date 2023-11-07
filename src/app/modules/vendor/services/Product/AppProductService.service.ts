@@ -13,7 +13,7 @@ export class AddProductService {
 		throw new Error('Method not implemented.');
 	}
 	baseURL = "http://localhost:3000/product";
-	urlApi="https://localhost:7013/api/Product";
+	urlApi="https://localhost:7013/AddProduct";
 	catgory:string="https://localhost:7013/ProductCatgorei";
 
 
@@ -31,8 +31,6 @@ gstAll(){
 getprofuct(id:number)
 {
 	return   this.httpclint.get<IProduct>(`${this.baseURL}?ID=${id}`);    /// get product by id
-
-
 }
 
 AddProductAPi(data:any):Observable<any>{

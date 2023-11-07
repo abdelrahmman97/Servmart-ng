@@ -54,12 +54,12 @@ console.log(this.shoplist)
 })
 	}
 
-		get.getServices().subscribe(services =>{
-			this.shoplist = services as IService[];
-			console.log(this.shoplist)
-		})
+	// 	get.getServices().subscribe(services =>{
+	// 		this.shoplist = services as IService[];
+	// 		console.log(this.shoplist)
+	// 	})
 
-	}
+	// }
 
 	// shop(){
 	// 	this.shoplist.gstAll().subscribe({

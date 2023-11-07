@@ -8,7 +8,7 @@ import { IProduct } from 'src/app/core/models/Product/IProduct';
   providedIn: 'root'
 })
 export class ServicesService {
-  GetAllProduct ="https://localhost:7013/api/Product";
+  GetAllProduct ="https://localhost:7013/GetAllProduct";
  
 
   constructor(public http: HttpClient) 
@@ -19,6 +19,6 @@ export class ServicesService {
     return this.http.get<IProduct[]>(this.GetAllProduct)
   }
   Details(id:string):Observable<any>{
-return this.http.get<IProduct>(`https://localhost:7013/api/Product/${id}`);
+return this.http.get<IProduct>(`https://localhost:7013/GetProductById/${id}`);
   }
 }
