@@ -2,18 +2,23 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IService } from 'src/app/core/models/IService';
+import { IProduct } from 'src/app/core/models/Product/IProduct';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicesService {
-  services = 'http://localhost:3000/Service';
+  GetAllProduct ="https://localhost:7013/api/Product";
  
 
   constructor(public http: HttpClient) 
   { }
 
-  getServices(){
-    return this.http.get<IService[]>(this.services);
+  GetProduct():Observable<any>{
+    // return this.http.get<IService[]>(this.services);
+    return this.http.get<IProduct[]>(this.GetAllProduct)
+  }
+  Details(id:string):Observable<any>{
+return this.http.get<IProduct>(`https://localhost:7013/api/Product/${id}`);
   }
 }
