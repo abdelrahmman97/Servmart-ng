@@ -4,6 +4,7 @@ import { Injectable } from "@angular/core";
 import { IUserLogIn } from "src/app/core/models/User/IUserLogIn";
 import { IUserRegister } from "src/app/core/models/User/IUserRegister";
 import { catchError, throwError } from "rxjs";
+import { IUser } from "src/app/core/models/IUser";
 
 @Injectable( {
 	providedIn: 'root',
@@ -20,4 +21,5 @@ export class AuthenticationClient {
 	register( user: IUserRegister ) {
 		return this.http.post( `${environment.apiUrl}/Auth/register`, user );
 	}
+
 }
