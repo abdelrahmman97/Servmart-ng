@@ -218,31 +218,31 @@
 			<div class="row gy-3 col-lg-12 col-md-9 p-4" id="CardGroup">
 				<div class="x col-lg-4 col-md-12 col-sm-12  "  name="contentcard" *ngFor="let t of shoplist|paginate: { itemsPerPage: 9, currentPage: P }" >
 					<div class="content bg-light  shadow-3 rounded-2 p-2" name="elements" >
-						<div class="image">
-							<img src="../../../../assets/images/images (2).jpeg" class="p-2 rounded-4" alt="..." />
+						<div class="image" *ngFor="let m of t.picsURL.slice(0,1)">
+							<img [src]="m" class="p-2 rounded-4" alt="..." />
 						</div>
 						<div class="card-body">
 							<div class="icon d-flex justify-content-between  ps-2 pe-2">
 								<div class="star bg-dark text-light p-1 rounded-1">
 									<i class="fas fa-star" style="color: #faf55a"></i>
-									<span>{{ t.Rate }}</span>
+									<span>4.5</span>
 								</div>
 								<div class="save">
 									<i class="far fa-bookmark"></i>
 								</div>
 							</div>
 							
-								<h5 class="card-title pe-4">{{ t.Title|minLength:7 }}</h5>
+								<h5 class="card-title pe-4">{{ t.productName|minLength:7 }}</h5>
 							<p class="card-text pe-3">
-								{{t.Discription|minLength:20}}
+								{{t.description|minLength:20}}
 							</p>
 							
 							<div class="footer d-flex justify-content-between text-success ">
 								<div class="text ">
-									<span class="fs-4 fw-bold">${{ t.ExpectedSalary }}</span><span class="text-secondary fs-5"></span>
+									<span class="fs-4 fw-bold">${{ t.unitPrice }}</span><span class="text-secondary fs-5"></span>
 								</div>
 								<div class="button col-7">
-									<a [routerLink]="['/details']" class="btn btn-primary ">اظهر المعلومات
+									<a [routerLink]="['/details',t.productID]" class="btn btn-primary ">اظهر المعلومات
 										<i class="fas fa-arrow-right fs-6"></i></a>
 								</div>
 							</div>
@@ -260,4 +260,3 @@
 		<pagination-controls (pageChange)="P=$event"></pagination-controls>
 	</nav>
 </section>
-

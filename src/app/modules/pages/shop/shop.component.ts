@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IService } from 'src/app/core/models/IService';
 import { ServicesService } from '../services.service';
+import { IProduct } from 'src/app/core/models/Product/IProduct';
+import { IProductCategory } from 'src/app/core/models/Product/IProductCategory';
 
 @Component({
 	selector: 'app-shop',
@@ -13,6 +15,7 @@ export class ShopComponent {
 	Price = 300;
 	rates = 0;
     P=1
+
 
 
 
@@ -31,9 +34,25 @@ export class ShopComponent {
 		{ id: 10, Name: 'اداوات كهربية' },
 	];
 	SelectedCategory: any[] = [];
-	shoplist: IService[] =[]
+	shoplist: IProduct[] =[]
 
 	constructor(public get:ServicesService){
+
+
+		
+		}
+	ngOnInit(): void {
+		this.GetProduct();
+	}
+		
+	
+
+	GetProduct(){
+this.get.GetProduct().subscribe(i=>{
+this.shoplist=i as IProduct[]
+console.log(this.shoplist)
+})
+	}
 
 		get.getServices().subscribe(services =>{
 			this.shoplist = services as IService[];
@@ -58,6 +77,7 @@ export class ShopComponent {
 	// 		  }
 	// 	   })
 	// }
+
 
 
 	select(id: any,ev :any) {
