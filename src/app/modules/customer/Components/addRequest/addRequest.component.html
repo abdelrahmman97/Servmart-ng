@@ -25,15 +25,16 @@
 						<div class="card-body">
 
 							<div class="mb-3">
-								<label for="name" class="form-label fs-5">اسم الخدمة</label>
-								<input type="text" class="form-control" id="name" formControlName="title" >
+								<label for="Title" class="form-label fs-5">اسم الخدمة</label>
+								<input type="text" class="form-control" id="Title" name="Title" formControlName="Title">
 							</div>
 
 							<div class="mb-3">
-								<label for="type" class="form-label fs-5">
+								<label for="Category" class="form-label fs-5">
 									نوع الخدمة
 								</label>
-								<select class="form-select" name="type" id="type" aria-label="نوع الخدمة" formControlName="status">
+								<select class="form-select" name="Category" id="Category" aria-label="نوع الخدمة"
+									formControlName="Category">
 									<option selected>-اختر-</option>
 									<option value="1">One</option>
 									<option value="2">Two</option>
@@ -42,9 +43,9 @@
 							</div>
 
 							<div class="mt-3">
-								<label class="form-label fs-5">وصف الخدمة</label>
-								<textarea formcontrolname="textera" id="DeliveryInstructions" rows="3"
-									placeholder="تفاصبل الخدمة" class="form-control"  formControlName="details"></textarea>
+								<label class="form-label fs-5" for="Details">وصف الخدمة</label>
+								<textarea rows="3" placeholder="تفاصبل الخدمة" class="form-control" id="Details"
+									name="Details" formControlName="Details"></textarea>
 							</div>
 
 						</div>
@@ -70,13 +71,15 @@
 						<div class="card-body">
 
 							<div class="mb-3">
-								<label for="budget" class="form-label fs-5">الميزانية المتوقعة</label>
-								<input type="number" class="form-control" id="budget" formControlName="rateMessage">
+								<label for="ExpectedSalary" class="form-label fs-5">الميزانية المتوقعة</label>
+								<input type="number" class="form-control" id="ExpectedSalary" name="ExpectedSalary"
+									formControlName="ExpectedSalary">
 							</div>
 
 							<div class="mb-3">
-								<label for="expectedDate" class="form-label fs-5" formControlName="endDate"> المدة المتوقعة للتسليم</label>
-								<input type="datetime-local" class="form-control" id="expectedDate">
+								<label for="EndDate" class="form-label fs-5"> المدة المتوقعة للتسليم</label>
+								<input type="datetime-local" class="form-control" id="EndDate" name="EndDate"
+									formControlName="EndDate">
 							</div>
 
 						</div>
@@ -102,8 +105,9 @@
 						<div class="card-body">
 
 							<div class="mb-3">
-								<label for="governorate" class="form-label fs-5">المحافظة</label>
-								<select class="form-select" id="governorate" name="governorate">
+								<label for="Governorate" class="form-label fs-5">المحافظة</label>
+								<select class="form-select" id="Governorate" name="Governorate"
+									formControlName="Governorate">
 									<option selected>-اختر-</option>
 									<option value="1">القاهرة</option>
 									<option value="2">الاقصر</option>
@@ -112,8 +116,8 @@
 							</div>
 
 							<div class="mb-3">
-								<label for="city" class="form-label fs-5">المركز</label>
-								<select class="form-select" id="city" name="city">
+								<label for="City" class="form-label fs-5">المركز</label>
+								<select class="form-select" id="City" name="City" formControlName="City">
 									<option selected>-اختر-</option>
 									<option value="1">السيل</option>
 									<option value="2">التامين</option>
@@ -121,8 +125,9 @@
 							</div>
 
 							<div class="mb-3">
-								<label for="address" class="form-label"> العنوان بالتفصيل</label>
-								<input type="email" class="form-control" id="address" name="address" formControlName="rateMessage" >
+								<label for="Address" class="form-label"> العنوان بالتفصيل</label>
+								<input type="email" class="form-control" id="Address" name="Address"
+									formControlName="Address">
 							</div>
 
 						</div>
@@ -153,18 +158,19 @@
 								يمكنك ان تضيف الي 5 صورة فقط
 							</div>
 
-
 							<div class="mb-3">
-								<label for="formImages" class="form-label">صور</label>
-								<input class="form-control" type="file" id="formImages" accept="image/*" multiple
-									(change)="onImagesChange($event)" formControlName="images">
+								<label for="Images" class="form-label">صور</label>
+								<input class="form-control" type="file" id="Images" name="Images" accept="image/*"
+									multiple (change)="onImagesSelected($event)" formControlName="Images" #imageInput>
 								<small>يمكنك ان تضيف الي 5 صورة</small>
 							</div>
 
-							<div *ngIf="uploadedImages.length != 0">
+							<!-- Images preview -->
+							<div *ngIf="AddRequestForm.get('Images')?.value">
 								<div class="d-flex flex-row align-items-start flex-wrap">
-									<div class="ms-2 d-flex flex-column" *ngFor="let image of uploadedImages">
-										<img [src]="image" class="img-thumbnail " alt=""
+									<div class="ms-2 d-flex flex-column"
+										*ngFor="let image of AddRequestForm.get('Images')?.value">
+										<img [src]="getImageUrl(image)" class="img-thumbnail " alt=""
 											style="width: 100px; height: 100px;">
 										<button class="btn btn-danger-soft btn-sm"
 											(click)="removeImage(image)">remove</button>
@@ -173,12 +179,17 @@
 							</div>
 
 							<div class="mb-3">
-								<label for="formVideo" class="form-label">فيديو</label>
-								<input class="form-control" type="file" id="formVideo" accept="video/*" multiple
-									(change)="onVideoChange($event)" formControlName="video">
+								<label for="Video" class="form-label">فيديو</label>
+								<input class="form-control" type="file" id="Video" name="Video" accept="video/*"
+									multiple (change)="onVideoSelected($event)" formControlName="Video" #VideoInput>
 								<small>يمكنك ان تضيف فيديو واحد لا يتعدي الدقيقتين</small>
 							</div>
 
+							<!-- Video preview -->
+							<button *ngIf="this.selectedVideo" (click)="clearVideo()">Clear Video</button>
+							<video *ngIf="this.selectedVideo" controls>
+								<source [src]="getVideoUrl()" type="video/mp4">
+							</video>
 
 						</div>
 

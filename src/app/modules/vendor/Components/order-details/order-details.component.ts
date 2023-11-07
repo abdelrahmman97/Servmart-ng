@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { addRequestService } from '../../services/Request-list/AppRequestService.service';
-import { IRequest } from 'src/app/core/models/IRequest';
+import { IRequest } from 'src/app/core/models/Request/IRequest';
 
 
 @Component( {
