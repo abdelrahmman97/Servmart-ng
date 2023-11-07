@@ -14,6 +14,8 @@ export class RegisterComponent implements OnInit {
 
 	registerForm!: FormGroup;
 	user!: IUserRegister;
+	showPassword: boolean = false;
+	showConfirmPassword: boolean = false;
 
 	constructor( private authService: AuthService, private toastr: ToastrService, private fb: FormBuilder, private router: Router ) {
 		if ( this.authService.getUser() ) {

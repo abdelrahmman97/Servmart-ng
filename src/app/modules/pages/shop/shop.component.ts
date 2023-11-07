@@ -14,7 +14,11 @@ export class ShopComponent {
 	SearchInput = '';
 	Price = 300;
 	rates = 0;
-P=1
+    P=1
+
+
+
+
 
 	Rate:any[]=[{id:1,value:1},{id:2,value:2},{id:3,value:3},{id:4,value:4},{id:5,value:5}]
 	categorylist: any[] = [
@@ -34,6 +38,7 @@ P=1
 
 	constructor(public get:ServicesService){
 
+
 		
 		}
 	ngOnInit(): void {
@@ -49,6 +54,32 @@ console.log(this.shoplist)
 })
 	}
 
+		get.getServices().subscribe(services =>{
+			this.shoplist = services as IService[];
+			console.log(this.shoplist)
+		})
+
+	}
+
+	// shop(){
+	// 	this.shoplist.gstAll().subscribe({
+	// 		next:data=>{
+	// 			this.shoplist= data as IShop[];
+	// 			console.log(this.shoplist)
+
+
+
+	// 		  },
+	// 		  error:(err)=>{
+	// 			 this.isThereError=true;
+	// 			 this.errorMessage=" عفوآ لايوجد اى منتجات "
+	// 						  console.error("عفوآ لايوجد اى منتجات ")
+	// 		  }
+	// 	   })
+	// }
+
+
+
 	select(id: any,ev :any) {
     if(ev.target.checked){
 
@@ -57,7 +88,7 @@ console.log(this.shoplist)
     else{
 
       this.SelectedCategory.splice(this.SelectedCategory.indexOf(id), 1);
-    } 
+    }
 
    console.log( this.SelectedCategory)
 	}
@@ -67,19 +98,19 @@ console.log(this.shoplist)
     this.SearchInput =""
     this.rates=0
   }
- 
+
   click( event:any){
 	if(event.target){
 
 		console.log(event.target.value)
-		
+
 	}
   }
   filter(){
     console.log(this.SelectedCategory)
     console.log(this.Price)
     console.log(this.SearchInput)
-   
+
   }
 	show(): void {
 		var GroupCard = document.getElementById('CardGroup');

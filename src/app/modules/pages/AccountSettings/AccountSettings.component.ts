@@ -156,7 +156,7 @@ export class AccountSettingsComponent {
 			// Set the initial values of the form controls
 			this.userInfoForm.patchValue({
 				work: this.personalInfo.work,
-				RoleID: this.getStatusString(this.personalInfo.RoleID),
+				RoleID: this.getStatusString(this.personalInfo.Roles),
 				FName: this.personalInfo.FName,
 				photo: this.personalInfo.ProfilePic,
 				LName: this.personalInfo.LName,
@@ -170,19 +170,21 @@ export class AccountSettingsComponent {
 		});
 	}
 
-	getStatusString(statusCode: number): string {
-		switch (statusCode) {
-			case Role.Customer:
-				return 'عام';
-			case Role.Vendor:
-				return 'بائع';
-			case Role.ServiceProvider:
-				return 'مقدم خدمات';
-			case Role.Admin:
-				return 'ادمن';
-			default:
-				return 'Unknown';
-		}
+	getStatusString( Roles: string[] ): string[] {
+
+		// switch (statusCode) {
+		// 	case Role.Customer:
+		// 		return 'عام';
+		// 	case Role.Vendor:
+		// 		return 'بائع';
+		// 	case Role.ServiceProvider:
+		// 		return 'مقدم خدمات';
+		// 	case Role.Admin:
+		// 		return 'ادمن';
+		// 	default:
+		// 		return 'Unknown';
+		// }
+		return [];
 	}
 	selectFile(): void {
 		const inputElement: HTMLInputElement = document.getElementById('photoInput') as HTMLInputElement;

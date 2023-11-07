@@ -11,7 +11,7 @@ export interface IUser {
 	PasswordHash: string;
 	PasswordSalt: string;
 	ProfilePic: string;
-	RoleID: number;
+	Roles: string[];
 	work: string;
 	Birthday:Date;
 	Gender: string;
