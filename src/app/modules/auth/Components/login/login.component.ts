@@ -7,27 +7,31 @@ import { ToastrService } from 'ngx-toastr';
 @Component( {
 	selector: 'app-login',
 	templateUrl: './login.component.html',
-	styleUrls: [ './login.component.css' ]
+	styleUrls: ['./login.component.css']
 } )
 export class LoginComponent {
 
 	user: any;
 	loginForm: FormGroup;
 
-	constructor ( private authService: AuthService, private toastr: ToastrService ) { }
+	constructor( private authService: AuthService, private toastr: ToastrService, private router: Router ) {
+		if ( this.authService.getUser() ) {
+			this.router.navigate( ['/'] );
+		}
+	}
 
-	ngOnInit (): void {
+	ngOnInit(): void {
 
 		this.loginForm = new FormGroup( {
-			email: new FormControl( null, [ Validators.required ] ),
-			password: new FormControl( null, [ Validators.required ] ),
+			email: new FormControl( null, [Validators.required] ),
+			password: new FormControl( null, [Validators.required] ),
 		} );
 	}
 
-	onSubmit () {
+	onSubmit() {
 		this.user = {
-			"Email": this.loginForm.controls[ 'email' ].value,
-			"Password": this.loginForm.controls[ 'password' ].value,
+			"Email": this.loginForm.controls['email'].value,
+			"Password": this.loginForm.controls['password'].value,
 		}
 
 		if ( this.loginForm.invalid ) {

@@ -19,7 +19,7 @@
 					</li>
 
 					<!-- Nav item - Services -->
-					<li class="nav-item">
+					<li class="nav-item" *ngIf="isServiceProvider">
 						<a class="nav-link flex-nowrap" [routerLink]="['/services']" routerLinkActive="active">
 							<i class="fa-duotone fa-sparkles"></i> الخدمات
 						</a>

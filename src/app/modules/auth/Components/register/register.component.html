@@ -38,22 +38,35 @@
 								اسم المستخدم غير صالح
 							</span>
 						</div>
-						<div class="form-floating mb-3">
-							<input placeholder="Enter your username" class="form-control" type="password"
-								formControlName="Password" id="password"
-								[ngClass]="{'is-invalid': registerForm.get('Password').touched && registerForm.get('Password').invalid}">
-							<label for="Password" class="form-label">كلمة المرور</label>
+						<div class="input-group mb-3">
+							<div class="form-floating">
+								<input placeholder="Enter your username" class="form-control"
+									[type]="showPassword ? 'text' : 'password'" formControlName="Password" id="password"
+									[ngClass]="{'is-invalid': registerForm.get('Password').touched && registerForm.get('Password').invalid}">
+								<label for="Password" class="form-label">كلمة المرور</label>
+							</div>
+							<button class="btn btn-outline-light" (click)="showPassword=!showPassword">
+								<i *ngIf="!showPassword" class="fa-duotone fa-eye-slash"></i>
+								<i *ngIf="showPassword" class="fa-duotone fa-eye"></i>
+							</button>
 							<span
 								*ngIf="registerForm.get('Password').touched && registerForm.get('Password').hasError('required') || registerForm.get('Password').hasError('minlength')"
 								class="invalid-feedback">
 								كلمة المرور غير صالحة
 							</span>
 						</div>
-						<div class="form-floating mb-3">
-							<input placeholder="Enter Confirm Password" class="form-control" type="password"
-								formControlName="ConfirmPassword" id="ConfirmPassword"
-								[ngClass]="{'is-invalid': registerForm.get('ConfirmPassword').touched && registerForm.get('ConfirmPassword').invalid || registerForm.get('ConfirmPassword').hasError('confirmedValidator')}">
-							<label for="ConfirmPassword" class="form-label">تأكيد كلمة المرور</label>
+						<div class="input-group mb-3">
+							<div class="form-floating">
+								<input placeholder="Enter Confirm Password" class="form-control"
+									[type]="showConfirmPassword ? 'text' : 'password'" formControlName="ConfirmPassword"
+									id="ConfirmPassword"
+									[ngClass]="{'is-invalid': registerForm.get('ConfirmPassword').touched && registerForm.get('ConfirmPassword').invalid || registerForm.get('ConfirmPassword').hasError('confirmedValidator')}">
+								<label for="ConfirmPassword" class="form-label">تأكيد كلمة المرور</label>
+							</div>
+							<button class="btn btn-outline-light" (click)="showConfirmPassword=!showConfirmPassword">
+								<i *ngIf="!showConfirmPassword" class="fa-duotone fa-eye-slash"></i>
+								<i *ngIf="showConfirmPassword" class="fa-duotone fa-eye"></i>
+							</button>
 							<span
 								*ngIf="registerForm.get('ConfirmPassword').touched && registerForm.get('ConfirmPassword').hasError('required') || registerForm.get('ConfirmPassword').hasError('confirmedValidator')"
 								class="invalid-feedback">

@@ -3,25 +3,32 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors,
 import { AuthService } from '../../services/auth/Auth.service';
 import { IUserRegister } from 'src/app/core/models/User/IUserRegister';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
-@Component({
+@Component( {
 	selector: 'app-register',
 	templateUrl: './register.component.html',
 	styleUrls: ['./register.component.css']
-})
+} )
 export class RegisterComponent implements OnInit {
 
 	registerForm!: FormGroup;
 	user!: IUserRegister;
+	showPassword: boolean = false;
+	showConfirmPassword: boolean = false;
 
-	constructor(private authService: AuthService, private toastr: ToastrService, private fb: FormBuilder) { }
+	constructor( private authService: AuthService, private toastr: ToastrService, private fb: FormBuilder, private router: Router ) {
+		if ( this.authService.getUser() ) {
+			this.router.navigate( ['/'] );
+		}
+	}
 
 	ngOnInit(): void {
-		this.registerForm = this.fb.group({
-			Email: ['', [Validators.required, (control: any) => {
+		this.registerForm = this.fb.group( {
+			Email: ['', [Validators.required, ( control: any ) => {
 				const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-				const isValid = emailPattern.test(control.value);
-				if (control.value == '') {
+				const isValid = emailPattern.test( control.value );
+				if ( control.value == '' ) {
 					return Validators.required;
 				}
 				else {
@@ -29,24 +36,24 @@ export class RegisterComponent implements OnInit {
 				}
 			}]],
 			Username: ['', [Validators.required]],
-			Password: ['', [Validators.required, Validators.minLength(8)]],
+			Password: ['', [Validators.required, Validators.minLength( 8 )]],
 			ConfirmPassword: ['', [Validators.required]],
 			FirstName: ['', [Validators.required]],
 			LastName: ['', [Validators.required]],
-			Phone: ['', [Validators.required, (control: any) => {
+			Phone: ['', [Validators.required, ( control: any ) => {
 				const phoneNumberPattern = /^01[0-2,5]\d{1,8}$/;
-				const isValid = phoneNumberPattern.test(control.value);
-				if (control.value == '') {
+				const isValid = phoneNumberPattern.test( control.value );
+				if ( control.value == '' ) {
 					return Validators.required;
 				}
 				else {
 					return isValid ? null : { invalidPhoneNumber: true };
 				}
 			}]],
-			SSN: ['', [Validators.required, (control: any) => {
+			SSN: ['', [Validators.required, ( control: any ) => {
 				const ssnpattern = /^([1-9]{1})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})[0-9]{3}([0-9]{1})[0-9]{1}$/;
-				const isValid = ssnpattern.test(control.value);
-				if (control.value == '') {
+				const isValid = ssnpattern.test( control.value );
+				if ( control.value == '' ) {
 					return Validators.required;
 				} else {
 					return isValid ? null : { invalidsnn: true };
@@ -56,13 +63,13 @@ export class RegisterComponent implements OnInit {
 			Specialization: [''],
 		},
 			{
-				validator: this.ConfirmedValidator('Password', 'ConfirmPassword'),
+				validator: this.ConfirmedValidator( 'Password', 'ConfirmPassword' ),
 			}
 		);
 	}
 
-	ConfirmedValidator(controlName: string, matchingControlName: string) {
-		return (formGroup: FormGroup) => {
+	ConfirmedValidator( controlName: string, matchingControlName: string ) {
+		return ( formGroup: FormGroup ) => {
 			const control = formGroup.controls[controlName];
 			const matchingControl = formGroup.controls[matchingControlName];
 			if (
@@ -71,35 +78,35 @@ export class RegisterComponent implements OnInit {
 			) {
 				return;
 			}
-			if (control.value !== matchingControl.value) {
-				matchingControl.setErrors({ confirmedValidator: true });
+			if ( control.value !== matchingControl.value ) {
+				matchingControl.setErrors( { confirmedValidator: true } );
 			} else {
-				matchingControl.setErrors(null);
+				matchingControl.setErrors( null );
 			}
 		};
 	}
 
 	onSubmit() {
 		this.user = {
-			"Email": this.registerForm.get('Email')!.value,
-			"Username": this.registerForm.get('Username')!.value,
-			"Password": this.registerForm.get('Password')!.value,
-			"FName": this.registerForm.get('FirstName')!.value,
-			"LName": this.registerForm.get('LastName')!.value,
-			"phoneNumber": this.registerForm.get('Phone')!.value,
-			"SSN": this.registerForm.get('SSN')!.value,
-			"Role": [this.registerForm.get('AccountType')!.value],
+			"Email": this.registerForm.get( 'Email' )!.value,
+			"Username": this.registerForm.get( 'Username' )!.value,
+			"Password": this.registerForm.get( 'Password' )!.value,
+			"FName": this.registerForm.get( 'FirstName' )!.value,
+			"LName": this.registerForm.get( 'LastName' )!.value,
+			"phoneNumber": this.registerForm.get( 'Phone' )!.value,
+			"SSN": this.registerForm.get( 'SSN' )!.value,
+			"Role": [this.registerForm.get( 'AccountType' )!.value],
 		}
 
-		console.log(this.user);
-		console.log(this.registerForm.value);
-		if (this.registerForm.invalid) {
-			console.log(this.registerForm.invalid);
-			this.toastr.error("برجاء التأكد من صحة البيانات المدخلة", "خطأ")
+		console.log( this.user );
+		console.log( this.registerForm.value );
+		if ( this.registerForm.invalid ) {
+			console.log( this.registerForm.invalid );
+			this.toastr.error( "برجاء التأكد من صحة البيانات المدخلة", "خطأ" )
 			return;
 		}
 
-		this.authService.register(this.user);
+		this.authService.register( this.user );
 	}
 
 	step: number = 1;
