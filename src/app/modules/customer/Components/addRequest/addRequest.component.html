@@ -168,9 +168,8 @@
 							<!-- Images preview -->
 							<div *ngIf="AddRequestForm.get('Images')?.value">
 								<div class="d-flex flex-row align-items-start flex-wrap">
-									<div class="ms-2 d-flex flex-column"
-										*ngFor="let image of AddRequestForm.get('Images')?.value">
-										<img [src]="getImageUrl(image)" class="img-thumbnail " alt=""
+									<div class="ms-2 d-flex flex-column" *ngFor="let image of imagesURLS">
+										<img [src]="image" class="img-thumbnail " alt=""
 											style="width: 100px; height: 100px;">
 										<button class="btn btn-danger-soft btn-sm"
 											(click)="removeImage(image)">remove</button>
