@@ -26,7 +26,7 @@ export class AddRequestComponent implements OnInit {
 
 	ngOnInit() {
 		this.AddRequestForm = new FormGroup( {
-			ClientId: new FormControl( this.auth.getUser().userID ),
+			ClientId: new FormControl( this.auth.getUserValue().userID ),
 			Title: new FormControl( '', Validators.required ),
 			Category: new FormControl( '', Validators.required ),
 			Details: new FormControl( '', Validators.required ),
