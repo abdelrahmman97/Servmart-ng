@@ -12,22 +12,22 @@
 
 			<div class="card-body">
 
-				<form class="row g-3" [formGroup]="userInfoForm" >
+				<form class="row g-3" [formGroup]="userInfoForm">
 					<!-- Profile photo -->
 					<div class="col-12">
 						<label class="form-label">ارفع صورة ملقك الشخصى<span class="text-danger">*</span></label>
 						<div class="d-flex align-items-center form">
-							<label class="position-relative ms-4 border rounded-circle" type="file" id="photo"
+							<!-- <label class="position-relative ms-4 border rounded-circle" type="file"
 								(change)="onFileSelected($event)" accept="image/*" title="user image">
 								<span class="avatar avatar-xl">
 									<img id="uploadfile-1-preview" class="avatar-img rounded-circle shadow"
-										style="width: 200px;" *ngIf="userInfoForm.get('photo').value"
-										[src]="userInfoForm.get('photo').value">
+										style="width: 200px;" *ngIf="userInfoForm.get('ProfilePic').value"
+										[src]="userInfoForm.get('ProfilePic').value">
 								</span>
-							</label>
+							</label> -->
 							<div class="btn btn-sm btn-primary-soft mb-0 form-group">
-								<label for="photo" type="button" (click)="selectFile()">تغير</label>
-								<input class="form-control d-none " type="file" id="photoInput"
+								<!-- <label for="ProfilePic" type="button" (click)="selectFile()">تغير</label> -->
+								<input class="form-control " type="file" id="ProfilePic" name="ProfilePic"
 									(change)="onFileSelected($event)" accept="image/*">
 							</div>
 
@@ -119,24 +119,22 @@
 						<span
 							*ngIf="userInfoForm.get('SSN').touched && (userInfoForm.get('SSN').hasError('required') || userInfoForm.get('SSN').hasError('invalidsnn'))"
 							class="invalid-feedback">
-							{{ userInfoForm.get('SSN').hasError('required') ? 'رقم الهوية مطلوب' : 'خطأ في رقم الهوية' }}
+							{{ userInfoForm.get('SSN').hasError('required') ? 'رقم الهوية مطلوب' : 'خطأ في رقم الهوية'
+							}}
 						</span>
 
 					</div>
 
 					<!-- Date of birth -->
 					<div class="col-md-6">
-						<label class="form-label">تاريخ الميلاد<span class="text-danger" for="Birthday">*</span></label>
+						<label class="form-label">تاريخ الميلاد<span class="text-danger" for="DOB">*</span></label>
 						<input type="date" class="form-control flatpickr" value="29 Aug 1996"
-							placeholder="Enter date of birth" data-date-format="d M Y" id="Birthday"
-							formControlName="Birthday"
-							[ngClass]="{'is-invalid': userInfoForm.get('Birthday').touched && userInfoForm.get('Birthday').invalid}">
-						<span
-							*ngIf="userInfoForm.get('Birthday').hasError('required') && userInfoForm.get('Birthday').touched"
+							placeholder="Enter date of birth" data-date-format="d M Y" id="DOB" formControlName="DOB"
+							[ngClass]="{'is-invalid': userInfoForm.get('DOB').touched && userInfoForm.get('DOB').invalid}">
+						<span *ngIf="userInfoForm.get('DOB').hasError('required') && userInfoForm.get('DOB').touched"
 							class="invalid-feedback"> sss </span>
-						<span
-							*ngIf="userInfoForm.get('Birthday').hasError('futureDate') && userInfoForm.get('Birthday').touched"
-							class="invalid-feedback"> invalidEmail.
+						<span *ngIf="userInfoForm.get('DOB').hasError('futureDate') && userInfoForm.get('DOB').touched"
+							class="invalid-feedback"> invalidDate.
 
 						</span>
 					</div>
@@ -177,7 +175,7 @@
 
 					<!-- Button -->
 					<div class="col-12 text-start">
-						<button href="#" class="btn btn-primary-soft mb-0" (click)="saveAccount()">حفظ التغيرات</button>
+						<button href="#" class="btn btn-primary-soft mb-0" (click)="onSubmitUserInfo()">حفظ التغيرات</button>
 					</div>
 				</form>
 
@@ -242,7 +240,8 @@
 					<span
 						*ngIf="emailform.get('email').touched && (emailform.get('email').hasError('required') || emailform.get('email').hasError('invalidEmail'))"
 						class="invalid-feedback">
-						{{ emailform.get('email').hasError('required') ? 'البريد الالكترونى مطلوب' : 'خطأ في البريد الالكتروني' }}
+						{{ emailform.get('email').hasError('required') ? 'البريد الالكترونى مطلوب' : 'خطأ في البريد
+						الالكتروني' }}
 					</span>
 
 					<div class="text-start mt-3">
