@@ -36,9 +36,8 @@
 								<select class="form-select" name="Category" id="Category" aria-label="نوع الخدمة"
 									formControlName="Category">
 									<option selected>-اختر-</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
+									<option *ngFor="let item of CategoriesList" [value]="item.id">{{item.nameAr}}
+									</option>
 								</select>
 							</div>
 
@@ -107,20 +106,18 @@
 							<div class="mb-3">
 								<label for="Governorate" class="form-label fs-5">المحافظة</label>
 								<select class="form-select" id="Governorate" name="Governorate"
-									formControlName="Governorate">
-									<option selected>-اختر-</option>
-									<option value="1">القاهرة</option>
-									<option value="2">الاقصر</option>
-									<option value="3">اسوان</option>
+									formControlName="Governorate" (change)="getCities($event)">
+									<option selected disabled>-اختر-</option>
+									<option *ngFor="let item of GovernoratesList" [value]="item.id">{{item.nameAr}}
+									</option>
 								</select>
 							</div>
 
 							<div class="mb-3">
 								<label for="City" class="form-label fs-5">المركز</label>
 								<select class="form-select" id="City" name="City" formControlName="City">
-									<option selected>-اختر-</option>
-									<option value="1">السيل</option>
-									<option value="2">التامين</option>
+									<option selected disabled>-اختر-</option>
+									<option *ngFor="let item of CitiesList" [value]="item.id">{{item.nameAr}}</option>
 								</select>
 							</div>
 
