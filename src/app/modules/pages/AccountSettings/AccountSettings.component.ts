@@ -213,6 +213,7 @@ export class AccountSettingsComponent {
 		// 		return 'Unknown';
 		// }
 		return [];
+		console.log(Roles)
 	}
 	selectFile(): void {
 		const inputElement: HTMLInputElement = document.getElementById('photoInput') as HTMLInputElement;

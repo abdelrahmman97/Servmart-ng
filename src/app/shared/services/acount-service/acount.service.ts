@@ -19,10 +19,10 @@ export class AcountService {
 	getData() {
 		console.log('Fetching vendors data...');
 		// const userId = this.auth.getUser().userID;
-		return this.Http.get<any>(`${environment.apiUrl}/AcountsittingControllers/getUser?id=`);
+		return this.Http.get<any>(`${environment.apiUrl}/User/getUser?id=`);
 	}
 	UpdateUserInfo(UserInfo: any) {
-		return this.Http.post(`${environment.apiUrl}/AcountsittingControllers/update`, UserInfo);
+		return this.Http.post(`${environment.apiUrl}/User/update?id=`, UserInfo);
 	}
 	UpdateEmail(Email: IEmailchang) {
 		return this.Http.put(`${environment.apiUrl}/ChangeEmail/`, Email);

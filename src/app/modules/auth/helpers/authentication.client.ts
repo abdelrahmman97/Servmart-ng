@@ -21,5 +21,6 @@ export class AuthenticationClient {
 	register( user: IUserRegister ) {
 		return this.http.post( `${environment.apiUrl}/Auth/register`, user );
 	}
+	
 
 }
