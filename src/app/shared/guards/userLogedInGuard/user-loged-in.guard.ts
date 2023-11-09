@@ -10,7 +10,7 @@ export class userLogedInGuard implements CanActivate {
 	constructor ( private authService: AuthService, private router: Router ) { }
 
 	canActivate ( route: ActivatedRouteSnapshot, state: RouterStateSnapshot ): boolean {
-		const user = this.authService.getUser();
+		const user = this.authService.getUserAsObservable();
 		if ( user ) {
 			return true;
 		}
