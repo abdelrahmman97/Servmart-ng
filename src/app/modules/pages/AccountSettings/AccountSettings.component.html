@@ -194,7 +194,7 @@
 				<form [formGroup]="accountTypeForm">
 					<div class="row">
 
-						<div class="col-md-6">
+						<!-- <div class="col-md-6">
 							<label class="form-label">نوع الحساب<span class="text-danger" for="role">*</span></label>
 							<select class="form-select js-choice" id="role" formControlName="role">
 								<option *ngFor="let work of workoption">{{work}}</option>
@@ -206,7 +206,29 @@
 							<select class="form-select js-choice" id="work" formControlName="work">
 								<option *ngFor="let account of accountoption">{{account}}</option>
 							</select>
-						</div>
+						</div> -->
+						<div class="form-group col-md-6">
+							<label> نوع الحساب</label>
+							<div class="form-check" *ngFor="let work of workoption">
+							  <input class="form-check-input" type="checkbox" value="role " id="role" formControlName="role">
+							  <label class="form-check-label" for="adminCheckbox">
+                               {{work}}
+							  </label>
+							</div>
+
+						  </div>
+
+						  <div class="form-group col-md-6">
+							<label>المهنه</label>
+							<div class="form-check" *ngFor="let account of accountoption">{{account}}>
+							  <input class="form-check-input" type="checkbox" value="work" id="work" formControlName="work">
+							  <label class="form-check-label" for="optionACheckbox">
+								{{account}}
+							  </label>
+							</div>
+
+						  </div>
+
 
 						<div class="col-12 text-start mt-3">
 							<button href="#" class="btn btn-primary-soft mb-0" (click)="updateSettings()">
@@ -240,8 +262,7 @@
 					<span
 						*ngIf="emailform.get('email').touched && (emailform.get('email').hasError('required') || emailform.get('email').hasError('invalidEmail'))"
 						class="invalid-feedback">
-						{{ emailform.get('email').hasError('required') ? 'البريد الالكترونى مطلوب' : 'خطأ في البريد
-						الالكتروني' }}
+						{{ emailform.get('email').hasError('required') ? 'البريد الالكترونى مطلوب' : 'خطأ في البريد	الالكتروني' }}
 					</span>
 
 					<div class="text-start mt-3">
