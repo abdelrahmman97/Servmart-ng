@@ -196,7 +196,7 @@ export class AccountSettingsComponent {
 	showPassword: boolean = false;
 
 	emaiil: any;
-	password: any;
+	password: any;  
 
 
 	ngOnInit() {
