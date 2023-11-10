@@ -20,10 +20,11 @@ import { PendingAccountComponent } from './pages/pending-account/pending-account
 import { ServiceProviderSendOfferComponent } from './services-provider/Components/service-provider-send-offer/service-provider-send-offer.component';
 import { CartComponent } from './customer/Components/cart/cart.component';
 import { CheckOutComponent } from './customer/Components/check-out/check-out.component';
-import { ServicesComponent } from './pages/services/services.component';
 import { AddRequestComponent } from './customer/Components/addRequest/addRequest.component';
 import { RequestOrdersComponent } from './services-provider/Components/requestOrders/requestOrders.component';
 import { userLogedInGuard } from '../shared/guards/userLogedInGuard/user-loged-in.guard';
+import { EditComponent } from './vendor/Components/edit/edit.component';
+import { UsersRequestsComponent } from './pages/Components/UsersRequests/UsersRequests.component';
 
 
 
@@ -38,7 +39,7 @@ const routes: Routes = [
 	{ path: "earning", component: EaringComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'cart', component: CartComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'checkout', component: CheckOutComponent, canActivate: [ userLogedInGuard ] },
-	{ path: 'services', component: ServicesComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'requests', component: UsersRequestsComponent, canActivate: [ userLogedInGuard ] },
 
 	// Customer Components
 	{ path: 'myRequests', component: CustomerRequestsListComponent, canActivate: [ userLogedInGuard ] },
@@ -53,6 +54,7 @@ const routes: Routes = [
 	{ path: "orderDetails/:id", component: OrderDetailsComponent, canActivate: [ userLogedInGuard ] },
 	{ path: "orderList", component: RequestListComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'productList', component: ProductListComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'edit/:id', component: EditComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'product/:id', component: ProductDetailsComponent },
 
 	// Service Provider Compproducts

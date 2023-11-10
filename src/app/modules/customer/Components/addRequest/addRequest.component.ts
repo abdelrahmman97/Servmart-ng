@@ -13,43 +13,43 @@ import { IRequestServiceCategory } from 'src/app/core/models/RequestServiceCateg
 @Component( {
 	selector: 'app-addRequest',
 	templateUrl: './addRequest.component.html',
-	styleUrls: [ './addRequest.component.css' ],
+	styleUrls: ['./addRequest.component.css'],
 } )
 export class AddRequestComponent implements OnInit {
 
-	constructor (
+	constructor(
 		private rsCategoryService: RequestServiceCategoriesService,
 		private address: AddressService,
 		private reqService: RequestService,
 		private auth: AuthService,
 		private toastr: ToastrService,
-		private router: Router ) { }
+		private router: Router
+	) { }
 
 	step: number = 1;
+	submited: boolean = false;
 
 	CitiesList: ICity[] | null = null;
 	GovernoratesList: IGovernorate[] | null = null;
 	CategoriesList: IRequestServiceCategory[] | null = null;
 
 	private _AddRequestForm: FormGroup;
-	public get AddRequestForm (): FormGroup {
+	public get AddRequestForm(): FormGroup {
 		return this._AddRequestForm;
 	}
-	public set AddRequestForm ( value: FormGroup ) {
+	public set AddRequestForm( value: FormGroup ) {
 		this._AddRequestForm = value;
 	}
 
-	selectedImages: File[] = [];
+	selectedImages: SelectedFile[] = [];
+	imagesError = false;
+
 	selectedVideo: File | null = null;
-	imagesURLS: string[];
-	@ViewChild( "VideoInput" ) VideoInput: ElementRef;
-	@ViewChild( 'imageInput', { static: true } ) imageInputRef: ElementRef;
+	selectedVideoUrl: string | null = null;
+	videoSizeError = false;
+	@ViewChild( 'videoInput', { static: false } ) videoInput: ElementRef;
 
-	error = false;
-
-
-
-	ngOnInit () {
+	ngOnInit() {
 		this.AddRequestForm = new FormGroup( {
 			ClientId: new FormControl( this.auth.getUserValue().userID ),
 			Title: new FormControl( '', Validators.required ),
@@ -61,7 +61,7 @@ export class AddRequestComponent implements OnInit {
 			City: new FormControl( '', Validators.required ),
 			Address: new FormControl( '', Validators.required ),
 			Images: new FormControl( '', Validators.required ),
-			Video: new FormControl( '', Validators.nullValidator ),
+			Video: new FormControl( '' ),
 		} );
 
 		this.address.getAllGovernorates().subscribe(
@@ -82,117 +82,123 @@ export class AddRequestComponent implements OnInit {
 		);
 	}
 
-	getCities ( event: any ) {
-		this.CitiesList = this.GovernoratesList[ event.target.value - 1 ].city;
+	getCities( event: any ) {
+		this.CitiesList = this.GovernoratesList[event.target.value - 1].city;
 	}
 
-	onImagesSelected ( event: any ) {
-		this.error = false;
+	onImagesSelected( event: any ) {
+
 		const files = event.target.files;
 
-		if ( files.length > 5 ) {
-			this.error = true
+		if ( files.length > 5 && this.selectedImages.length != 5 ) {
+			this.imagesError = true
+			event.target.value = null;
 			return;
 		}
-
-		// Preview the uploaded images
-		this.selectedImages = Array.from( files );
-		this.AddRequestForm.get( 'Images' )?.setValue( files );
-
-		for ( const file of files ) {
-			const reader = new FileReader();
-			reader.onload = () => {
-				this.imagesURLS.push( reader.result as string );
-			};
-			reader.readAsDataURL( file );
+		else {
+			for ( const file of files ) {
+				// if ( file.type.startsWith( 'image/' ) ) {
+				const reader = new FileReader();
+				reader.onload = ( e: any ) => {
+					this.selectedImages.push( {
+						file,
+						url: e.target.result,
+					} );
+				};
+				reader.readAsDataURL( file );
+				// }
+			}
+			this.AddRequestForm.get( 'Images' )?.setValue( this.selectedImages );
 		}
+
 	}
 
-	getImageUrl ( image: File ) {
-		return URL.createObjectURL( image );
-	}
-
-	removeImage ( image ) {
-
-		// this.selectedImages.splice( index, 1 );
-		const index = this.selectedImages.indexOf( image );
+	removeImage( index ) {
 		this.selectedImages.splice( index, 1 );
-		this.imagesURLS.splice( index, 1 );
 		this.AddRequestForm.get( 'Images' )?.setValue( this.selectedImages );
+	}
 
-		if ( this.imageInputRef && this.imageInputRef.nativeElement ) {
-			const input = this.imageInputRef.nativeElement;
-			input.value = ''; // Clear the input
-			input.files = this.selectedImages; // Set the input value to the updated selectedImages
+	onVideoSelected( event: any ) {
+		const file = event.target.files[0];
+		if ( file ) {
+			if ( file.size <= 100 * 1024 * 1024 ) { // 100MB limit
+				this.selectedVideo = file;
+				this.selectedVideoUrl = URL.createObjectURL( file );
+				this.videoSizeError = false;
+			} else {
+				this.videoSizeError = true;
+			}
 		}
 	}
 
-	onVideoSelected ( event: any ) {
-		this.selectedVideo = event.target.files[ 0 ];
-		this.AddRequestForm.get( 'Video' )?.setValue( this.selectedVideo );
-	}
-
-	getVideoUrl () {
-		return this.selectedVideo ? URL.createObjectURL( this.selectedVideo ) : '';
-	}
-
-	clearVideo () {
+	removeVideo() {
 		this.selectedVideo = null;
-		this.AddRequestForm.get( 'video' )?.setValue( this.selectedVideo );
-		if ( this.VideoInput && this.VideoInput.nativeElement ) {
-			this.VideoInput.nativeElement.value = null;
+		this.selectedVideoUrl = null;
+		this.videoSizeError = false;
+		this.AddRequestForm.get( 'Video' )?.setValue( this.selectedVideo );
+		if ( this.videoInput && this.videoInput.nativeElement ) {
+			this.videoInput.nativeElement.value = null;
 		}
 	}
 
-	submitForm () {
+	submitForm() {
+		this.submited = true;
 		if ( this.AddRequestForm.valid ) {
 			// Perform the desired action with the form data
 			console.log( this.AddRequestForm.value );
 			const formData: FormData = new FormData();
 
-			const imageFiles = this.AddRequestForm.get( 'Images' )?.value;
-			if ( imageFiles ) {
-				for ( let i = 0; i < imageFiles.length; i++ ) {
-					formData.append( 'Images', imageFiles[ i ] );
+			if ( this.selectedImages ) {
+				for ( let i = 0; i < this.selectedImages.length; i++ ) {
+					formData.append( 'Images', this.selectedImages[i].file );
 				}
 			}
 
-			const videoFile = this.AddRequestForm.get( 'Video' )?.value;
-			if ( videoFile ) {
-				formData.append( 'Video', videoFile );
+			if ( this.selectedVideo ) {
+				formData.append( 'Video', this.selectedVideo );
 			}
 
 			formData.append( 'ClientId', null );
 			formData.append( 'Title', this.AddRequestForm.get( 'Title' )?.value );
+			formData.append( 'Category', this.AddRequestForm.get( 'Category' )?.value );
 			formData.append( 'Details', this.AddRequestForm.get( 'Details' )?.value );
 			formData.append( 'ExpectedSalary', this.AddRequestForm.get( 'ExpectedSalary' )?.value );
 			formData.append( 'EndDate', this.AddRequestForm.get( 'EndDate' )?.value );
-
 			formData.append( 'Address', this.AddRequestForm.get( 'Address' )?.value );
-			formData.append( 'Category', this.AddRequestForm.get( 'Category' )?.value );
 			formData.append( 'CityId', this.AddRequestForm.get( 'City' )?.value );
 			formData.append( 'GovernorateId', this.AddRequestForm.get( 'Governorate' )?.value );
 
 			for ( const pair of formData.entries() ) {
-				console.log( `${ pair[ 0 ] }: ${ pair[ 1 ] }` );
+				console.log( `${pair[0]}: ${pair[1]}` );
 			}
 
 			console.log( this.AddRequestForm.value );
 
-			// TODO call api
+			this.toastr.info( "جاري إضافة الطلب" )
+
 			this.reqService.create( formData ).subscribe(
 				next => {
 					console.log( next );
 					this.toastr.success( "تم إضافة الطلب بنجاح" );
-					this.router.navigate( [ '/myRequests/' ] );
+					this.router.navigate( ['/myRequests/'] );
 				},
 				error => {
 					console.log( error );
 					this.toastr.error( "حدث خطأ أثناء الاضافة\nالرجاء المحاولة مرة أخري" )
+					this.submited = false;
 				}
 			);
 
 		}
+		else {
+			this.toastr.error( "الرجاء اكمال البيانات" );
+			this.submited = false;
+		}
 	}
 
+}
+
+interface SelectedFile {
+	file: File;
+	url: string;
 }

@@ -13,11 +13,18 @@ export class LoginComponent {
 
 	user: any;
 	loginForm: FormGroup;
+	submited: boolean = false;
 
 	constructor( private authService: AuthService, private toastr: ToastrService, private router: Router ) {
 		if ( this.authService.getUserValue() ) {
 			this.router.navigate( ['/'] );
 		}
+
+		this.authService.data.subscribe(
+			( data ) => {
+				this.submited = data;
+			}
+		);
 	}
 
 	ngOnInit(): void {
@@ -29,6 +36,8 @@ export class LoginComponent {
 	}
 
 	onSubmit() {
+		this.authService.setSubmitted( true );
+
 		this.user = {
 			"Email": this.loginForm.controls['email'].value,
 			"Password": this.loginForm.controls['password'].value,

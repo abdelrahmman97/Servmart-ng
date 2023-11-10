@@ -2,12 +2,12 @@
 	<div class="d-flex justify-content-between mb-4">
 		<h4 class="card-header-title">عربة التسوق</h4>
 		<div class="d-flex gap-2">
-			<button class="btn btn-danger-soft" (click)="emptyCart()" [ngClass]="products.length == 0? 'disabled':''">
+			<button class="btn btn-danger-soft" (click)="emptyCart()" [ngClass]="GetCart.length == 0? 'disabled':''">
 				<i class="fa-duotone fa-trash"></i>
 				امسح الكل
 			</button>
 			<a [routerLink]="['/checkout']" class="btn btn-primary-soft"
-				[ngClass]="products.length == 0? 'disabled':''">
+				[ngClass]="GetCart.length == 0? 'disabled':''">
 				<i class="fa-duotone fa-cart-circle-check"></i>
 				تابع عملية الشراء
 			</a>
@@ -17,21 +17,21 @@
 
 <div class="row">
 	<!-- Cart Items -->
-	<div class="col-lg-8 col-md-7">
-		<ul class="list-group list-group-flush" *ngFor="let item of products">
+	<div *ngIf="GetCart.length != 0" class="col-lg-8 col-md-7">
+		<ul class="list-group list-group-flush" *ngFor="let item of GetCart">
 			<li class="list-group-item py-3 px-0 border-bottom">
 				<div class="align-items-center justify-content-between row">
 					<!-- item img -->
 					<div class="col-3 col-md-2">
-						<img src="{{item.Image}}" class="img-fluid rounded" alt="Card image">
+						<img [src]="item.picURL" class="img-fluid rounded" alt="Card image">
 					</div>
 					<!-- item details -->
 					<div class="col-4 col-md-5">
 						<!-- Title -->
 						<h5 class="card-title mb-3 text-truncate">
-							{{item.Name}}
+							{{item.productName}}
 						</h5>
-						<a (click)="remove(item)" class="btn btn-sm btn-danger-soft" title="حذف من عربة التسوق">
+						<a  (click)="remove(item.id)" class="btn btn-sm btn-danger-soft" title="حذف من عربة التسوق">
 							<i class="fa-duotone fa-trash"></i>
 							حذف
 						</a>
@@ -43,7 +43,7 @@
 								(click)="stepDown(item)" title="add one more">
 								<i class="fa-solid fa-minus"></i>
 							</button>
-							<input min="1" [value]="item.Quantity" type="number" id="{{item.ID}}" name="quantity"
+							<input min="1" [value]="item.count" type="number" id="{{item.productID}}" name="quantity"
 								class="form-control border text-center" disabled title="number of items">
 							<button class="btn btn-group-sm border m-0 rounded-0 rounded-start bg-light-hover"
 								(click)="stepUp(item)" title="remove one more">
@@ -53,18 +53,18 @@
 					</div>
 					<!-- item price -->
 					<div class="col-2 col-md-2 text-lg-end text-start text-end">
-						<h6 class="fw-bold mb-0">{{item.UnitPrice | CustomCurrency:'ar':false}}</h6>
-						<div class="border-top my-1" *ngIf="item.Quantity!=1">
-							<h6>× {{item.Quantity}}</h6>
+						<h6 class="fw-bold mb-0">{{item.unitPrice| CustomCurrency:'ar':false}}</h6>
+						<div class="border-top my-1" *ngIf="item.count">
+							<h6>× {{item.count}}</h6>
 							<h6 class="fw-bold mb-0">
-								{{item.UnitPrice*item.Quantity | CustomCurrency:'ar':false}}
+								{{item.unitPrice * item.count | CustomCurrency:'ar':false}}
 							</h6>
 						</div>
 					</div>
 				</div>
 			</li>
 		</ul>
-		<div *ngIf="products.length == 0" class="align-items-center d-flex flex-column">
+		<div *ngIf="GetCart.length == 0" class="align-items-center d-flex flex-column">
 			<div class="align-items-center d-flex flex-column mb-n5">
 				<p class="p-0 m-0 mb-1">عربة التسوق الخاصة بك فارغة!</p>
 				<a [routerLink]="['/shop']" class="btn btn-primary-soft btn-sm m-0">استمرار التصفح</a>
@@ -624,10 +624,14 @@
 				</defs>
 			</svg>
 		</div>
-		<div class="d-flex justify-content-between mt-4" *ngIf="products.length > 0">
+		<div class="d-flex justify-content-between mt-4" *ngIf="GetCart.length > 0">
 			<a [routerLink]="['/shop']" class="btn btn-primary-soft btn-sm">استمرار التصفح</a>
 		</div>
 
+	</div>
+
+	<div *ngIf="GetCart.length == 0">
+		<img style="width: 50%;" src="../../../../../assets/images/emptycart.jpg">
 	</div>
 
 	<!-- Cart Summery -->

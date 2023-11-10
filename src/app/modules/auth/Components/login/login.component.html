@@ -36,7 +36,10 @@
 				</div>
 
 				<div class="d-flex justify-content-end w-100">
-					<button class="btn btn-primary">تسجيل دخول</button>
+					<button class="btn btn-primary" [ngClass]="submited? 'disabled':''">
+						تسجيل دخول
+						<i class="fa-duotone fa-spinner-third fa-spin" *ngIf="submited"></i>
+					</button>
 				</div>
 
 			</form>

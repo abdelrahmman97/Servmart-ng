@@ -74,6 +74,7 @@ export class AddProduectsComponent implements OnInit {
 				console.log(error);
 
 			},
+			
 		});
 	}
 

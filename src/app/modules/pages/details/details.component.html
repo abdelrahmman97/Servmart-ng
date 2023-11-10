@@ -59,7 +59,7 @@
 
                         </div>
                         <div class="btns text-center ">
-                           <a [routerLink]="['/cart']">
+                           <a  (click)="AddToCart(product.productID)">
                             <button class="btn btn-outline-primary text-center w-75">اضف المنتج للقائمة</button>
 
                            </a>
