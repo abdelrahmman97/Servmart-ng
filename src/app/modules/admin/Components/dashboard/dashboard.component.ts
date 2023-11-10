@@ -13,11 +13,11 @@ import { Observable } from 'rxjs';
 export class DashboardComponent implements OnInit {
 
 	vendorsList: Observable<any[]>;
-	selectedcatid: number = 0;
-  product: number = 0;
+	selectedcatid: number ;
+  product: number ;
 
 	protected: Observable<any[]>;
-  user: number = 0;
+  user: number ;
 
 	users: Observable<any[]>;
 
@@ -40,8 +40,9 @@ export class DashboardComponent implements OnInit {
       this.product = data.length;
     });
     this.users=this.productService.gstAllusers();
-    this.protected.subscribe(data => {
+    this.users.subscribe(data => {
       this.user = data.length;
+	 
     });
 }
 
