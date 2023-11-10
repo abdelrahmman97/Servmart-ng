@@ -8,7 +8,8 @@ import { SendOffersComponent } from './Components/SendOffers/SendOffers.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { OrderDetailsComponent } from './Components/order-details/order-details.component';
-import { NgxPaginationModule } from 'ngx-pagination'
+import { NgxPaginationModule } from 'ngx-pagination';
+import { EditComponent } from './Components/edit/edit.component'
 
 
 
@@ -21,7 +22,8 @@ import { NgxPaginationModule } from 'ngx-pagination'
 		SendOffersComponent,
 		OrderDetailsComponent,
 		RequestListComponent,
-		OrderDetailsComponent
+		OrderDetailsComponent,
+  EditComponent
 	],
 	imports: [
 		CommonModule,
@@ -30,4 +32,7 @@ import { NgxPaginationModule } from 'ngx-pagination'
 		NgxPaginationModule
 	]
 })
-export class VendorModule { }
+export class VendorModule 
+{ 
+	
+}
