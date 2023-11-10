@@ -1,0 +1,98 @@
+<div class="text-start">
+  <button class="btn btn-primary mb-2 btn-start" [routerLink]="['/admin/servicesList']">العودة الى الخدمات</button>
+</div>
+<section class="card-grid pt-0">
+	<div class="container">
+		<div class="row g-2">
+			<!-- Image -->
+      <div class="col-md-6">
+        <div class="card card-grid-lg card-element-hover card-overlay-hover overflow-hidden">
+          <img class="card-img-top" [src]="product.picUrl" alt="Product Image" style="height: 400px;">
+          <div class="card-body">
+            <!-- Add any additional content here -->
+          </div>
+          <div class="hover-element position-absolute w-100 h-100">
+            <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xl-6 order-1">
+				<div class="">
+        
+					<!-- Personal info START -->
+					<div class="card shadow">
+						<!-- Card header -->
+						<div class="card-header border-bottom">
+							<h5 class="mb-0">معلومات  الخدمة</h5>
+						</div>
+						<!-- Card body -->
+						<div class="card-body">
+							<div class="row">
+								<!-- Information item -->
+							
+								<!-- Information item -->
+								<div class="col-md-6">
+									<ul class="list-group list-group-borderless">
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> رقم الخدمة :</span>
+											<span>
+                        {{
+                          product.id
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0">  عنوان الخدمة :</span>
+											<span>
+                        {{
+                          product.title
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> وصف الخدمة :</span>
+											<span>
+                        {{
+                          product.discription
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> سعر الخدمة :</span>
+											<span>
+                        {{
+                          product.expectedSalary
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> تقيم الخدمة :</span>
+											<span>
+                        {{
+                          product.rate
+                          }}
+                         </span>
+
+										</li>
+                    
+										
+									</ul>
+								</div>
+
+					
+							</div>
+						</div>
+					</div>
+					<!-- Personal info END -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //////////section-two\\\\\\\\\\ -->
+

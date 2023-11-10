@@ -1,39 +1,30 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { AdminService } from '../../services/admin.service';
 import { Observable } from 'rxjs';
-import { IProduct } from 'src/app/core/models/Product/IProduct';
-import { IProductCategory } from 'src/app/core/models/Product/IProductCategory';
-import { AddProductService } from 'src/app/modules/vendor/services/Product/AppProductService.service';
+import { HttpClient } from '@angular/common/http';
 
-@Component( {
-	selector: 'app-order-list',
-	templateUrl: './order-list.component.html',
-	styleUrls: ['./order-list.component.css']
-} )
-export class OrderListComponent implements OnInit {
+@Component({
+  selector: 'app-request',
+  templateUrl: './request.component.html',
+  styleUrls: ['./request.component.css']
+})
+export class RequestComponent implements OnInit {
 
-	catlist: IProductCategory[];
-	protects: IProduct[];
 	vendorsList: Observable<any[]>;
-	protectedlisteofcat: IProduct[] = [];
 	selectedcatid: number = 0;
 	ordertotalprice: number = 0;
 	isThereError: boolean;
 	errorMessage: string;
 
-	constructor( private productService: AddProductService,private http:HttpClient  ) {
+  constructor( private productService: AdminService,private http:HttpClient ) {
 		
-		this.protectedlisteofcat = this.protects;
 	}
 
-  
-
   deleteUser(userId: string) {
-    this.http.delete(`https://localhost:7013/DeleteProduct/${userId}`).subscribe(
+    this.http.delete(`https://localhost:7013/api/Request?Id=${userId}`).subscribe(
       () => {
         // Update the user list after deletion
-        this.vendorsList = this.productService.gstAll();
+        this.vendorsList = this.productService.gstAllserviec();
         this.vendorsList.subscribe(vendors => {
           console.log('Received vendors data:', vendors);
       
@@ -49,9 +40,10 @@ export class OrderListComponent implements OnInit {
   }
 
 
+
 	ngOnInit(): void {
 		
-		this.vendorsList = this.productService.gstAll();
+		this.vendorsList = this.productService.gstAllrequest();
 		this.vendorsList.subscribe(vendors => {
 		  console.log('Received vendors data:', vendors);
 	

@@ -1,0 +1,142 @@
+<div class="text-start">
+  <button class="btn btn-primary mb-2 btn-start" [routerLink]="['/requestlist']">العودة الى الطلبات</button>
+</div>
+<section class="card-grid pt-0">
+	<div class="container">
+		<div class="row g-2">
+			<!-- Image -->
+      <div class="col-xl-8 order-1">
+				<div class="">
+        
+					<!-- Personal info START -->
+					<div class="card shadow">
+						<!-- Card header -->
+						<div class="card-header border-bottom">
+							<h5 class="mb-0">معلومات  الطلب</h5>
+						</div>
+						<!-- Card body -->
+						<div class="card-body">
+							<div class="row">
+								<!-- Information item -->
+							
+								<!-- Information item -->
+								<div class="col-md-8">
+									<ul class="list-group list-group-borderless">
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> رقم الطلب :</span>
+											<span>
+                        {{
+                          product.id
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0">  اسم الطلب :</span>
+											<span>
+                        {{
+                          product.title
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> وصف الطلب :</span>
+											<span>
+                        {{
+                          product.details
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> سعر الطلب:</span>
+											<span>
+                        {{
+                          product.expectedSalary
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> عنوان الطلب :</span>
+											<span>
+                        {{
+                          product.address
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> تقيم الطلب :</span>
+											<span>
+                        {{
+                          product.rateValue
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> تصنفيف الطلب :</span>
+											<span>
+                        {{
+                          product.category
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> تاريخ بداية  الطلب :</span>
+											<span>
+                        {{
+                          product.startDate
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0"> تاريخ نهاية  الطلب :</span>
+											<span>
+                        {{
+                          product.endDate
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0">  مقدم خدمة  الطلب :</span>
+											<span>
+                        {{
+                          product.provider.fName+' '+product.provider.lName
+                          }}
+                         </span>
+
+										</li>
+                    <li class="list-group-item mb-3">
+											<span class=" fw-normal ms-1 mb-0">  مستخدم  الطلب :</span>
+											<span>
+                        {{
+                          product.user.fName+' '+product.user.lName
+                          }}
+                         </span>
+
+										</li>
+                    
+										
+									</ul>
+								</div>
+
+					
+							</div>
+						</div>
+					</div>
+					<!-- Personal info END -->
+				</div>
+			</div>
+      
+    
+		</div>
+	</div>
+</section>
+<!-- //////////section-two\\\\\\\\\\ -->
+

@@ -12,7 +12,7 @@ export class AddProductService {
 	AddProduct(product: IProduct) {
 		throw new Error('Method not implemented.');
 	}
-	baseURL = "http://localhost:3000/product";
+	baseURL = "https://localhost:7013/GetAllProduct";
 	urlApi="https://localhost:7013/AddProduct";
 	catgory:string="https://localhost:7013/ProductCatgorei";
 	Update="https://localhost:7013/UpdateProduct";

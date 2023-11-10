@@ -1,122 +1,77 @@
 <div class="card bg-light border-0 rounded-4 mt-4"
-	style="background-image: url(../../../../../assets/images/22.jpg); background-repeat: no-repeat; background-size: cover; background-position: right;">
-	<div class="card-body p-lg-12">
-		<h1>Welcome back! FreshCart
-		</h1>
-		<p>FreshCart is simple & clean design for developer and
-			designer.</p>
-		<a href="#" class="btn btn-primary">
-			Create Product
-		</a>
-	</div>
+style="background-image: url(../../../../../assets/images/22.jpg); background-repeat: no-repeat; background-size: cover; background-position: right;">
+<div class="card-body p-lg-12">
+    <h1>مرحبا ! ServMart
+    </h1>
+    
+</div>
 </div>
 
 <!-- Cars -->
 
 <div class="row mt-4">
-	<div class="col-lg-4 col-12 mb-6">
-		<!-- card -->
-		<div class="card h-100 card-lg">
-			<!-- card body -->
-			<div class="card-body p-6">
-				<!-- heading -->
-				<div class="d-flex justify-content-between align-items-center mb-6">
-					<div>
-						<h4 class="mb-0 fs-5">Earnings</h4>
-					</div>
-					<div class="icon-shape icon-md bg-light-danger text-dark-danger rounded-circle">
-						<i class="fa-solid fa-hand-holding-dollar fs-5"></i>
-					</div>
-				</div>
-				<!-- project number -->
-				<div class="lh-1">
-					<h1 class=" mb-2 fw-bold fs-2">$93,430</h1>
-					<span>Monthly revenue</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-lg-4 col-12 mb-6">
-		<!-- card -->
-		<div class="card h-100 card-lg">
-			<!-- card body -->
-			<div class="card-body p-6">
-				<!-- heading -->
-				<div class="d-flex justify-content-between align-items-center mb-6">
-					<div>
-						<h4 class="mb-0 fs-5">Orders</h4>
-					</div>
-					<div class="icon-shape icon-md bg-light-warning text-dark-warning rounded-circle">
-						<i class="fa-solid fa-cart-shopping fs-5"></i>
-					</div>
-				</div>
-				<!-- project number -->
-				<div class="lh-1">
-					<h1 class=" mb-2 fw-bold fs-2">42,339</h1>
-					<span><span class="text-dark me-1">35+</span>New Sales</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-lg-4 col-12 mb-6">
-		<!-- card -->
-		<div class="card h-100 card-lg">
-			<!-- card body -->
-			<div class="card-body p-6">
-				<!-- heading -->
-				<div class="d-flex justify-content-between align-items-center mb-6">
-					<div>
-						<h4 class="mb-0 fs-5">Customer</h4>
-					</div>
-					<div class="icon-shape icon-md bg-light-info text-dark-info rounded-circle">
-						<i class="fa-solid fa-user-group fs-5"></i>
-					</div>
-				</div>
-				<!-- project number -->
-				<div class="lh-1">
-					<h1 class=" mb-2 fw-bold fs-2">2,120</h1>
-					<span><span class="text-dark me-1">30+</span>new in 2 days</span>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="col-lg-4 col-12 mb-6">
+    <!-- card -->
+    <div class="card h-100 card-lg">
+        <!-- card body -->
+        <div class="card-body p-6">
+            <!-- heading -->
+            <div class="d-flex justify-content-between align-items-center mb-6">
+                <div>
+                    <h4 class="mb-0 fs-5">الخدمات</h4>
+                </div>
+                <div class="icon-shape icon-md bg-light-danger text-dark-danger rounded-circle">
+                    <i class="fa-solid fa-hand-holding-dollar fs-5"></i>
+                </div>
+            </div>
+            <!-- project number -->
+            <div class="lh-1">
+                <h1 class=" mb-2 fw-bold fs-2"> {{ selectedcatid }}</h1>
+            </div>
+        </div>
+    </div>
 </div>
-
-<!-- Content goes here -->
-<!--
-                          <ngx-charts-bar-vertical
-                          [results]="chartData"
-                          [xAxis]="true"
-                          [yAxis]="true"
-                          [gradient]="false"
-                          [legend]="true"
-                          [showXAxisLabel]="true"
-                          [showYAxisLabel]="true"
-                          [xAxisLabel]="xAxisLabel"
-                          [yAxisLabel]="yAxisLabel">
-                        </ngx-charts-bar-vertical>
-					-->
-
-
-<div class="row">
-	<table class="table table-responsive">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Name</th>
-				<th>Image</th>
-				<th>Quntaty</th>
-				<th>Price</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr *ngFor="let prd of products">
-				<td>{{ prd.ID }}</td>
-				<td>{{ prd.Name }}</td>
-				<td>{{ prd.Descriptoin }}</td>
-				<td>{{ prd.UnitPrice }}</td>
-				<td>{{ prd.Stoke }}</td>
-			</tr>
-		</tbody>
-	</table>
+<div class="col-lg-4 col-12 mb-6">
+    <!-- card -->
+    <div class="card h-100 card-lg">
+        <!-- card body -->
+        <div class="card-body p-6">
+            <!-- heading -->
+            <div class="d-flex justify-content-between align-items-center mb-6">
+                <div>
+                    <h4 class="mb-0 fs-5">المنتجات</h4>
+                </div>
+                <div class="icon-shape icon-md bg-light-warning text-dark-warning rounded-circle">
+                    <i class="fa-solid fa-cart-shopping fs-5"></i>
+                </div>
+            </div>
+            <!-- project number -->
+            <div class="lh-1">
+                <h1 class=" mb-2 fw-bold fs-2">{{product}}</h1>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-12 mb-6">
+    <!-- card -->
+    <div class="card h-100 card-lg">
+        <!-- card body -->
+        <div class="card-body p-6">
+            <!-- heading -->
+            <div class="d-flex justify-content-between align-items-center mb-6">
+                <div>
+                    <h4 class="mb-0 fs-5">المستخدمين</h4>
+                </div>
+                <div class="icon-shape icon-md bg-light-info text-dark-info rounded-circle">
+                    <i class="fa-solid fa-user-group fs-5"></i>
+                </div>
+            </div>
+            <!-- project number -->
+            <div class="lh-1">
+                <h1 class=" mb-2 fw-bold fs-2">{{user}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
