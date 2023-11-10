@@ -23,6 +23,7 @@ import { CheckOutComponent } from './customer/Components/check-out/check-out.com
 import { AddRequestComponent } from './customer/Components/addRequest/addRequest.component';
 import { RequestOrdersComponent } from './services-provider/Components/requestOrders/requestOrders.component';
 import { userLogedInGuard } from '../shared/guards/userLogedInGuard/user-loged-in.guard';
+import { EditComponent } from './vendor/Components/edit/edit.component';
 import { UsersRequestsComponent } from './pages/Components/UsersRequests/UsersRequests.component';
 
 
@@ -53,6 +54,7 @@ const routes: Routes = [
 	{ path: "orderDetails/:id", component: OrderDetailsComponent, canActivate: [ userLogedInGuard ] },
 	{ path: "orderList", component: RequestListComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'productList', component: ProductListComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'edit/:id', component: EditComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'product/:id', component: ProductDetailsComponent },
 
 	// Service Provider Compproducts

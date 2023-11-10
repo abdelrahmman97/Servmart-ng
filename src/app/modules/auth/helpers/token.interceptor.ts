@@ -11,8 +11,9 @@ export class TokenInterceptor implements HttpInterceptor {
 
 	intercept( req: HttpRequest<any>, next: HttpHandler ): Observable<HttpEvent<any>> {
 		const isLoggedIn =this.authService.getToken();
-		const isApiUrl = req.url.startsWith( environment.apiUrl );
-		if ( isLoggedIn && isApiUrl ) {
+		
+		// const isApiUrl = req.url.startsWith( environment.apiUrl );
+		if ( isLoggedIn ) {
 			let newReq = req.clone(
 				{
 					setHeaders:
@@ -21,6 +22,8 @@ export class TokenInterceptor implements HttpInterceptor {
 					}
 				}
 			);
+			console.log(req.headers)
+			console.log(newReq.headers)
 			return next.handle( newReq );
 		}
 		return next.handle( req );

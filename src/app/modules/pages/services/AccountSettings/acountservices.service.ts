@@ -13,7 +13,7 @@ export class AcountservicesService {
 
    }
    UpdateUserInfo(UserInfo: IUserInfo){
-	return this.Http.post(`${this.ApiUrl}/UpdateUserEmail`, UserInfo);
+	return this.Http.post(`${this.ApiUrl}/update`, UserInfo);
    }
     UpdateEmail(Email:IEmailchang){
 		return this.Http.put(`${this.ApiUrl}/ChangeEmail`, Email);

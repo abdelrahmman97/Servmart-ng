@@ -1,0 +1,62 @@
+<div class="page-content mb-5 m-0" *ngIf="!loading">
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-3 mb-sm-0">تعديل منتج</h1>
+        <div>
+            <button type="button" (click)="onSubmite()" class="btn btn-primary-soft">تعديل</button>
+        </div>
+    </div>
+    <form [formGroup]="reactiveForm">
+        <div class="p-4 row">
+            <div class="col-lg-6 col=md-12 d-flex flex-column">
+                <div class="mb-3">
+                    <div class="col-auto">
+                        <label for="ProductName" class="col-form-label">اسم المنتج</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" id="Product"  class="form-control" formControlName="productName">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="col-auto">
+                        <label for="Product" class="col-form-label">الصنف</label>
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-control" aria-label="Large select example"
+                            formControlName="categoryID" >
+                            <option *ngFor="let cat of catgory"   [value]="cat.id" >{{cat.catagory}}</option>
+                           
+                        </select>
+                    </div>
+                </div>
+
+              
+
+                <div class="mb-3">
+                    <div class="col-auto">
+                        <label for="stoke" class="col-form-label">الكمية</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" id="Countity" class="form-control" formControlName="stoke">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="col-auto">
+                        <label for="unitPrice" class="col-form-label">سعر القطعة</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" id="Price" class="form-control" formControlName="unitPrice">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label" >وصف المنتج</label>
+                    <textarea class="form-control" id="Description" formControlName="description" rows="6"></textarea>
+                </div>
+            </div>
+
+        
+        </div>
+    </form>
+</div>

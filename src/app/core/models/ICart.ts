@@ -4,9 +4,12 @@ export interface ICart {
 }
 
 export interface ICartProduct {
-	ID: string,
-	Name: string,
-	UnitPrice: number,
-	Quantity: number,
-	Image: string,
+	id: number;
+	productID?: string;
+	productName: string;
+	unitPrice : number;
+	count: number;
+	supPrice: number;
+	stoke: number;
+	picURL:string;
 }

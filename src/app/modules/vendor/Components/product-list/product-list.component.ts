@@ -13,27 +13,43 @@ export class ProductListComponent  implements OnInit{
 	isThereError: boolean = false;
 	errorMessage: string = "";
 	productlist:IProduct[]
-	constructor(private ProductsService: ServicesService){
+	constructor(private ProductsService: ServicesService,public up:AddProductService){
 
+	}
+
+AllProduct(){
+		this.ProductsService.GetProduct().subscribe({
+			next:data=>{
+	this.productlist= data as IProduct[];
+				console.log(this.productlist)
+	
+	
+	
+			  },
+			  error:(err)=>{
+				 this.isThereError=true;
+				 this.errorMessage=" عفوآ لايوجد اى منتجات "
+							  console.error("عفوآ لايوجد اى منتجات ")
+			  }
+		   })
 	}
 	ngOnInit(): void {
-       this.ProductsService.GetProduct().subscribe({
-		next:data=>{
-			this.productlist= data as IProduct[];
-			console.log(this.productlist)
-
-
-
-		  },
-		  error:(err)=>{
-		     this.isThereError=true;
-			 this.errorMessage=" عفوآ لايوجد اى منتجات "
-			 			 console.error("عفوآ لايوجد اى منتجات ")
-		  }
-	   })
+		this.AllProduct()
 	}
 
-Delete(){
-	alert("hello")
+Delete(id:string){
+	this.ProductsService.DeleteProduct(id).subscribe({
+		next(value) {
+			
+		},
+
+	})
+	this.AllProduct()
 }
+update(id:string){
+	this.ProductsService.Details(id).subscribe(data => {
+		this.productlist=data
+		console.log(this.productlist)
+	})
+		}
 }

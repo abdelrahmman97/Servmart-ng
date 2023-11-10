@@ -15,6 +15,7 @@ export class AddProductService {
 	baseURL = "http://localhost:3000/product";
 	urlApi="https://localhost:7013/AddProduct";
 	catgory:string="https://localhost:7013/ProductCatgorei";
+	Update="https://localhost:7013/UpdateProduct";
 
 
 
@@ -31,6 +32,8 @@ gstAll(){
 getprofuct(id:number)
 {
 	return   this.httpclint.get<IProduct>(`${this.baseURL}?ID=${id}`);    /// get product by id
+
+
 }
 
 AddProductAPi(data:any):Observable<any>{
@@ -42,6 +45,10 @@ GetCagory():Observable<any>{
 return this.httpclint.get<IProductCategory[]>(this.catgory)
 }
 
-
+UpdateProduct(data:any,id:string):Observable<any>{
+	console.log(id);
+	
+return this.httpclint.put(`https://localhost:7013/UpdateProduct/${id}`, data)
+}
 
 }

@@ -21,4 +21,12 @@ export class ServicesService {
   Details(id:string):Observable<any>{
 return this.http.get<IProduct>(`https://localhost:7013/GetProductById/${id}`);
   }
+
+  DeleteProduct(id:string):Observable<any>{
+return this.http.delete<IProduct>(`https://localhost:7013/DeleteProduct/${id}`);
+  }
+
+  AddCart(id:string):Observable<any>{
+   return this.http.post(`https://localhost:7013/api/CartItem/?productid=${id}`,{});
+  }
 }
