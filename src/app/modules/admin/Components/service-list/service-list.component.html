@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 		<div class="d-md-flex justify-content-between align-items-center">
 			<div>
-				<h2>المنتجات</h2>
+				<h2>قائمة الخدمات</h2>
 				<!-- breacrumb -->
 			
 			</div>
@@ -23,33 +23,33 @@
 						<thead class="bg-light">
 							<tr>
 								
-								<th>ID</th>
-								<th>اسم المنتج</th>
+								
+								<th>اسم الخدمة</th>
 								<th>الصورة</th>
-								<th>الكمية</th>
+								<th>التصنيف</th>
+								<th>التقيم</th>
 								<th>السعر</th>
+								<th>مقدم الخدمة</th>
 								<th></th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr *ngFor="let prd of visibleData">
+							<tr *ngFor="let service of visibleData">
 								
-								<td>
-									<!-- <a href="#!"> <img src="../../../../assets/images/product-img-1.jpg" alt=""
-											class="icon-shape icon-md"></a> -->
-											{{ extractFirstFiveCharacters(prd.productID) }}
-								</td>
-								<td>{{ prd.productName }}</td>
+								
+								<td>{{ service.title }}</td>
 								<td>
 									<a href="#!">
-									  <img [src]="prd.picsURL[0]" alt="" class="icon-shape icon-md">
+									  <img [src]="service.picUrl" alt="" class="icon-shape icon-md">
 									</a>
 								  </td>
 								  
-								
+								<td>{{ service.serviceCategory.nameAr }}</td>
+							
 
-								<td>{{ prd.stoke }}</td>
-								<td>{{ prd.unitPrice }}</td>
+								<td>{{ service.rate }}</td>
+								<td>{{ service.expectedSalary }}</td>
+								<td>{{ service.user.fName+' '+service.user.lName }}</td>
 
 								
 								<td>
@@ -57,10 +57,10 @@
 										<i class="fa-regular fa-ellipsis-vertical" type="button"
 											data-bs-toggle="dropdown" aria-expanded="false"></i>
 										<ul class="dropdown-menu">
-											<li><a class="dropdown-item" [routerLink]="['/detail',prd.productID]"><i
+											<li><a class="dropdown-item" [routerLink]="['/servic',service.id]"><i
 														class="fa-solid fa-eye"></i>See Order ID</a>
 											</li>
-											<li><a class="dropdown-item" (click)="deleteUser(prd.productID)" ><svg
+											<li><a class="dropdown-item" (click)="deleteUser(service.id)"><svg
 														xmlns="http://www.w3.org/2000/svg" height="1em"
 														viewBox="0 0 448 512">
 														<path

@@ -150,6 +150,7 @@
 
 	<div class="main-content">
 		<section class="container p-0">
+
 			<router-outlet></router-outlet>
 		</section>
 	</div>
@@ -163,7 +164,7 @@
 			</a>
 			<ul class="nav nav-pills-primary-soft flex-column flex-nowrap overflow-y-auto overflow-x-hidden p-4">
 				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" [routerLink]="['/dashboard']"
+					<a class="nav-link justify-content-center justify-content-xl-start" [routerLink]="['/admin/dashboard']"
 						routerLinkActive="active">
 						<i class="fa-duotone fa-house"></i>
 						<span class="d-none d-xl-inline">لوحة التحكم الرئيسية</span>
@@ -179,7 +180,8 @@
 					</a>
 				</li> -->
 				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
+					<a class="nav-link justify-content-center justify-content-xl-start btn-toggle"
+					
 						data-bs-toggle="collapse" data-bs-target="#vendors" aria-expanded="false"
 						aria-controls="vendors">
 						<i class="fa-duotone fa-users"></i>
@@ -188,17 +190,17 @@
 					<div id="vendors" class="collapse p-2" data-bs-parent="#sideNavbar">
 						<ul class="nav flex-column list-group">
 							<li class="nav-item">
-								<a class="nav-link with-dot" href="#">
+								<a class="nav-link with-dot" [routerLink]="['/admin/userlist']">
 									العملاء
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link with-dot" href="#">
+								<a class="nav-link with-dot" [routerLink]="['/admin/serprovider']">
 									مقدمي الخدمات
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link with-dot" href="#">
+								<a class="nav-link with-dot" [routerLink]="['/admin/vendorlist']">
 									البائعين
 								</a>
 							</li>
@@ -206,35 +208,25 @@
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+					<a class="nav-link justify-content-center justify-content-xl-start" [routerLink]="['/admin/servicesList']">
 						<i class="fa-duotone fa-bolt"></i>
 						<span class="d-none d-xl-inline">الخدمات</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+					<a class="nav-link justify-content-center justify-content-xl-start" [routerLink]="['/admin/orderList']">
 						<i class="fa-duotone fa-cart-shopping"></i>
 						<span class="d-none d-xl-inline">المنتجات</span>
 					</a>
 				</li>
+				
 				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
-						<i class="fa-duotone fa-tags"></i>
-						<span class="d-none d-xl-inline">تصنيفات المنتجات</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
+					<a class="nav-link justify-content-center justify-content-xl-start" [routerLink]="['/admin/requestlist']">
 						<i class="fa-duotone fa-basket-shopping"></i>
 						<span class="d-none d-xl-inline">الطلبات</span>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link justify-content-center justify-content-xl-start" href="#">
-						<i class="fa-duotone fa-star-sharp-half"></i>
-						<span class="d-none d-xl-inline">المراجعات</span>
-					</a>
-				</li>
+			
 			</ul>
 		</div>
 	</div>
