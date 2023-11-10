@@ -11,23 +11,42 @@ export class ServiceService {
 	private apiUrl2 = 'https://localhost:7013/api/Service/cat';
 	private apiUrl3 = 'https://localhost:7013/api/Service/search';
 
-	constructor( private http: HttpClient ) { }
+	constructor ( private http: HttpClient ) { }
 
-	createService( service: FormData ) {
-		return this.http.post( `${environment.apiUrl}`, service );
+	createService ( service: FormData ) {
+		return this.http.post( `${ environment.apiUrl }/Service/AddService`, service );
 	}
 
-	getValues(): Observable<any[]> {
+	getUserService () {
+		return this.http.get( `${ environment.apiUrl }/Service/GetUserService` );
+	}
+
+	getTotalServicesCount () {
+		return this.http.get<number>( `${ environment.apiUrl }/Service/GetServicesCount` );
+	}
+
+	getAllServices () {
+		return this.http.get( `${ environment.apiUrl }/Service/GetAllServices` );
+	}
+	getServicesProviders ( page: number, pageSize: number ) {
+		return this.http.get( `${ environment.apiUrl }/Service/GetServicesProviders?page=${ page }&pageSize=${ pageSize }` );
+	}
+
+
+	// TODO(abdo tiba): To be deleted
+	getValues (): Observable<any[]> {
 		return this.http.get<any[]>( this.apiUrl2 ).pipe(
-			map( response => response['$values'] )
+			map( response => response[ '$values' ] )
 		);
 	}
 
-	uploadFormData( formData: FormData ) {
-		return this.http.post<any>( `${this.apiUrl}`, formData );
+	// TODO(abdo tiba): To be deleted
+	uploadFormData ( formData: FormData ) {
+		return this.http.post<any>( `${ this.apiUrl }`, formData );
 	}
 
-	getItems(
+	// TODO(abdo tiba): To be deleted
+	getItems (
 		name: string,
 		categoryName: string,
 		expectedSalary: number,
