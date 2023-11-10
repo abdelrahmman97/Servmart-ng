@@ -17,6 +17,9 @@ export class AuthService {
 	private userSubject: BehaviorSubject<ILoginResualtModel | null>;
 	public user: Observable<ILoginResualtModel | null>;
 
+	private submitted = new BehaviorSubject<boolean>( false );
+	data = this.submitted.asObservable();
+
 	constructor
 		(
 			private authClient: AuthenticationClient,
@@ -27,10 +30,13 @@ export class AuthService {
 		this.user = this.userSubject.asObservable();
 	}
 
+	setSubmitted = ( newValue: boolean ) => this.submitted.next( newValue );
+
 	login( user: IUserLogIn ): void {
+		this.submitted.next( true );
 		this.authClient.login( user ).subscribe(
 			( data ) => {
-				this.updateUserInLocalStorage(data);
+				this.updateUserInLocalStorage( data );
 				this.userSubject.next( data as ILoginResualtModel );
 				this.router.navigate( ['/'] );
 			},
@@ -40,16 +46,18 @@ export class AuthService {
 					msg = "البريد الالكتروني او كلمة المرور غير صحيحة";
 				}
 				else {
-					msg = error.statusText;
+					msg = error.error;
 				}
-				console.log(error);
-				this.toastr.error( error, "خطأ" )
+				console.log( error );
+				this.toastr.error( msg, "خطأ" )
+				this.submitted.next( false );
 				return error;
 			}
 		);
 	}
 
 	register( user: IUserRegister ): void {
+		this.submitted.next( true );
 		this.authClient.register( user ).subscribe(
 			( data ) => {
 				localStorage.setItem( this.AuthModel, JSON.stringify( data ) );
@@ -58,6 +66,7 @@ export class AuthService {
 			},
 			( error ) => {
 				this.toastr.error( error.error, "خطأ" )
+				this.submitted.next( false );
 			}
 		);
 	}
@@ -84,10 +93,10 @@ export class AuthService {
 	getUserSubject = () => this.userSubject;
 	getUserAsObservable = () => this.userSubject.asObservable();
 	getUserValue = () => this.userSubject.value;
-	getRole = ()=>  this.isLoggedIn() ? this.userSubject.value.role: [];
+	getRole = () => this.isLoggedIn() ? this.userSubject.value.role : [];
 
 	private getUserFromLocalStorage = () => JSON.parse( localStorage.getItem( this.AuthModel ) );
-	public updateUserInLocalStorage = (data) => localStorage.setItem( this.AuthModel, JSON.stringify( data ) );
+	public updateUserInLocalStorage = ( data ) => localStorage.setItem( this.AuthModel, JSON.stringify( data ) );
 
 	// Cehck user type ============================================================================
 

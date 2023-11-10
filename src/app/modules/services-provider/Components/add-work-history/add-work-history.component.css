@@ -1,83 +1,14 @@
-.textarea {
-    resize: none;
-  }
-
-  /* Bootstrap 5 CSS and icons included */
-:root {
-	--colorPrimaryNormal: #0072f5;
-	--colorPrimaryDark: #0072f5;
-	--colorPrimaryGlare: #0072f5;
-	--colorPrimaryHalf: #0072f5;
-	--colorPrimaryQuarter: #bfecee;
-	--colorPrimaryEighth: #dff5f7;
-	--colorPrimaryPale: #f3f5f7;
-	--colorPrimarySeparator: #f3f5f7;
-	--colorPrimaryOutline: #dff5f7;
-	--colorButtonNormal: #0072f5;
-	--colorButtonHover: #0072f5;
-	--colorLinkNormal: #0072f5;
-	--colorLinkHover: #0072f5;
+.FileContainer {
+	width: 600px;
+	border: 4px dotted #0072f5;
+	padding: 0 !important;
 }
 
-
-.FileContainer{
-    width: 600px;
-    border: 4px dotted #0072f5;
+.FileContainer label {
+	height: 4rem;
+	cursor: pointer;
 }
 
-.file{
-    opacity: 0;
-    padding: 5rem;
-    width: auto;
-    height: 5rem;
+textarea.error {
+	border-color: red;
 }
-
-.upload_dropZone {
-	border-radius: 7px;
-	color: #0f3c4b;
-	background-color: #fff;
-	outline: 2px dashed #0072f5;
-	outline-offset: -12px;
-	transition:
-		outline-offset 0.2s ease-out,
-		outline-color 0.3s ease-in-out,
-		background-color 0.2s ease-out;
-}
-
-.upload_dropZone.highlight {
-	outline-offset: -4px;
-	outline-color: var(--colorPrimaryNormal, #0576bd);
-	background-color: #fff
-}
-
-.upload_svg {
-	fill: var(--colorPrimaryNormal, #0576bd);
-}
-
-.btn-upload {
-	color: #fff;
-	background-color: var(--colorPrimaryNormal);
-}
-
-.btn-upload:hover,
-.btn-upload:focus {
-	color: #fff;
-	background-color: var(--colorPrimaryGlare);
-}
-
-.upload_img {
-	width: calc(33.333% - (2rem / 3));
-	-o-object-fit: contain;
-	object-fit: contain;
-}
-.is-invalid {
-    border-color: #dc3545;
-  } 
-  .is-matched {
-    border-color: green;
-  }
-  .invalid-feedback {
-    font-size: 12px; /* Set the font size to a small value */
-    padding: 2px 0; /* Add minimal padding to the top and bottom */
-    color: #dc3545;
-  }

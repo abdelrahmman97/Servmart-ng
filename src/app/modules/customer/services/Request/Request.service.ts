@@ -14,8 +14,12 @@ export class RequestService {
 		return this.httpClient.post( `${environment.apiUrl}/Request/Create`, request );
 	}
 
+	getTotalUsersRequests() {
+		return this.httpClient.get<number>( `${environment.apiUrl}/Request/GetRequestCount` );
+	}
+
 	getAllUsersRequests( page: number, pageSize: number ) {
-		return this.httpClient.get<IUsersRequests[]>( `${environment.apiUrl}/Request/GetAll?page=1&pageSize=3` );
+		return this.httpClient.get<IUsersRequests[]>( `${environment.apiUrl}/Request/GetAll?page=${page}&pageSize=${pageSize}` );
 	}
 
 	getRequest( id: string ) {
