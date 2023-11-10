@@ -23,6 +23,7 @@ export class AccountSettingsComponent {
 	passform: FormGroup;
 	accountTypeForm: FormGroup;
 	userInfo: IUserInfo;
+	Roleinfo:IUserRole;
 
 	workoption: string[] = ['عام', 'بائع', 'مقدم خدمات', 'ادمن'];
 	accountoption: string[] = ['سباك', 'كهربائى', 'اخرى'];
@@ -33,6 +34,7 @@ export class AccountSettingsComponent {
 	userData = new FormData();
 
 	current: any;
+	roles: any;
 
 	constructor(private auth: AuthService, private toastr: ToastrService, private formBuilder: FormBuilder, private datePipe: DatePipe, private AcountService: AcountService) {
 
@@ -158,9 +160,31 @@ export class AccountSettingsComponent {
 				console.log(error);
 			}
 		);
-		console.log('asdasd');
 	}
-
+	updateSettings() {
+		if (this.accountTypeForm.valid) {
+			const formData = this.accountTypeForm.value;
+			// Send formData to API endpoint for processing
+			this.showaSuccessMessage = true;
+			this.showaErrorMessage = false;
+			console.log(formData);
+		} else {
+			this.showaSuccessMessage = false;
+			this.showaErrorMessage = true;
+			// Handle form validation errors
+		}
+        if (this.accountTypeForm.valid){
+			const formData = this.accountTypeForm.value;
+			this.AcountService.UpdateROle(this.userData).subscribe(
+				data=>{
+					this.auth.getUserSubject().next(data as ILoginResualtModel)
+					console.log('role updated')
+				},
+				err=>{
+					console.log(err)
+				})
+		}
+	}
 
 	// showSuccess() {
 	// 	this.toastr.error('Hello world!', 'Toastr fun!');
@@ -172,7 +196,7 @@ export class AccountSettingsComponent {
 	showPassword: boolean = false;
 
 	emaiil: any;
-	password: any;
+	password: any;  
 
 
 	ngOnInit() {
@@ -273,17 +297,5 @@ export class AccountSettingsComponent {
 	}
 	showaSuccessMessage = false;
 	showaErrorMessage = false;
-	updateSettings() {
-		if (this.accountTypeForm.valid) {
-			const formData = this.accountTypeForm.value;
-			// Send formData to API endpoint for processing
-			this.showaSuccessMessage = true;
-			this.showaErrorMessage = false;
-			console.log(formData);
-		} else {
-			this.showaSuccessMessage = false;
-			this.showaErrorMessage = true;
-			// Handle form validation errors
-		}
-	}
+
 }

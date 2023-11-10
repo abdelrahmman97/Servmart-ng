@@ -132,37 +132,31 @@
 
 		<div class="d-flex flex-column pt-4 pb-sm-8 pb-md-3 gap-4">
 
-			<div class="card p-4">
+			<div class="card p-4" *ngFor="let item of usersRequestsList">
 				<div class="row g-0">
 					<div class="col-md-3 col-sm-4">
-						<img src="https://dummyimage.com/300x300" class="card-img rounded-2" alt="">
+						<img [src]="item.images[0]" class="card-img rounded-2" title="{{item.title}}">
 					</div>
 					<div class="col">
 						<div class="d-flex flex-column gap-1 px-3">
 							<h5 class="card-title">
 								<a href="#">
-									عنوان الخدمة
+									{{item.title}}
 								</a>
 							</h5>
 							<div class="">
 								<p class="mb-1">
 									<i class="bi bi-geo-alt me-2"></i>
-									العنوان
+									{{item.governorateId}} - {{item.cityId}}
 								</p>
 								<div class="d-flex flex-row gap-3">
-									<p class="m-0">125$</p>
-									<p class="m-0"> 3 أيام</p>
+									<p class="m-0">{{item.expectedSalary}}</p>
+									<p class="m-0"> {{item.endDate}}</p>
 								</div>
 							</div>
 							<div class="row g-0">
 								<p class="line-clamp-3">
-									وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف
-									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
-									وصف الخدمة وصف الخدمة وصف الخدمة
-									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
-									وصف الخدمة وصف الخدمة وصف الخدمة
-									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
-									وصف الخدمة وصف الخدمة وصف الخدمة
+									{{item.details}}
 								</p>
 							</div>
 							<div class="row g-0">
@@ -171,100 +165,14 @@
 						</div>
 					</div>
 					<div class="col-md-2 text-start">
-						<a class="btn btn-primary-soft" [routerLink]="['/sendOffer', 'asdasd']"
-							routerLinkActive="router-link-active">ارسال عرض</a>
+						<a class="btn btn-primary-soft" [routerLink]="['sendOffer', item.id]">ارسال عرض</a>
 					</div>
 				</div>
 			</div>
 
-			<div class="card p-4">
-				<div class="row g-0">
-					<div class="col-md-3 col-sm-4">
-						<img src="https://dummyimage.com/300x300" class="card-img rounded-2" alt="">
-					</div>
-					<div class="col">
-						<div class="d-flex flex-column gap-1 px-3">
-							<h5 class="card-title">
-								<a href="#">
-									عنوان الخدمة
-								</a>
-							</h5>
-							<div class="">
-								<p class="mb-1">
-									<i class="bi bi-geo-alt me-2"></i>
-									العنوان
-								</p>
-								<div class="d-flex flex-row gap-3">
-									<p class="m-0">125$</p>
-									<p class="m-0"> 3 أيام</p>
-								</div>
-							</div>
-							<div class="row g-0">
-								<p class="line-clamp-3">
-									وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف
-									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
-									وصف الخدمة وصف الخدمة وصف الخدمة
-									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
-									وصف الخدمة وصف الخدمة وصف الخدمة
-									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
-									وصف الخدمة وصف الخدمة وصف الخدمة
-								</p>
-							</div>
-							<div class="row g-0">
-								مند 14 ساعة
-							</div>
-						</div>
-					</div>
-					<div class="col-md-2 text-start">
-						<button class="btn btn-primary-soft">ارسال عرض</button>
-					</div>
-				</div>
+			<div *ngIf="usersRequestsList.length == 0">
+				<h1>لا يوجد طلبات حاليا</h1>
 			</div>
-
-			<div class="card p-4">
-				<div class="row g-0">
-					<div class="col-md-3 col-sm-4">
-						<img src="https://dummyimage.com/300x300" class="card-img rounded-2" alt="">
-					</div>
-					<div class="col">
-						<div class="d-flex flex-column gap-1 px-3">
-							<h5 class="card-title">
-								<a href="#">
-									عنوان الخدمة
-								</a>
-							</h5>
-							<div class="">
-								<p class="mb-1">
-									<i class="bi bi-geo-alt me-2"></i>
-									العنوان
-								</p>
-								<div class="d-flex flex-row gap-3">
-									<p class="m-0">125$</p>
-									<p class="m-0"> 3 أيام</p>
-								</div>
-							</div>
-							<div class="row g-0">
-								<p class="line-clamp-3">
-									وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف
-									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
-									وصف الخدمة وصف الخدمة وصف الخدمة
-									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
-									وصف الخدمة وصف الخدمة وصف الخدمة
-									الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة وصف الخدمة
-									وصف الخدمة وصف الخدمة وصف الخدمة
-								</p>
-							</div>
-							<div class="row g-0">
-								مند 14 ساعة
-							</div>
-						</div>
-					</div>
-					<div class="col-md-2 text-start">
-						<button class="btn btn-primary-soft">ارسال عرض</button>
-					</div>
-				</div>
-			</div>
-
 		</div>
 
 	</div>

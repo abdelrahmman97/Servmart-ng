@@ -11,7 +11,7 @@ export class HeaderComponent {
 
 	user?: ILoginResualtModel | null = null;
 	constructor( private auth: AuthService ) {
-		this.auth.user.subscribe( x => this.user = x );
+		this.auth.getUserAsObservable().subscribe( x => this.user = x );
 	}
 
 	isCustomer: boolean = this.auth.isCustomer();

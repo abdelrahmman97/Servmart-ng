@@ -30,7 +30,7 @@ export class AuthService {
 	login( user: IUserLogIn ): void {
 		this.authClient.login( user ).subscribe(
 			( data ) => {
-				localStorage.setItem( this.AuthModel, JSON.stringify( data ) )
+				this.updateUserInLocalStorage(data);
 				this.userSubject.next( data as ILoginResualtModel );
 				this.router.navigate( ['/'] );
 			},
@@ -82,14 +82,12 @@ export class AuthService {
 	}
 
 	getUserSubject = () => this.userSubject;
-	getUser = () => this.userSubject.asObservable();
+	getUserAsObservable = () => this.userSubject.asObservable();
 	getUserValue = () => this.userSubject.value;
-
-	getRole() {
-		return this.isLoggedIn() ? this.userSubject.value.role: [];
-	}
+	getRole = ()=>  this.isLoggedIn() ? this.userSubject.value.role: [];
 
 	private getUserFromLocalStorage = () => JSON.parse( localStorage.getItem( this.AuthModel ) );
+	public updateUserInLocalStorage = (data) => localStorage.setItem( this.AuthModel, JSON.stringify( data ) );
 
 	// Cehck user type ============================================================================
 
