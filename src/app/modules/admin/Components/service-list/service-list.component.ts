@@ -21,7 +21,7 @@ export class ServiceListComponent implements OnInit {
 	}
 
   deleteUser(userId: string) {
-    this.http.delete(`https://localhost:7013/api/Service?Id==${userId}`).subscribe(
+    this.http.delete(`https://localhost:7013/api/Service/Delete?Id=${userId}`).subscribe(
       () => {
         // Update the user list after deletion
         this.vendorsList = this.productService.gstAllserviec();

@@ -24,7 +24,7 @@ export class RequestComponent implements OnInit {
     this.http.delete(`https://localhost:7013/api/Request?Id=${userId}`).subscribe(
       () => {
         // Update the user list after deletion
-        this.vendorsList = this.productService.gstAllserviec();
+        this.vendorsList = this.productService.gstAllrequest();
         this.vendorsList.subscribe(vendors => {
           console.log('Received vendors data:', vendors);
       
