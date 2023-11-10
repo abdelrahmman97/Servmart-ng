@@ -3,16 +3,22 @@
 		<div class="flex-grow">
 			<div class="container mt-2">
 
-				<div class="d-flex justify-content-between align-items-center mb-4">
-					<h3>إضافة خدمة</h3>
-					<button class="btn btn-primary-soft" [ngClass]="submit?'disabled':''" (click)="onSubmitForm()">إضافة</button>
-				</div>
+				<form [formGroup]="serviceForm" (ngSubmit)="onSubmitForm()" class="d-flex flex-column gap-2 mb-3">
 
-				<form [formGroup]="serviceForm" class="d-flex flex-column gap-2 mb-3">
+					<div class="d-flex justify-content-between align-items-center mb-4">
+						<h3>إضافة خدمة</h3>
+
+						<button class="btn btn-primary-soft d-flex flex-row gap-2" type="submit"
+							[ngClass]="submit? 'disabled':''">
+							<span *ngIf="!submit">إضافة</span>
+							<span *ngIf="submit">جاري الإضافة</span>
+							<i class="fa-duotone fa-spinner-third fa-spin" *ngIf="submit"></i>
+						</button>
+					</div>
 
 					<div class="mb-3">
 						<label for="ServiceTitle" class="form-label">اسم الخدمة</label>
-						<input formControlName="ServiceTitle" class="form-control" type="text" id=""
+						<input formControlName="ServiceTitle" class="form-control" type="text" id="ServiceTitle"
 							[ngClass]="{'is-invalid': serviceForm.get('ServiceTitle').touched && serviceForm.get('ServiceTitle').invalid}">
 						<span
 							*ngIf="serviceForm.get('ServiceTitle').touched && serviceForm.get('ServiceTitle').hasError('required')"
@@ -58,12 +64,13 @@
 						<div *ngIf="selectedImages.length == 0"
 							class="FileContainer text-center w-100 d-flex flex-column mb-3 btn btn-primary-soft">
 							<label class="mt-2" for="ServicePic">إضافة صور للخدمة بحد أقصي 5 صور</label>
-							<input formControlName="ServicePic" class="d-none" id="ServicePic" type="file" accept="image/*"
-								multiple (change)="onImagesSelected($event)"
+							<input formControlName="ServicePic" class="d-none" id="ServicePic" type="file"
+								accept="image/*" multiple (change)="onImagesSelected($event)"
 								[ngClass]="{'is-invalid': serviceForm.get('ServicePic').touched && serviceForm.get('ServicePic').invalid}">
 						</div>
 
-						<span *ngIf="serviceForm.get('ServicePic').touched && serviceForm.get('ServicePic').hasError('required')"
+						<span
+							*ngIf="serviceForm.get('ServicePic').touched && serviceForm.get('ServicePic').hasError('required')"
 							class="invalid-feedback mb-3">
 							صورة الخدمة مطلوبة
 						</span>

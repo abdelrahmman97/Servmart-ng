@@ -9,11 +9,11 @@ import { ToastrService } from 'ngx-toastr';
 @Component( {
 	selector: 'app-add-work-history',
 	templateUrl: './add-work-history.component.html',
-	styleUrls: ['./add-work-history.component.css']
+	styleUrls: [ './add-work-history.component.css' ]
 } )
 export class AddWorkHistoryComponent implements OnInit {
 
-	constructor(
+	constructor (
 		private serviceService: ServiceService,
 		private category: RequestServiceCategoriesService,
 		private toastr: ToastrService,
@@ -31,7 +31,7 @@ export class AddWorkHistoryComponent implements OnInit {
 	maxCharacters = 500;
 	currentCharacterCount = 0;
 
-	ngOnInit(): void {
+	ngOnInit (): void {
 
 		this.category.getAllCategories().subscribe(
 			next => {
@@ -49,7 +49,7 @@ export class AddWorkHistoryComponent implements OnInit {
 
 	}
 
-	onImagesSelected( event: any ) {
+	onImagesSelected ( event: any ) {
 
 		const files = event.target.files;
 		if ( files.length > 5 ) {
@@ -70,17 +70,15 @@ export class AddWorkHistoryComponent implements OnInit {
 				reader.readAsDataURL( file );
 				// }
 			}
-			this.serviceForm.get( 'ServicePic' )?.setValue( this.selectedImages );
 		}
 
 	}
 
-	removeImage( index ) {
+	removeImage ( index ) {
 		this.selectedImages.splice( index, 1 );
-		this.serviceForm.get( 'ServicePic' )?.setValue( this.selectedImages );
 	}
 
-	onTextareaChange( event: any ) {
+	onTextareaChange ( event: any ) {
 		const inputText = event.target.value;
 		this.currentCharacterCount = inputText.length;
 		if ( this.currentCharacterCount > this.maxCharacters ) {
@@ -89,46 +87,35 @@ export class AddWorkHistoryComponent implements OnInit {
 		}
 	}
 
-	onSubmitForm() {
+	onSubmitForm () {
+
 		if ( this.serviceForm.valid ) {
 
 			const formData: FormData = new FormData();
 
-			const imageFiles = this.serviceForm.get( 'ServicePic' )?.value;
-			if ( imageFiles ) {
-				for ( let i = 0; i < imageFiles.length; i++ ) {
-					formData.append( 'ServicePic', imageFiles[i] );
+			if ( this.selectedImages ) {
+				for ( let i = 0; i < this.selectedImages.length; i++ ) {
+					formData.append( 'ServicePic', this.selectedImages[ i ].file );
 				}
 			}
 
-			const videoFile = this.serviceForm.get( 'Video' )?.value;
-			if ( videoFile ) {
-				formData.append( 'Video', videoFile );
-			}
-
-			formData.append( 'ClientId', null );
-			formData.append( 'Title', this.serviceForm.get( 'Title' )?.value );
-			formData.append( 'Details', this.serviceForm.get( 'Details' )?.value );
-			formData.append( 'ExpectedSalary', this.serviceForm.get( 'ExpectedSalary' )?.value );
-			formData.append( 'EndDate', this.serviceForm.get( 'EndDate' )?.value );
-
-			formData.append( 'Address', this.serviceForm.get( 'Address' )?.value );
-			formData.append( 'Category', this.serviceForm.get( 'Category' )?.value );
-			formData.append( 'CityId', this.serviceForm.get( 'City' )?.value );
-			formData.append( 'GovernorateId', this.serviceForm.get( 'Governorate' )?.value );
+			formData.append( 'UserId', null );
+			formData.append( 'Title', this.serviceForm.get( 'ServiceTitle' )?.value );
+			formData.append( 'CategoryID', this.serviceForm.get( 'CategoryID' )?.value );
+			formData.append( 'Description', this.serviceForm.get( 'Description' )?.value );
 
 			for ( const pair of formData.entries() ) {
-				console.log( `${pair[0]}: ${pair[1]}` );
+				console.log( `${ pair[ 0 ] }: ${ pair[ 1 ] }` );
 			}
 
 			console.log( this.serviceForm.value );
 
-			// TODO call api
+			this.toastr.info( "جاري إضافة الطلب" )
 			this.serviceService.createService( formData ).subscribe(
 				next => {
 					console.log( next );
 					this.toastr.success( "تم إضافة الطلب بنجاح" );
-					this.router.navigate( ['/myRequests/'] );
+					this.router.navigate( [ '/myRequests/' ] );
 				},
 				error => {
 					console.log( error );
@@ -136,6 +123,10 @@ export class AddWorkHistoryComponent implements OnInit {
 				}
 			);
 
+		}
+		else {
+			this.toastr.error( "الرجاء اكمال البيانات" );
+			this.submit = false;
 		}
 	}
 

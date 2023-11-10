@@ -1,94 +1,109 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { DataService } from '../../services/search-vendors/Data.service';
-import { Serprovider } from './serprovider';
+import { ServiceService } from 'src/app/modules/services-provider/services/service.service';
+import { ToastrService } from 'ngx-toastr';
+import { AddressService } from 'src/app/shared/services/Address/Address.service';
+import { RequestServiceCategoriesService } from 'src/app/shared/services/RequestAndServiceCategories/RequestServiceCategories.service';
+import { IService } from 'src/app/core/models/Service/IService';
+import { ICity } from 'src/app/core/models/Address/ICity';
+import { IGovernorate } from 'src/app/core/models/Address/IGovernorate';
+import { IRequestServiceCategory } from 'src/app/core/models/RequestServiceCategory/IServiceCategory';
+import { IServicesProviders } from 'src/app/core/models/Service/IServicesProviders';
 
 @Component( {
 	selector: 'app-search-vendors',
 	templateUrl: './search-vendors.component.html',
-	styleUrls: ['./search-vendors.component.css']
+	styleUrls: [ './search-vendors.component.css' ]
 } )
 
 export class SearchVendorsComponent {
 
-	// vendorsList: Observable<any> = of(this.dastaList);
-
-	constructor(
-		private dataService: DataService
+	constructor (
+		private serService: ServiceService,
+		private toastr: ToastrService,
+		private address: AddressService,
+		private category: RequestServiceCategoriesService,
 	) { }
 
-	vendorsList: Observable<Serprovider[]>;
-
 	searchInput: string = '';
+	loading: boolean;
+	currentPage: number = 1;
+	pageSize: number = 3;
+	totalRequestItems: number = 0;
+	servicesProviders: IServicesProviders[] = [];
+	CitiesList: ICity[] | null = null;
+	GovernoratesList: IGovernorate[] | null = null;
+	CategoriesList: IRequestServiceCategory[] | null = null;
 
-	onInputChange(): void {
+	fakeArray = new Array( this.pageSize );
+
+	ngOnInit () {
+		// get total items of services
+		this.serService.getTotalServicesCount().subscribe(
+			next => {
+				this.totalRequestItems = next as number;
+				console.log( `services`, this.totalRequestItems );
+			}
+		);
+
+		this.getServicesProviders( this.currentPage, this.pageSize );
+
+		this.address.getAllGovernorates().subscribe(
+			next => {
+				this.GovernoratesList = next as IGovernorate[];
+				console.log( this.GovernoratesList );
+			},
+			error => {
+				this.toastr.error( 'خطأ في عرض المحافظات' )
+			}
+		);
+
+		this.category.getAllCategories().subscribe(
+			next => {
+				this.CategoriesList = next as IRequestServiceCategory[];
+				console.log( this.CategoriesList );
+			}
+		);
+
+	}
+
+	getCities ( event: any ) {
+		this.CitiesList = this.GovernoratesList[ event.target.value - 1 ].city;
+	}
+
+	pageChanged ( event: any ) {
+		this.currentPage = event;
+		this.getServicesProviders( this.currentPage, this.pageSize );
+	}
+
+	getServicesProviders ( page: number, pageSize: number ) {
+		this.loading = true;
+		this.serService.getServicesProviders( page, pageSize ).subscribe(
+			next => {
+				this.servicesProviders = next as IServicesProviders[];
+				this.loading = false;
+			},
+			error => {
+				this.toastr.error( error )
+			}
+		);
+	}
+
+
+	onInputChange (): void {
 		console.log( 'Input Value:', this.searchInput );
 	}
-	onSearch(): void {
+	onSearch (): void {
 		console.log( 'Input Value:', this.searchInput );
 
 	}
 	selectedOption: string;
 
-	onOptionChange(): void {
+	onOptionChange (): void {
 		console.log( 'Selected Option:', this.selectedOption );
 		// Perform actions based on the selected option
 	}
 
 
-	ngOnInit(): void {
-		this.vendorsList = this.dataService.getData();
-		this.vendorsList.subscribe( vendors => {
-			console.log( 'Received vendors data:', vendors );
-
-			this.calculateTotalPages( vendors );
-			this.updateVisibleData( vendors );
-		} );
-	}
-
-	pageSize = 8;
-	currentPage = 1;
-	totalPages: number;
-	visibleData: any[];
-
-	calculateTotalPages( vendors: any[] ): void {
-		this.totalPages = Math.ceil( vendors.length / this.pageSize );
-	}
-
-	updateVisibleData( vendors: any[] ): void {
-		const startIndex = ( this.currentPage - 1 ) * this.pageSize;
-		const endIndex = startIndex + this.pageSize;
-		this.visibleData = vendors.slice( startIndex, endIndex );
-	}
-
-	onPageChange( pageNumber: number ): void {
-		this.currentPage = pageNumber;
-		this.vendorsList.subscribe( vendors => {
-			this.updateVisibleData( vendors );
-		} );
-	}
-
-	getPageNumbers(): number[] {
-		return Array.from( { length: this.totalPages }, ( _, index ) => index + 1 );
-	}
-
-	onPreviousClick(): void {
-		if ( this.currentPage > 1 ) {
-			this.currentPage--;
-			this.vendorsList.subscribe( vendors => {
-				this.updateVisibleData( vendors );
-			} );
-		}
-	}
-
-	onNextClick(): void {
-		if ( this.currentPage < this.totalPages ) {
-			this.currentPage++;
-			this.vendorsList.subscribe( vendors => {
-				this.updateVisibleData( vendors );
-			} );
-		}
-	}
 
 }
 

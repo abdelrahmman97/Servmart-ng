@@ -32,13 +32,13 @@ export class AuthService {
 
 	setSubmitted = ( newValue: boolean ) => this.submitted.next( newValue );
 
-	login( user: IUserLogIn ): void {
+	login ( user: IUserLogIn ): void {
 		this.submitted.next( true );
 		this.authClient.login( user ).subscribe(
 			( data ) => {
 				this.updateUserInLocalStorage( data );
 				this.userSubject.next( data as ILoginResualtModel );
-				this.router.navigate( ['/'] );
+				this.router.navigate( [ '/' ] );
 			},
 			( error ) => {
 				let msg = "لقد حدث خطأ غير معروف";
@@ -56,28 +56,29 @@ export class AuthService {
 		);
 	}
 
-	register( user: IUserRegister ): void {
+	register ( user: IUserRegister ): void {
 		this.submitted.next( true );
 		this.authClient.register( user ).subscribe(
 			( data ) => {
 				localStorage.setItem( this.AuthModel, JSON.stringify( data ) );
 				this.userSubject.next( data as ILoginResualtModel );
-				this.router.navigate( ['/'] );
+				this.router.navigate( [ '/' ] );
 			},
 			( error ) => {
 				this.toastr.error( error.error, "خطأ" )
+				console.log( error );
 				this.submitted.next( false );
 			}
 		);
 	}
 
-	logOut() {
+	logOut () {
 		localStorage.removeItem( this.AuthModel );
 		this.userSubject.next( null );
-		this.router.navigate( ['/auth/login'] );
+		this.router.navigate( [ '/auth/login' ] );
 	}
 
-	isLoggedIn(): boolean {
+	isLoggedIn (): boolean {
 		if ( this.userSubject.value != null ) {
 			return this.userSubject.value.token != null && this.userSubject.value.token.length > 0;
 		}
@@ -86,7 +87,7 @@ export class AuthService {
 		}
 	}
 
-	getToken() {
+	getToken () {
 		return this.isLoggedIn() ? this.userSubject.value.token : null;
 	}
 
@@ -100,28 +101,28 @@ export class AuthService {
 
 	// Cehck user type ============================================================================
 
-	isCustomer(): boolean {
+	isCustomer (): boolean {
 		if ( this.getRole().includes( Role.Customer ) )
 			return true;
 		else
 			return false;
 	}
 
-	isVendor(): boolean {
+	isVendor (): boolean {
 		if ( this.getRole().includes( Role.Vendor ) )
 			return true;
 		else
 			return false;
 	}
 
-	isAdmin(): boolean {
+	isAdmin (): boolean {
 		if ( this.getRole().includes( Role.Admin ) )
 			return true;
 		else
 			return false;
 	}
 
-	isServiceProvider(): boolean {
+	isServiceProvider (): boolean {
 		if ( this.getRole().includes( Role.ServiceProvider ) )
 			return true;
 		else

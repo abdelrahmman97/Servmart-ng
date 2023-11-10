@@ -8,15 +8,18 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
+import { ServicesListComponent } from './Components/services-list/services-list.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
 
-@NgModule({
+@NgModule( {
 	declarations: [
 		AddWorkHistoryComponent,
 		ServiceProviderSendOfferComponent,
-		RequestOrdersComponent
+		RequestOrdersComponent,
+		ServicesListComponent
 	],
 	imports: [
 		CommonModule,
@@ -25,9 +28,10 @@ import { CoreModule } from 'src/app/core/core.module';
 		RouterModule,
 		SharedModule,
 		ReactiveFormsModule,
-		
+		NgxPaginationModule,
+
 		CoreModule
 	],
-	providers: [ServiceService],
-})
+	providers: [ ServiceService ],
+} )
 export class ServicesProviderModule { }

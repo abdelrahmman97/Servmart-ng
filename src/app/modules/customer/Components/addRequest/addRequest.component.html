@@ -142,7 +142,7 @@
 
 								<div class="d-flex gap-3">
 									<button class="btn btn-secondary-soft" (click)="step=step-1">السابق</button>
-									<button class="btn btn-primary-soft d-flex flex-row gap-2" (click)="submitForm()"
+									<button class="btn btn-primary-soft d-flex flex-row gap-2" type="submit"
 										[ngClass]="submited? 'disabled':''">
 										<span *ngIf="!submited">نشر</span>
 										<span *ngIf="submited">جاري النشر</span>
@@ -175,14 +175,11 @@
 							<div *ngIf="selectedImages.length != 5"
 								class="FileContainer text-center w-100 d-flex flex-column mb-3 btn btn-primary-soft">
 								<label class="mt-2" for="Images">إضافة صور للخدمة بحد أقصي 5 صور</label>
-								<input formControlName="Images" class="d-none" id="Images" type="file" accept="image/*"
-									multiple (change)="onImagesSelected($event)"
-									[ngClass]="{'is-invalid': AddRequestForm.get('Images').touched && AddRequestForm.get('Images').invalid}">
+								<input class="d-none" id="Images" type="file" accept="image/*" multiple
+									(change)="onImagesSelected($event)">
 							</div>
 
-							<small
-								*ngIf="AddRequestForm.get('Images').touched && AddRequestForm.get('Images').hasError('required')"
-								class="invalid-feedback mb-3">
+							<small *ngIf="imagesRequiredError" class="invalid-feedback mb-3">
 								صورة الخدمة مطلوبة
 							</small>
 
@@ -205,9 +202,8 @@
 							<div *ngIf="!this.selectedVideo"
 								class="FileContainer text-center w-100 d-flex flex-column mb-3 mt-3 btn btn-primary-soft">
 								<label for="Video" class="">فيديو</label>
-								<input formControlName="Video" class="d-none" id="Video" name="Video" type="file"
-									accept=".mp4, .mkv" (change)="onVideoSelected($event)" #videoInput
-									[ngClass]="{'is-invalid': AddRequestForm.get('Video').touched && AddRequestForm.get('Video').invalid}">
+								<input class="d-none" id="Video" name="Video" type="file" accept=".mp4, .mkv"
+									(change)="onVideoSelected($event)" #videoInput>
 								<small>يمكنك ان تضيف فيديو واحد لا يتعدي حجمه (100MB)</small>
 							</div>
 

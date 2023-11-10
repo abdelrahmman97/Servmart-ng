@@ -1,0 +1,87 @@
+<div class="col-lg-">
+
+	<div class="page-content mb-5 m-0">
+
+		<!-- Title -->
+		<div class="row">
+			<div class="col-12 mb-4 mb-sm-5">
+				<div class="d-sm-flex justify-content-between align-items-center">
+					<h1 class="h3 mb-3 mb-sm-0">خدماتي</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row ">
+			<div class="col-xl-12 col-12 mb-5">
+				<div class="card h-100 card-lg px-0 border-0">
+
+					<!-- Search -->
+					<div class="card-header border-0">
+						<div class="row justify-content-between">
+							<div class="col-md-4">
+								<form class="d-flex" role="search">
+									<input class="form-control" type="search" placeholder="بحث" aria-label="بحث">
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<!-- Services -->
+					<div class="card-body p-4 px-0 border-0">
+
+						<div class="table-responsive border rounded">
+
+							<table class="table table-centered table-hover table-borderless mb-0 text-nowrap">
+
+								<thead class="bg-light">
+									<tr>
+										<th></th>
+										<th>اسم الخدمة</th>
+										<th>التصنيف</th>
+										<th>الوصف</th>
+										<th>التقيم</th>
+										<th></th>
+									</tr>
+								</thead>
+
+								<tbody
+									*ngFor="let item of services | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalRequestItems }">
+									<tr>
+										<td class="w-25">
+											<img [src]="item.serviceMedia[0].mediaUrl"
+												class="bg-dark w-25 rounded-circle" alt="">
+										</td>
+										<td>{{item.title}}</td>
+										<td>{{item.serviceCategory.nameAr}}</td>
+										<td>{{item.discription}}</td>
+										<td>{{item.rate}}</td>
+										<td>
+											<div class="d-flex flex-row gap-3">
+												<button class="btn btn-outline-primary"
+													[routerLink]="['/edit',item.id]">
+													تعديل
+												</button>
+												<button (click)="deleteService(item.id)" class="btn btn-outline-danger">
+													حذف
+												</button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+
+					<!-- Pagination -->
+					<div class="card-footer text-center px-0 border-0">
+						<pagination-controls (pageChange)="pageChanged($event)" previousLabel="السابق"
+							nextLabel="التالي" [maxSize]="7">
+						</pagination-controls>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

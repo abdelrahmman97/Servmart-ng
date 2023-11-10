@@ -12,26 +12,28 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from "../../core/core.module";
 import { AddRequestComponent } from './Components/addRequest/addRequest.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
-@NgModule({
-    declarations: [
-        CheckOutComponent,
-        CartComponent,
+@NgModule( {
+	declarations: [
+		CheckOutComponent,
+		CartComponent,
 		CustomerRequestsListComponent,
-        SearchVendorsComponent,
-        RequestOffersComponent,
+		SearchVendorsComponent,
+		RequestOffersComponent,
 		RateServiceComponent,
 		AddRequestComponent
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        RouterModule,
-        SharedModule,
+	],
+	imports: [
+		CommonModule,
+		FormsModule,
+		RouterModule,
+		SharedModule,
 		ReactiveFormsModule,
+		NgxPaginationModule,
 		CoreModule
-    ]
-})
+	]
+} )
 export class CustomerModule { }
