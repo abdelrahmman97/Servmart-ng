@@ -22,11 +22,13 @@ export class AcountService {
 	UpdateUserInfo( UserInfo: any ) {
 		return this.Http.post( `${environment.apiUrl}/User/update`, UserInfo );
 	}
-	UpdateEmail( Email: IEmailchang ) {
-		return this.Http.put( `${environment.apiUrl}/ChangeEmail/`, Email );
+	UpdateEmail( Email: string[] ) {
+		return this.Http.put( `${environment.apiUrl}/User/UpdateEmail`, {Email:Email,userID:""} );
 	}
-	UpdateROle( UserRole: any ) {
-		return this.Http.put( `${environment.apiUrl}/ChangeRoles/`, UserRole );
+	UpdateROle( UserRole: string[] ) {
+		console.log(UserRole);
+
+		return this.Http.post( `${environment.apiUrl}/User/UpDateRole/`, {Role:UserRole,UserId:""} );
 	}
 	ChangePassWord( passwrod: Changpassword ) {
 		return this.Http.put( `${environment.apiUrl}/ChangePassword/`, passwrod );

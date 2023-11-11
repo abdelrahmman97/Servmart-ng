@@ -21,18 +21,16 @@ export class AccountSettingsComponent {
 	userInfoForm: FormGroup;
 	emailform: FormGroup;
 	passform: FormGroup;
-	accountTypeForm: FormGroup;
 	userInfo: IUserInfo;
 	Roleinfo: IUserRole;
-
-	workoption: string[] = [ 'عام', 'بائع', 'مقدم خدمات', 'ادمن' ];
-	accountoption: string[] = [ 'سباك', 'كهربائى', 'اخرى' ];
+	workoption = [ "Vendor", "Customer", "ServiceProvider" ]
 	personalInfo: IUser;
 	ChangPassword: Changpassword;
 	UserRole: IUserRole;
 	ChageEmail: IEmailchang;
 	userData = new FormData();
-
+	MyRoles: string[] = [];
+	EmailNew: string[] = [];
 	current: any;
 	roles: any;
 
@@ -105,11 +103,6 @@ export class AccountSettingsComponent {
 			ProfilePic: [ '' ]
 		} );
 
-		this.accountTypeForm = this.formBuilder.group( {
-			role: [ null ],
-			work: [ null ],
-		} )
-
 		this.emailform = this.formBuilder.group( {
 			email: [ null, [ Validators.required,
 			( control: any ) => {
@@ -144,7 +137,6 @@ export class AccountSettingsComponent {
 				}
 			} ] ],
 		} );
-
 	}
 	onSubmitUserInfo () {
 		for ( const key in this.userInfoForm.controls ) {
@@ -161,31 +153,46 @@ export class AccountSettingsComponent {
 			}
 		);
 	}
-	updateSettings () {
-		if ( this.accountTypeForm.valid ) {
-			const formData = this.accountTypeForm.value;
-			// Send formData to API endpoint for processing
-			this.showaSuccessMessage = true;
-			this.showaErrorMessage = false;
-			console.log( formData );
-		} else {
-			this.showaSuccessMessage = false;
-			this.showaErrorMessage = true;
-			// Handle form validation errors
-		}
-		if ( this.accountTypeForm.valid ) {
-			const formData = this.accountTypeForm.value;
-			this.AcountService.UpdateROle( this.userData ).subscribe(
-				data => {
-					this.auth.getUserSubject().next( data as ILoginResualtModel )
-					console.log( 'role updated' )
-				},
-				err => {
-					console.log( err )
-				} )
-		}
-	}
 
+	onChangeEmail () {
+		this.AcountService.UpdateEmail( this.EmailNew ).subscribe(
+			( data: ILoginResualtModel ) => {
+				this.auth.getUserSubject().next( data );
+				console.log( 'Updated email' );
+				console.log( data );
+			},
+			( err ) => {
+				console.log( err );
+			}
+		);
+	}
+	onChangePassword () {
+	}
+	updateSettings () {
+
+
+		this.showaSuccessMessage = true;
+		this.showaErrorMessage = false;
+
+		this.AcountService.UpdateROle( this.MyRoles ).subscribe(
+			data => {
+				this.auth.getUserSubject().next( data as ILoginResualtModel )
+				console.log( 'role updated' )
+			},
+			err => {
+				console.log( err )
+			} )
+
+	}
+	SetRole ( event: any, role: string ) {
+		if ( event.target.checked == true ) {
+			this.MyRoles.push( role )
+		} else {
+			this.MyRoles = this.MyRoles.filter( i => i != role )
+		}
+		console.log( this.MyRoles );
+
+	}
 	// showSuccess() {
 	// 	this.toastr.error('Hello world!', 'Toastr fun!');
 	// 	this.toastr.info('Hello world!', 'Toastr fun!');
