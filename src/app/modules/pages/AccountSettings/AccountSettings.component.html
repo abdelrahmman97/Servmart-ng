@@ -191,45 +191,26 @@
 			<span *ngIf="showaErrorMessage" class="text-danger">&#10008; حدث خطأ اثناء التحديث</span>
 			<div class="card-body">
 
-				<form [formGroup]="accountTypeForm">
+				<form >
 					<div class="row">
 
-						<!-- <div class="col-md-6">
-							<label class="form-label">نوع الحساب<span class="text-danger" for="role">*</span></label>
-							<select class="form-select js-choice" id="role" formControlName="role">
-								<option *ngFor="let work of workoption">{{work}}</option>
-							</select>
-						</div>
 
-						<div class="col-md-6">
+						<!-- <div class="col-md-6">
 							<label class="form-label">المهنة<span class="text-danger" for="work">*</span></label>
 							<select class="form-select js-choice" id="work" formControlName="work">
 								<option *ngFor="let account of accountoption">{{account}}</option>
 							</select>
-						</div> -->
+						</div> - -->
 						<div class="form-group col-md-6">
 							<label> نوع الحساب</label>
-							<div class="form-check" *ngFor="let work of workoption">
-							  <input class="form-check-input" type="checkbox" value="role " id="role" formControlName="role">
-							  <label class="form-check-label" for="adminCheckbox">
-                               {{work}}
-							  </label>
+
+							<div class="form-check" *ngFor="let work of workoption" >
+							  <input class="form-check-input" type="checkbox" value="{{work}}" (change)="SetRole($event,work)" id="role">
+							  <label class="form-check-label" for="adminCheckbox">{{work}}</label>
+
+
 							</div>
-
 						  </div>
-
-						  <div class="form-group col-md-6">
-							<label>المهنه</label>
-							<div class="form-check" *ngFor="let account of accountoption">{{account}}>
-							  <input class="form-check-input" type="checkbox" value="work" id="work" formControlName="work">
-							  <label class="form-check-label" for="optionACheckbox">
-								{{account}}
-							  </label>
-							</div> 
-
-						  </div>
-
-
 						<div class="col-12 text-start mt-3">
 							<button href="#" class="btn btn-primary-soft mb-0" (click)="updateSettings()">
 								حفظ التغيرات
@@ -253,20 +234,23 @@
 			<span *ngIf="showSuccessMessage" class="text-success">&#10004; تم تحديث البريد الإلكتروني بنجاح!</span>
 			<span *ngIf="showErrorMessage" class="text-danger">&#10008; خطأ في البريد الإلكتروني</span>
 			<div class="card-body">
-				<form [formGroup]="emailform">
-					<label class="form-label" for="email">ادخل البريد الالكترونى الجديد<span
-							class="text-danger">*</span></label>
-					<input type="email" class="form-control" placeholder="ادخل البريد الالكترونى الجديد" id="email"
-						formControlName="email"
-						[ngClass]="{'is-invalid': emailform.get('email').touched && emailform.get('email').invalid}">
-					<span
-						*ngIf="emailform.get('email').touched && (emailform.get('email').hasError('required') || emailform.get('email').hasError('invalidEmail'))"
-						class="invalid-feedback">
-						{{ emailform.get('email').hasError('required') ? 'البريد الالكترونى مطلوب' : 'خطأ في البريد	الالكتروني' }}
-					</span>
+				<form [formGroup]="emailform" class=" row">
+					<div class="col-6">
+				<label class="form-label" for="email">ادخل البريد الالكترونى الجديد<span
+						class="text-danger">*</span></label>
+				<input type="email" class="form-control" placeholder="ادخل البريد الالكترونى الجديد" id="email"
+					formControlName="email"
+					[ngClass]="{'is-invalid': emailform.get('email').touched && emailform.get('email').invalid}">
+				<span
+					*ngIf="emailform.get('email').touched && (emailform.get('email').hasError('required') || emailform.get('email').hasError('invalidEmail'))"
+					class="invalid-feedback">
+					{{ emailform.get('email').hasError('required') ? 'البريد الالكترونى مطلوب' : 'خطأ في البريد	الالكتروني' }}
+				</span>
+			</div>
+
 
 					<div class="text-start mt-3">
-						<a type="submit" (click)="updateemail()" class="btn btn-primary-soft mb-0">تحديث البريد
+						<a type="submit" (click)="onChangeEmail()" class="btn btn-primary-soft mb-0">تحديث البريد
 							الكترونى</a>
 					</div>
 
