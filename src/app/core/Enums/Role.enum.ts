@@ -4,3 +4,10 @@ export enum Role {
 	ServiceProvider = "ServiceProvider",
 	Admin = "Admin"
 }
+// export class Roles {
+// 	static Customer :string= "Customer";
+// 	static Vendor :string = "Vendor";
+// 	static ServiceProvider:string ="ServiceProvider";
+// 	// ServiceProvider :string= "3",
+
+// }

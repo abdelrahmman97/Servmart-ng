@@ -26,7 +26,6 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 		CoreModule,
 		SharedModule,
 		ModulesModule,
-
 		ToastNoAnimationModule.forRoot(
 			{
 				timeOut: 10000,
