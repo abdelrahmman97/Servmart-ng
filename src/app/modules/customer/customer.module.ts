@@ -17,13 +17,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
-@NgModule({
-    declarations: [
-        CheckOutComponent,
-        CartComponent,
+@NgModule( {
+	declarations: [
+		CheckOutComponent,
+		CartComponent,
 		CustomerRequestsListComponent,
-        SearchVendorsComponent,
-        RequestOffersComponent,
+		SearchVendorsComponent,
+		RequestOffersComponent,
 		RateServiceComponent,
 		AddRequestComponent,
         OrdersComponent
@@ -33,7 +33,18 @@ import { NgxPaginationModule } from 'ngx-pagination';
         FormsModule,
         RouterModule,
         SharedModule,
+		AddRequestComponent
+	],
+	imports: [
+		CommonModule,
+		FormsModule,
+		RouterModule,
+		SharedModule,
 		ReactiveFormsModule,
+		NgxPaginationModule,
+		CoreModule
+	]
+} )
 		CoreModule,
         NgxPaginationModule,
     ]

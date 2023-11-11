@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 import { RequestService } from '../../services/Request/Request.service';
 import { ToastrService } from 'ngx-toastr';
@@ -9,6 +9,7 @@ import { AddressService } from 'src/app/shared/services/Address/Address.service'
 import { ICity } from 'src/app/core/models/Address/ICity';
 import { RequestServiceCategoriesService } from 'src/app/shared/services/RequestAndServiceCategories/RequestServiceCategories.service';
 import { IRequestServiceCategory } from 'src/app/core/models/RequestServiceCategory/IServiceCategory';
+import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
 
 @Component( {
 	selector: 'app-addRequest',
@@ -21,11 +22,15 @@ export class AddRequestComponent implements OnInit {
 		private rsCategoryService: RequestServiceCategoriesService,
 		private address: AddressService,
 		private reqService: RequestService,
-		private auth: AuthService,
 		private toastr: ToastrService,
-		private router: Router ) { }
+		private router: Router,
+		private activeRoute: ActivatedRoute,
+		private auth: AuthService,
+	) { }
 
+	serviceProvidersId: string = "";
 	step: number = 1;
+	submited: boolean = false;
 
 	CitiesList: ICity[] | null = null;
 	GovernoratesList: IGovernorate[] | null = null;
@@ -39,19 +44,28 @@ export class AddRequestComponent implements OnInit {
 		this._AddRequestForm = value;
 	}
 
-	selectedImages: File[] = [];
+	selectedImages: SelectedFile[] = [];
+	imagesError = false;
+	imagesRequiredError = false;
+
 	selectedVideo: File | null = null;
-	imagesURLS: string[];
-	@ViewChild( "VideoInput" ) VideoInput: ElementRef;
-	@ViewChild( 'imageInput', { static: true } ) imageInputRef: ElementRef;
-
-	error = false;
-
-
+	selectedVideoUrl: string | null = null;
+	videoSizeError = false;
+	@ViewChild( 'videoInput', { static: false } ) videoInput: ElementRef;
 
 	ngOnInit () {
+
+		this.activeRoute.params.subscribe( {
+			next: ( params ) => {
+				this.serviceProvidersId = params[ 'id' ];
+				console.log( "🚀 ~ get service provider id next:", this.serviceProvidersId )
+			},
+			error: ( error ) => {
+				console.log( "🚀 ~ get service provider id error:", error )
+			}
+		} );
+
 		this.AddRequestForm = new FormGroup( {
-			ClientId: new FormControl( this.auth.getUserValue().userID ),
 			Title: new FormControl( '', Validators.required ),
 			Category: new FormControl( '', Validators.required ),
 			Details: new FormControl( '', Validators.required ),
@@ -60,14 +74,11 @@ export class AddRequestComponent implements OnInit {
 			Governorate: new FormControl( '', Validators.required ),
 			City: new FormControl( '', Validators.required ),
 			Address: new FormControl( '', Validators.required ),
-			Images: new FormControl( '', Validators.required ),
-			Video: new FormControl( '', Validators.nullValidator ),
 		} );
 
 		this.address.getAllGovernorates().subscribe(
 			next => {
 				this.GovernoratesList = next as IGovernorate[];
-				console.log( this.GovernoratesList );
 			},
 			error => {
 				this.toastr.error( 'خطأ في عرض المحافظات' )
@@ -77,7 +88,6 @@ export class AddRequestComponent implements OnInit {
 		this.rsCategoryService.getAllCategories().subscribe(
 			next => {
 				this.CategoriesList = next as IRequestServiceCategory[];
-				console.log( this.CategoriesList );
 			}
 		);
 	}
@@ -87,89 +97,91 @@ export class AddRequestComponent implements OnInit {
 	}
 
 	onImagesSelected ( event: any ) {
-		this.error = false;
-		const files = event.target.files;
 
+		const files = event.target.files;
 		if ( files.length > 5 ) {
-			this.error = true
+			this.imagesError = true
+			event.target.value = null;
 			return;
 		}
-
-		// Preview the uploaded images
-		this.selectedImages = Array.from( files );
-		this.AddRequestForm.get( 'Images' )?.setValue( files );
-
-		for ( const file of files ) {
-			const reader = new FileReader();
-			reader.onload = () => {
-				this.imagesURLS.push( reader.result as string );
-			};
-			reader.readAsDataURL( file );
+		else {
+			for ( const file of files ) {
+				// if ( file.type.startsWith( 'image/' ) ) {
+				const reader = new FileReader();
+				reader.onload = ( e: any ) => {
+					this.selectedImages.push( {
+						file,
+						url: e.target.result,
+					} );
+				};
+				reader.readAsDataURL( file );
+				// }
+			}
 		}
+
 	}
 
-	getImageUrl ( image: File ) {
-		return URL.createObjectURL( image );
-	}
-
-	removeImage ( image ) {
-
-		// this.selectedImages.splice( index, 1 );
-		const index = this.selectedImages.indexOf( image );
+	removeImage ( index ) {
 		this.selectedImages.splice( index, 1 );
-		this.imagesURLS.splice( index, 1 );
-		this.AddRequestForm.get( 'Images' )?.setValue( this.selectedImages );
-
-		if ( this.imageInputRef && this.imageInputRef.nativeElement ) {
-			const input = this.imageInputRef.nativeElement;
-			input.value = ''; // Clear the input
-			input.files = this.selectedImages; // Set the input value to the updated selectedImages
-		}
 	}
 
 	onVideoSelected ( event: any ) {
-		this.selectedVideo = event.target.files[ 0 ];
-		this.AddRequestForm.get( 'Video' )?.setValue( this.selectedVideo );
+		const file = event.target.files[ 0 ];
+		if ( file ) {
+			if ( file.size <= 100 * 1024 * 1024 ) { // 100MB limit
+				this.selectedVideo = file;
+				this.selectedVideoUrl = URL.createObjectURL( file );
+				this.videoSizeError = false;
+			} else {
+				this.videoSizeError = true;
+			}
+		}
 	}
 
-	getVideoUrl () {
-		return this.selectedVideo ? URL.createObjectURL( this.selectedVideo ) : '';
-	}
-
-	clearVideo () {
+	removeVideo () {
 		this.selectedVideo = null;
-		this.AddRequestForm.get( 'video' )?.setValue( this.selectedVideo );
-		if ( this.VideoInput && this.VideoInput.nativeElement ) {
-			this.VideoInput.nativeElement.value = null;
+		this.selectedVideoUrl = null;
+		this.videoSizeError = false;
+		if ( this.videoInput && this.videoInput.nativeElement ) {
+			this.videoInput.nativeElement.value = null;
 		}
 	}
 
 	submitForm () {
+		this.submited = true;
 		if ( this.AddRequestForm.valid ) {
 			// Perform the desired action with the form data
-			console.log( this.AddRequestForm.value );
+			// console.log( this.AddRequestForm.value );
 			const formData: FormData = new FormData();
 
-			const imageFiles = this.AddRequestForm.get( 'Images' )?.value;
-			if ( imageFiles ) {
-				for ( let i = 0; i < imageFiles.length; i++ ) {
-					formData.append( 'Images', imageFiles[ i ] );
+			if ( this.selectedImages ) {
+				this.imagesRequiredError = false;
+				for ( let i = 0; i < this.selectedImages.length; i++ ) {
+					formData.append( 'Images', this.selectedImages[ i ].file );
 				}
 			}
+			else {
+				this.imagesRequiredError = true;
+			}
 
-			const videoFile = this.AddRequestForm.get( 'Video' )?.value;
-			if ( videoFile ) {
-				formData.append( 'Video', videoFile );
+			if ( this.selectedVideo ) {
+				formData.append( 'Video', this.selectedVideo );
+			}
+
+			if ( this.serviceProvidersId == undefined ) {
+				formData.append( 'ProviderID', null );
+			}
+			else {
+				formData.append( 'ProviderID', this.serviceProvidersId );
 			}
 
 			formData.append( 'ClientId', null );
 			formData.append( 'Title', this.AddRequestForm.get( 'Title' )?.value );
+			formData.append( 'Category', this.AddRequestForm.get( 'Category' )?.value );
 			formData.append( 'Details', this.AddRequestForm.get( 'Details' )?.value );
 			formData.append( 'ExpectedSalary', this.AddRequestForm.get( 'ExpectedSalary' )?.value );
 			formData.append( 'EndDate', this.AddRequestForm.get( 'EndDate' )?.value );
-
 			formData.append( 'Address', this.AddRequestForm.get( 'Address' )?.value );
-			formData.append( 'Category', this.AddRequestForm.get( 'Category' )?.value );
 			formData.append( 'CityId', this.AddRequestForm.get( 'City' )?.value );
 			formData.append( 'GovernorateId', this.AddRequestForm.get( 'Governorate' )?.value );
 
@@ -177,22 +189,33 @@ export class AddRequestComponent implements OnInit {
 				console.log( `${ pair[ 0 ] }: ${ pair[ 1 ] }` );
 			}
 
-			console.log( this.AddRequestForm.value );
+			// console.log( this.AddRequestForm.value );
 
-			// TODO call api
+			this.toastr.info( "جاري إضافة الطلب" )
+
 			this.reqService.create( formData ).subscribe(
 				next => {
-					console.log( next );
+					console.log( "next", next );
 					this.toastr.success( "تم إضافة الطلب بنجاح" );
 					this.router.navigate( [ '/myRequests/' ] );
 				},
 				error => {
-					console.log( error );
+					console.log( "error", error );
 					this.toastr.error( "حدث خطأ أثناء الاضافة\nالرجاء المحاولة مرة أخري" )
+					this.submited = false;
 				}
 			);
 
 		}
+		else {
+			this.toastr.error( "الرجاء اكمال البيانات" );
+			this.submited = false;
+		}
 	}
 
+}
+
+interface SelectedFile {
+	file: File;
+	url: string;
 }

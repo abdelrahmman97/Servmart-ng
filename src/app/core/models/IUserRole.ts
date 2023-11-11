@@ -1,5 +1,5 @@
 import { IRole } from "./IRole";
-import { IUser } from "./IUser";
+import { IUser } from "./User/IUser";
 
 
 export interface IUserRole {

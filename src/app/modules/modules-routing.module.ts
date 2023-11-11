@@ -27,13 +27,14 @@ import { EditComponent } from './vendor/Components/edit/edit.component';
 import { UsersRequestsComponent } from './pages/Components/UsersRequests/UsersRequests.component';
 import { OrderListComponent } from './vendor/Components/order-list/order-list.component';
 import { OrdersComponent } from './customer/Components/orders/orders.component';
+import { ServicesListComponent } from './services-provider/Components/services-list/services-list.component';
 
 
 
 const routes: Routes = [
 
 	// Shared Components
-	{ path: 'profile', component: ProfileComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'profile/:id', component: ProfileComponent, canActivate: [ userLogedInGuard ] },
 	{ path: "shop", component: ShopComponent },
 	{ path: "details/:productID", component: DetailsComponent },
 	{ path: "settings", component: AccountSettingsComponent, canActivate: [ userLogedInGuard ] },
@@ -42,12 +43,13 @@ const routes: Routes = [
 	{ path: 'cart', component: CartComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'checkout', component: CheckOutComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'requests', component: UsersRequestsComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'servicesProviders', component: SearchVendorsComponent },
 
 	// Customer Components
 	{ path: 'myRequests', component: CustomerRequestsListComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'offers/:id', component: RequestOffersComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'rateService/:id', component: RateServiceComponent, canActivate: [ userLogedInGuard ] },
-	{ path: 'vendors', component: SearchVendorsComponent },
+	{ path: 'addRequest/:id', component: AddRequestComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'addRequest', component: AddRequestComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'myOrders', component: OrdersComponent, canActivate: [ userLogedInGuard ] },
 
@@ -65,6 +67,7 @@ const routes: Routes = [
 	{ path: 'service/:id', component: DetailsComponent },
 	{ path: 'sendOffer/:id', component: ServiceProviderSendOfferComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'requestsOrders', component: RequestOrdersComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'myServices', component: ServicesListComponent, canActivate: [ userLogedInGuard ] }
 
 
 ];

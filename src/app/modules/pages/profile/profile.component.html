@@ -5,21 +5,20 @@
 			<div class="d-sm-flex justify-content-between align-items-start gap-2">
 				<div class="d-sm-flex align-items-center gap-2">
 					<div class="avatar avatar-xl mb-2 mb-sm-0">
-						<img class="avatar-img rounded-circle"
-							src="https://images.placeholders.dev/?width=200&height=200" alt="">
+						<img class="avatar-img rounded-circle" [src]="user.profilePic" alt="">
 					</div>
 					<div class="d-flex flex-column gap-1">
 						<h4 class="mb-2 mb-sm-0">
-							عبدالرحمن محمود
+							{{user.fName}} {{user.lName}}
 							<span>
 								<i class="fa-duotone fa-badge-check text-primary"></i>
 							</span>
 						</h4>
-						<p class="mb-2 mb-sm-0">مطور ويب</p>
+						<!-- <p class="mb-2 mb-sm-0">مطور ويب</p> -->
 					</div>
 				</div>
 
-				<div class=" d-flex align-items-center flex-shrink-0 me-auto gap-4">
+				<div class=" d-flex align-items-center flex-shrink-0 me-auto gap-4" *ngIf="!isCurrentUser()">
 					<div class="dropdown">
 						<a class="btn btn-light" href="#" id="dropdoanMenu" data-bs-toggle="dropdown" title="اعدادت"
 							aria-haspopup="true" aria-expanded="false">
@@ -30,16 +29,17 @@
 							<li> <a class="dropdown-item" href="#">تبليغ</a></li>
 						</ul>
 					</div>
-					<a href="#" class="btn btn-primary-soft mb-0" *ngIf="!isCustomer">
+					<a [routerLink]="['/addRequest', user.id]" class="btn btn-primary-soft mb-0"
+						*ngIf="isServiceProvider">
 						<i class="fa-duotone fa-handshake"></i> وظفني
 					</a>
 				</div>
 			</div>
 
 			<!-- Nav item -->
-			<div class="card-footer border-0 p-0 navbar navbar-expand-xl">
-				<ul class="navbar-nav navbar-offcanvas-menu flex-row gap-4 p-0" role="tablist">
-					<li class="nav-item" role="presentation">
+			<div class="card-footer border-0 p-0 navbar navbar-expand-xl" role="tablist">
+				<ul class="navbar-nav navbar-offcanvas-menu flex-row gap-4 p-0" role="presentation">
+					<li class="nav-item">
 						<a class="nav-link p-2 rounded active" href="#about" data-bs-toggle="tab" aria-selected="false"
 							role="tab">
 							<i class="fa-duotone fa-user"></i>
@@ -47,15 +47,15 @@
 						</a>
 					</li>
 
-					<li class="nav-item" role="presentation">
-						<a class="nav-link p-2 rounded" href="#work" data-bs-toggle="tab" aria-selected="false"
+					<li class="nav-item">
+						<a class="nav-link p-2 rounded" href="#works" data-bs-toggle="tab" aria-selected="false"
 							role="tab">
 							<i class="fa-duotone fa-boxes-stacked"></i>
 							<span class="d-none d-sm-flex">اعمالي السابقة</span>
 						</a>
 					</li>
 
-					<li class="nav-item" role="presentation">
+					<li class="nav-item">
 						<a class="nav-link p-2 rounded" href="#services" data-bs-toggle="tab" aria-selected="false"
 							role="tab">
 							<i class="fa-duotone fa-bolt"></i>
@@ -63,7 +63,7 @@
 						</a>
 					</li>
 
-					<li class="nav-item" role="presentation">
+					<li class="nav-item">
 						<a class="nav-link p-2 rounded" href="#reviews" data-bs-toggle="tab" aria-selected="false"
 							role="tab">
 							<i class="fa-duotone fa-star-sharp-half"></i>
@@ -79,585 +79,19 @@
 
 <div class="tab-content card-body p-0 pb-lg-0 pb-4" id="nav-tabContent">
 	<!-- about section -->
-	<section class="tab-pane fade active show" role="tabpanel" id="about">
-		<div class="container">
-			<div class="row gy-4">
-				<div class="col-xl-8 col-lg-12 col-sm-12">
-					<div class="card">
-						<div class="card-header">
-							<h6 class="m-0">نبذة عني</h6>
-						</div>
-						<div class="card-body">
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-								obcaecati, dolorem architecto accusantium labore sit, ullam
-								fugiat voluptas, aliquam nobis dicta consequatur odio assumenda
-								autem! Quibusdam quos vitae adipisci accusamus.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-12 col-sm-12">
-					<div class="card">
-						<div class="card-header">
-							<h6 class="m-0">إحصائيات</h6>
-						</div>
-						<div class="card-body">
-							<div class="d-flex">
-								<div class="col-7">التقييم</div>
-								<div class="col-5">
-									4.5
-									<i class="fa-solid fa-star text-warning"></i>
-								</div>
-							</div>
-							<div class="d-flex">
-								<div class="col-7">الخدمات</div>
-								<div class="col-5">
-									3 خدمات
-								</div>
-							</div>
-							<div class="d-flex">
-								<div class="col-7">تاريخ إنشاء الحساب</div>
-								<div class="col-5">
-									<!-- 2 years -->
-									سنتان
-								</div>
-							</div>
-							<div class="d-flex">
-								<div class="col-7">العمل/الخدمات التي تم إنجازها</div>
-								<div class="col-5">
-									12
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<profile-about-section role="tabpanel" [userId]="user.id" id="about"
+		class="tab-pane fade active show"></profile-about-section>
 
-	<!-- projects section -->
-	<section class="tab-pane fade" role="tabpanel" id="work">
-		<div class="container">
-			<div class="card border-0">
-				<div class="card-header">
-					<h6 class="mb-0">تفقد اخر اعمالي</h6>
-				</div>
-				<div class="card-body">
-					<div class="row gy-4">
-						<!-- project example -->
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" *ngFor="let item of items">
-							<div class="card">
-								<img [src]="transform(item.file.fileContents)" class="card-img-top" alt="...">
-								<div class="card-body">
-									<div class="d-flex flex-column">
-										<h5 class="card-title">
-											{{item.title}}
-										</h5>
-										<span>
-
-											{{item.categoryName}}
-
-										</span>
-									</div>
-									<p class="card-text line-clamp-3">
-										{{item.discription}}
-
-									</p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4">
-
-			<p class="mb-sm-0 text-center text-sm-start"></p>
-
-			<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
-				<ul class="pagination pagination-sm pagination-primary-soft mb-0">
-					<li class="page-item z-0">
-						<button class="page-link" [disabled]="currentPage == 1"
-							(click)="onPreviousClick()">السابق</button>
-					</li>
-					<li class="page-item z-0 " *ngFor="let pageNumber of getPageNumbers()">
-						<button class="page-link" [class]="pageNumber == currentPage? 'active' :''"
-							(click)="onPageChange(pageNumber)"
-							[disabled]="pageNumber == currentPage">{{pageNumber}}</button>
-					</li>
-					<li class="page-item z-0">
-						<button class="page-link" [disabled]="currentPage == totalPages"
-							(click)="onNextClick()">التالي</button>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</section>
+	<!-- previous works section -->
+	<profile-previous-works-section role="tabpanel" [userId]="user.id" id="works"
+		class="tab-pane fade"></profile-previous-works-section>
 
 	<!-- services section -->
-	<section class="tab-pane fade" role="tabpanel" id="services">
-		<div class="container">
-			<div class="card border-0">
-				<div class="card-header d-flex justify-content-between flex-row align-items-center">
-					<h6 class="mb-0">تفقد خدماتي</h6>
-					<a class="btn btn-primary-soft" href="#" routerLinkActive="active"
-						[routerLink]="['/addWorkHistory']">
-						إضافة خدمة
-					</a>
-				</div>
-				<div class="card-body">
-					<div class="row gy-4">
-						<!-- project example -->
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body pb-2">
-
-									<h5 class="card-title">
-										عنوان المشروع
-									</h5>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										Recusandae nihil molestiae itaque dignissimos nam
-										deleniti
-										laudantium doloribus voluptates odio velit? Ullam,
-										dignissimos
-										architecto? Est dolore, voluptatibus laudantium dolorem
-										esse
-										minus?
-									</p>
-								</div>
-								<div class="card-footer border-0 pt-0">
-									<div class="d-flex flex-row justify-content-between">
-										<span class="text-primary">23$</span>
-
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body pb-2">
-
-									<h5 class="card-title">
-										عنوان المشروع
-									</h5>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										Recusandae nihil molestiae itaque dignissimos nam
-										deleniti
-										laudantium doloribus voluptates odio velit? Ullam,
-										dignissimos
-										architecto? Est dolore, voluptatibus laudantium dolorem
-										esse
-										minus?
-									</p>
-								</div>
-								<div class="card-footer border-0 pt-0">
-									<div class="d-flex flex-row justify-content-between">
-										<span class="text-primary">23$</span>
-
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body pb-2">
-
-									<h5 class="card-title">
-										عنوان المشروع
-									</h5>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										Recusandae nihil molestiae itaque dignissimos nam
-										deleniti
-										laudantium doloribus voluptates odio velit? Ullam,
-										dignissimos
-										architecto? Est dolore, voluptatibus laudantium dolorem
-										esse
-										minus?
-									</p>
-								</div>
-								<div class="card-footer border-0 pt-0">
-									<div class="d-flex flex-row justify-content-between">
-										<span class="text-primary">23$</span>
-
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body pb-2">
-
-									<h5 class="card-title">
-										عنوان المشروع
-									</h5>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										Recusandae nihil molestiae itaque dignissimos nam
-										deleniti
-										laudantium doloribus voluptates odio velit? Ullam,
-										dignissimos
-										architecto? Est dolore, voluptatibus laudantium dolorem
-										esse
-										minus?
-									</p>
-								</div>
-								<div class="card-footer border-0 pt-0">
-									<div class="d-flex flex-row justify-content-between">
-										<span class="text-primary">23$</span>
-
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body pb-2">
-
-									<h5 class="card-title">
-										عنوان المشروع
-									</h5>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										Recusandae nihil molestiae itaque dignissimos nam
-										deleniti
-										laudantium doloribus voluptates odio velit? Ullam,
-										dignissimos
-										architecto? Est dolore, voluptatibus laudantium dolorem
-										esse
-										minus?
-									</p>
-								</div>
-								<div class="card-footer border-0 pt-0">
-									<div class="d-flex flex-row justify-content-between">
-										<span class="text-primary">23$</span>
-
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body pb-2">
-
-									<h5 class="card-title">
-										عنوان المشروع
-									</h5>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										Recusandae nihil molestiae itaque dignissimos nam
-										deleniti
-										laudantium doloribus voluptates odio velit? Ullam,
-										dignissimos
-										architecto? Est dolore, voluptatibus laudantium dolorem
-										esse
-										minus?
-									</p>
-								</div>
-								<div class="card-footer border-0 pt-0">
-									<div class="d-flex flex-row justify-content-between">
-										<span class="text-primary">23$</span>
-
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body pb-2">
-
-									<h5 class="card-title">
-										عنوان المشروع
-									</h5>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										Recusandae nihil molestiae itaque dignissimos nam
-										deleniti
-										laudantium doloribus voluptates odio velit? Ullam,
-										dignissimos
-										architecto? Est dolore, voluptatibus laudantium dolorem
-										esse
-										minus?
-									</p>
-								</div>
-								<div class="card-footer border-0 pt-0">
-									<div class="d-flex flex-row justify-content-between">
-										<span class="text-primary">23$</span>
-
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-							<div class="card">
-								<img src="https://nafezly-production.fra1.digitaloceanspaces.com/uploads/portfolios/small/13946_638922fd9a35d_1669931773.webp"
-									class="card-img-top" alt="...">
-								<div class="card-body pb-2">
-
-									<h5 class="card-title">
-										عنوان المشروع
-									</h5>
-									<p class="card-text line-clamp-3">
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit.
-										Recusandae nihil molestiae itaque dignissimos nam
-										deleniti
-										laudantium doloribus voluptates odio velit? Ullam,
-										dignissimos
-										architecto? Est dolore, voluptatibus laudantium dolorem
-										esse
-										minus?
-									</p>
-								</div>
-								<div class="card-footer border-0 pt-0">
-									<div class="d-flex flex-row justify-content-between">
-										<span class="text-primary">23$</span>
-
-										<span>
-											<i class="fa-solid fa-star text-warning"></i>
-											4.3
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<profile-services-section role="tabpanel" [userId]="user.id" id="services"
+		class="tab-pane fade"></profile-services-section>
 
 	<!-- reviews section -->
-	<section class="tab-pane fade" role="tabpanel" id="reviews">
-		<div class="container">
-			<div class="card border-0">
-				<div class="card-header">
-					<h6 class="mb-0">
-						ما يقوله الأشخاص الذين عملت معهم
-					</h6>
-				</div>
-				<div class="card-body row gy-4">
-					<!-- reviews -->
-					<div class="card">
-						<div class="card-header">
-							<h6 class="m-0 p-0 fs-6 fw-medium">عنوان العمل أو الخدمة</h6>
-						</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-							maiores
-							aperiam totam consequatur, voluptate quo repellendus facilis itaque
-							cupiditate rem incidunt quos corrupti obcaecati similique excepturi
-							illo
-							reprehenderit libero in?
-						</div>
-						<div class="card-footer">
-							<div class="row g-3">
-								<div class="col-sm-6 col-md-3">
-									<span>ترشح للآخرين</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-								<div class="col-sm-6 col-md-3">
-									<span>جودة العمل</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-								<div class="col-sm-6 col-md-3">
-									<span>احترام موعد التسليم</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-header">
-							<h6 class="m-0 p-0 fs-6 fw-medium">عنوان العمل أو الخدمة</h6>
-						</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-							maiores
-							aperiam totam consequatur, voluptate quo repellendus facilis itaque
-							cupiditate rem incidunt quos corrupti obcaecati similique excepturi
-							illo
-							reprehenderit libero in?
-						</div>
-						<div class="card-footer">
-							<div class="row g-3">
-								<div class="col-sm-6 col-md-3">
-									<span>ترشح للآخرين</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-								<div class="col-sm-6 col-md-3">
-									<span>جودة العمل</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-								<div class="col-sm-6 col-md-3">
-									<span>احترام موعد التسليم</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-header">
-							<h6 class="m-0 p-0 fs-6 fw-medium">عنوان العمل أو الخدمة</h6>
-						</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-							maiores
-							aperiam totam consequatur, voluptate quo repellendus facilis itaque
-							cupiditate rem incidunt quos corrupti obcaecati similique excepturi
-							illo
-							reprehenderit libero in?
-						</div>
-						<div class="card-footer">
-							<div class="row g-3">
-								<div class="col-sm-6 col-md-3">
-									<span>ترشح للآخرين</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-								<div class="col-sm-6 col-md-3">
-									<span>جودة العمل</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-								<div class="col-sm-6 col-md-3">
-									<span>احترام موعد التسليم</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="card-header">
-							<h6 class="m-0 p-0 fs-6 fw-medium">عنوان العمل أو الخدمة</h6>
-						</div>
-						<div class="card-body">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-							maiores
-							aperiam totam consequatur, voluptate quo repellendus facilis itaque
-							cupiditate rem incidunt quos corrupti obcaecati similique excepturi
-							illo
-							reprehenderit libero in?
-						</div>
-						<div class="card-footer">
-							<div class="row g-3">
-								<div class="col-sm-6 col-md-3">
-									<span>ترشح للآخرين</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-								<div class="col-sm-6 col-md-3">
-									<span>جودة العمل</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-								<div class="col-sm-6 col-md-3">
-									<span>احترام موعد التسليم</span>
-									<span>
-										<br>
-										<i class="fa-solid fa-star text-warning"></i>
-										4.3
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<profile-reviews-section role="tabpanel" [userId]="user.id" id="reviews"
+		class="tab-pane fade"></profile-reviews-section>
 
 </div>

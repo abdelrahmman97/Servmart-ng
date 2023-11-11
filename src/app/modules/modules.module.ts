@@ -16,12 +16,22 @@ import { MinLengthPipe } from './pages/min-length.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModule } from '../shared/shared.module';
 import { UsersRequestsComponent } from './pages/Components/UsersRequests/UsersRequests.component';
+import { AboutSectionComponent } from './pages/profile/Components/about-section/about-section.component';
+import { PreviousWorksSectionComponent } from './pages/profile/Components/previous-works-section/previous-works-section.component';
+import { ReviewsSectionComponent } from './pages/profile/Components/reviews-section/reviews-section.component';
+import { ServicesSectionComponent } from './pages/profile/Components/services-section/services-section.component';
 
 
-@NgModule({
+@NgModule( {
 	declarations: [
 		HomePageComponent,
+		// profile & profile sections
 		ProfileComponent,
+		AboutSectionComponent,
+		PreviousWorksSectionComponent,
+		ReviewsSectionComponent,
+		ServicesSectionComponent,
+		// ===============================
 		ShopComponent,
 		DetailsComponent,
 		MinLengthPipe,
@@ -40,5 +50,5 @@ import { UsersRequestsComponent } from './pages/Components/UsersRequests/UsersRe
 		VendorModule,
 		ServicesProviderModule,
 	],
-})
+} )
 export class ModulesModule { }

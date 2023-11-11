@@ -11,6 +11,8 @@ import { TokenInterceptor } from './modules/auth/helpers/token.interceptor';
 import { NgxPaginationModule } from 'ngx-pagination'
 import { ToastNoAnimationModule } from 'ngx-toastr';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+// import { LoadingBarModule } from '@ngx-loading-bar/core';
+// import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 
 @NgModule({
@@ -26,7 +28,6 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 		CoreModule,
 		SharedModule,
 		ModulesModule,
-
 		ToastNoAnimationModule.forRoot(
 			{
 				timeOut: 10000,
@@ -37,6 +38,8 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 		// for ngx loading bar
 		LoadingBarHttpClientModule,
+		// LoadingBarRouterModule,
+		// LoadingBarModule
 	],
 	providers: [
 		{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }

@@ -1,0 +1,14 @@
+.FileContainer {
+	width: 600px;
+	border: 4px dotted #0072f5;
+	padding: 0 !important;
+}
+
+.FileContainer label {
+	height: 4rem;
+	cursor: pointer;
+}
+
+video{
+	width: 450px;
+}

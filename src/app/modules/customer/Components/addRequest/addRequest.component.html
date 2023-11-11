@@ -142,50 +142,78 @@
 
 								<div class="d-flex gap-3">
 									<button class="btn btn-secondary-soft" (click)="step=step-1">السابق</button>
-									<button class="btn btn-primary-soft">نشر</button>
+									<button class="btn btn-primary-soft d-flex flex-row gap-2" type="submit"
+										[ngClass]="submited? 'disabled':''">
+										<span *ngIf="!submited">نشر</span>
+										<span *ngIf="submited">جاري النشر</span>
+										<i class="fa-duotone fa-spinner-third fa-spin" *ngIf="submited"></i>
+									</button>
 								</div>
 							</div>
 						</div>
 
 						<div class="card-body">
 
-							<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="error">
+							<!-- Error Alert for Images -->
+							<div class="alert alert-danger alert-dismissible fade show" role="alert"
+								*ngIf="imagesError">
 								<button type="button" class="btn-close" data-bs-dismiss="alert"
 									aria-label="Close"></button>
-								يمكنك ان تضيف الي 5 صورة فقط
+								يمكنك ان تضيف صور للخدمة بحد أقصي 5 صور
 							</div>
 
-							<div class="mb-3">
-								<label for="Images" class="form-label">صور</label>
-								<input class="form-control" type="file" id="Images" name="Images" accept="image/*"
-									multiple (change)="onImagesSelected($event)" formControlName="Images" #imageInput>
-								<small>يمكنك ان تضيف الي 5 صورة</small>
+							<!-- Error Alert for Video -->
+							<div class="alert alert-danger alert-dismissible fade show" role="alert"
+								*ngIf="videoSizeError">
+								<button type="button" class="btn-close" data-bs-dismiss="alert"
+									aria-label="Close"></button>
+								تجاوز حجم الملف الحد الأقصى (100 ميجابايت).
 							</div>
+
+
+							<!-- Images file input -->
+							<div *ngIf="selectedImages.length != 5"
+								class="FileContainer text-center w-100 d-flex flex-column mb-3 btn btn-primary-soft">
+								<label class="mt-2" for="Images">إضافة صور للخدمة بحد أقصي 5 صور</label>
+								<input class="d-none" id="Images" type="file" accept="image/*" multiple
+									(change)="onImagesSelected($event)">
+							</div>
+
+							<small *ngIf="imagesRequiredError" class="invalid-feedback mb-3">
+								صورة الخدمة مطلوبة
+							</small>
 
 							<!-- Images preview -->
-							<div *ngIf="AddRequestForm.get('Images')?.value">
-								<div class="d-flex flex-row align-items-start flex-wrap">
-									<div class="ms-2 d-flex flex-column" *ngFor="let image of imagesURLS">
-										<img [src]="image" class="img-thumbnail " alt=""
-											style="width: 100px; height: 100px;">
-										<button class="btn btn-danger-soft btn-sm"
-											(click)="removeImage(image)">remove</button>
+							<div *ngIf="selectedImages.length != 0">
+								<div class="d-flex flex-row gap-2">
+									<div *ngFor="let image of selectedImages; let i = index"
+										class="d-flex flex-column gap-2">
+										<div class="avatar avatar-xxl">
+											<img [src]="image.url" class="img-thumbnail avatar-img mb-2" alt="">
+										</div>
+										<button class="btn btn-danger-soft btn-sm" (click)="removeImage(i)">حذف</button>
 									</div>
 								</div>
 							</div>
 
-							<div class="mb-3">
-								<label for="Video" class="form-label">فيديو</label>
-								<input class="form-control" type="file" id="Video" name="Video" accept="video/*"
-									multiple (change)="onVideoSelected($event)" formControlName="Video" #VideoInput>
-								<small>يمكنك ان تضيف فيديو واحد لا يتعدي الدقيقتين</small>
+							<!-- ========================================================== -->
+
+							<!-- Video file input -->
+							<div *ngIf="!this.selectedVideo"
+								class="FileContainer text-center w-100 d-flex flex-column mb-3 mt-3 btn btn-primary-soft">
+								<label for="Video" class="">فيديو</label>
+								<input class="d-none" id="Video" name="Video" type="file" accept=".mp4, .mkv"
+									(change)="onVideoSelected($event)" #videoInput>
+								<small>يمكنك ان تضيف فيديو واحد لا يتعدي حجمه (100MB)</small>
 							</div>
 
 							<!-- Video preview -->
-							<button *ngIf="this.selectedVideo" (click)="clearVideo()">Clear Video</button>
-							<video *ngIf="this.selectedVideo" controls>
-								<source [src]="getVideoUrl()" type="video/mp4">
-							</video>
+							<div *ngIf="this.selectedVideo" class="align-items-start d-flex flex-row gap-5">
+								<video controls width="450">
+									<source [src]="selectedVideoUrl" type="video/mp4">
+								</video>
+								<button (click)="removeVideo()" class="btn btn-danger-soft">حذف</button>
+							</div>
 
 						</div>
 
