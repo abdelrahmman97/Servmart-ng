@@ -163,8 +163,8 @@
 							<td>{{x.unitPrice}}</td>
 							<td>{{x.description}}</td>
 							<td>4</td>
-							<td><button class="btn btn-outline-primary" [routerLink]="['/edit',x.productID]">تعديل</button></td>
-							<td><button (click)="Delete(x.productID)" class="btn btn-outline-danger">حذف</button></td>
+							<td><button class="btn btn-outline-primary" [routerLink]="['/edit',x.productID]"><i class="fa-regular fa-pen-to-square"></i> تعديل</button></td>
+							<td><button (click)="Delete(x.productID)" class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i>حذف</button></td>
 						</tr>
 						
 					</tbody>

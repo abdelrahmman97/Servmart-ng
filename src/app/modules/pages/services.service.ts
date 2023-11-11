@@ -26,6 +26,10 @@ return this.http.get<IProduct>(`https://localhost:7013/GetProductById/${id}`);
 return this.http.delete<IProduct>(`https://localhost:7013/DeleteProduct/${id}`);
   }
 
+  Getproductvendor():Observable<any>{
+   return this.http.get<IProduct[]>(`https://localhost:7013/GetAllUserProduct`);
+  }
+
   AddCart(id:string):Observable<any>{
    return this.http.post(`https://localhost:7013/api/CartItem/?productid=${id}`,{});
   }

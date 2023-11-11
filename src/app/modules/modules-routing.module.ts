@@ -25,6 +25,8 @@ import { RequestOrdersComponent } from './services-provider/Components/requestOr
 import { userLogedInGuard } from '../shared/guards/userLogedInGuard/user-loged-in.guard';
 import { EditComponent } from './vendor/Components/edit/edit.component';
 import { UsersRequestsComponent } from './pages/Components/UsersRequests/UsersRequests.component';
+import { OrderListComponent } from './vendor/Components/order-list/order-list.component';
+import { OrdersComponent } from './customer/Components/orders/orders.component';
 
 
 
@@ -47,12 +49,13 @@ const routes: Routes = [
 	{ path: 'rateService/:id', component: RateServiceComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'vendors', component: SearchVendorsComponent },
 	{ path: 'addRequest', component: AddRequestComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'myOrders', component: OrdersComponent, canActivate: [ userLogedInGuard ] },
 
 	// Vendor Components
 	{ path: 'addProduct', component: AddProduectsComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'addWorkHistory', component: AddWorkHistoryComponent, canActivate: [ userLogedInGuard ] },
 	{ path: "orderDetails/:id", component: OrderDetailsComponent, canActivate: [ userLogedInGuard ] },
-	{ path: "orderList", component: RequestListComponent, canActivate: [ userLogedInGuard ] },
+	{ path: "orderList", component: OrderListComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'productList', component: ProductListComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'edit/:id', component: EditComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'product/:id', component: ProductDetailsComponent },

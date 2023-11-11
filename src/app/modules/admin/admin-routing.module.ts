@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { NotFoundComponent } from 'src/app/core/components/not-found/not-found.component';
-import { OrderListComponent } from './Components/order-list/order-list.component';
+import { OrderListComponent } from '../vendor/Components/order-list/order-list.component';
 import { SingleOrderComponent } from './Components/single-order/single-order.component';
 
 const routes: Routes = [

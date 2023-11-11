@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from "../../core/core.module";
 import { AddRequestComponent } from './Components/addRequest/addRequest.component';
+import { OrdersComponent } from './Components/orders/orders.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -23,7 +25,8 @@ import { AddRequestComponent } from './Components/addRequest/addRequest.componen
         SearchVendorsComponent,
         RequestOffersComponent,
 		RateServiceComponent,
-		AddRequestComponent
+		AddRequestComponent,
+        OrdersComponent
     ],
     imports: [
         CommonModule,
@@ -31,7 +34,8 @@ import { AddRequestComponent } from './Components/addRequest/addRequest.componen
         RouterModule,
         SharedModule,
 		ReactiveFormsModule,
-		CoreModule
+		CoreModule,
+        NgxPaginationModule,
     ]
 })
 export class CustomerModule { }

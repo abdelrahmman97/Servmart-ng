@@ -1,0 +1,81 @@
+<div class="row mb-0">
+	<div class="col-md-12">
+		<div class="d-md-flex justify-content-between align-items-center">
+			<div>
+				<h2>الطلبات</h2>
+				<!-- breacrumb -->
+			
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row ">
+	<div class="col-xl-12 col-12 mb-5">
+		<div class="card h-100 card-lg">
+
+			<div class="p-6">
+				<div class="row justify-content-between">
+					<div class="col-md-4  mb-2 ">
+						<form class="d-flex" role="search">
+							<input class="form-control" type="search" placeholder="Search " aria-label="Search">
+
+						</form>
+					</div>
+					<div class="col-lg-2 col-md-4 ">
+						<select class="form-select form-control " tabindex="-1">
+							<option value="">الحالة</option>
+							<option value="">تمت بنجاح</option>
+							<option value="">انتظار</option>
+							<option value="">الغاء</option>
+						</select>
+					</div>
+
+				</div>
+			</div>
+			<div class="card-body p-3 ">
+
+				<div class="table-responsive">
+		<table class="table table-centered table-hover table-borderless mb-0 table-with-checkbox text-nowrap">
+			<thead class="bg-light">
+				<tr>
+					<th>صورة المنتج</th>
+					<th>اسم المنتج</th>
+					<th>اسم العميل</th>
+					<th>التاريخ والوقت</th>
+					<th>العنوان</th>
+					<th>الدفع</th>
+					<th>السعر النهائي</th>
+					
+				</tr>
+			</thead>
+			<tbody >
+				<tr *ngFor="let order of DataList|paginate: { itemsPerPage: 9, currentPage: p }" >
+				<td *ngFor="let ordercustomer of order.orderItems
+				">
+					<img [src]="ordercustomer" style="width: 50px;" class="rounded-circle bg-danger " alt=""></td>
+				<td>{{order.productName}}</td>
+				<td>{{order.userName}}</td>
+				<td>{{order.createAt.slice(0,7)}}</td>
+				<td>{{order.address .slice(0,10)}} <br> {{order.governorate}} <br>{{order.city }}</td>
+				<td>تم</td>
+				<td>{{order.totalPrice
+				}}</td>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+
+	<section class="number-icon mt-3">
+		<nav aria-label="Page navigation example " class="text-center">
+			<pagination-controls (pageChange)="p=$event"></pagination-controls>
+		</nav>
+	</section>
+			</div>
+
+		</div>
+
+	</div>
+</div>	

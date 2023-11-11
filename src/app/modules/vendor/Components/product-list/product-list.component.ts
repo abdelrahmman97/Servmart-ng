@@ -18,7 +18,7 @@ export class ProductListComponent  implements OnInit{
 	}
 
 AllProduct(){
-		this.ProductsService.GetProduct().subscribe({
+		this.ProductsService.Getproductvendor().subscribe({
 			next:data=>{
 	this.productlist= data as IProduct[];
 				console.log(this.productlist)
@@ -43,7 +43,9 @@ Delete(id:string){
 			
 		},
 
+
 	})
+
 	this.AllProduct()
 }
 update(id:string){

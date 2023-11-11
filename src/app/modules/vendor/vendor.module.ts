@@ -9,9 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { OrderDetailsComponent } from './Components/order-details/order-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { EditComponent } from './Components/edit/edit.component'
-
-
+import { OrderListComponent } from './Components/order-list/order-list.component';
+import { EditComponent } from './Components/edit/edit.component';
 
 @NgModule({
 	declarations: [
@@ -23,16 +22,14 @@ import { EditComponent } from './Components/edit/edit.component'
 		OrderDetailsComponent,
 		RequestListComponent,
 		OrderDetailsComponent,
-  EditComponent
+		EditComponent,
+		OrderListComponent,
 	],
 	imports: [
 		CommonModule,
 		RouterModule,
 		ReactiveFormsModule,
-		NgxPaginationModule
-	]
+		NgxPaginationModule,
+	],
 })
-export class VendorModule 
-{ 
-	
-}
+export class VendorModule {}

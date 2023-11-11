@@ -35,53 +35,32 @@
 					<div id="flush-collapseOne" class="accordion-collapse collapse show"
 						data-bs-parent="#accordionFlushExample">
 						<div class="row m-0 p-0">
-
 							<div class="row p-0 m-0 mb-3">
 								<div class="col-md-6">
 									<div class="form-floating">
-										<input formControlName="name" type="text" class="form-control" id="fullName"
-											placeholder="الاسم">
-										<label class="form-label">
-											الاسم</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-floating">
-										<input type="tel" class="form-control" id="phomeNumber" formControlName="Phone"
-											placeholder="التليفون الشخصي ">
-										<label class="form-label">
-											التليفون الشخصي
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="row p-0 m-0 mb-3">
-								<div class="col-md-6">
-									<div class="form-floating">
-										<select class="form-select" formControlName="Select" id="governorate"
+										<select (change)="getCities($event)" class="form-select" formControlName="GovernorateId" id="governorate"
 											aria-label="Default select example">
 											<option selected>اختر المحافظة</option>
-											<option value="1">اسوان</option>
-											<option value="2">الاقصر</option>
-											<option value="3">قنا</option>
+											<option *ngFor="let item of GovernoratesList" [value]="item.id">{{item.nameAr}}
+											</option>
 										</select>
 
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-floating">
-										<input type="text" class="form-control" formControlName="city" id="city"
-											placeholder="المدينة">
-										<label class="form-label">
-											المدينة
-										</label>
+										<select class="form-select" formControlName="CityId" id="City"
+											aria-label="Default select example">
+											<option selected>اختر المركز</option>
+											<option *ngFor="let item of CitiesList" [value]="item.id">{{item.nameAr}}</option>
+										</select>
 									</div>
 								</div>
 							</div>
 							<div class="row p-0 m-0 mb-3">
 								<div class="col-12">
 									<div class="form-floating">
-										<input type="text" formControlName="Addrees" class="form-control"
+										<input type="text" formControlName="Address" class="form-control"
 											id="inputAddress" placeholder="محافظة اسوان طريق السادات ">
 										<label for="inputAddress" class="form-label">العنوان</label>
 									</div>
@@ -112,7 +91,7 @@
 						<div class="mt-5">
 							<label for="DeliveryInstructions" class="form-label sr-only">
 								تفاصيل الخدمة</label>
-							<textarea class="form-control" formControlName="textera" id="DeliveryInstructions" rows="3"
+							<textarea class="form-control" formControlName="Details" id="DeliveryInstructions" rows="3"
 								placeholder="تفاصبل اخري"></textarea>
 							<p class="form-text">أضف تعليمات حول الطريقة التي تريد بها استلام طلبك
 							</p>
@@ -160,7 +139,7 @@
 									<a href="#" class="btn btn-secondary-soft collapsed" data-bs-toggle="collapse"
 										data-bs-target="#flush-collapseTwo" aria-expanded="false"
 										aria-controls="flush-collapseTwo">السابق</a>
-									<button class="btn btn-primary-soft ms-2" type="submit">
+									<button class="btn btn-primary-soft ms-2" type="submit" [disabled]="vaildition.invalid">
 										ارسل الطلب</button>
 
 								</div>
@@ -186,20 +165,20 @@
 
 					<ul class="list-group list-group-flush border rounded p-0 mb-3">
 						<!-- list group item -->
-						<li class="list-group-item" *ngFor="let li of Arrayli">
+						<li class="list-group-item" *ngFor="let item of GetCart">
 							<div class="row align-items-center">
 								<div class="col-3">
-									<img src="/assets/images/logo.png" alt="Ecommerce"
+									<img [src]="item.picURL" alt="Ecommerce"
 										class="img-fluid rounded">
 								</div>
 								<div class="col-5">
-									<h6 class="mb-0 text-truncate">{{li.name}}</h6>
+									<h6 class="mb-0 text-truncate">{{item.productName}}</h6>
 								</div>
 								<div class="col-1 text-center">
-									<span>{{li.id}}</span>
+									<span>{{item.count}}</span>
 								</div>
 								<div class="col-3 text-lg-end text-start text-md-end">
-									<span class="fw-bold">{{li.salary | CustomCurrency:'ar':false}}</span>
+									<span class="fw-bold">{{item.unitPrice | CustomCurrency:'ar':false}}</span>
 								</div>
 							</div>
 
@@ -218,7 +197,7 @@
 									اجمالي السلع
 								</div>
 								<div class="fw-bold">
-									{{75 | CustomCurrency:'ar':false}}
+									{{getTotal()| CustomCurrency:'ar':false}}
 								</div>
 
 							</div>
@@ -237,7 +216,7 @@
 						<li class="list-group-item px-4 py-3">
 							<div class="d-flex align-items-center justify-content-between fw-bold">
 								<div>إجمالي المبلغ</div>
-								<div class="text-primary">{{78 | CustomCurrency:'ar':false}}</div>
+								<div class="text-primary">{{getTotal()+3 | CustomCurrency:'ar':false}}</div>
 							</div>
 						</li>
 
