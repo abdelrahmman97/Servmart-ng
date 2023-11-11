@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../services/service.service';
 import { IService } from 'src/app/core/models/Service/IService';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 
 @Component( {
 	selector: 'app-services-list',
@@ -14,6 +15,7 @@ export class ServicesListComponent implements OnInit {
 	constructor (
 		private servicesService: ServiceService,
 		private toastr: ToastrService,
+		private auth: AuthService
 	) { }
 
 	services: IService[] = [];
@@ -31,7 +33,7 @@ export class ServicesListComponent implements OnInit {
 	}
 
 	getServices ( page: number, pageSize: number ) {
-		this.servicesService.getUserService().subscribe(
+		this.servicesService.getUserServiceById( this.auth.getUserValue().userID, page, pageSize ).subscribe(
 			next => {
 				this.services = next as IService[];
 				console.log( "🚀 this.services:", this.services )

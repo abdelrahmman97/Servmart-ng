@@ -17,19 +17,36 @@ export class ServiceService {
 		return this.http.post( `${ environment.apiUrl }/Service/AddService`, service );
 	}
 
+	getAllServices () {
+		return this.http.get( `${ environment.apiUrl }/Service/GetAllServices` );
+	}
+
 	getUserService () {
 		return this.http.get( `${ environment.apiUrl }/Service/GetUserService` );
 	}
 
-	getTotalServicesCount () {
-		return this.http.get<number>( `${ environment.apiUrl }/Service/GetServicesCount` );
+	getUserServiceById ( userId: string, page: number, pageSize: number ) {
+		return this.http.get( `${ environment.apiUrl }/Service/GetUserServiceById?userId=${ userId }` );
 	}
 
-	getAllServices () {
-		return this.http.get( `${ environment.apiUrl }/Service/GetAllServices` );
+	getTotalUserServicesCount ( userId: string ) {
+		return this.http.get<number>( `${ environment.apiUrl }/Service/GetUserServicesCount?id=${ userId }` );
 	}
+
+	getTotalServicesProviders () {
+		return this.http.get<number>( `${ environment.apiUrl }/Service/GetTotalServicesProviders` );
+	}
+
 	getServicesProviders ( page: number, pageSize: number ) {
 		return this.http.get( `${ environment.apiUrl }/Service/GetServicesProviders?page=${ page }&pageSize=${ pageSize }` );
+	}
+
+	GetUserRate ( userId: string, page: number, pageSize: number ) {
+		return this.http.get( `${ environment.apiUrl }/Service/GetUserRate?userId=${ userId }&page=${ page }&pageSize=${ pageSize }` );
+	}
+
+	GetTotalUserRatesCount ( id: string ) {
+		return this.http.get<number>( `${ environment.apiUrl }/Service/GetTotaUserRatesCount?id=${ id }` );
 	}
 
 

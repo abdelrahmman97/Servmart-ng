@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 import { RequestService } from '../../services/Request/Request.service';
 import { ToastrService } from 'ngx-toastr';
@@ -9,6 +9,7 @@ import { AddressService } from 'src/app/shared/services/Address/Address.service'
 import { ICity } from 'src/app/core/models/Address/ICity';
 import { RequestServiceCategoriesService } from 'src/app/shared/services/RequestAndServiceCategories/RequestServiceCategories.service';
 import { IRequestServiceCategory } from 'src/app/core/models/RequestServiceCategory/IServiceCategory';
+import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
 
 @Component( {
 	selector: 'app-addRequest',
@@ -23,8 +24,11 @@ export class AddRequestComponent implements OnInit {
 		private reqService: RequestService,
 		private toastr: ToastrService,
 		private router: Router,
+		private activeRoute: ActivatedRoute,
+		private auth: AuthService,
 	) { }
 
+	serviceProvidersId: string = "";
 	step: number = 1;
 	submited: boolean = false;
 
@@ -50,6 +54,17 @@ export class AddRequestComponent implements OnInit {
 	@ViewChild( 'videoInput', { static: false } ) videoInput: ElementRef;
 
 	ngOnInit () {
+
+		this.activeRoute.params.subscribe( {
+			next: ( params ) => {
+				this.serviceProvidersId = params[ 'id' ];
+				console.log( "🚀 ~ get service provider id next:", this.serviceProvidersId )
+			},
+			error: ( error ) => {
+				console.log( "🚀 ~ get service provider id error:", error )
+			}
+		} );
+
 		this.AddRequestForm = new FormGroup( {
 			Title: new FormControl( '', Validators.required ),
 			Category: new FormControl( '', Validators.required ),
@@ -136,7 +151,7 @@ export class AddRequestComponent implements OnInit {
 		this.submited = true;
 		if ( this.AddRequestForm.valid ) {
 			// Perform the desired action with the form data
-			console.log( this.AddRequestForm.value );
+			// console.log( this.AddRequestForm.value );
 			const formData: FormData = new FormData();
 
 			if ( this.selectedImages ) {
@@ -153,6 +168,13 @@ export class AddRequestComponent implements OnInit {
 				formData.append( 'Video', this.selectedVideo );
 			}
 
+			if ( this.serviceProvidersId == undefined ) {
+				formData.append( 'ProviderID', null );
+			}
+			else {
+				formData.append( 'ProviderID', this.serviceProvidersId );
+			}
+
 			formData.append( 'ClientId', null );
 			formData.append( 'Title', this.AddRequestForm.get( 'Title' )?.value );
 			formData.append( 'Category', this.AddRequestForm.get( 'Category' )?.value );
@@ -163,9 +185,9 @@ export class AddRequestComponent implements OnInit {
 			formData.append( 'CityId', this.AddRequestForm.get( 'City' )?.value );
 			formData.append( 'GovernorateId', this.AddRequestForm.get( 'Governorate' )?.value );
 
-			// for ( const pair of formData.entries() ) {
-			// 	console.log( `${ pair[ 0 ] }: ${ pair[ 1 ] }` );
-			// }
+			for ( const pair of formData.entries() ) {
+				console.log( `${ pair[ 0 ] }: ${ pair[ 1 ] }` );
+			}
 
 			// console.log( this.AddRequestForm.value );
 
@@ -173,12 +195,12 @@ export class AddRequestComponent implements OnInit {
 
 			this.reqService.create( formData ).subscribe(
 				next => {
-					console.log( next );
+					console.log( "next", next );
 					this.toastr.success( "تم إضافة الطلب بنجاح" );
 					this.router.navigate( [ '/myRequests/' ] );
 				},
 				error => {
-					console.log( error );
+					console.log( "error", error );
 					this.toastr.error( "حدث خطأ أثناء الاضافة\nالرجاء المحاولة مرة أخري" )
 					this.submited = false;
 				}

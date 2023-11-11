@@ -43,7 +43,9 @@
 
 		<div class="col-lg-4 col-md-6 col-sm-12 col-xxl-3"
 			*ngFor="let provider of servicesProviders | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalRequestItems }">
+
 			<div class="card border h-100">
+
 				<div class="dropdown position-absolute top-0 end-0 m-3">
 					<a href="#" class="btn btn-sm btn-light btn-round small mb-0" role="button" id="dropdownShare2"
 						data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,32 +67,47 @@
 						</li>
 					</ul>
 				</div>
+
 				<div class="card-body text-center pb-0">
+
 					<div class="avatar avatar-xl flex-shrink-0 mb-3">
 						<img class="avatar-img rounded-circle" src="{{provider.profilePic}}" alt="avatar">
 					</div>
+
 					<h5 class="mb-1"> {{provider.fName +' '+ provider.lName }}</h5>
-					<!-- <small><i class="fa-duotone fa-location-dot me-1"></i>{{provider.Address}}</small> -->
+
+					<small>
+						<i class="fa-duotone fa-location-dot me-1"></i>
+						{{provider.governorateAr}} - {{provider.cityAr}}
+					</small>
+
 					<!-- Info and rating -->
 					<div class="d-flex justify-content-between my-3">
-						<h6 class="mb-0 small"><span class="fw-light">اجمالى الخدمات:</span> {{provider.serviceCount}}
+						<h6 class="mb-0 small">
+							<span class="fw-light">اجمالى الخدمات:</span> {{provider.serviceCount}}
 						</h6>
-						<h6 class="mb-0 small">{{provider.rate}}<i class="fa-duotone fa-star   text-warning ms-1"></i>
+						<h6 class="mb-0 small">
+							{{provider.rate}}
+							<i class="fa-duotone fa-star text-warning ms-1"></i>
 						</h6>
 					</div>
 				</div>
 
 				<div class="card-footer d-flex gap-3 align-items-center">
-					<a [routerLink]="['profile']" class="btn btn-sm btn-primary-soft mb-0 w-100">تفاصيل</a>
+					<a [routerLink]="['/profile', provider.id]"
+						class="btn btn-sm btn-primary-soft mb-0 w-100">تفاصيل</a>
 					<a class="btn btn-sm btn-light flex-shrink-0 mb-0"><i class="fa-duotone fa-comment"></i></a>
 				</div>
 			</div>
+
 		</div>
 
 	</div>
 
 	<!-- Pagination -->
-	<pagination-controls (pageChange)="pageChanged($event)" previousLabel="السابق" nextLabel="التالي" [maxSize]="7">
-	</pagination-controls>
+	<div class="d-flex flex-row justify-center align-content-center align-items-center my-4">
+		<pagination-controls (pageChange)="pageChanged($event)" previousLabel="السابق" nextLabel="التالي" [maxSize]="7">
+		</pagination-controls>
+	</div>
 
 </div>

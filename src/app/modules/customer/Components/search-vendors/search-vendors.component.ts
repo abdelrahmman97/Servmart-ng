@@ -37,8 +37,8 @@ export class SearchVendorsComponent {
 	fakeArray = new Array( this.pageSize );
 
 	ngOnInit () {
-		// get total items of services
-		this.serService.getTotalServicesCount().subscribe(
+		// get total items of service providers
+		this.serService.getTotalServicesProviders().subscribe(
 			next => {
 				this.totalRequestItems = next as number;
 				console.log( `services`, this.totalRequestItems );
@@ -79,16 +79,19 @@ export class SearchVendorsComponent {
 		this.loading = true;
 		this.serService.getServicesProviders( page, pageSize ).subscribe(
 			next => {
+				console.log( 'next', next );
 				this.servicesProviders = next as IServicesProviders[];
 				this.loading = false;
 			},
 			error => {
-				this.toastr.error( error )
+				console.log( 'error', error );
+				this.toastr.error( error.error )
 			}
 		);
 	}
 
 
+	// TODO(abdo tiba): To be deleted or fixed
 	onInputChange (): void {
 		console.log( 'Input Value:', this.searchInput );
 	}

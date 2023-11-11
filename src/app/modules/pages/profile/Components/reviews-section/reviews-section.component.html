@@ -1,0 +1,70 @@
+<section>
+	<div class="container">
+		<div class="card border-0">
+			<div class="card-header">
+				<h6 class="mb-0">
+					ما يقوله الأشخاص الذين عملت معهم
+				</h6>
+			</div>
+			<div class="card-body row gy-4">
+				<!-- reviews -->
+				<div class="card"
+					*ngFor="let item of userServicesRateList | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }">
+					<div class="card-header">
+						{{item}}
+						<h6 class="m-0 p-0 fs-6 fw-medium">عنوان العمل أو الخدمة</h6>
+					</div>
+					<div class="card-body">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+						maiores
+						aperiam totam consequatur, voluptate quo repellendus facilis itaque
+						cupiditate rem incidunt quos corrupti obcaecati similique excepturi
+						illo
+						reprehenderit libero in?
+					</div>
+					<div class="card-footer">
+						<div class="row g-3">
+							<div class="col-sm-6 col-md-3">
+								<span>ترشح للآخرين</span>
+								<span>
+									<br>
+									<i class="fa-solid fa-star text-warning"></i>
+									4.3
+								</span>
+							</div>
+							<div class="col-sm-6 col-md-3">
+								<span>جودة العمل</span>
+								<span>
+									<br>
+									<i class="fa-solid fa-star text-warning"></i>
+									4.3
+								</span>
+							</div>
+							<div class="col-sm-6 col-md-3">
+								<span>احترام موعد التسليم</span>
+								<span>
+									<br>
+									<i class="fa-solid fa-star text-warning"></i>
+									4.3
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="card-footer border-0">
+
+				<!-- Pagination -->
+				<div class="d-flex flex-row justify-center align-content-center align-items-center my-4">
+					<pagination-controls (pageChange)="pageChanged($event)" previousLabel="السابق" nextLabel="التالي"
+						[maxSize]="7">
+					</pagination-controls>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</section>

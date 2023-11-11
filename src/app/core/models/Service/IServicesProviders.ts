@@ -5,4 +5,8 @@ export interface IServicesProviders {
 	profilePic: string;
 	rate: number;
 	serviceCount: number;
+	cityAr: string;
+	cityEn: string;
+	governorateAr: string;
+	governorateEn: string;
 }

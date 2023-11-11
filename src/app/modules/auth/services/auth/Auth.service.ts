@@ -7,6 +7,8 @@ import { ToastrService } from 'ngx-toastr';
 import { ILoginResualtModel } from 'src/app/core/models/Auth/ILoginResualtModel';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Role } from 'src/app/core/Enums/Role.enum';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/app/core/environments/environment';
 
 @Injectable( {
 	providedIn: 'root'
@@ -23,6 +25,7 @@ export class AuthService {
 	constructor
 		(
 			private authClient: AuthenticationClient,
+			private httpClient: HttpClient,
 			private router: Router,
 			private toastr: ToastrService
 		) {
@@ -89,6 +92,10 @@ export class AuthService {
 
 	getToken () {
 		return this.isLoggedIn() ? this.userSubject.value.token : null;
+	}
+
+	getUserFromApi ( id: string ) {
+		return this.httpClient.get( `${ environment.apiUrl }/User/GetUser?id=${ id }` )
 	}
 
 	getUserSubject = () => this.userSubject;

@@ -1,0 +1,55 @@
+<section>
+	<div class="container">
+		<div class="card border-0">
+			<div class="card-header d-flex justify-content-between flex-row align-items-center">
+				<h6 class="mb-0">تفقد خدماتي</h6>
+				<a class="btn btn-primary-soft" href="#" routerLinkActive="active" [routerLink]="['/addWorkHistory']">
+					إضافة خدمة
+				</a>
+			</div>
+			<div class="card-body">
+				<div class="row gy-4">
+
+					<!-- service example -->
+					<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
+						*ngFor="let item of servicesList | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }">
+						<div class="card">
+							<img [src]="item.serviceMedia[0].mediaUrl" class="card-img-top" alt="...">
+							<div class="card-body pb-2">
+								<h5 class="card-title">
+									<a [routerLink]="['/routePath', item.id]">{{item.title}}</a>
+								</h5>
+								<p class="card-text line-clamp-3">
+									{{item.discription}}
+								</p>
+							</div>
+							<div class="card-footer border-0 pt-0">
+								<div class="d-flex flex-row justify-content-between">
+									<span class="text-primary">{{item.expectedSalary}}</span>
+
+									<span>
+										<i class="fa-solid fa-star text-warning"></i>
+										{{item.rate}}
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="card-footer border-0">
+
+				<!-- Pagination -->
+				<div class="d-flex flex-row justify-center align-content-center align-items-center my-4">
+					<pagination-controls (pageChange)="pageChanged($event)" previousLabel="السابق" nextLabel="التالي"
+						[maxSize]="7">
+					</pagination-controls>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</section>

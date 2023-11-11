@@ -5215,6 +5215,7 @@ fieldset:disabled .btn {
 	flex-wrap: wrap;
 	flex-direction: row;
 	gap: 0.6rem;
+	cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
