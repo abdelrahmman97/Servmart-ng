@@ -28,13 +28,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 		AddRequestComponent,
         OrdersComponent
     ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        RouterModule,
-        SharedModule,
-		AddRequestComponent
-	],
 	imports: [
 		CommonModule,
 		FormsModule,
@@ -45,8 +38,5 @@ import { NgxPaginationModule } from 'ngx-pagination';
 		CoreModule
 	]
 } )
-		CoreModule,
-        NgxPaginationModule,
-    ]
-})
+
 export class CustomerModule { }

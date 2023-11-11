@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IProduct } from 'src/app/core/models/Product/IProduct';
 import { IProductCategory } from 'src/app/core/models/Product/IProductCategory';

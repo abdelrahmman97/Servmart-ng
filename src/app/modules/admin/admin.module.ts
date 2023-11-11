@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { OrderListComponent } from './Components/order-list/order-list.component';
-import { SingleOrderComponent } from './Components/single-order/single-order.component';
+// import { SingleOrderComponent } from './Components/single-order/single-order.component';
 import { NgxChartComponent } from './Components/ngx-chart/ngx-chart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -24,11 +24,9 @@ import { SinglerequestComponent } from './Components/singlerequest/singlerequest
 	declarations: [
 		AdminLayoutComponent,
 		DashboardComponent,
-		SingleOrderComponent,
+		// SingleOrderComponent,
 		NgxChartComponent,
-  
 		OrderListComponent,
-		
 		NgxChartComponent,
 		ServiceListComponent,
 		RequestComponent,
