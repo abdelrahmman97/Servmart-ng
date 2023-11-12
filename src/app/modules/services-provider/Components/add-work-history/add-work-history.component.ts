@@ -25,7 +25,7 @@ export class AddWorkHistoryComponent implements OnInit {
 	selectedImages: SelectedFile[] = [];
 	serviceForm: FormGroup;
 	imagesError: boolean = false;
-	submit: boolean = false;
+	isSubmitted: boolean = false;
 
 	// for text area character limit size
 	maxCharacters = 500;
@@ -89,7 +89,7 @@ export class AddWorkHistoryComponent implements OnInit {
 	}
 
 	onSubmitForm () {
-
+		this.isSubmitted = true;
 		if ( this.serviceForm.valid ) {
 
 			const formData: FormData = new FormData();
@@ -117,10 +117,12 @@ export class AddWorkHistoryComponent implements OnInit {
 				next => {
 					console.log( next );
 					this.toastr.success( "تم إضافة الطلب بنجاح" );
-					this.router.navigate( [ '/myRequests/' ] );
+					this.router.navigate( [ '/myServices/' ] );
+					this.isSubmitted = false;
 				},
 				error => {
 					console.log( error );
+					this.isSubmitted = false;
 					this.toastr.error( "حدث خطأ أثناء الاضافة\nالرجاء المحاولة مرة أخري" )
 				}
 			);
@@ -128,7 +130,7 @@ export class AddWorkHistoryComponent implements OnInit {
 		}
 		else {
 			this.toastr.error( "الرجاء اكمال البيانات" );
-			this.submit = false;
+			this.isSubmitted = false;
 		}
 	}
 

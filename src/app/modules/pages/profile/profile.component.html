@@ -29,7 +29,18 @@
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdoanMenu">
 							<!-- Dropdown menu -->
-							<li> <a class="dropdown-item" href="#">تبليغ</a></li>
+							<li>
+								<a class="dropdown-item" href="#">
+									<i class="fa-duotone fa-flag"></i>
+									تبليغ
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item bg-danger-soft-hover" href="#">
+									<i class="fa-duotone fa-user-xmark"></i>
+									حظر
+								</a>
+							</li>
 						</ul>
 					</div>
 					<a [routerLink]="['/addRequest', user.id]" class="btn btn-primary-soft mb-0"

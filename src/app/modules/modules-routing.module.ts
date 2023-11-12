@@ -28,6 +28,7 @@ import { UsersRequestsComponent } from './pages/Components/UsersRequests/UsersRe
 import { OrderListComponent } from './vendor/Components/order-list/order-list.component';
 import { OrdersComponent } from './customer/Components/orders/orders.component';
 import { ServicesListComponent } from './services-provider/Components/services-list/services-list.component';
+import { RequestOrderDetailsComponent } from './services-provider/Components/request-order-details/request-order-details.component';
 
 
 
@@ -55,7 +56,7 @@ const routes: Routes = [
 
 	// Vendor Components
 	{ path: 'addProduct', component: AddProduectsComponent, canActivate: [ userLogedInGuard ] },
-	{ path: 'addWorkHistory', component: AddWorkHistoryComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'AddService', component: AddWorkHistoryComponent, canActivate: [ userLogedInGuard ] },
 	{ path: "orderDetails/:id", component: OrderDetailsComponent, canActivate: [ userLogedInGuard ] },
 	{ path: "orderList", component: OrderListComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'productList', component: ProductListComponent, canActivate: [ userLogedInGuard ] },
@@ -67,6 +68,7 @@ const routes: Routes = [
 	{ path: 'service/:id', component: DetailsComponent },
 	{ path: 'sendOffer/:id', component: ServiceProviderSendOfferComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'requestsOrders', component: RequestOrdersComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'requestOrderDetails/:id', component: RequestOrderDetailsComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'myServices', component: ServicesListComponent, canActivate: [ userLogedInGuard ] }
 
 

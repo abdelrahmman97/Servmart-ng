@@ -8,22 +8,30 @@ import { IUsersRequests } from 'src/app/core/models/Request/IUsersRequests';
 } )
 export class RequestService {
 
-	constructor( private httpClient: HttpClient ) { }
+	constructor ( private httpClient: HttpClient ) { }
 
-	create( request: FormData ) {
-		return this.httpClient.post( `${environment.apiUrl}/Request/Create`, request );
+	create ( request: FormData ) {
+		return this.httpClient.post( `${ environment.apiUrl }/Request/Create`, request );
 	}
 
-	getTotalUsersRequests() {
-		return this.httpClient.get<number>( `${environment.apiUrl}/Request/GetRequestCount` );
+	getTotalUsersRequests () {
+		return this.httpClient.get<number>( `${ environment.apiUrl }/Request/GetRequestCount` );
 	}
 
-	getAllUsersRequests( page: number, pageSize: number ) {
-		return this.httpClient.get<IUsersRequests[]>( `${environment.apiUrl}/Request/GetAll?page=${page}&pageSize=${pageSize}` );
+	getAllRequests ( page: number, pageSize: number ) {
+		return this.httpClient.get<IUsersRequests[]>( `${ environment.apiUrl }/Request/GetAll?page=${ page }&pageSize=${ pageSize }` );
 	}
 
-	getRequest( id: string ) {
+	getUsersRequests ( userId: string, page: number, pageSize: number ) {
+		return this.httpClient.get( `${ environment.apiUrl }/Request/GetUserRequestsById?userId=${ userId }&page=${ page }&pageSize=${ pageSize }` );
+	}
 
+	GetUserRequestsCountById ( userId: string ) {
+		return this.httpClient.get( `${ environment.apiUrl }/Request/GetUserRequestsCountById?userId=${ userId }` );
+	}
+
+	getRequestById ( requestId: string ) {
+		return this.httpClient.get( `${ environment.apiUrl }/Request/GetRequestById?requestId=${ requestId }` );
 	}
 
 	// getRequestCategory( name: string ): string {

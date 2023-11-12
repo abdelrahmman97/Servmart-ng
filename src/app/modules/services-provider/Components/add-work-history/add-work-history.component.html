@@ -9,10 +9,10 @@
 						<h3>إضافة خدمة</h3>
 
 						<button class="btn btn-primary-soft d-flex flex-row gap-2" type="submit"
-							[ngClass]="submit? 'disabled':''">
-							<span *ngIf="!submit">إضافة</span>
-							<span *ngIf="submit">جاري الإضافة</span>
-							<i class="fa-duotone fa-spinner-third fa-spin" *ngIf="submit"></i>
+							[ngClass]="isSubmitted? 'disabled':''">
+							<span *ngIf="!isSubmitted">إضافة</span>
+							<span *ngIf="isSubmitted">جاري الإضافة</span>
+							<i class="fa-duotone fa-spinner-third fa-spin" *ngIf="isSubmitted"></i>
 						</button>
 					</div>
 
@@ -55,7 +55,6 @@
 							متوسط سعر الخدمة مطلوب
 						</span>
 					</div>
-
 
 					<div class="mb-3">
 

@@ -34,13 +34,14 @@
 		<!-- Tabs content START -->
 		<div class="tab-content p-2 p-sm-4" id="nav-tabContent">
 
-			<div class="alert alert-danger d-flex flex-row justify-content-between align-content-center fade show" role="alert"
-				*ngIf="isThereError">
+			<div class="alert alert-danger d-flex flex-row justify-content-between align-content-center fade show"
+				role="alert" *ngIf="isThereError">
 				<div class="align-items-center d-flex flex-row gap-4">
 					<i class="fa-duotone fa-triangle-exclamation fs-4"></i>
 					{{errorMessage}}
 				</div>
-				<button type="button" class="btn btn-round btn-danger-soft fs-4" data-bs-dismiss="alert" aria-label="Close">
+				<button type="button" class="btn btn-round btn-danger-soft fs-4" data-bs-dismiss="alert"
+					aria-label="Close">
 					<i class="fa-solid fa-xmark"></i>
 				</button>
 			</div>
@@ -48,7 +49,8 @@
 			<!-- Tab content item -->
 			<div class="tab-pane fade active show" id="tab-1" role="tabpanel">
 				<!-- Request Item -->
-				<div class="card border mb-4" *ngFor="let request of requestList">
+				<div class="card border mb-4"
+					*ngFor="let item of requestList | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalRequestItems }">
 					<div class="card-header border-bottom d-md-flex justify-content-md-between align-items-center">
 						<!-- Icon and Title -->
 						<div class="d-flex align-items-center gap-4">
@@ -59,9 +61,9 @@
 							<!-- Title -->
 							<div class="ms-2">
 								<!-- <h6 class="card-title mb-0">اسم الطلب او الخدمة</h6> -->
-								<h6 class="card-title mb-0">{{request.Title}}</h6>
+								<h6 class="card-title mb-0">{{item.Title}}</h6>
 								<ul class="nav nav-divider small p-0 mt-2">
-									<li class="nav-item">رقم الطلب: {{request.ID}}</li>
+									<li class="nav-item">رقم الطلب: {{item.id}}</li>
 									<li class="nav-item">اسم التصنيف</li>
 								</ul>
 							</div>
@@ -70,7 +72,7 @@
 						<!-- Button -->
 						<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
 							<a href="#" class="btn btn-primary-soft mb-0">تعديل</a>
-							<a href="#" [routerLink]="['/offers',request.ID]" class="btn btn-primary mb-0">رؤية
+							<a href="#" [routerLink]="['/offers',item.id]" class="btn btn-primary mb-0">رؤية
 								العروض</a>
 						</div>
 					</div>
@@ -78,18 +80,18 @@
 						<div class="row g-3">
 							<div class="col-sm-6 col-md-4">
 								<span>تاريخ الانشاء</span>
-								<h6 class="mb-0">{{request.StartDate}}</h6>
+								<h6 class="mb-0">{{item.startDate}}</h6>
 							</div>
 
 							<div class="col-sm-6 col-md-4">
 								<span>تاريخ الانتهاء</span>
 								<!-- <h6 class="mb-0">Tue 06 Aug 4:00 PM</h6> -->
-								<h6 class="mb-0">{{request.EndDate}}</h6>
+								<h6 class="mb-0">{{item.endDate}}</h6>
 							</div>
 
 							<div class="col-md-4">
 								<span>الميزانية</span>
-								<h6 class="mb-0">${{request.ExpectSalary}}</h6>
+								<h6 class="mb-0">${{item.expectSalary}}</h6>
 							</div>
 						</div>
 					</div>

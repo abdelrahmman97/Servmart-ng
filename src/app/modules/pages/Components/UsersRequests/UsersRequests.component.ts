@@ -11,11 +11,11 @@ import { RequestServiceCategoriesService } from 'src/app/shared/services/Request
 @Component( {
 	selector: 'app-UsersRequests',
 	templateUrl: './UsersRequests.component.html',
-	styleUrls: ['./UsersRequests.component.css']
+	styleUrls: [ './UsersRequests.component.css' ]
 } )
 export class UsersRequestsComponent implements OnInit {
 
-	constructor(
+	constructor (
 		private reqService: RequestService,
 		private toastr: ToastrService,
 		private address: AddressService,
@@ -33,7 +33,7 @@ export class UsersRequestsComponent implements OnInit {
 
 	fakeArray = new Array( this.pageSize );
 
-	ngOnInit() {
+	ngOnInit () {
 
 		// get total items of requests
 		this.reqService.getTotalUsersRequests().subscribe(
@@ -63,18 +63,18 @@ export class UsersRequestsComponent implements OnInit {
 		);
 	}
 
-	getCities( event: any ) {
-		this.CitiesList = this.GovernoratesList[event.target.value - 1].city;
+	getCities ( event: any ) {
+		this.CitiesList = this.GovernoratesList[ event.target.value - 1 ].city;
 	}
 
-	pageChanged( event: any ) {
+	pageChanged ( event: any ) {
 		this.currentPage = event;
 		this.getRequests( this.currentPage, this.pageSize );
 	}
 
-	getRequests( page: number, pageSize: number ) {
+	getRequests ( page: number, pageSize: number ) {
 		this.loading = true;
-		this.reqService.getAllUsersRequests( page, pageSize ).subscribe(
+		this.reqService.getAllRequests( page, pageSize ).subscribe(
 			next => {
 				this.usersRequestsList = next as IUsersRequests[];
 				this.loading = false;

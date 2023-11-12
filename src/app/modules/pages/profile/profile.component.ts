@@ -45,7 +45,6 @@ export class ProfileComponent {
 
 	ngOnInit (): void {
 
-
 		this.activeRoute.params.subscribe( {
 			next: ( params ) => {
 				this.isLoading = true;

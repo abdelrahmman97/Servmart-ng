@@ -48,8 +48,8 @@
 									*ngFor="let item of services | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalRequestItems }">
 									<tr>
 										<td class="w-25">
-											<img [src]="item.serviceMedia[0].mediaUrl"
-												class="bg-dark w-25 rounded-circle" alt="">
+											<img [src]="item.serviceMedia[0].mediaUrl" class="bg-dark w-75 rounded"
+												alt="">
 										</td>
 										<td>{{item.title}}</td>
 										<td>{{item.serviceCategory.nameAr}}</td>
@@ -57,11 +57,10 @@
 										<td>{{item.rate}}</td>
 										<td>
 											<div class="d-flex flex-row gap-3">
-												<button class="btn btn-outline-primary"
-													[routerLink]="['/edit',item.id]">
+												<button class="btn btn-primary-soft" [routerLink]="['/edit',item.id]">
 													تعديل
 												</button>
-												<button (click)="deleteService(item.id)" class="btn btn-outline-danger">
+												<button (click)="deleteService(item.id)" class="btn btn-danger-soft">
 													حذف
 												</button>
 											</div>

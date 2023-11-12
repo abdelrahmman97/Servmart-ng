@@ -154,6 +154,7 @@ export class AddRequestComponent implements OnInit {
 			// console.log( this.AddRequestForm.value );
 			const formData: FormData = new FormData();
 
+			//  images
 			if ( this.selectedImages ) {
 				this.imagesRequiredError = false;
 				for ( let i = 0; i < this.selectedImages.length; i++ ) {
@@ -164,15 +165,18 @@ export class AddRequestComponent implements OnInit {
 				this.imagesRequiredError = true;
 			}
 
+			//  video
 			if ( this.selectedVideo ) {
 				formData.append( 'Video', this.selectedVideo );
 			}
 
 			if ( this.serviceProvidersId == undefined ) {
 				formData.append( 'ProviderID', null );
+				formData.append( 'IsDirect', "false" );
 			}
 			else {
 				formData.append( 'ProviderID', this.serviceProvidersId );
+				formData.append( 'IsDirect', "true" );
 			}
 
 			formData.append( 'ClientId', null );

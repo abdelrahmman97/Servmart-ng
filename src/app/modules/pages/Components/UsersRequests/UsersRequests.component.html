@@ -251,9 +251,9 @@
 							<p>الموقع</p>
 							<div class="d-flex flex-column gap-2">
 								<div class="mb-3">
-									<label for="Governorate" class="form-label">المحافظة</label>
-									<select class="form-select" id="Governorate" name="Governorate"
-										formControlName="Governorate" (change)="getCities($event)">
+									<label for="Governorate2" class="form-label">المحافظة</label>
+									<select class="form-select" id="Governorate2" name="Governorate2"
+										formControlName="Governorate2" (change)="getCities($event)">
 										<option selected disabled>-اختر-</option>
 										<option *ngFor="let item of GovernoratesList" [value]="item.id">{{item.nameAr}}
 										</option>
@@ -261,8 +261,8 @@
 								</div>
 
 								<div class="mb-3">
-									<label for="City" class="form-label">المركز</label>
-									<select class="form-select" id="City" name="City" formControlName="City">
+									<label for="City2" class="form-label">المركز</label>
+									<select class="form-select" id="City2" name="City2" formControlName="City2">
 										<option selected disabled>-اختر-</option>
 										<option *ngFor="let item of CitiesList" [value]="item.id">{{item.nameAr}}
 										</option>
@@ -275,8 +275,8 @@
 						<div>
 							<p>التصنيف</p>
 							<div>
-								<select class="form-select" name="Category" id="Category" aria-label="التصنيف"
-									formControlName="Category">
+								<select class="form-select" name="Category2" id="Category2" aria-label="التصنيف"
+									formControlName="Category2">
 									<option selected>-اختر-</option>
 									<option *ngFor="let item of CategoriesList" [value]="item.id">{{item.nameAr}}
 									</option>
