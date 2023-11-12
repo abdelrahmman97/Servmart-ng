@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
 import { ServiceService } from 'src/app/modules/services-provider/services/service.service';
 
 @Component( {
@@ -14,7 +15,7 @@ export class ReviewsSectionComponent implements OnInit {
 		private toastr: ToastrService,
 	) { }
 
-	@Input() userId;
+	@Input() User: IUserProfile;
 	userServicesRateList: any[] = [];
 
 	loading: boolean;
@@ -24,24 +25,24 @@ export class ReviewsSectionComponent implements OnInit {
 
 	ngOnInit () {
 		// get total items of user rate rows
-		this.serService.GetTotalUserRatesCount( this.userId ).subscribe(
+		this.serService.GetTotalUserRatesCount( this.User.id ).subscribe(
 			next => {
 				this.totalItems = next as number;
 				console.log( `total items`, this.totalItems );
 			}
 		);
 
-		this.GetUserRate( this.userId, this.currentPage, this.pageSize );
+		this.GetUserRate( this.User.id, this.currentPage, this.pageSize );
 	}
 
 	pageChanged ( event: any ) {
 		this.currentPage = event;
-		this.GetUserRate( this.userId, this.currentPage, this.pageSize );
+		this.GetUserRate( this.User.id, this.currentPage, this.pageSize );
 	}
 
 	GetUserRate ( userId: string, page: number, pageSize: number ) {
 		this.loading = true;
-		this.serService.GetUserRate( this.userId, page, pageSize ).subscribe( {
+		this.serService.GetUserRate( userId, page, pageSize ).subscribe( {
 			next: ( data ) => {
 				console.log( 'next rates', data );
 				this.userServicesRateList = data as any[];

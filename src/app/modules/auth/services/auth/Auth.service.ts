@@ -106,34 +106,18 @@ export class AuthService {
 	private getUserFromLocalStorage = () => JSON.parse( localStorage.getItem( this.AuthModel ) );
 	public updateUserInLocalStorage = ( data ) => localStorage.setItem( this.AuthModel, JSON.stringify( data ) );
 
-	// Cehck user type ============================================================================
+	// Cehck the logged in user type ============================================================================
 
-	isCustomer (): boolean {
-		if ( this.getRole().includes( Role.Customer ) )
-			return true;
-		else
-			return false;
-	}
+	isUserLoggedInCustomer = (): boolean => this.getRole().includes( Role.Customer );
 
-	isVendor (): boolean {
-		if ( this.getRole().includes( Role.Vendor ) )
-			return true;
-		else
-			return false;
-	}
+	isUserLoggedInVendor = (): boolean => this.getRole().includes( Role.Vendor );
 
-	isAdmin (): boolean {
-		if ( this.getRole().includes( Role.Admin ) )
-			return true;
-		else
-			return false;
-	}
+	isUserLoggedInAdmin = (): boolean => this.getRole().includes( Role.Admin );
 
-	isServiceProvider (): boolean {
-		if ( this.getRole().includes( Role.ServiceProvider ) )
-			return true;
-		else
-			return false;
-	}
+	isUserLoggedInServiceProvider = (): boolean => this.getRole().includes( Role.ServiceProvider );
+
+	isCurrentUser = ( userId: string ): boolean => this.isLoggedIn() ? this.getUserValue().userID == userId : false;
+
+
 
 }

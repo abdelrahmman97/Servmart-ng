@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { AuthService } from '../../auth/services/auth/Auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
+import { Role } from 'src/app/core/Enums/Role.enum';
 
 @Component( {
 	selector: 'app-profile',
@@ -21,41 +22,59 @@ export class ProfileComponent {
 		private sanitizer: DomSanitizer
 	) { }
 
+	isLoading: boolean = false;
 	tab: string = "about";
 
 	userId: string = "";
 	user: IUserProfile = null;
+	userRoles: string[] = [];
 
-	isCustomer: boolean = this.auth.isCustomer();
-	isVendor: boolean = this.auth.isVendor();
-	isServiceProvider: boolean = this.auth.isServiceProvider();
-	isAdmin: boolean = this.auth.isAdmin();
+	isUserLoggedInCustomer: boolean = this.auth.isUserLoggedInCustomer();
+	isUserLoggedInVendor: boolean = this.auth.isUserLoggedInVendor();
+	isUserLoggedInServiceProvider: boolean = this.auth.isUserLoggedInServiceProvider();
+	isUserLoggedInAdmin: boolean = this.auth.isUserLoggedInAdmin();
+
+	isViewProfileUserSProvider: boolean = false;
 
 	items: Item[] = [];
 	currentPage = 1;
 	pageSize: number;
 	count: number;
 
+	isCurrentUser: boolean = false;
+
 	ngOnInit (): void {
+
 
 		this.activeRoute.params.subscribe( {
 			next: ( params ) => {
+				this.isLoading = true;
 				this.userId = params[ 'id' ];
+				this.isCurrentUser = this.auth.isCurrentUser( this.userId );
 				this.auth.getUserFromApi( this.userId ).subscribe( {
 					next: ( data ) => {
-						this.user = data as IUserProfile;
+						const _data = data as any;
+						this.user = _data.user as IUserProfile;
+						this.userRoles = _data.roles as any[];
+						this.isViewProfileUserSProvider = this.userRoles.includes( Role.ServiceProvider );
+						this.isLoading = false;
 						console.log( "🚀 ~ this.user:", this.user )
 					},
 					error: ( error ) => {
+						this.isLoading = false;
 						console.log( "🚀 ~ error 1:", error )
 					}
 				} );
 			},
 			error: ( error ) => {
+				this.isLoading = false;
 				console.log( "🚀 ~ errro 2:", error )
 			}
 		} );
 
+
+
+		// TODO(abdo tiba): Remove useles code
 		var name = '';
 		const categoryName = ''
 		const expectedSalary = 0;
@@ -81,7 +100,10 @@ export class ProfileComponent {
 			} );
 	}
 
-	isCurrentUser = () => this.auth.getUserValue().userID == this.userId;
+
+
+
+
 
 	transform ( file: string ): any {
 

@@ -39,10 +39,23 @@
 						<span
 							*ngIf="serviceForm.get('CategoryID').touched && serviceForm.get('CategoryID').hasError('required')"
 							class="invalid-feedback">
-							نوع الخدمة
+							نوع الخدمة مطلوب
 						</span>
 
 					</div>
+
+					<div class="mb-3">
+						<label for="ExpectedSalary" class="form-label">متوسط سعر الخدمة</label>
+						<input formControlName="ExpectedSalary" class="form-control" type="number" min="1" step="any"
+							id="ExpectedSalary"
+							[ngClass]="{'is-invalid': serviceForm.get('ExpectedSalary').touched && serviceForm.get('ExpectedSalary').invalid}">
+						<span
+							*ngIf="serviceForm.get('ExpectedSalary').touched && serviceForm.get('ExpectedSalary').hasError('required')"
+							class="invalid-feedback">
+							متوسط سعر الخدمة مطلوب
+						</span>
+					</div>
+
 
 					<div class="mb-3">
 

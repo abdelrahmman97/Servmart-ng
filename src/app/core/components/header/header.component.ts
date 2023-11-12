@@ -5,18 +5,18 @@ import { ILoginResualtModel } from '../../models/Auth/ILoginResualtModel';
 @Component( {
 	selector: 'app-header',
 	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.css']
+	styleUrls: [ './header.component.css' ]
 } )
 export class HeaderComponent {
 
 	user?: ILoginResualtModel | null = null;
-	constructor( private auth: AuthService ) {
+	constructor ( private auth: AuthService ) {
 		this.auth.getUserAsObservable().subscribe( x => this.user = x );
 	}
 
-	isCustomer: boolean = this.auth.isCustomer();
-	isVendor: boolean = this.auth.isVendor();
-	isServiceProvider: boolean = this.auth.isServiceProvider();
-	isAdmin: boolean = this.auth.isAdmin();
+	isUserLoggedInCustomer: boolean = this.auth.isUserLoggedInCustomer();
+	isUserLoggedInVendor: boolean = this.auth.isUserLoggedInVendor();
+	isUserLoggedInServiceProvider: boolean = this.auth.isUserLoggedInServiceProvider();
+	isUserLoggedInAdmin: boolean = this.auth.isUserLoggedInAdmin();
 
 }

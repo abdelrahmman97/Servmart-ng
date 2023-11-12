@@ -3,7 +3,8 @@
 		<div class="card border-0">
 			<div class="card-header d-flex justify-content-between flex-row align-items-center">
 				<h6 class="mb-0">تفقد خدماتي</h6>
-				<a class="btn btn-primary-soft" href="#" routerLinkActive="active" [routerLink]="['/addWorkHistory']">
+				<a class="btn btn-primary-soft" href="#" routerLinkActive="active" [routerLink]="['/addWorkHistory']"
+					*ngIf="isCurrentUser">
 					إضافة خدمة
 				</a>
 			</div>

@@ -4,8 +4,11 @@
 			<!-- Avatar and info -->
 			<div class="d-sm-flex justify-content-between align-items-start gap-2">
 				<div class="d-sm-flex align-items-center gap-2">
-					<div class="avatar avatar-xl mb-2 mb-sm-0">
-						<img class="avatar-img rounded-circle" [src]="user.profilePic" alt="">
+					<div class="avatar avatar-xl mb-2 mb-sm-0 ">
+						<img class="avatar-img rounded-circle" [src]="user.profilePic" alt="" *ngIf="!isLoading">
+						<div class="avatar-img rounded-circle d-flex placeholder-glow">
+							<span class="avatar-img rounded-circle placeholder" alt="" *ngIf="isLoading"></span>
+						</div>
 					</div>
 					<div class="d-flex flex-column gap-1">
 						<h4 class="mb-2 mb-sm-0">
@@ -18,7 +21,7 @@
 					</div>
 				</div>
 
-				<div class=" d-flex align-items-center flex-shrink-0 me-auto gap-4" *ngIf="!isCurrentUser()">
+				<div class="d-flex align-items-center flex-shrink-0 me-auto gap-4" *ngIf="!isCurrentUser">
 					<div class="dropdown">
 						<a class="btn btn-light" href="#" id="dropdoanMenu" data-bs-toggle="dropdown" title="اعدادت"
 							aria-haspopup="true" aria-expanded="false">
@@ -30,7 +33,7 @@
 						</ul>
 					</div>
 					<a [routerLink]="['/addRequest', user.id]" class="btn btn-primary-soft mb-0"
-						*ngIf="isServiceProvider">
+						*ngIf="isViewProfileUserSProvider">
 						<i class="fa-duotone fa-handshake"></i> وظفني
 					</a>
 				</div>
@@ -47,7 +50,7 @@
 						</a>
 					</li>
 
-					<li class="nav-item">
+					<li class="nav-item" *ngIf="!isCurrentUser || !isUserLoggedInCustomer">
 						<a class="nav-link p-2 rounded" href="#works" data-bs-toggle="tab" aria-selected="false"
 							role="tab">
 							<i class="fa-duotone fa-boxes-stacked"></i>
@@ -55,7 +58,7 @@
 						</a>
 					</li>
 
-					<li class="nav-item">
+					<li class="nav-item" *ngIf="!isCurrentUser || !isUserLoggedInCustomer">
 						<a class="nav-link p-2 rounded" href="#services" data-bs-toggle="tab" aria-selected="false"
 							role="tab">
 							<i class="fa-duotone fa-bolt"></i>
@@ -63,7 +66,7 @@
 						</a>
 					</li>
 
-					<li class="nav-item">
+					<li class="nav-item" *ngIf="!isCurrentUser || !isUserLoggedInCustomer">
 						<a class="nav-link p-2 rounded" href="#reviews" data-bs-toggle="tab" aria-selected="false"
 							role="tab">
 							<i class="fa-duotone fa-star-sharp-half"></i>
@@ -79,19 +82,18 @@
 
 <div class="tab-content card-body p-0 pb-lg-0 pb-4" id="nav-tabContent">
 	<!-- about section -->
-	<profile-about-section role="tabpanel" [userId]="user.id" id="about"
+	<profile-about-section role="tabpanel" [User]="user" [UserRoles]="userRoles" id="about"
 		class="tab-pane fade active show"></profile-about-section>
 
 	<!-- previous works section -->
-	<profile-previous-works-section role="tabpanel" [userId]="user.id" id="works"
+	<profile-previous-works-section role="tabpanel" [User]="user" id="works"
 		class="tab-pane fade"></profile-previous-works-section>
 
 	<!-- services section -->
-	<profile-services-section role="tabpanel" [userId]="user.id" id="services"
+	<profile-services-section role="tabpanel" [User]="user" id="services"
 		class="tab-pane fade"></profile-services-section>
 
 	<!-- reviews section -->
-	<profile-reviews-section role="tabpanel" [userId]="user.id" id="reviews"
-		class="tab-pane fade"></profile-reviews-section>
+	<profile-reviews-section role="tabpanel" [User]="user" id="reviews" class="tab-pane fade"></profile-reviews-section>
 
 </div>

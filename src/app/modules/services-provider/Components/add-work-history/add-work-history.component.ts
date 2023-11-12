@@ -44,7 +44,8 @@ export class AddWorkHistoryComponent implements OnInit {
 			ServiceTitle: new FormControl( '', Validators.required ),
 			CategoryID: new FormControl( '', Validators.required ),
 			Description: new FormControl( '', Validators.required ),
-			ServicePic: new FormControl( '', Validators.required )
+			ServicePic: new FormControl( '', Validators.required ),
+			ExpectedSalary: new FormControl( '', Validators.required )
 		} );
 
 	}
@@ -103,6 +104,7 @@ export class AddWorkHistoryComponent implements OnInit {
 			formData.append( 'Title', this.serviceForm.get( 'ServiceTitle' )?.value );
 			formData.append( 'CategoryID', this.serviceForm.get( 'CategoryID' )?.value );
 			formData.append( 'Description', this.serviceForm.get( 'Description' )?.value );
+			formData.append( 'ExpectedSalary', this.serviceForm.get( 'ExpectedSalary' )?.value );
 
 			for ( const pair of formData.entries() ) {
 				console.log( `${ pair[ 0 ] }: ${ pair[ 1 ] }` );

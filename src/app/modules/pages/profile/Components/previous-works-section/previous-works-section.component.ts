@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
 
 @Component( {
 	selector: 'profile-previous-works-section',
@@ -9,7 +10,7 @@ export class PreviousWorksSectionComponent implements OnInit {
 
 	constructor () { }
 
-	@Input() userId;
+	@Input() User: IUserProfile;
 	previusWorkList: any[] = [];
 
 	ngOnInit () {

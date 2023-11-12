@@ -34,7 +34,7 @@ import { ServicesListComponent } from './services-provider/Components/services-l
 const routes: Routes = [
 
 	// Shared Components
-	{ path: 'profile/:id', component: ProfileComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'profile/:id', component: ProfileComponent },
 	{ path: "shop", component: ShopComponent },
 	{ path: "details/:productID", component: DetailsComponent },
 	{ path: "settings", component: AccountSettingsComponent, canActivate: [ userLogedInGuard ] },
@@ -60,7 +60,7 @@ const routes: Routes = [
 	{ path: "orderList", component: OrderListComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'productList', component: ProductListComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'edit/:id', component: EditComponent, canActivate: [ userLogedInGuard ] },
-	{ path: 'product/:id', component: ProductDetailsComponent },
+	{ path: 'product/:id', component: ProductDetailsComponent, canActivate: [ userLogedInGuard ] },
 
 	// Service Provider Compproducts
 	{ path: 'bids', component: SendOffersComponent, canActivate: [ userLogedInGuard ] },

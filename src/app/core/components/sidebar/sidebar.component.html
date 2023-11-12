@@ -43,8 +43,7 @@
 				<div id="customerRequests" class="collapse p-2" data-bs-parent="#sideNavbar">
 					<ul class="nav flex-column list-group pe-0 pe-xl-4">
 						<li class="nav-item">
-							<a class="nav-link with-dot" href="#" [routerLink]="['myOrders']"
-								routerLinkActive="active">
+							<a class="nav-link with-dot" href="#" [routerLink]="['myOrders']" routerLinkActive="active">
 								المنتجات
 							</a>
 						</li>
@@ -57,7 +56,7 @@
 					</ul>
 				</div>
 			</li>
-			<li class="nav-item" *ngIf="isServiceProvider">
+			<li class="nav-item" *ngIf="isUserLoggedInServiceProvider">
 				<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
 					data-bs-toggle="collapse" data-bs-target="#serviceProvider" aria-expanded="false"
 					aria-controls="serviceProvider" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -92,7 +91,7 @@
 					</ul>
 				</div>
 			</li>
-			<li class="nav-item" *ngIf="isVendor">
+			<li class="nav-item" *ngIf="isUserLoggedInVendor">
 				<a class="nav-link justify-content-center justify-content-xl-start btn-toggle" href="#"
 					data-bs-toggle="collapse" data-bs-target="#vendor" aria-expanded="false" aria-controls="vendor"
 					routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">

@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
+import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 import { ServiceService } from 'src/app/modules/services-provider/services/service.service';
 
 @Component( {
@@ -10,11 +12,12 @@ import { ServiceService } from 'src/app/modules/services-provider/services/servi
 export class ServicesSectionComponent implements OnInit {
 
 	constructor (
+		private auth: AuthService,
 		private serService: ServiceService,
 		private toastr: ToastrService,
 	) { }
 
-	@Input() userId;
+	@Input() User: IUserProfile;
 	servicesList: any[] = [];
 
 	loading: boolean;
@@ -22,21 +25,24 @@ export class ServicesSectionComponent implements OnInit {
 	pageSize: number = 3;
 	totalItems: number = 0;
 
+	isCurrentUser: boolean;
+
 	ngOnInit () {
+		this.isCurrentUser = this.auth.isCurrentUser( this.User.id );
 		// get total items of user rate rows
-		this.serService.GetTotalUserRatesCount( this.userId ).subscribe(
+		this.serService.GetTotalUserRatesCount( this.User.id ).subscribe(
 			next => {
 				this.totalItems = next as number;
 				console.log( `total items`, this.totalItems );
 			}
 		);
 
-		this.GetServices( this.userId, this.currentPage, this.pageSize );
+		this.GetServices( this.User.id, this.currentPage, this.pageSize );
 	}
 
 	pageChanged ( event: any ) {
 		this.currentPage = event;
-		this.GetServices( this.userId, this.currentPage, this.pageSize );
+		this.GetServices( this.User.id, this.currentPage, this.pageSize );
 	}
 
 	GetServices ( userId: string, page: number, pageSize: number ) {
