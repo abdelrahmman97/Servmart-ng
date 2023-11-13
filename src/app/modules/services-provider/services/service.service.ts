@@ -17,8 +17,8 @@ export class ServiceService {
 		return this.http.post( `${ environment.apiUrl }/Service/AddService`, service );
 	}
 
-	getAllServices () {
-		return this.http.get( `${ environment.apiUrl }/Service/GetAllServices` );
+	getAllServices ( page: number, pageSize: number ) {
+		return this.http.get( `${ environment.apiUrl }/Service/GetAllServices?page=${ page }&pageSize=${ pageSize }` );
 	}
 
 	getUserService () {
