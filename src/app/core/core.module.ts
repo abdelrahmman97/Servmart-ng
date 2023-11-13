@@ -14,6 +14,7 @@ import { CustomCurrencyPipe } from './Pipes/CustomCurrency/CustomCurrency.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { CustomDatePipe } from './Pipes/CustomDate/CustomDate.pipe';
 import { DateFromNowPipe } from './Pipes/DateFromNow/date-from-now.pipe';
+import { DateDifferencePipe } from './Pipes/Date-Difference/Date-Difference.pipe';
 
 
 
@@ -36,6 +37,7 @@ import { DateFromNowPipe } from './Pipes/DateFromNow/date-from-now.pipe';
 		CustomCurrencyPipe,
 		CustomDatePipe,
 		DateFromNowPipe,
+		DateDifferencePipe
 	],
 	imports: [
 		CommonModule,
@@ -48,6 +50,7 @@ import { DateFromNowPipe } from './Pipes/DateFromNow/date-from-now.pipe';
 		CustomCurrencyPipe,
 		CustomDatePipe,
 		DateFromNowPipe,
+		DateDifferencePipe
 	]
 } )
 export class CoreModule { }
