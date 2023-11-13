@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { CustomCurrencyPipe } from './CustomCurrency.pipe';
+import { DateFromNowPipe } from './date-from-now.pipe';
 
-describe('Pipe: CustomCurrencye', () => {
+describe('Pipe: DateFromNowe', () => {
   it('create an instance', () => {
-    let pipe = new CustomCurrencyPipe();
+    let pipe = new DateFromNowPipe();
     expect(pipe).toBeTruthy();
   });
 });

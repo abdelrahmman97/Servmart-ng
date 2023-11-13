@@ -10,12 +10,14 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BottomSidebarComponent } from './components/BottomSidebar/BottomSidebar.component';
-import { CustomCurrencyPipe } from './Pipes/CustomCurrency.pipe';
+import { CustomCurrencyPipe } from './Pipes/CustomCurrency/CustomCurrency.pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { CustomDatePipe } from './Pipes/CustomDate/CustomDate.pipe';
+import { DateFromNowPipe } from './Pipes/DateFromNow/date-from-now.pipe';
 
 
 
-@NgModule({
+@NgModule( {
 	declarations: [
 		// Pages
 		NotFoundComponent,
@@ -31,7 +33,9 @@ import { FooterComponent } from './components/footer/footer.component';
 		FooterComponent,
 
 		// Pipes
-		CustomCurrencyPipe
+		CustomCurrencyPipe,
+		CustomDatePipe,
+		DateFromNowPipe,
 	],
 	imports: [
 		CommonModule,
@@ -41,7 +45,9 @@ import { FooterComponent } from './components/footer/footer.component';
 		HeaderComponent,
 		UserDropdownComponent,
 		FooterComponent,
-		CustomCurrencyPipe
+		CustomCurrencyPipe,
+		CustomDatePipe,
+		DateFromNowPipe,
 	]
-})
+} )
 export class CoreModule { }
