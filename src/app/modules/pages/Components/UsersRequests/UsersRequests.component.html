@@ -146,87 +146,100 @@
 		<div class="d-flex flex-column pt-4 pb-sm-8 pb-md-3 gap-4">
 
 			<!-- Requests -->
-			<div class="card p-4"
+			<div class="card"
 				*ngFor="let item of usersRequestsList | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalRequestItems }">
+
+				<div class="card-header border-0 p-3">
+
+					<div class="d-flex justify-content-between align-items-center">
+						<h5 class="card-title">
+							<a [routerLink]="['/requestDetails', item.id]">
+								{{item.title}}
+							</a>
+						</h5>
+						<a class="btn btn-primary-soft" [routerLink]="['/sendOffer/', item.id]">ارسال عرض</a>
+					</div>
+
+					<div class="d-flex flex-row align-items-center gap-3">
+						<p class="mb-1">
+							<i class="fa-duotone fa-map-location text-primary"></i>
+							{{item.governorateAr}} - {{item.cityAr}}
+						</p>
+						<div class="d-flex flex-row gap-3">
+							<p class="m-0">
+								<i class="fa-duotone fa-hand-holding-dollar text-primary"></i>
+								{{item.expectedSalary | CustomCurrency:"ar":false}}
+							</p>
+							<p class="m-0">
+								<i class="fa-duotone fa-calendar-days text-primary"></i>
+								{{item.startDate | DateDifference:item.endDate}}
+							</p>
+						</div>
+					</div>
+
+				</div>
+
+
+				<div class="card-body border-0 py-0">
+					<p class="line-clamp-3 m-0">
+						{{item.details}}
+					</p>
+				</div>
+
+				<div class="card-footer border-0">
+					<small>
+						<i class="fa-duotone fa-clock text-primary"></i>
+						{{item.startDate | DateFromNow}}
+					</small>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Requests placeholder-->
+		<div *ngIf="loading">
+			<div class="card p-4" *ngFor="let item of fakeArray">
 				<div class="row g-0">
-					<div class="col-md-3 col-sm-4">
-						<img [src]="item.images[0]" class="card-img rounded-2" title="{{item.title}}">
+					<div class="col-md-3 col-sm-4 placeholder-wave">
+						<div class="card-img rounded-2 placeholder placeholder-lg h-100"></div>
 					</div>
 					<div class="col">
 						<div class="d-flex flex-column gap-1 px-3">
-							<h5 class="card-title">
-								<a href="#">
-									{{item.title}}
-								</a>
+							<h5 class="card-title placeholder-glow">
+								<a class="placeholder col-6"></a>
 							</h5>
-							<div class="">
-								<p class="mb-1">
-									<i class="bi bi-geo-alt me-2"></i>
-									{{item.governorateId}} - {{item.cityId}}
-								</p>
-								<div class="d-flex flex-row gap-3">
-									<p class="m-0">{{item.expectedSalary}}</p>
-									<p class="m-0"> {{item.endDate}}</p>
+							<div class="row g-0 placeholder-glow">
+								<div class="row placeholder-glow gap-2">
+									<p class="mb-1 placeholder col-3"></p>
+									<p class="mb-1 placeholder col-3"></p>
 								</div>
-							</div>
-							<div class="row g-0">
-								<p class="line-clamp-3">
-									{{item.details}}
+								<p class="card-text placeholder-glow">
+									<span class="placeholder col-7"></span>
+									<span class="placeholder col-4"></span>
+									<span class="placeholder col-4"></span>
+									<span class="placeholder col-6"></span>
+									<span class="placeholder col-8"></span>
 								</p>
+								<div class="mb-1 placeholder col-2"></div>
 							</div>
-							<div class="row g-0">
-								مند 14 ساعة
-							</div>
+							<p class="card-text g-0 placeholder-glow"></p>
 						</div>
 					</div>
-					<div class="col-md-2 text-start">
-						<a class="btn btn-primary-soft" [routerLink]="['/sendOffer/', item.id]">ارسال عرض</a>
+					<div class="col-md-2 text-start placeholder-wave">
+						<a class="btn btn-primary bg-primary placeholder col-6"></a>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<!-- Requests placeholder-->
-			<div *ngIf="loading">
-				<div class="card p-4" *ngFor="let item of fakeArray">
-					<div class="row g-0">
-						<div class="col-md-3 col-sm-4 placeholder-wave">
-							<div class="card-img rounded-2 placeholder placeholder-lg h-100"></div>
-						</div>
-						<div class="col">
-							<div class="d-flex flex-column gap-1 px-3">
-								<h5 class="card-title placeholder-glow">
-									<a class="placeholder col-6"></a>
-								</h5>
-								<div class="row g-0 placeholder-glow">
-									<div class="row placeholder-glow gap-2">
-										<p class="mb-1 placeholder col-3"></p>
-										<p class="mb-1 placeholder col-3"></p>
-									</div>
-									<p class="card-text placeholder-glow">
-										<span class="placeholder col-7"></span>
-										<span class="placeholder col-4"></span>
-										<span class="placeholder col-4"></span>
-										<span class="placeholder col-6"></span>
-										<span class="placeholder col-8"></span>
-									</p>
-									<div class="mb-1 placeholder col-2"></div>
-								</div>
-								<p class="card-text g-0 placeholder-glow"></p>
-							</div>
-						</div>
-						<div class="col-md-2 text-start placeholder-wave">
-							<a class="btn btn-primary bg-primary placeholder col-6"></a>
-						</div>
-					</div>
-				</div>
-			</div>
+		<!-- No Requests -->
+		<div *ngIf="usersRequestsList.length == 0">
+			<h1>لا يوجد طلبات حاليا</h1>
+		</div>
 
-			<!-- No Requests -->
-			<div *ngIf="usersRequestsList.length == 0">
-				<h1>لا يوجد طلبات حاليا</h1>
-			</div>
-
-			<!-- Pagination -->
+		<!-- Pagination -->
+		<div class="d-flex justify-center">
 			<pagination-controls (pageChange)="pageChanged($event)" previousLabel="السابق" nextLabel="التالي"
 				[maxSize]="7">
 			</pagination-controls>

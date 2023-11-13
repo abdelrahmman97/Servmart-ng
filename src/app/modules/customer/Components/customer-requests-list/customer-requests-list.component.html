@@ -49,51 +49,43 @@
 			<!-- Tab content item -->
 			<div class="tab-pane fade active show" id="tab-1" role="tabpanel">
 				<!-- Request Item -->
-				<div class="card border mb-4"
-					*ngFor="let item of requestList | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalRequestItems }">
-					<div class="card-header border-bottom d-md-flex justify-content-md-between align-items-center">
-						<!-- Icon and Title -->
-						<div class="d-flex align-items-center gap-4">
-							<div class="icon-lg bg-light rounded-circle flex-shrink-0">
-								<img src="https://images.placeholders.dev/?width=200&height=200" alt=""
-									class="rounded-circle">
-							</div>
-							<!-- Title -->
-							<div class="ms-2">
-								<!-- <h6 class="card-title mb-0">اسم الطلب او الخدمة</h6> -->
-								<h6 class="card-title mb-0">{{item.Title}}</h6>
-								<ul class="nav nav-divider small p-0 mt-2">
-									<li class="nav-item">رقم الطلب: {{item.id}}</li>
-									<li class="nav-item">اسم التصنيف</li>
-								</ul>
-							</div>
-						</div>
-
-						<!-- Button -->
-						<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
-							<a href="#" class="btn btn-primary-soft mb-0">تعديل</a>
-							<a href="#" [routerLink]="['/offers',item.id]" class="btn btn-primary mb-0">رؤية
-								العروض</a>
-						</div>
-					</div>
+				<div class="card mb-4">
 					<div class="card-body">
-						<div class="row g-3">
-							<div class="col-sm-6 col-md-4">
-								<span>تاريخ الانشاء</span>
-								<h6 class="mb-0">{{item.startDate}}</h6>
-							</div>
-
-							<div class="col-sm-6 col-md-4">
-								<span>تاريخ الانتهاء</span>
-								<!-- <h6 class="mb-0">Tue 06 Aug 4:00 PM</h6> -->
-								<h6 class="mb-0">{{item.endDate}}</h6>
-							</div>
-
-							<div class="col-md-4">
-								<span>الميزانية</span>
-								<h6 class="mb-0">${{item.expectSalary}}</h6>
-							</div>
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">اسم الطلب</th>
+										<th scope="col">تاريخ البدء</th>
+										<th scope="col">الميزانية</th>
+										<th scope="col"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class=""
+										*ngFor="let item of requestList | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalRequestItems }">
+										<td scope="row">
+											<p class="mb-0 fs-5 fw-medium">{{item.title}}</p>
+											<small class="mb-0">{{item.startDate|DateFromNow}}</small>
+										</td>
+										<td>{{item.startDate | CustomDate}}</td>
+										<td>{{item.expectedSalary | CustomCurrency: "ar": false}}</td>
+										<td>
+											<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
+												<a href="#" class="btn btn-primary-soft mb-0">
+													تعديل
+												</a>
+												<a href="#" [routerLink]="['/offers',item.id]"
+													class="btn btn-primary mb-0">
+													رؤية العروض
+												</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
+
 					</div>
 				</div>
 			</div>

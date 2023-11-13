@@ -24,7 +24,7 @@ export class UsersRequestsComponent implements OnInit {
 
 	loading: boolean;
 	currentPage: number = 1;
-	pageSize: number = 3;
+	pageSize: number = 10;
 	totalRequestItems: number = 0;
 	usersRequestsList: IUsersRequests[] = [];
 	CitiesList: ICity[] | null = null;
@@ -78,6 +78,7 @@ export class UsersRequestsComponent implements OnInit {
 			next => {
 				this.usersRequestsList = next as IUsersRequests[];
 				this.loading = false;
+				console.log( next );
 			},
 			error => {
 				this.toastr.error( error )

@@ -3,12 +3,15 @@ export interface IUsersRequests {
 	clientId: string;
 	title: string;
 	category: string;
-	governorateId: string;
-	cityId: string;
+	cityAr: string,
+	cityEn: string,
+	governorateAr: string,
+	governorateEn: string,
 	address: string;
 	details: string;
 	expectedSalary: number;
 	images: string[];
 	video: string;
 	endDate: string;
+	startDate: string;
 }

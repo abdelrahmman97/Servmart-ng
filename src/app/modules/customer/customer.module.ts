@@ -26,16 +26,16 @@ import { NgxPaginationModule } from 'ngx-pagination';
 		RequestOffersComponent,
 		RateServiceComponent,
 		AddRequestComponent,
-        OrdersComponent
-    ],
+		OrdersComponent,
+	],
 	imports: [
 		CommonModule,
+		CoreModule,
 		FormsModule,
 		RouterModule,
 		SharedModule,
 		ReactiveFormsModule,
 		NgxPaginationModule,
-		CoreModule
 	]
 } )
 

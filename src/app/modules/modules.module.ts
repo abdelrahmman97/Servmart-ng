@@ -19,6 +19,7 @@ import { AboutSectionComponent } from './pages/profile/Components/about-section/
 import { PreviousWorksSectionComponent } from './pages/profile/Components/previous-works-section/previous-works-section.component';
 import { ReviewsSectionComponent } from './pages/profile/Components/reviews-section/reviews-section.component';
 import { ServicesSectionComponent } from './pages/profile/Components/services-section/services-section.component';
+import { RequestDerailsComponent } from './pages/Components/request-derails/request-derails.component';
 
 
 @NgModule( {
@@ -34,7 +35,8 @@ import { ServicesSectionComponent } from './pages/profile/Components/services-se
 		ShopComponent,
 		DetailsComponent,
 		MinLengthPipe,
-		UsersRequestsComponent
+		UsersRequestsComponent,
+		RequestDerailsComponent
 	],
 	imports: [
 		CommonModule,

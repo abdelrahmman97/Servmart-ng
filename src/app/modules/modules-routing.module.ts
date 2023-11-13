@@ -29,6 +29,7 @@ import { OrderListComponent } from './vendor/Components/order-list/order-list.co
 import { OrdersComponent } from './customer/Components/orders/orders.component';
 import { ServicesListComponent } from './services-provider/Components/services-list/services-list.component';
 import { RequestOrderDetailsComponent } from './services-provider/Components/request-order-details/request-order-details.component';
+import { RequestDerailsComponent } from './pages/Components/request-derails/request-derails.component';
 
 
 
@@ -44,6 +45,7 @@ const routes: Routes = [
 	{ path: 'cart', component: CartComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'checkout', component: CheckOutComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'requests', component: UsersRequestsComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'requestDetails/:id', component: RequestDerailsComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'servicesProviders', component: SearchVendorsComponent },
 
 	// Customer Components

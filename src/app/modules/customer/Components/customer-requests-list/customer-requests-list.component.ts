@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IRequest } from 'src/app/core/models/Request/IRequest';
 import { RequestService } from '../../services/Request/Request.service';
-import { IUsersRequests } from 'src/app/core/models/Request/IUsersRequests';
 import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 
 @Component( {
@@ -49,7 +47,7 @@ export class CustomerRequestsListComponent implements OnInit {
 
 	getRequests ( userId: string, page: number, pageSize: number ) {
 		this.loading = true;
-		this.requestService.getUsersRequests( this.auth.getUserValue().userID, 1, 3 ).subscribe(
+		this.requestService.getUsersRequests( userId, page, pageSize ).subscribe(
 			{
 				next: data => {
 					this.requestList = data as any[];
@@ -65,7 +63,14 @@ export class CustomerRequestsListComponent implements OnInit {
 		);
 	}
 
+	// calculateDate ( startDate: Date, endDate: Date ) {
+	// 	// const _startDate = new Date( startDate );
+	// 	// const _endDate = new Date( endDate );
+	// 	// return ( _endDate.getDate() - _startDate.getDate() );
 
-
+	// 	moment.locale( 'ar' );
+	// 	const currentDate = moment( startDate ).fromNow();
+	// 	return currentDate;
+	// }
 
 }
