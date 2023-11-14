@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
 
 @Component( {
@@ -6,14 +6,14 @@ import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
 	templateUrl: './previous-works-section.component.html',
 	styleUrls: [ './previous-works-section.component.css' ]
 } )
-export class PreviousWorksSectionComponent implements OnInit {
+export class PreviousWorksSectionComponent implements OnChanges {
 
 	constructor () { }
 
 	@Input() User: IUserProfile;
 	previusWorkList: any[] = [];
 
-	ngOnInit () {
+	ngOnChanges ( changes: SimpleChanges ): void {
 	}
 
 	pageChanged ( event: any ) {

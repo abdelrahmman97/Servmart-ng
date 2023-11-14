@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Role } from 'src/app/core/Enums/Role.enum';
 import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
@@ -9,7 +9,7 @@ import { ServiceService } from 'src/app/modules/services-provider/services/servi
 	templateUrl: './about-section.component.html',
 	styleUrls: [ './about-section.component.css' ]
 } )
-export class AboutSectionComponent implements OnInit {
+export class AboutSectionComponent implements OnChanges {
 
 	// TODO(abdo tiba): Get User Rate
 	// TODO(abdo tiba): Get User total services
@@ -21,13 +21,14 @@ export class AboutSectionComponent implements OnInit {
 		private toastr: ToastrService,
 	) { }
 
+
 	@Input() User: IUserProfile;
 	@Input() UserRoles: string[];
 	totalServices: number = 0;
 	loading: boolean;
 	isViewProfileUserSProvider: boolean = false;
 
-	ngOnInit () {
+	ngOnChanges ( changes: SimpleChanges ): void {
 		console.log( this.UserRoles );
 		this.isViewProfileUserSProvider = this.UserRoles.includes( Role.ServiceProvider );
 		console.log( this.isViewProfileUserSProvider );

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
 import { ServiceService } from 'src/app/modules/services-provider/services/service.service';
@@ -8,7 +8,7 @@ import { ServiceService } from 'src/app/modules/services-provider/services/servi
 	templateUrl: './reviews-section.component.html',
 	styleUrls: [ './reviews-section.component.css' ]
 } )
-export class ReviewsSectionComponent implements OnInit {
+export class ReviewsSectionComponent implements OnChanges {
 
 	constructor (
 		private serService: ServiceService,
@@ -23,7 +23,7 @@ export class ReviewsSectionComponent implements OnInit {
 	pageSize: number = 3;
 	totalItems: number = 0;
 
-	ngOnInit () {
+	ngOnChanges ( changes: SimpleChanges ): void {
 		// get total items of user rate rows
 		this.serService.GetTotalUserRatesCount( this.User.id ).subscribe(
 			next => {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
 import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
@@ -9,7 +9,7 @@ import { ServiceService } from 'src/app/modules/services-provider/services/servi
 	templateUrl: './services-section.component.html',
 	styleUrls: [ './services-section.component.css' ]
 } )
-export class ServicesSectionComponent implements OnInit {
+export class ServicesSectionComponent implements OnChanges {
 
 	constructor (
 		private auth: AuthService,
@@ -27,7 +27,7 @@ export class ServicesSectionComponent implements OnInit {
 
 	isCurrentUser: boolean;
 
-	ngOnInit () {
+	ngOnChanges ( changes: SimpleChanges ): void {
 		this.isCurrentUser = this.auth.isCurrentUser( this.User.id );
 		// get total items of user rate rows
 		this.serService.GetTotalUserRatesCount( this.User.id ).subscribe(
