@@ -2,12 +2,13 @@
 	<div class="d-flex justify-content-between mb-4">
 		<h4 class="card-header-title">عربة التسوق</h4>
 		<div class="d-flex gap-2">
-			<button class="btn btn-danger-soft" (click)="emptyCart()" [ngClass]="GetCart.length == 0? 'disabled':''">
+			<button class="btn btn-danger-soft" (click)="emptyCart()" [ngClass]="GetCart.length == 0? 'disabled':''"
+				*ngIf="GetCart.length != 0">
 				<i class="fa-duotone fa-trash"></i>
 				امسح الكل
 			</button>
-			<a [routerLink]="['/checkout']" class="btn btn-primary-soft"
-				[ngClass]="GetCart.length == 0? 'disabled':''">
+			<a [routerLink]="['/checkout']" class="btn btn-primary-soft" [ngClass]="GetCart.length == 0? 'disabled':''"
+				*ngIf="GetCart.length != 0">
 				<i class="fa-duotone fa-cart-circle-check"></i>
 				تابع عملية الشراء
 			</a>
@@ -31,7 +32,7 @@
 						<h5 class="card-title mb-3 text-truncate">
 							{{item.productName}}
 						</h5>
-						<a  (click)="remove(item.id)" class="btn btn-sm btn-danger-soft" title="حذف من عربة التسوق">
+						<a (click)="remove(item.id)" class="btn btn-sm btn-danger-soft" title="حذف من عربة التسوق">
 							<i class="fa-duotone fa-trash"></i>
 							حذف
 						</a>
@@ -630,12 +631,10 @@
 
 	</div>
 
-	<div *ngIf="GetCart.length == 0">
-		<img style="width: 50%;" src="../../../../../assets/images/emptycart.jpg">
-	</div>
+	<app-empty-cart *ngIf="GetCart.length == 0" class="align-items-center d-flex flex-column"></app-empty-cart>
 
 	<!-- Cart Summery -->
-	<div class="col-12 col-lg-4 col-md-5 mt-4 mt-lg-0">
+	<div *ngIf="GetCart.length != 0" class="col-12 col-lg-4 col-md-5 mt-4 mt-lg-0">
 		<div class="card">
 			<div class="card-header border-0 pb-0">
 				<h2 class="h5">ملخص الطلب</h2>

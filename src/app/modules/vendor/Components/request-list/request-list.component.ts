@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { addRequestService } from '../../services/Request-list/AppRequestService.service';
-import { IRequest } from 'src/app/core/models/Request/IRequest';
+import { IRequest } from 'src/app/core/models/IRequest';
 
 
 
 @Component( {
 	selector: 'app-request-list',
 	templateUrl: './request-list.component.html',
-	styleUrls: ['./request-list.component.css']
+	styleUrls: [ './request-list.component.css' ]
 } )
 export class RequestListComponent implements OnInit {
 	isThereError: boolean = false;
 	errorMessage: string = "";
-	P=1;
+	P = 1;
 
 	requestList: IRequest[] = [];
-	constructor( private serviceRequest: addRequestService ) { }
+	constructor ( private serviceRequest: addRequestService ) { }
 
-	ngOnInit(): void {
+	ngOnInit (): void {
 		this.serviceRequest.getAllUserRequests().subscribe(
 			{
 				next: data => {

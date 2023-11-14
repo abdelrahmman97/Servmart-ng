@@ -160,22 +160,26 @@
 						<a class="btn btn-primary-soft" [routerLink]="['/sendOffer/', item.id]">ارسال عرض</a>
 					</div>
 
-					<div class="d-flex flex-row align-items-center gap-3">
-						<p class="mb-1">
+					<ul class="nav nav-divider p-0">
+						<li class="nav-item d-flex flex-row align-items-center gap-2">
 							<i class="fa-duotone fa-map-location text-primary"></i>
-							{{item.governorateAr}} - {{item.cityAr}}
-						</p>
-						<div class="d-flex flex-row gap-3">
+							<p class="mb-0">
+								{{item.governorateAr}} - {{item.cityAr}}
+							</p>
+						</li>
+						<li class="nav-item d-flex flex-row align-items-center gap-2">
+							<i class="fa-duotone fa-hand-holding-dollar text-primary"></i>
 							<p class="m-0">
-								<i class="fa-duotone fa-hand-holding-dollar text-primary"></i>
 								{{item.expectedSalary | CustomCurrency:"ar":false}}
 							</p>
+						</li>
+						<li class="nav-item d-flex flex-row align-items-center gap-2">
+							<i class="fa-duotone fa-calendar-days text-primary"></i>
 							<p class="m-0">
-								<i class="fa-duotone fa-calendar-days text-primary"></i>
 								{{item.startDate | DateDifference:item.endDate}}
 							</p>
-						</div>
-					</div>
+						</li>
+					</ul>
 
 				</div>
 

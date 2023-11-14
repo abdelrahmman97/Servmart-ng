@@ -1,13 +1,13 @@
-import { RequestStatus } from "../../Enums/RequestStatus.enum";
+import { IRequest } from "../Request/IRequest";
 
 export interface IRequestOffer {
-	RequestId: string;
-	ProviderId: string;
-	Status: RequestStatus;
-	Details: string;
-	ExpectedSalary: number;
-	StartDate: Date;
-	EndDate: Date;
+	id: string;
+	request: IRequest;
+	details: string;
+	expectSalary: number;
+	duration: number;
+	status: number;
+	createdAt: string;
 }
 
 

@@ -25,7 +25,6 @@ export class AddRequestComponent implements OnInit {
 		private toastr: ToastrService,
 		private router: Router,
 		private activeRoute: ActivatedRoute,
-		private auth: AuthService,
 	) { }
 
 	serviceProvidersId: string = "";
@@ -171,7 +170,7 @@ export class AddRequestComponent implements OnInit {
 			}
 
 			if ( this.serviceProvidersId == undefined ) {
-				formData.append( 'ProviderID', null );
+				formData.append( 'ProviderID', "" );
 				formData.append( 'IsDirect', "false" );
 			}
 			else {
@@ -205,7 +204,8 @@ export class AddRequestComponent implements OnInit {
 				},
 				error => {
 					console.log( "error", error );
-					this.toastr.error( "حدث خطأ أثناء الاضافة\nالرجاء المحاولة مرة أخري" )
+					this.toastr.error( error.error.title )
+					// this.toastr.error( "حدث خطأ أثناء الاضافة\nالرجاء المحاولة مرة أخري" )
 					this.submited = false;
 				}
 			);

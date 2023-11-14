@@ -202,7 +202,7 @@
 							<div *ngIf="!this.selectedVideo"
 								class="FileContainer text-center w-100 d-flex flex-column mb-3 mt-3 btn btn-primary-soft">
 								<label for="Video" class="">فيديو</label>
-								<input class="d-none" id="Video" name="Video" type="file" accept=".mp4, .mkv"
+								<input class="d-none" id="Video" name="Video" type="file" accept="video/*"
 									(change)="onVideoSelected($event)" #videoInput>
 								<small>يمكنك ان تضيف فيديو واحد لا يتعدي حجمه (100MB)</small>
 							</div>
