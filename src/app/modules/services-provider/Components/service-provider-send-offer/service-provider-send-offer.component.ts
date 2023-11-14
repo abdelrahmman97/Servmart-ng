@@ -70,7 +70,7 @@ export class ServiceProviderSendOfferComponent implements OnInit {
 				next: ( value ) => {
 					console.log( value );
 					this.toastr.success( "تم ارسال العرض بنجاح" );
-					this.router.navigate( [ '/bids' ] );
+					this.router.navigate( [ '/proposals' ] );
 					this.isSubmitted = false;
 				},
 				error: ( error ) => {

@@ -66,7 +66,7 @@ const routes: Routes = [
 	{ path: 'product/:id', component: ProductDetailsComponent, canActivate: [ userLogedInGuard ] },
 
 	// Service Provider Compproducts
-	{ path: 'bids', component: SendOffersComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'proposals', component: SendOffersComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'service/:id', component: DetailsComponent },
 	{ path: 'sendOffer/:id', component: ServiceProviderSendOfferComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'requestsOrders', component: RequestOrdersComponent, canActivate: [ userLogedInGuard ] },
