@@ -5,18 +5,29 @@ import { Pipe, PipeTransform } from '@angular/core';
 } )
 export class DateDifferencePipe implements PipeTransform {
 
-	transform ( startDate: any, endDate: any, args?: any ): any {
+	transform( startDate: any, endDate?: any, args?: any ): any {
 		const _startDate = new Date( startDate );
 		const _endDate = new Date( endDate );
-		const duration = _endDate.getDate() - _startDate.getDate();
+		let duration;
 
-		if ( duration == 1 ) {
-			return `يوم`;
+		if ( isNaN( _startDate.getTime() ) ) {
+			duration = _endDate.getDate() - _startDate.getDate();
+		} else if ( typeof startDate === 'number' ) {
+			duration = startDate;
 		}
-		else if ( 10 >= duration && duration > 1 && duration != 2 ) {
-			return `${ duration } أيام`;
+
+		if ( typeof duration === 'number' ) {
+			if ( duration === 1 ) {
+				return `يوم`;
+			} else if ( duration > 1 && duration <= 10 && duration !== 2 ) {
+				return `${duration} أيام`;
+			} else {
+				return `${duration} يوم`;
+			}
+		} else {
+			// Handle other cases if needed
+			return 'Invalid duration';
 		}
-		return `${ duration } يوم`;
 	}
 
 }
