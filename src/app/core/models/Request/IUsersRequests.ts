@@ -12,6 +12,6 @@ export interface IUsersRequests {
 	expectedSalary: number;
 	images: string[];
 	video: string;
-	endDate: string;
-	startDate: string;
+	createdAt: string;
+	duration: string;
 }

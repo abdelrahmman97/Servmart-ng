@@ -176,7 +176,7 @@
 						<li class="nav-item d-flex flex-row align-items-center gap-2">
 							<i class="fa-duotone fa-calendar-days text-primary"></i>
 							<p class="m-0">
-								{{item.startDate | DateDifference:item.endDate}}
+								{{item.duration | DateDifference}}
 							</p>
 						</li>
 					</ul>
@@ -193,7 +193,7 @@
 				<div class="card-footer border-0">
 					<small>
 						<i class="fa-duotone fa-clock text-primary"></i>
-						{{item.startDate | DateFromNow}}
+						{{item.createdAt | DateFromNow}}
 					</small>
 				</div>
 
