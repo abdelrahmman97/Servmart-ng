@@ -14,6 +14,7 @@ import { CoreModule } from "../../core/core.module";
 import { AddRequestComponent } from './Components/addRequest/addRequest.component';
 import { OrdersComponent } from './Components/orders/orders.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { EmptyCartComponent } from './Components/cart/components/empty-cart/empty-cart.component';
 
 
 
@@ -27,6 +28,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 		RateServiceComponent,
 		AddRequestComponent,
 		OrdersComponent,
+		EmptyCartComponent
 	],
 	imports: [
 		CommonModule,

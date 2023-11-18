@@ -18817,7 +18817,7 @@ html[dir="rtl"] .accordion-button::after {
 
 .btn-primary-soft {
 	color: var(--bs-primary);
-	background-color: rgba(81, 67, 217, 0.1);
+	background-color: rgba(10, 88, 202, 0.1);
 }
 
 .btn-primary-soft:active,

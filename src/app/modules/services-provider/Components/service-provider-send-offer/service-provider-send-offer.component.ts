@@ -17,7 +17,7 @@ export class ServiceProviderSendOfferComponent implements OnInit {
 		private reqService: RequestService,
 		private offerService: OffersService,
 		private toastr: ToastrService,
-		private router: Router
+		private router: Router,
 	) { }
 
 	offerForm: FormGroup;
