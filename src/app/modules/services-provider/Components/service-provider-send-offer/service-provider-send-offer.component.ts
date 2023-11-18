@@ -4,7 +4,6 @@ import { ToastrService } from 'ngx-toastr';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from 'src/app/modules/customer/services/Request/Request.service';
-import { NotificationService } from 'src/app/shared/services/Notifications/Notification.service';
 
 @Component( {
 	selector: 'app-service-provider-send-offer',
@@ -19,7 +18,6 @@ export class ServiceProviderSendOfferComponent implements OnInit {
 		private offerService: OffersService,
 		private toastr: ToastrService,
 		private router: Router,
-		private notifiService: NotificationService
 	) { }
 
 	offerForm: FormGroup;
@@ -72,7 +70,6 @@ export class ServiceProviderSendOfferComponent implements OnInit {
 				next: ( value ) => {
 					console.log( value );
 					this.toastr.success( "تم ارسال العرض بنجاح" );
-					this.notifiService.sendNotificationToUser( '78221701-15cf-4763-8b7f-c63d60886130', "got offer" )
 					this.router.navigate( [ '/proposals' ] );
 					this.isSubmitted = false;
 				},

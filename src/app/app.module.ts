@@ -32,7 +32,9 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 			{
 				timeOut: 10000,
 				positionClass: 'toast-bottom-right',
-				preventDuplicates: true,
+				preventDuplicates: false,
+				progressBar: true,
+				closeButton: true
 			}
 		),
 

@@ -1,7 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as signalR from '@microsoft/signalr';
 import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/app/core/environments/environment';
+import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 
 @Injectable( {
 	providedIn: 'root'
@@ -9,47 +12,58 @@ import { environment } from 'src/app/core/environments/environment';
 export class NotificationService {
 
 	private hubConnection: HubConnection;
-	private notificationSubject = new Subject<string>();
+	private notificationSubject = new Subject<any>();
 
-	constructor () {
+	constructor( private auth: AuthService, private httpClient: HttpClient ) {
 		this.hubConnection = new HubConnectionBuilder()
-			.withUrl( 'https://localhost:7013/notificationHub', { withCredentials: true } )
+			.withUrl( 'https://localhost:7013/notificationHub', {
+				withCredentials: true,
+				skipNegotiation: true,
+				accessTokenFactory: () => auth.getToken(),
+				transport: signalR.HttpTransportType.WebSockets
+			} )
 			.build();
+
+		this.hubConnection
+			.start()
+			.then( () => {
+				console.log( 'Connection started' );
+				this.hubConnection.invoke( 'AddToGroup', auth.getUserValue().userID );
+			} )
+			.catch( ( err ) => console.log( 'Error while starting connection: ' + err ) );
+
 		// Handle incoming notifications
-		this.hubConnection.on( 'ReceiveNotification', ( message: string ) => {
-			console.log( message );
-			this.notificationSubject.next( message );
-		} );
+		// this.hubConnection.on( 'ReceiveNotification', ( message: string ) => {
+		// 	this.notificationSubject.next( message );
+		// } );
 
-		// Start the SignalR connection
-		this.startConnection();
 	}
 
-
-	private async startConnection () {
-		try {
-			await this.hubConnection.start();
-			console.log( 'SignalR connection started' );
-		} catch ( err ) {
-			console.error( 'Error while starting SignalR connection: ', err );
-			// Retry connection after 5 seconds
-			setTimeout( () => this.startConnection(), 5000 );
-		}
+	// get user old notifications from databse
+	getNotifications() {
+		return this.httpClient.get( `${environment.apiUrl}/Notification/GetUserNotifications` );
 	}
 
-	// Method to send a notification to all clients
-	sendNotificationToAll ( message: string ) {
-		this.hubConnection.invoke( 'SendNotificationToAll', message );
+	updateNotifications() {
+		return this.httpClient.get( `${environment.apiUrl}/Notification/UpdateUserNotifications` );
 	}
 
-	// Method to send a notification to a specific user
-	sendNotificationToUser ( userId: string, message: string ) {
-		this.hubConnection.invoke( 'SendNotificationToUser', userId, message );
-	}
 
 	// Observable to subscribe to incoming notifications
-	getNotifications (): Observable<string> {
-		return this.notificationSubject.asObservable();
-	}
+	// getNotifications(): Observable<string> {
+	// 	return this.notificationSubject.asObservable();
+	// }
 
+	newOfferListener( callback: ( offer: any ) => void ) {
+		console.log(`init newOfferListener`);
+		this.hubConnection.on( 'NewOffer', callback );
+	}
+	newRequestListener( callback: ( offer: any ) => void ) {
+		console.log(`init newRequestListener`);
+		this.hubConnection.on( 'NewRequest', callback );
+	}
+	newOrderListener( callback: ( offer: any ) => void ) {
+		console.log(`init newOrderListener`);
+		this.hubConnection.on( 'NewOrder', callback );
+	}
 }
