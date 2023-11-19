@@ -41,14 +41,14 @@
 		<!-- Tabs content START -->
 		<div class="tab-content p-2 p-sm-4" id="nav-tabContent">
 
+			<div class="text-center" *ngIf="isLoading">
+				<i class="fa-duotone fa-spinner-third fa-spin text-primary fs-4"></i>
+			</div>
+
 			<!-- list -->
 			<proposals-list class="tab-pane fade active show" id="tab-1" role="tabpanel" [offers]="offers"
-				[totaloffersItems]="totaloffersItems" (pageChangedEvent)="handlePageChange($event)"
+				[totaloffersItems]="totaloffersItems" (pageChangedEvent)="handlePageChange($event)" [currentPage]="page"
 				*ngIf="!isLoading"></proposals-list>
-
-			<div class="card p-0 placeholder-wave" *ngIf="isLoading">
-				<div class="card border-0 h-300px placeholder"></div>
-			</div>
 
 		</div>
 

@@ -30,7 +30,7 @@ export class ProposalsComponent implements OnInit {
 		this.offerService.providerOffersByStatusCount( this.status ).subscribe(
 			next => {
 				this.totaloffersItems = next as number;
-				console.log( `total of ${ this.status }`, this.totaloffersItems );
+				console.log( `total of ${ OfferStatus[this.status] } items`, this.totaloffersItems );
 			}
 		);
 
@@ -40,11 +40,12 @@ export class ProposalsComponent implements OnInit {
 
 	getOffers ( status: OfferStatus, page: number, pageSize: number ) {
 		this.isLoading = true;
+		console.log(`status: `, OfferStatus[status]);
 		this.offerService.listProviderOffersByStatus( status, page, pageSize ).subscribe( {
 			next: ( value ) => {
 				this.offers = value as IRequestOffer[]
-				console.log( this.offers );
 				this.isLoading = false;
+				console.log( `value:`, this.offers );
 			},
 			error: ( err ) => {
 				this.isLoading = false;
@@ -55,7 +56,8 @@ export class ProposalsComponent implements OnInit {
 
 	handlePageChange ( event ) {
 		this.page = event;
-		this.getOffers( this.status, this.page, this.pageSize );
+		console.log(`event: `, event);
+		this.getOffers( this.status, event, this.pageSize );
 	}
 
 	statusChanged ( status: OfferStatus ) {

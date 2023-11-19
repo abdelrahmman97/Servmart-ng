@@ -1,7 +1,9 @@
 <!-- proposals -->
 <div class="card border mb-4"
-	*ngFor="let item of offers | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: totaloffersItems }">
+	*ngFor="let item of offers | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totaloffersItems }">
+
 	<div class="card-header border-bottom d-md-flex justify-content-md-between align-items-center">
+
 		<!-- Icon and Title -->
 		<div class="d-flex align-items-center gap-4">
 			<!-- <div class="icon-lg bg-light rounded-circle flex-shrink-0">
@@ -38,7 +40,9 @@
 		<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
 			<a href="#" [routerLink]="['/edit-offer','CGDSUAHA12548']" class="btn btn-primary-soft mb-0">تعديل</a>
 		</div>
+
 	</div>
+
 	<!--  offer details -->
 	<div class="card-body">
 		<div class="row">
@@ -67,10 +71,16 @@
 			</h6>
 		</div>
 	</div>
+
+
+</div>
+
+<div class="card-body text-center" *ngIf="offers.length == 0">
+	<h6>لا يوجد لديك عروض</h6>
 </div>
 
 <!-- Pagination -->
-<div class="d-flex justify-center">
+<div class="d-flex justify-center" *ngIf="offers.length != 0">
 	<pagination-controls (pageChange)="pageChanged($event)" previousLabel="السابق" nextLabel="التالي" [maxSize]="7">
 	</pagination-controls>
 </div>
