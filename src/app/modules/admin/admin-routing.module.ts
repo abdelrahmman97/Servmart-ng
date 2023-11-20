@@ -16,10 +16,10 @@ import { OrderListComponent } from '../vendor/Components/order-list/order-list.c
 
 const routes: Routes = [
 
-	{ path: '', component: NotFoundComponent },
+	{ path: '', component: DashboardComponent },
 	{ path: 'dashboard', component: DashboardComponent },
 	{ path: 'orderList', component: OrderListComponent },
-	{ path: 'servicesList', component: ServiceListComponent },	
+	{ path: 'servicesList', component: ServiceListComponent },
 	{ path: 'userlist', component: UserComponent },
 	{ path: 'requestlist', component: RequestComponent },
 	{ path: 'vendorlist', component: VendorComponent },
@@ -28,7 +28,7 @@ const routes: Routes = [
 	{ path: "servic/:serID", component: SingleserviceComponent },
 	{ path: "request/:serID", component: SinglerequestComponent },
 
-	
+
 
 ];
 
