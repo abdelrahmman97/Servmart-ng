@@ -58,12 +58,29 @@ export class NotificationService {
 		console.log(`init newOfferListener`);
 		this.hubConnection.on( 'NewOffer', callback );
 	}
+
 	newRequestListener( callback: ( offer: any ) => void ) {
 		console.log(`init newRequestListener`);
 		this.hubConnection.on( 'NewRequest', callback );
 	}
+
 	newOrderListener( callback: ( offer: any ) => void ) {
 		console.log(`init newOrderListener`);
 		this.hubConnection.on( 'NewOrder', callback );
+	}
+
+	offerAcceptedListener( callback: ( offer: any ) => void ) {
+		console.log( `init OfferAccepted` );
+		this.hubConnection.on( 'OfferAccepted', callback );
+	}
+
+	offerRejectedListener( callback: ( offer: any ) => void ) {
+		console.log( `init OfferRejected` );
+		this.hubConnection.on( 'OfferRejected', callback );
+	}
+
+	offerCompletedListener( callback: ( offer: any ) => void ) {
+		console.log( `init OfferCompleted` );
+		this.hubConnection.on( 'OfferCompleted', callback );
 	}
 }

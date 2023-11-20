@@ -8,12 +8,12 @@
 
 <!-- Notification -->
 <div class="dropdown-menu dropdown-animation dropdown-menu-start dropdown-menu-size-md shadow-lg p-0">
-	<div class="card border-0">
+	<div class="card">
 		<!-- Card header -->
 		<div class="card-header bg-transparent d-flex justify-content-between align-items-center border-bottom">
 			<h6 class="d-flex flex-row gap-2 m-0">
 				الإشعارات
-				<span class="badge text-bg-info bg-opacity-10 text-info" *ngIf="!(newNotificationsCount == 0)">
+				<span class="badge text-bg-primary bg-opacity-10 text-primary" *ngIf="!(newNotificationsCount == 0)">
 					{{newNotificationsCount}} جديدة
 				</span>
 			</h6>
@@ -24,24 +24,24 @@
 		</div>
 
 		<!-- Card body START -->
-		<div class="card-body p-0">
+		<div class="card-body h-300px overflow-auto p-0">
 			<ul class="list-group list-group-flush list-unstyled p-2">
 				<!-- Notification item -->
 				<!-- <li *ngFor="let item of notifications.slice(0, 3)"> -->
-				<li *ngFor="let item of notifications">
+				<li *ngFor="let item of notifications" class="mb-1 border-bottom">
 					<div class="list-group-item list-group-item-action rounded  border-0 mb-1 p-3 text-end"
-						[ngClass]="!item.isRead?'notif-unread':''">
+						[ngClass]="!item.isRead?'notif-unread border-2 border-end border-primary rounded-end-0':''">
 						<div [ngSwitch]="item.type">
 							<ng-template [ngSwitchCase]="Offer">
 								<div class="d-flex flex-row align-items-center gap-2 mb-1">
 									<i class="fa-duotone fa-sparkles" [ngClass]="!item.isRead?'text-primary':''"></i>
-									<h6 class="m-0">عرض جديد</h6>
+									<h6 class="m-0">العروض</h6>
 								</div>
 							</ng-template>
 							<ng-template [ngSwitchCase]="ServiceRequest">
 								<div class="d-flex flex-row align-items-center gap-2 mb-1">
 									<i class="fa-duotone fa-sparkles" [ngClass]="!item.isRead?'text-primary':''"></i>
-									<h6 class="m-0">طلب خدمة</h6>
+									<h6 class="m-0">الخدمات</h6>
 								</div>
 							</ng-template>
 							<ng-template [ngSwitchCase]="OrderRequest">
@@ -52,7 +52,7 @@
 							</ng-template>
 						</div>
 
-						<p class="mb-0 small">{{item.message}}</p>
+						<p class="mb-0 small" [innerHTML]="item.message"></p>
 						<span class="small"
 							[ngClass]="!item.isRead?'text-primary':''">{{item.createdAt | DateFromNow}}</span>
 					</div>

@@ -27,9 +27,13 @@ export class NotificationComponent implements OnInit {
 	ngOnInit() {
 
 		this.getUserNotificationsFromDB();
+
 		this.OfferNotifications();
 		this.RequestNotifications();
 		this.OrderNotifications();
+		this.OfferAcceptedNotifications();
+		this.OfferRejectedNotifications();
+		this.OfferCompletedNotifications();
 	}
 
 	getUserNotificationsFromDB() {
@@ -71,6 +75,30 @@ export class NotificationComponent implements OnInit {
 			const notification = data as INotification;
 			this.updateNotifications( notification );
 			this.toastr.info( "لديك طلب جديد", `الاشعارات`, { toastClass: 'info-toast-custom ngx-toastr' } )
+		} );
+	}
+
+	OfferAcceptedNotifications() {
+		this.notifiService.offerAcceptedListener( ( data ) => {
+			const notification = data as INotification;
+			this.updateNotifications( notification );
+			this.toastr.info( "لقد تم قبول عرضك", `الاشعارات`, { toastClass: 'info-toast-custom ngx-toastr' } )
+		} );
+	}
+
+	OfferRejectedNotifications() {
+		this.notifiService.offerRejectedListener( ( data ) => {
+			const notification = data as INotification;
+			this.updateNotifications( notification );
+			this.toastr.info( "لقد تم رفض عرضك", `الاشعارات`, { toastClass: 'info-toast-custom ngx-toastr' } )
+		} );
+	}
+
+	OfferCompletedNotifications() {
+		this.notifiService.offerCompletedListener( ( data ) => {
+			const notification = data as INotification;
+			this.updateNotifications( notification );
+			this.toastr.info( "لقد تم اكمال طلبك", `الاشعارات`, { toastClass: 'info-toast-custom ngx-toastr' } )
 		} );
 	}
 
