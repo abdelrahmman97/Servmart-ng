@@ -4,9 +4,16 @@
 
 		<!-- Title -->
 		<div class="row">
-			<div class="col-12 mb-4 mb-sm-5">
+			<div class="col-12">
 				<div class="d-sm-flex justify-content-between align-items-center">
+
 					<h1 class="h3 mb-3 mb-sm-0">خدماتي</h1>
+
+					<!-- Search -->
+					<form class="d-flex" role="search">
+						<input class="form-control" type="search" placeholder="بحث" aria-label="بحث">
+					</form>
+
 				</div>
 			</div>
 		</div>
@@ -14,17 +21,6 @@
 		<div class="row ">
 			<div class="col-xl-12 col-12 mb-5">
 				<div class="card h-100 card-lg px-0 border-0">
-
-					<!-- Search -->
-					<div class="card-header border-0">
-						<div class="row justify-content-between">
-							<div class="col-md-4">
-								<form class="d-flex" role="search">
-									<input class="form-control" type="search" placeholder="بحث" aria-label="بحث">
-								</form>
-							</div>
-						</div>
-					</div>
 
 					<!-- Services -->
 					<div class="card-body p-4 px-0 border-0">
@@ -38,7 +34,7 @@
 										<th></th>
 										<th>اسم الخدمة</th>
 										<th>التصنيف</th>
-										<th>الوصف</th>
+										<th class="w-75">الوصف</th>
 										<th>التقيم</th>
 										<th></th>
 									</tr>
@@ -53,7 +49,11 @@
 										</td>
 										<td>{{item.title}}</td>
 										<td>{{item.serviceCategory.nameAr}}</td>
-										<td>{{item.discription}}</td>
+										<td>
+											<p class="text-wrap line-clamp-2">
+												{{item.discription}}
+											</p>
+										</td>
 										<td>{{item.rate}}</td>
 										<td>
 											<div class="d-flex flex-row gap-3">
@@ -78,6 +78,7 @@
 							nextLabel="التالي" [maxSize]="7">
 						</pagination-controls>
 					</div>
+
 				</div>
 			</div>
 		</div>

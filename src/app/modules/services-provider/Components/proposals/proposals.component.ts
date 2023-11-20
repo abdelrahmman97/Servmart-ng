@@ -7,11 +7,11 @@ import { OffersService } from 'src/app/modules/services-provider/services/offers
 @Component( {
 	selector: 'app-proposals',
 	templateUrl: './proposals.component.html',
-	styleUrls: [ './proposals.component.css' ]
+	styleUrls: ['./proposals.component.css']
 } )
 export class ProposalsComponent implements OnInit {
 
-	constructor (
+	constructor(
 		private offerService: OffersService,
 		private toastr: ToastrService
 	) { }
@@ -24,23 +24,14 @@ export class ProposalsComponent implements OnInit {
 	page: number = 1;
 	pageSize: number = 3
 
-	ngOnInit () {
-
-		// get total items of offers
-		this.offerService.providerOffersByStatusCount( this.status ).subscribe(
-			next => {
-				this.totaloffersItems = next as number;
-				console.log( `total of ${ OfferStatus[this.status] } items`, this.totaloffersItems );
-			}
-		);
-
+	ngOnInit() {
 		this.getOffers( this.status, this.page, this.pageSize );
-
 	}
 
-	getOffers ( status: OfferStatus, page: number, pageSize: number ) {
+	getOffers( status: OfferStatus, page: number, pageSize: number ) {
 		this.isLoading = true;
-		console.log(`status: `, OfferStatus[status]);
+		console.log( `status: `, OfferStatus[status] );
+		this.getOffersCount( status );
 		this.offerService.listProviderOffersByStatus( status, page, pageSize ).subscribe( {
 			next: ( value ) => {
 				this.offers = value as IRequestOffer[]
@@ -54,13 +45,23 @@ export class ProposalsComponent implements OnInit {
 		} );
 	}
 
-	handlePageChange ( event ) {
+	getOffersCount( status: OfferStatus ) {
+		this.offerService.providerOffersByStatusCount( this.status ).subscribe(
+			next => {
+				this.totaloffersItems = next as number;
+				console.log( `total of ${OfferStatus[this.status]} items`, this.totaloffersItems );
+			}
+		);
+	}
+
+	handlePageChange( event ) {
 		this.page = event;
-		console.log(`event: `, event);
+		console.log( `event: `, event );
 		this.getOffers( this.status, event, this.pageSize );
 	}
 
-	statusChanged ( status: OfferStatus ) {
+	statusChanged( status: OfferStatus ) {
+		this.status = status;
 		this.getOffers( status, this.page, this.pageSize );
 	}
 

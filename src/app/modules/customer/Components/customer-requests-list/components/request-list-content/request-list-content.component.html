@@ -1,0 +1,44 @@
+<div class="card mb-4">
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">اسم الطلب</th>
+						<th scope="col">تاريخ البدء</th>
+						<th scope="col">الميزانية</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class=""
+						*ngFor="let item of requestList | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }">
+						<td scope="row">
+							<p class="mb-0 fs-5 fw-medium">{{item.title}}</p>
+							<small class="mb-0">{{item.startDate|DateFromNow}}</small>
+						</td>
+						<td>{{item.startDate | CustomDate}}</td>
+						<td>{{item.expectedSalary | CustomCurrency: "ar": false}}</td>
+						<td>
+							<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
+								<a href="#" class="btn btn-primary-soft mb-0">
+									تعديل
+								</a>
+								<a href="#" [routerLink]="['/offers',item.id]" class="btn btn-primary mb-0">
+									رؤية العروض
+								</a>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+<!-- Pagination -->
+<div class="d-flex justify-center" *ngIf="requestList.length != 0">
+	<pagination-controls (pageChange)="pageChanged($event)" previousLabel="السابق" nextLabel="التالي" [maxSize]="7">
+	</pagination-controls>
+</div>

@@ -37,14 +37,25 @@
 		</div>
 
 		<!-- Update -->
-		<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
-			<a href="#" [routerLink]="['/edit-offer','CGDSUAHA12548']" class="btn btn-primary-soft mb-0">تعديل</a>
+		<div class="mt-2 mt-md-0 d-flex flex-row gap-2" [ngSwitch]="status">
+			<ng-template [ngSwitchCase]="0">
+				<a href="#" [routerLink]="['/edit-offer','CGDSUAHA12548']" class="btn btn-primary-soft mb-0">تعديل</a>
+			</ng-template>
+			<ng-template [ngSwitchCase]="1">
+				<button class="btn btn-primary-soft mb-0" (click)="setAsCompleted(item.id)">تم التنفيذ</button>
+			</ng-template>
+			<ng-template [ngSwitchCase]="2">
+				<button class="btn btn-primary-soft mb-0" (click)="setAsArchived(item.id)">أرشفة</button>
+			</ng-template>
+			<ng-template [ngSwitchCase]="3">
+				<button class="btn btn-primary-soft mb-0" (click)="setAsArchived(item.id)">أرشفة</button>
+			</ng-template>
 		</div>
 
 	</div>
 
 	<!--  offer details -->
-	<div class="card-body">
+	<div class="card-body bg-light">
 		<div class="row">
 			<h6>العرض الخاص بك</h6>
 		</div>
@@ -75,8 +86,19 @@
 
 </div>
 
-<div class="card-body text-center" *ngIf="offers.length == 0">
-	<h6>لا يوجد لديك عروض</h6>
+<div class="card-body text-center" *ngIf="!isLoading && offers.length == 0" [ngSwitch]="status">
+	<ng-template [ngSwitchCase]="0">
+		<h6>لا يوجد لديك عروض منتظرة</h6>
+	</ng-template>
+	<ng-template [ngSwitchCase]="1">
+		<h6>لا يوجد لديك طلبات تحت التنفيذ</h6>
+	</ng-template>
+	<ng-template [ngSwitchCase]="2">
+		<h6>لا يوجد لديك عروض مستبعدة</h6>
+	</ng-template>
+	<ng-template [ngSwitchCase]="3">
+		<h6>لا يوجد لديك طلبات منتهية</h6>
+	</ng-template>
 </div>
 
 <!-- Pagination -->

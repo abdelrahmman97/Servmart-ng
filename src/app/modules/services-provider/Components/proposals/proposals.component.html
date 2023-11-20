@@ -13,6 +13,7 @@
 					role="tab" tabindex="-1" [ngClass]="status == 0?'active':''" (click)="statusChanged(0)">
 					<i class="fa-duotone fa-flag-pennant"></i>
 					المنتظرة
+					<span class="bg-primary text-bg-primary px-2 py-1 rounded-1" *ngIf="status == 0">{{totaloffersItems}}</span>
 				</a>
 			</li>
 			<li class="nav-item" role="presentation">
@@ -20,6 +21,7 @@
 					role="tab" tabindex="-1" [ngClass]="status == 1?'active':''" (click)="statusChanged(1)">
 					<i class="fa-duotone fa-alarm-clock"></i>
 					تحت التنفيذ
+					<span class="bg-primary text-bg-primary px-2 py-1 rounded-1" *ngIf="status == 1">{{totaloffersItems}}</span>
 				</a>
 			</li>
 			<li class="nav-item" role="presentation">
@@ -27,6 +29,7 @@
 					role="tab" tabindex="-1" [ngClass]="status == 2?'active':''" (click)="statusChanged(2)">
 					<i class="fa-duotone fa-ban"></i>
 					المستبعدة
+					<span class="bg-primary text-bg-primary px-2 py-1 rounded-1" *ngIf="status == 2">{{totaloffersItems}}</span>
 				</a>
 			</li>
 			<li class="nav-item" role="presentation">
@@ -34,6 +37,7 @@
 					role="tab" tabindex="-1" [ngClass]="status == 3?'active':''" (click)="statusChanged(3)">
 					<i class="fa-duotone fa-check-double"></i>
 					المنتهية
+					<span class="bg-primary text-bg-primary px-2 py-1 rounded-1" *ngIf="status == 3">{{totaloffersItems}}</span>
 				</a>
 			</li>
 		</ul>
@@ -47,8 +51,8 @@
 
 			<!-- list -->
 			<proposals-list class="tab-pane fade active show" id="tab-1" role="tabpanel" [offers]="offers"
-				[totaloffersItems]="totaloffersItems" (pageChangedEvent)="handlePageChange($event)" [currentPage]="page"
-				*ngIf="!isLoading"></proposals-list>
+				[status]="status" [totaloffersItems]="totaloffersItems" (pageChangedEvent)="handlePageChange($event)"
+				[currentPage]="page" *ngIf="!isLoading"></proposals-list>
 
 		</div>
 
