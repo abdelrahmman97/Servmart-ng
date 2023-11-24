@@ -7,7 +7,7 @@
   <p align="center">
     A Servmart is an application project for ITI - Intensive Code Camp (ICC) program Scholarship
   </p>
-  <p>This repositry is just contain the " frontent " of Servmart project</p>
+  <p>This repositry is just contain the " frontend " of Servmart project</p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
