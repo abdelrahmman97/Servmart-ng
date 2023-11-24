@@ -59,7 +59,7 @@ Technologies used in the project:
 
 <br>
 <!-- GETTING STARTED -->
-# Getting Started
+<h2>💻 Getting Started</h2>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
@@ -101,4 +101,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: assets/servmat-1.png
+[product-screenshot]: src/assets/servmart-1.png
