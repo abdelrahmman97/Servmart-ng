@@ -1,0 +1,60 @@
+<div class="card border bg-transparent">
+
+	<div class="card-header bg-transparent border-bottom">
+		<h5 class="card-header-title">العروض الخاصة بي</h5>
+	</div>
+
+	<div class="card-body p-0">
+
+		<!-- Tabs -->
+		<ul class="nav nav-tabs nav-bottom-line nav-responsive nav-justified" role="tablist">
+			<li class="nav-item" role="presentation">
+				<a class="nav-link mb-0 justify-center" data-bs-toggle="tab" href="#tab-1" aria-selected="true"
+					role="tab" tabindex="-1" [ngClass]="status == 0?'active':''" (click)="statusChanged(0)">
+					<i class="fa-duotone fa-flag-pennant"></i>
+					المنتظرة
+					<span class="bg-primary text-bg-primary px-2 py-1 rounded-1" *ngIf="status == 0">{{totaloffersItems}}</span>
+				</a>
+			</li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link mb-0 justify-center" data-bs-toggle="tab" href="#tab-1" aria-selected="false"
+					role="tab" tabindex="-1" [ngClass]="status == 1?'active':''" (click)="statusChanged(1)">
+					<i class="fa-duotone fa-alarm-clock"></i>
+					تحت التنفيذ
+					<span class="bg-primary text-bg-primary px-2 py-1 rounded-1" *ngIf="status == 1">{{totaloffersItems}}</span>
+				</a>
+			</li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link mb-0 justify-center" data-bs-toggle="tab" href="#tab-1" aria-selected="false"
+					role="tab" tabindex="-1" [ngClass]="status == 2?'active':''" (click)="statusChanged(2)">
+					<i class="fa-duotone fa-ban"></i>
+					المستبعدة
+					<span class="bg-primary text-bg-primary px-2 py-1 rounded-1" *ngIf="status == 2">{{totaloffersItems}}</span>
+				</a>
+			</li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link mb-0 justify-center" data-bs-toggle="tab" href="#tab-1" aria-selected="false"
+					role="tab" tabindex="-1" [ngClass]="status == 3?'active':''" (click)="statusChanged(3)">
+					<i class="fa-duotone fa-check-double"></i>
+					المنتهية
+					<span class="bg-primary text-bg-primary px-2 py-1 rounded-1" *ngIf="status == 3">{{totaloffersItems}}</span>
+				</a>
+			</li>
+		</ul>
+
+		<!-- Tabs content START -->
+		<div class="tab-content p-2 p-sm-4" id="nav-tabContent">
+
+			<div class="text-center" *ngIf="isLoading">
+				<i class="fa-duotone fa-spinner-third fa-spin text-primary fs-4"></i>
+			</div>
+
+			<!-- list -->
+			<proposals-list class="tab-pane fade active show" id="tab-1" role="tabpanel" [offers]="offers"
+				[status]="status" [totaloffersItems]="totaloffersItems" (pageChangedEvent)="handlePageChange($event)"
+				[currentPage]="page" *ngIf="!isLoading"></proposals-list>
+
+		</div>
+
+	</div>
+</div>

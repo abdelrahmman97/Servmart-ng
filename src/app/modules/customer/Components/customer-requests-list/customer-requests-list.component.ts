@@ -1,76 +1,69 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../../services/Request/Request.service';
 import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
+import { ToastrService } from 'ngx-toastr';
+import { OfferStatus } from 'src/app/core/Enums/OfferStatus.enum';
 
 @Component( {
 	selector: 'app-request',
 	templateUrl: './customer-requests-list.component.html',
-	styleUrls: [ './customer-requests-list.component.css' ]
+	styleUrls: ['./customer-requests-list.component.css']
 } )
 export class CustomerRequestsListComponent implements OnInit {
 
-
-	constructor (
+	constructor(
 		private requestService: RequestService,
-		private auth: AuthService
+		private auth: AuthService,
+		private toastr: ToastrService
 	) { }
 
-	isThereError: boolean = false;
-	errorMessage: string = "";
-
-	loading: boolean;
+	isLoading: boolean;
 	currentPage: number = 1;
 	pageSize: number = 3;
 
+	status: OfferStatus = OfferStatus.Pending;
 	totalRequestItems: number = 0;
 	requestList: any[] = [];
 
 	fakeArray = new Array( this.pageSize );
 
+	ngOnInit(): void {
+		this.getRequests( this.auth.getUserValue().userID, OfferStatus.Pending, this.currentPage, this.pageSize );
+	}
 
-	ngOnInit (): void {
-		// get total items of requests
-		this.requestService.GetUserRequestsCountById( this.auth.getUserValue().userID ).subscribe(
+	getRequests( userId: string, status: OfferStatus, page: number, pageSize: number ) {
+		this.isLoading = true;
+		this.getRequestsCount( this.status );
+		this.requestService.getUsersRequests( userId, status, page, pageSize ).subscribe( {
+			next: data => {
+				this.requestList = data as any[];
+				this.isLoading = false;
+			},
+			error: error => {
+				this.isLoading = false;
+				this.toastr.error( "لقد حدث خطأ غير معروف من فضلك حاول مرة أخرى في وقت لاحق" )
+				this.toastr.error( error.statusText );
+				console.log( error );
+			}
+		} );
+	}
+
+	getRequestsCount( status: OfferStatus ) {
+		this.requestService.GetUserRequestsCountById( this.auth.getUserValue().userID, status ).subscribe(
 			next => {
 				this.totalRequestItems = next as number;
-				console.log( `total Request Items`, this.totalRequestItems );
 			}
 		);
-
-		this.getRequests( this.auth.getUserValue().userID, this.currentPage, this.pageSize );
 	}
 
-	pageChanged ( event: any ) {
+	statusChanged( status: OfferStatus ) {
+		this.status = status;
+		this.getRequests( this.auth.getUserValue().userID, status, this.currentPage, this.pageSize );
+	}
+
+	pageChanged( event: any ) {
 		this.currentPage = event;
-		this.getRequests( this.auth.getUserValue().userID, this.currentPage, this.pageSize );
+		this.getRequests( this.auth.getUserValue().userID, this.status, this.currentPage, this.pageSize );
 	}
-
-	getRequests ( userId: string, page: number, pageSize: number ) {
-		this.loading = true;
-		this.requestService.getUsersRequests( userId, page, pageSize ).subscribe(
-			{
-				next: data => {
-					this.requestList = data as any[];
-					console.log( this.requestList );
-				},
-				error: error => {
-					this.isThereError = true;
-					this.errorMessage = "لقد حدث خطأ غير معروف من فضلك حاول مرة أخرى في وقت لاحق";
-					// this.errorMessage = error.statusText;
-					console.log( error );
-				}
-			}
-		);
-	}
-
-	// calculateDate ( startDate: Date, endDate: Date ) {
-	// 	// const _startDate = new Date( startDate );
-	// 	// const _endDate = new Date( endDate );
-	// 	// return ( _endDate.getDate() - _startDate.getDate() );
-
-	// 	moment.locale( 'ar' );
-	// 	const currentDate = moment( startDate ).fromNow();
-	// 	return currentDate;
-	// }
 
 }

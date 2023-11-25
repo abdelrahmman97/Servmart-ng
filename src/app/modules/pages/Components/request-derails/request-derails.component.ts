@@ -5,11 +5,11 @@ import { RequestService } from 'src/app/modules/customer/services/Request/Reques
 @Component( {
 	selector: 'app-request-derails',
 	templateUrl: './request-derails.component.html',
-	styleUrls: [ './request-derails.component.css' ]
+	styleUrls: ['./request-derails.component.css']
 } )
 export class RequestDerailsComponent implements OnInit {
 
-	constructor (
+	constructor(
 		private activeRoute: ActivatedRoute,
 		private reqService: RequestService
 	) { }
@@ -18,12 +18,12 @@ export class RequestDerailsComponent implements OnInit {
 	request: any = null;
 	isLoading: boolean = false;
 
-	ngOnInit () {
+	ngOnInit() {
 
 		this.activeRoute.params.subscribe( {
 			next: ( params ) => {
 				this.isLoading = true;
-				this.requestId = params[ 'id' ];
+				this.requestId = params['id'];
 				this.reqService.getRequestById( this.requestId ).subscribe( {
 					next: ( data ) => {
 						this.request = data as any;
@@ -43,10 +43,10 @@ export class RequestDerailsComponent implements OnInit {
 		} );
 	}
 
-	isVideo ( url: string ): boolean {
+	isVideo( url: string ): boolean {
 		const parts = url.split( '.' );
-		const fileExtension = parts[ parts.length - 1 ];
-		const videoExtensions = [ 'mp4' ];
+		const fileExtension = parts[parts.length - 1];
+		const videoExtensions = ['mp4'];
 		return videoExtensions.includes( fileExtension.toLowerCase() );
 	}
 

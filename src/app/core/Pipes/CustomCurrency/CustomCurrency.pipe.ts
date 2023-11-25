@@ -6,26 +6,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class
 	CustomCurrencyPipe implements PipeTransform {
 
-	transform( value: number | string, lang: string, symbol: boolean ): any {
+	transform( value: number | string, lang: string = "ar", symbol: boolean = false ): any {
+		value = value as number;
+		const formattedValue = value.toFixed( 2 );
 		switch ( lang ) {
-			case 'ar':
-				value = value as number;
-				if ( symbol ) {
-					return `E£${value.toFixed( 2 )}`
-				}
-				return `${value.toFixed( 2 )} جنيه`
-				break;
+			case "ar":
+				return symbol ? `E£ ${formattedValue}` : `${formattedValue} جنيه`;
 			case 'en':
-				value = value as number;
-				if ( symbol ) {
-					return `$${value.toFixed( 2 )}`
-				}
-				return `USD ${value.toFixed( 2 )}`
-				break;
+				return symbol ? `$ ${formattedValue}` : `USD ${formattedValue}`;
 			default:
-				break;
+				return value;
 		}
-		return value;
 	}
 
 }

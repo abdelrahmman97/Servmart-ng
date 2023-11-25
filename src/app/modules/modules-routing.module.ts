@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CustomerRequestsListComponent } from './customer/Components/customer-requests-list/customer-requests-list.component';
 import { RequestOffersComponent } from './customer/Components/RequestOffers/RequestOffers.component';
-import { SendOffersComponent } from './vendor/Components/SendOffers/SendOffers.component';
+import { ProposalsComponent } from './services-provider/Components/proposals/proposals.component';
 import { RateServiceComponent } from './customer/Components/RateService/RateService.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { ShopComponent } from './pages/shop/shop.component';
@@ -66,7 +66,7 @@ const routes: Routes = [
 	{ path: 'product/:id', component: ProductDetailsComponent, canActivate: [ userLogedInGuard ] },
 
 	// Service Provider Compproducts
-	{ path: 'proposals', component: SendOffersComponent, canActivate: [ userLogedInGuard ] },
+	{ path: 'proposals', component: ProposalsComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'service/:id', component: DetailsComponent },
 	{ path: 'sendOffer/:id', component: ServiceProviderSendOfferComponent, canActivate: [ userLogedInGuard ] },
 	{ path: 'requestsOrders', component: RequestOrdersComponent, canActivate: [ userLogedInGuard ] },

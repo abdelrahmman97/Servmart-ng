@@ -1,43 +1,64 @@
 <!-- Notification button -->
-<a class="nav-notification btn btn-primary-soft p-0 mb-0" href="#" role="button" data-bs-toggle="dropdown"
-	aria-expanded="false" data-bs-auto-close="outside" title="Notifications">
+<a class="nav-notification btn btn-primary-soft p-0 mb-0" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+	data-bs-auto-close="outside" title="Notifications">
 	<i class="fa-duotone fa-bell"></i>
 </a>
 <!-- Notification dote -->
-<span class="notif-badge animation-blink"></span>
+<span class="notif-badge animation-blink" *ngIf="newNotification"></span>
 
 <!-- Notification -->
 <div class="dropdown-menu dropdown-animation dropdown-menu-start dropdown-menu-size-md shadow-lg p-0">
-	<div class="card border-0">
+	<div class="card">
 		<!-- Card header -->
 		<div class="card-header bg-transparent d-flex justify-content-between align-items-center border-bottom">
-			<h6 class="d-flex flex-row gap-2 m-0">الإشعارات <span class="badge text-bg-info bg-opacity-10 text-info">4
-					جديدة</span>
+			<h6 class="d-flex flex-row gap-2 m-0">
+				الإشعارات
+				<span class="badge text-bg-primary bg-opacity-10 text-primary" *ngIf="!(newNotificationsCount == 0)">
+					{{newNotificationsCount}} جديدة
+				</span>
 			</h6>
-			<a class="small btn btn-primary-soft" href="#" title="Mark all as read">
+			<a class="small btn btn-primary-soft" title="Mark all as read"
+				[ngClass]="newNotificationsCount == 0?'disabled':''" (click)="setAllAsRead()">
 				<i class="fa-duotone fa-check-double"></i>
 			</a>
 		</div>
 
 		<!-- Card body START -->
-		<div class="card-body p-0">
+		<div class="card-body h-300px overflow-auto p-0">
 			<ul class="list-group list-group-flush list-unstyled p-2">
 				<!-- Notification item -->
-				<li>
-					<a href="#"
-						class="list-group-item list-group-item-action rounded notif-unread border-0 mb-1 p-3 text-end">
-						<h6 class="mb-2">طلب خدمة ✈️</h6>
-						<p class="mb-0 small">وصف للخدمة المطلوبة من المستخدم</p>
-						<span class="small">15 نوفمبر 2022</span>
-					</a>
+				<!-- <li *ngFor="let item of notifications.slice(0, 3)"> -->
+				<li *ngFor="let item of notifications" class="mb-1 border-bottom">
+					<div class="list-group-item list-group-item-action rounded  border-0 mb-1 p-3 text-end"
+						[ngClass]="!item.isRead?'notif-unread border-2 border-end border-primary rounded-end-0':''">
+						<div [ngSwitch]="item.type">
+							<ng-template [ngSwitchCase]="Offer">
+								<div class="d-flex flex-row align-items-center gap-2 mb-1">
+									<i class="fa-duotone fa-sparkles" [ngClass]="!item.isRead?'text-primary':''"></i>
+									<h6 class="m-0">العروض</h6>
+								</div>
+							</ng-template>
+							<ng-template [ngSwitchCase]="ServiceRequest">
+								<div class="d-flex flex-row align-items-center gap-2 mb-1">
+									<i class="fa-duotone fa-sparkles" [ngClass]="!item.isRead?'text-primary':''"></i>
+									<h6 class="m-0">الخدمات</h6>
+								</div>
+							</ng-template>
+							<ng-template [ngSwitchCase]="OrderRequest">
+								<div class="d-flex flex-row align-items-center gap-2 mb-1">
+									<i class="fa-duotone fa-store" [ngClass]="!item.isRead?'text-primary':''"></i>
+									<h6 class="m-0">طلب جديد</h6>
+								</div>
+							</ng-template>
+						</div>
+
+						<p class="mb-0 small" [innerHTML]="item.message"></p>
+						<span class="small"
+							[ngClass]="!item.isRead?'text-primary':''">{{item.createdAt | DateFromNow}}</span>
+					</div>
 				</li>
-				<!-- Notification item -->
-				<li>
-					<a href="#" class="list-group-item list-group-item-action rounded border-0 mb-1 p-3 text-end">
-						<h6 class="mb-2">طلب منتج جدية 😎</h6>
-						<p class="mb-0 small">وصف للمنتج المطلوب من المستخدم</p>
-						<span class="small">15 نوفمبر 2022</span>
-					</a>
+				<li *ngIf="notifications.length == 0">
+					<p class="fs-6 fw-medium text-center my-1">ليس لديك اشعارات حالياً</p>
 				</li>
 			</ul>
 		</div>

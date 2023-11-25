@@ -11,6 +11,8 @@ import { CoreModule } from 'src/app/core/core.module';
 import { ServicesListComponent } from './Components/services-list/services-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RequestOrderDetailsComponent } from './Components/request-order-details/request-order-details.component';
+import { ProposalsComponent } from './Components/proposals/proposals.component';
+import { ProposalsListComponent } from './Components/proposals/components/proposals-list/proposals-list.component';
 
 
 
@@ -21,7 +23,11 @@ import { RequestOrderDetailsComponent } from './Components/request-order-details
 		ServiceProviderSendOfferComponent,
 		RequestOrdersComponent,
 		RequestOrderDetailsComponent,
-		ServicesListComponent
+		ServicesListComponent,
+		// Proposals components ---------------------
+		ProposalsComponent,
+		ProposalsListComponent
+		// ------------------------------------------
 	],
 	imports: [
 		CommonModule,

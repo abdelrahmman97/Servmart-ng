@@ -4,7 +4,7 @@
 	<img class="avatar-img rounded-2" [src]="user.profilePic" alt="{{user.userName}}" title="{{user.userName}}">
 </a>
 
-<ul class="dropdown-menu dropdown-animation dropdown-menu-start shadow pt-3" aria-labelledby="profileDropdown">
+<ul class="dropdown-menu dropdown-animation dropdown-menu-start shadow pt-3 border" aria-labelledby="profileDropdown">
 	<!-- Links -->
 	<li>
 		<a class="dropdown-item" [routerLink]="['/profile', user.userID]" routerLinkActive="">

@@ -4,7 +4,6 @@ import { RequestListComponent } from './Components/request-list/request-list.com
 import { EaringComponent } from './Components/earing/earing.component';
 import { AddProduectsComponent } from './Components/add-produects/AddProduectsComponent';
 import { RouterModule } from '@angular/router';
-import { SendOffersComponent } from './Components/SendOffers/SendOffers.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { OrderDetailsComponent } from './Components/order-details/order-details.component';
@@ -12,13 +11,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderListComponent } from './Components/order-list/order-list.component';
 import { EditComponent } from './Components/edit/edit.component';
 
-@NgModule({
+@NgModule( {
 	declarations: [
 		RequestListComponent,
 		EaringComponent,
 		AddProduectsComponent,
 		ProductListComponent,
-		SendOffersComponent,
 		OrderDetailsComponent,
 		RequestListComponent,
 		OrderDetailsComponent,
@@ -31,5 +29,5 @@ import { EditComponent } from './Components/edit/edit.component';
 		ReactiveFormsModule,
 		NgxPaginationModule,
 	],
-})
-export class VendorModule {}
+} )
+export class VendorModule { }

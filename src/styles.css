@@ -3761,6 +3761,22 @@ textarea.form-control-lg {
 	color: transparent;
 }
 
+.form-floating>.form-control::-webkit-input-placeholder, .form-floating>.form-control-plaintext::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control::-moz-placeholder, .form-floating>.form-control-plaintext::-moz-placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control:-ms-input-placeholder, .form-floating>.form-control-plaintext:-ms-input-placeholder {
+	color: transparent;
+}
+
+.form-floating>.form-control::-ms-input-placeholder, .form-floating>.form-control-plaintext::-ms-input-placeholder {
+	color: transparent;
+}
+
 .form-floating>.form-control::placeholder,
 .form-floating>.form-control-plaintext::placeholder {
 	color: transparent;
@@ -8841,57 +8857,57 @@ html[dir="rtl"] .accordion-button::after {
 
 .text-bg-primary {
 	color: #fff !important;
-	background-color: RGBA(81, 67, 217, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
 }
 
 .text-bg-white {
 	color: #000 !important;
-	background-color: RGBA(255, 255, 255, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(255, 255, 255, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-secondary {
 	color: #fff !important;
-	background-color: RGBA(133, 135, 138, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(133, 135, 138, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-success {
 	color: #fff !important;
-	background-color: RGBA(12, 188, 135, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(12, 188, 135, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-info {
 	color: #fff !important;
-	background-color: RGBA(23, 162, 184, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(23, 162, 184, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-warning {
 	color: #000 !important;
-	background-color: RGBA(247, 195, 46, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(247, 195, 46, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-danger {
 	color: #fff !important;
-	background-color: RGBA(214, 41, 62, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(214, 41, 62, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-light {
 	color: #000 !important;
-	background-color: RGBA(245, 245, 246, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(245, 245, 246, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-dark {
 	color: #fff !important;
-	background-color: RGBA(11, 10, 18, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(11, 10, 18, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-orange {
 	color: #fff !important;
-	background-color: RGBA(253, 126, 20, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(253, 126, 20, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-mode {
 	color: #000 !important;
-	background-color: RGBA(255, 255, 255, var(--bs-bg-opacity, 1)) !important;
+	background-color: rgba(255, 255, 255, var(--bs-bg-opacity, 1)) !important;
 }
 
 .link-primary {
@@ -18817,7 +18833,7 @@ html[dir="rtl"] .accordion-button::after {
 
 .btn-primary-soft {
 	color: var(--bs-primary);
-	background-color: rgba(81, 67, 217, 0.1);
+	background-color: rgba(10, 88, 202, 0.1);
 }
 
 .btn-primary-soft:active,

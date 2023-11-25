@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
 import { RequestService } from '../../services/Request/Request.service';
 import { ToastrService } from 'ngx-toastr';
 import { IGovernorate } from 'src/app/core/models/Address/IGovernorate';
@@ -9,23 +8,21 @@ import { AddressService } from 'src/app/shared/services/Address/Address.service'
 import { ICity } from 'src/app/core/models/Address/ICity';
 import { RequestServiceCategoriesService } from 'src/app/shared/services/RequestAndServiceCategories/RequestServiceCategories.service';
 import { IRequestServiceCategory } from 'src/app/core/models/RequestServiceCategory/IServiceCategory';
-import { IUserProfile } from 'src/app/core/models/User/IUserProfile';
 
 @Component( {
 	selector: 'app-addRequest',
 	templateUrl: './addRequest.component.html',
-	styleUrls: [ './addRequest.component.css' ],
+	styleUrls: ['./addRequest.component.css'],
 } )
 export class AddRequestComponent implements OnInit {
 
-	constructor (
+	constructor(
 		private rsCategoryService: RequestServiceCategoriesService,
 		private address: AddressService,
 		private reqService: RequestService,
 		private toastr: ToastrService,
 		private router: Router,
 		private activeRoute: ActivatedRoute,
-		private auth: AuthService,
 	) { }
 
 	serviceProvidersId: string = "";
@@ -37,10 +34,10 @@ export class AddRequestComponent implements OnInit {
 	CategoriesList: IRequestServiceCategory[] | null = null;
 
 	private _AddRequestForm: FormGroup;
-	public get AddRequestForm (): FormGroup {
+	public get AddRequestForm(): FormGroup {
 		return this._AddRequestForm;
 	}
-	public set AddRequestForm ( value: FormGroup ) {
+	public set AddRequestForm( value: FormGroup ) {
 		this._AddRequestForm = value;
 	}
 
@@ -53,11 +50,11 @@ export class AddRequestComponent implements OnInit {
 	videoSizeError = false;
 	@ViewChild( 'videoInput', { static: false } ) videoInput: ElementRef;
 
-	ngOnInit () {
+	ngOnInit() {
 
 		this.activeRoute.params.subscribe( {
 			next: ( params ) => {
-				this.serviceProvidersId = params[ 'id' ];
+				this.serviceProvidersId = params['id'];
 				console.log( "🚀 ~ get service provider id next:", this.serviceProvidersId )
 			},
 			error: ( error ) => {
@@ -70,18 +67,19 @@ export class AddRequestComponent implements OnInit {
 			Category: new FormControl( '', Validators.required ),
 			Details: new FormControl( '', Validators.required ),
 			ExpectedSalary: new FormControl( '', Validators.required ),
-			EndDate: new FormControl( '', Validators.required ),
+			Duration: new FormControl( '', Validators.required ),
 			Governorate: new FormControl( '', Validators.required ),
 			City: new FormControl( '', Validators.required ),
 			Address: new FormControl( '', Validators.required ),
 		} );
 
-		this.address.getAllGovernorates().subscribe(
-			next => {
-				this.GovernoratesList = next as IGovernorate[];
-			},
-			error => {
-				this.toastr.error( 'خطأ في عرض المحافظات' )
+		this.address.getAllGovernorates().subscribe({
+				next: ( value ) => {
+					this.GovernoratesList = value as IGovernorate[];
+				},
+				error: ( error ) => {
+					this.toastr.error( 'خطأ في عرض المحافظات' )
+				}
 			}
 		);
 
@@ -92,11 +90,11 @@ export class AddRequestComponent implements OnInit {
 		);
 	}
 
-	getCities ( event: any ) {
-		this.CitiesList = this.GovernoratesList[ event.target.value - 1 ].city;
+	getCities( event: any ) {
+		this.CitiesList = this.GovernoratesList[event.target.value - 1].city;
 	}
 
-	onImagesSelected ( event: any ) {
+	onImagesSelected( event: any ) {
 
 		const files = event.target.files;
 		if ( files.length > 5 ) {
@@ -121,12 +119,12 @@ export class AddRequestComponent implements OnInit {
 
 	}
 
-	removeImage ( index ) {
+	removeImage( index ) {
 		this.selectedImages.splice( index, 1 );
 	}
 
-	onVideoSelected ( event: any ) {
-		const file = event.target.files[ 0 ];
+	onVideoSelected( event: any ) {
+		const file = event.target.files[0];
 		if ( file ) {
 			if ( file.size <= 100 * 1024 * 1024 ) { // 100MB limit
 				this.selectedVideo = file;
@@ -138,7 +136,7 @@ export class AddRequestComponent implements OnInit {
 		}
 	}
 
-	removeVideo () {
+	removeVideo() {
 		this.selectedVideo = null;
 		this.selectedVideoUrl = null;
 		this.videoSizeError = false;
@@ -147,7 +145,7 @@ export class AddRequestComponent implements OnInit {
 		}
 	}
 
-	submitForm () {
+	submitForm() {
 		this.submited = true;
 		if ( this.AddRequestForm.valid ) {
 			// Perform the desired action with the form data
@@ -158,7 +156,7 @@ export class AddRequestComponent implements OnInit {
 			if ( this.selectedImages ) {
 				this.imagesRequiredError = false;
 				for ( let i = 0; i < this.selectedImages.length; i++ ) {
-					formData.append( 'Images', this.selectedImages[ i ].file );
+					formData.append( 'Images', this.selectedImages[i].file );
 				}
 			}
 			else {
@@ -171,7 +169,7 @@ export class AddRequestComponent implements OnInit {
 			}
 
 			if ( this.serviceProvidersId == undefined ) {
-				formData.append( 'ProviderID', null );
+				formData.append( 'ProviderID', "" );
 				formData.append( 'IsDirect', "false" );
 			}
 			else {
@@ -184,13 +182,13 @@ export class AddRequestComponent implements OnInit {
 			formData.append( 'Category', this.AddRequestForm.get( 'Category' )?.value );
 			formData.append( 'Details', this.AddRequestForm.get( 'Details' )?.value );
 			formData.append( 'ExpectedSalary', this.AddRequestForm.get( 'ExpectedSalary' )?.value );
-			formData.append( 'EndDate', this.AddRequestForm.get( 'EndDate' )?.value );
+			formData.append( 'Duration', this.AddRequestForm.get( 'Duration' )?.value );
 			formData.append( 'Address', this.AddRequestForm.get( 'Address' )?.value );
 			formData.append( 'CityId', this.AddRequestForm.get( 'City' )?.value );
 			formData.append( 'GovernorateId', this.AddRequestForm.get( 'Governorate' )?.value );
 
 			for ( const pair of formData.entries() ) {
-				console.log( `${ pair[ 0 ] }: ${ pair[ 1 ] }` );
+				console.log( `${pair[0]}: ${pair[1]}` );
 			}
 
 			// console.log( this.AddRequestForm.value );
@@ -201,11 +199,12 @@ export class AddRequestComponent implements OnInit {
 				next => {
 					console.log( "next", next );
 					this.toastr.success( "تم إضافة الطلب بنجاح" );
-					this.router.navigate( [ '/myRequests/' ] );
+					this.router.navigate( ['/myRequests/'] );
 				},
 				error => {
 					console.log( "error", error );
-					this.toastr.error( "حدث خطأ أثناء الاضافة\nالرجاء المحاولة مرة أخري" )
+					this.toastr.error( error.error.title )
+					// this.toastr.error( "حدث خطأ أثناء الاضافة\nالرجاء المحاولة مرة أخري" )
 					this.submited = false;
 				}
 			);

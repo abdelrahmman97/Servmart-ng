@@ -23,7 +23,8 @@
 							"src/styles.css",
 							"src/assets/fontawesome/css/all.min.css",
 							"src/assets/fontawesome/css/duotone.min.css",
-							"node_modules/ngx-toastr/toastr.css"
+							"node_modules/ngx-toastr/toastr.css",
+							"src/assets/styles/toast.css"
 						],
 						"scripts": [
 							"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"

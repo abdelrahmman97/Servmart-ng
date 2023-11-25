@@ -57,8 +57,9 @@
 										<th></th>
 									</tr>
 								</thead>
-								<tbody >
-									<tr *ngFor="let Request of requestList|paginate: { itemsPerPage: 10, currentPage: P }">
+								<tbody>
+									<tr
+										*ngFor="let Request of requestList|paginate: { itemsPerPage: 10, currentPage: P }">
 
 										<td>
 											<div class="form-check">
@@ -69,11 +70,10 @@
 											</div>
 										</td>
 										<td>
-											<a href="#!"> <img [src]="" alt=""
-													class="icon-shape icon-md"></a>
+											<a href="#!"> <img [src]="" alt="" class="icon-shape icon-md"></a>
 										</td>
 										<td><a href="#" class="text-reset">
-											{{Request.CleintID}} </a>
+												{{Request.CleintID}} </a>
 										</td>
 										<td>
 											{{Request.Title}}
@@ -92,8 +92,8 @@
 
 
 										<td>
-										   <a class="text-primary-emphasis" [routerLink]="['/orderdetail',Request.ID]">
-											<i class="fa-thin fa-eye fa-xl"></i></a>
+											<a class="text-primary-emphasis" [routerLink]="['/orderdetail',Request.ID]">
+												<i class="fa-thin fa-eye fa-xl"></i></a>
 										</td>
 									</tr>
 								</tbody>
@@ -112,4 +112,3 @@
 		</nav>
 	</section>
 </div>
-

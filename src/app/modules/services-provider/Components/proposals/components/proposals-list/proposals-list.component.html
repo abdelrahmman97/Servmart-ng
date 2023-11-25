@@ -1,0 +1,108 @@
+<!-- proposals -->
+<div class="card border mb-4"
+	*ngFor="let item of offers | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totaloffersItems }">
+
+	<div class="card-header border-bottom d-md-flex justify-content-md-between align-items-center">
+
+		<!-- Icon and Title -->
+		<div class="d-flex align-items-center gap-4">
+			<!-- <div class="icon-lg bg-light rounded-circle flex-shrink-0">
+								<img src="https://images.placeholders.dev/?width=200&height=200" alt=""
+									class="rounded-circle">
+							</div> -->
+			<!-- Title -->
+			<div class="ms-2">
+				<h6 class="card-title mb-2">{{item.request.title}}</h6>
+				<ul class="nav nav-divider p-0">
+					<li class="nav-item d-flex flex-row align-items-center gap-2">
+						<i class="fa-duotone fa-map-location text-primary"></i>
+						<p class="mb-0">
+							{{item.request.governorateAr}} - {{item.request.cityAr}}
+						</p>
+					</li>
+					<li class="nav-item d-flex flex-row align-items-center gap-2">
+						<i class="fa-duotone fa-hand-holding-dollar text-primary"></i>
+						<p class="m-0">
+							{{item.expectSalary | CustomCurrency:"ar":false}}
+						</p>
+					</li>
+					<li class="nav-item d-flex flex-row align-items-center gap-2">
+						<i class="fa-duotone fa-calendar-days text-primary"></i>
+						<p class="m-0">
+							{{item.request.startDate | DateDifference:item.request.endDate}}
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Update -->
+		<div class="mt-2 mt-md-0 d-flex flex-row gap-2" [ngSwitch]="status">
+			<ng-template [ngSwitchCase]="0">
+				<a href="#" [routerLink]="['/edit-offer','CGDSUAHA12548']" class="btn btn-primary-soft mb-0">تعديل</a>
+			</ng-template>
+			<ng-template [ngSwitchCase]="1">
+				<button class="btn btn-primary-soft mb-0" (click)="setAsCompleted(item.id)">تم التنفيذ</button>
+			</ng-template>
+			<ng-template [ngSwitchCase]="2">
+				<button class="btn btn-primary-soft mb-0" (click)="setAsArchived(item.id)">أرشفة</button>
+			</ng-template>
+			<ng-template [ngSwitchCase]="3">
+				<button class="btn btn-primary-soft mb-0" (click)="setAsArchived(item.id)">أرشفة</button>
+			</ng-template>
+		</div>
+
+	</div>
+
+	<!--  offer details -->
+	<div class="card-body bg-light">
+		<div class="row">
+			<h6>العرض الخاص بك</h6>
+		</div>
+		<div class="row g-3">
+			<div class="col-sm-6 col-md-4">
+				<span>تاريخ الانشاء</span>
+				<h6 class="mb-0">{{item.createdAt | DateFromNow}}</h6>
+			</div>
+
+			<div class="col-sm-6 col-md-4">
+				<span>مدة التنفيذ</span>
+				<h6 class="mb-0">{{item.duration}}</h6>
+			</div>
+
+			<div class="col-md-4">
+				<span>المبلغ</span>
+				<h6 class="mb-0">{{item.expectSalary | CustomCurrency:"ar":false}}</h6>
+			</div>
+		</div>
+		<div class="row mt-4">
+			<span>التفاصيل</span>
+			<h6>
+				{{item.details}}
+			</h6>
+		</div>
+	</div>
+
+
+</div>
+
+<div class="card-body text-center" *ngIf="!isLoading && offers.length == 0" [ngSwitch]="status">
+	<ng-template [ngSwitchCase]="0">
+		<h6>لا يوجد لديك عروض منتظرة</h6>
+	</ng-template>
+	<ng-template [ngSwitchCase]="1">
+		<h6>لا يوجد لديك طلبات تحت التنفيذ</h6>
+	</ng-template>
+	<ng-template [ngSwitchCase]="2">
+		<h6>لا يوجد لديك عروض مستبعدة</h6>
+	</ng-template>
+	<ng-template [ngSwitchCase]="3">
+		<h6>لا يوجد لديك طلبات منتهية</h6>
+	</ng-template>
+</div>
+
+<!-- Pagination -->
+<div class="d-flex justify-center" *ngIf="offers.length != 0">
+	<pagination-controls (pageChange)="pageChanged($event)" previousLabel="السابق" nextLabel="التالي" [maxSize]="7">
+	</pagination-controls>
+</div>
