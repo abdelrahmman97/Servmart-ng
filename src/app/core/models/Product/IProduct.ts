@@ -1,6 +1,8 @@
+import { IProductCategory } from "./IProductCategory";
+
 export interface IProduct {
 	productID?: string;
-	categoryID: number;
+	categoryID: IProductCategory;
 	productName: string;
 	description: string;
 	unitPrice : number;
