@@ -48,10 +48,11 @@
 							</a>
 							<ul class="dropdown-menu min-w-auto dropdown-menu-end">
 								<li>
-									<a class="dropdown-item" href="#" target="_blank">
+									<a class="dropdown-item" [routerLink]="['/dashboard']" target="_blank" *ngIf="user.role && user.role.includes('Admin')">
 										<i class="fa-duotone fa-headset"></i>
-										الدعم الفني
+										لوحة التحكم
 									</a>
+									
 								</li>
 								<li>
 									<a class="dropdown-item" href="docs/index.html" target="_blank">

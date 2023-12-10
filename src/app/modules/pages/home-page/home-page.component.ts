@@ -20,6 +20,7 @@ export class HomePageComponent implements OnInit {
 	constructor ( private Homeservice: HomePageService, private Http: HttpClient ) {}
 	ngOnInit(): void {
 		this.getproduct(this.pageSize,this.currentPage)
+    this.getallService(this.pageSize,this.currentPage)
    	}
 
     getproduct(Page:number,pagesize:number){
