@@ -5,7 +5,7 @@
 				<thead>
 					<tr>
 						<th scope="col">اسم الطلب</th>
-						<th scope="col">تاريخ البدء</th>
+						<th scope="col">مدة التنفيذ</th>
 						<th scope="col">الميزانية</th>
 						<th scope="col"></th>
 					</tr>
@@ -15,17 +15,21 @@
 						*ngFor="let item of requestList | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }">
 						<td scope="row">
 							<p class="mb-0 fs-5 fw-medium">{{item.title}}</p>
-							<small class="mb-0">{{item.startDate|DateFromNow}}</small>
+							<small class="mb-0">{{item.createdAt|DateFromNow}}</small>
 						</td>
-						<td>{{item.startDate | CustomDate}}</td>
+						<td>{{item.duration}}</td>
 						<td>{{item.expectedSalary | CustomCurrency: "ar": false}}</td>
 						<td>
 							<div class="mt-2 mt-md-0 d-flex flex-row gap-2">
-								<a href="#" class="btn btn-primary-soft mb-0">
+								<a *ngIf="status == 0" class="btn btn-primary-soft mb-0">
 									تعديل
 								</a>
-								<a href="#" [routerLink]="['/offers',item.id]" class="btn btn-primary mb-0">
+								<a *ngIf="status == 0" [routerLink]="['/offers',item.id]" class="btn btn-primary mb-0">
 									رؤية العروض
+								</a>
+								<a *ngIf="status == 3 && item.rateValue == 0" [routerLink]="['/rateService',item.id]"
+									class="btn btn-primary mb-0">
+									تقييم الخدمة
 								</a>
 							</div>
 						</td>

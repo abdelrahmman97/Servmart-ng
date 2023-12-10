@@ -38,6 +38,7 @@ export class CustomerRequestsListComponent implements OnInit {
 			next: data => {
 				this.requestList = data as any[];
 				this.isLoading = false;
+				console.log(data);
 			},
 			error: error => {
 				this.isLoading = false;

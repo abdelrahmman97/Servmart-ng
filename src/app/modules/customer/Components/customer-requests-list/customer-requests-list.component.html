@@ -9,7 +9,7 @@
 		<!-- Tabs -->
 		<ul class="nav nav-tabs nav-bottom-line nav-responsive nav-justified" role="tablist">
 			<li class="nav-item" role="presentation">
-				<a class="nav-link mb-0 justify-center active" data-bs-toggle="tab" href="#tab-0" aria-selected="false"
+				<a class="nav-link mb-0 justify-center active" data-bs-toggle="tab" href="#tab-1" aria-selected="false"
 					role="tab" tabindex="-1" (click)="statusChanged(0)">
 					<i class="fa-duotone fa-flag-pennant"></i>
 					المنتظرة
@@ -27,7 +27,7 @@
 				</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link mb-0 justify-center" data-bs-toggle="tab" href="#tab-3" aria-selected="true"
+				<a class="nav-link mb-0 justify-center" data-bs-toggle="tab" href="#tab-1" aria-selected="true"
 					role="tab" (click)="statusChanged(3)">
 					<i class="fa-duotone fa-check-double"></i>
 					المنتهية
@@ -56,8 +56,9 @@
 				</ng-template>
 			</div>
 
-			<request-list-content class="tab-pane fade active show" id="tab-0" role="tabpanel" [status]="status"
-				[currentPage]="currentPage" [requestList]="requestList" (pageChangedEvent)="pageChanged($event)">
+			<request-list-content *ngIf="!isLoading && requestList.length != 0" class="tab-pane fade active show"
+				id="tab-1" role="tabpanel" [status]="status" [currentPage]="currentPage" [requestList]="requestList"
+				(pageChangedEvent)="pageChanged($event)">
 			</request-list-content>
 
 		</div>

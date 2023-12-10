@@ -8,30 +8,30 @@ import { IUsersRequests } from 'src/app/core/models/Request/IUsersRequests';
 } )
 export class RequestService {
 
-	constructor( private httpClient: HttpClient ) { }
+	constructor ( private httpClient: HttpClient ) { }
 
-	create( request: FormData ) {
-		return this.httpClient.post( `${environment.apiUrl}/Request/Create`, request );
+	create ( request: FormData ) {
+		return this.httpClient.post( `${ environment.apiUrl }/Request/Create`, request );
 	}
 
-	getTotalUsersRequests() {
-		return this.httpClient.get<number>( `${environment.apiUrl}/Request/GetRequestCount` );
+	getTotalUsersRequests () {
+		return this.httpClient.get<number>( `${ environment.apiUrl }/Request/GetRequestCount` );
 	}
 
-	getAllRequests( page: number, pageSize: number ) {
-		return this.httpClient.get<IUsersRequests[]>( `${environment.apiUrl}/Request/GetAll?page=${page}&pageSize=${pageSize}` );
+	getAllRequests ( page: number, pageSize: number, status: number ) {
+		return this.httpClient.get<IUsersRequests[]>( `${ environment.apiUrl }/Request/GetAll?page=${ page }&pageSize=${ pageSize }&status=${ status }` );
 	}
 
-	getUsersRequests( userId: string, status: number, page: number, pageSize: number ) {
-		return this.httpClient.get( `${environment.apiUrl}/Request/GetUserRequestsById?userId=${userId}&status=${status}&page=${page}&pageSize=${pageSize}` );
+	getUsersRequests ( userId: string, status: number, page: number, pageSize: number ) {
+		return this.httpClient.get( `${ environment.apiUrl }/Request/GetUserRequestsById?userId=${ userId }&status=${ status }&page=${ page }&pageSize=${ pageSize }` );
 	}
 
-	GetUserRequestsCountById( userId: string, status: number ) {
-		return this.httpClient.get( `${environment.apiUrl}/Request/GetUserRequestsCountById?userId=${userId}&status=${status}` );
+	GetUserRequestsCountById ( userId: string, status: number ) {
+		return this.httpClient.get( `${ environment.apiUrl }/Request/GetUserRequestsCountById?userId=${ userId }&status=${ status }` );
 	}
 
-	getRequestById( requestId: string ) {
-		return this.httpClient.get( `${environment.apiUrl}/Request/GetRequestById?requestId=${requestId}` );
+	getRequestById ( requestId: string ) {
+		return this.httpClient.get( `${ environment.apiUrl }/Request/GetRequestById?requestId=${ requestId }` );
 	}
 
 	// getRequestCategory( name: string ): string {

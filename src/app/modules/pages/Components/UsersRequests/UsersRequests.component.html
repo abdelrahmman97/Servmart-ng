@@ -238,8 +238,8 @@
 		</div>
 
 		<!-- No Requests -->
-		<div *ngIf="usersRequestsList.length == 0">
-			<h1>لا يوجد طلبات حاليا</h1>
+		<div *ngIf="usersRequestsList.length == 0 && !loading" class="text-center">
+			<h3>لا يوجد طلبات حاليا</h3>
 		</div>
 
 		<!-- Pagination -->

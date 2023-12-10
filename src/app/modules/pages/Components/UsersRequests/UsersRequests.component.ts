@@ -24,7 +24,7 @@ export class UsersRequestsComponent implements OnInit {
 
 	loading: boolean;
 	currentPage: number = 1;
-	pageSize: number = 10;
+	pageSize: number = 3;
 	totalRequestItems: number = 0;
 	usersRequestsList: IUsersRequests[] = [];
 	CitiesList: ICity[] | null = null;
@@ -32,6 +32,8 @@ export class UsersRequestsComponent implements OnInit {
 	CategoriesList: IRequestServiceCategory[] | null = null;
 
 	fakeArray = new Array( this.pageSize );
+
+	requestsStatus: number = 0;
 
 	ngOnInit () {
 
@@ -43,7 +45,7 @@ export class UsersRequestsComponent implements OnInit {
 			}
 		);
 
-		this.getRequests( this.currentPage, this.pageSize );
+		this.getRequests( this.currentPage, this.pageSize, this.requestsStatus );
 
 		this.address.getAllGovernorates().subscribe(
 			next => {
@@ -51,7 +53,7 @@ export class UsersRequestsComponent implements OnInit {
 				console.log( this.GovernoratesList );
 			},
 			error => {
-				this.toastr.error( 'خطأ في عرض المحافظات' )
+				// this.toastr.error( 'خطأ في عرض المحافظات' )
 			}
 		);
 
@@ -69,12 +71,12 @@ export class UsersRequestsComponent implements OnInit {
 
 	pageChanged ( event: any ) {
 		this.currentPage = event;
-		this.getRequests( this.currentPage, this.pageSize );
+		this.getRequests( this.currentPage, this.pageSize, this.requestsStatus );
 	}
 
-	getRequests ( page: number, pageSize: number ) {
+	getRequests ( page: number, pageSize: number, status: number ) {
 		this.loading = true;
-		this.reqService.getAllRequests( page, pageSize ).subscribe(
+		this.reqService.getAllRequests( page, pageSize, status ).subscribe(
 			next => {
 				this.usersRequestsList = next as IUsersRequests[];
 				this.loading = false;
@@ -82,6 +84,7 @@ export class UsersRequestsComponent implements OnInit {
 			},
 			error => {
 				this.toastr.error( error )
+				this.loading = false;
 			}
 		);
 	}

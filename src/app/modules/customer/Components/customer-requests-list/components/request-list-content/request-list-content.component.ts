@@ -1,14 +1,14 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 @Component( {
 	selector: 'request-list-content',
 	templateUrl: './request-list-content.component.html',
-	styleUrls: ['./request-list-content.component.css']
+	styleUrls: [ './request-list-content.component.css' ]
 } )
 export class RequestListContentComponent {
 
-	constructor(
+	constructor (
 		private toastr: ToastrService
 	) { }
 
@@ -21,10 +21,9 @@ export class RequestListContentComponent {
 	@Input() currentPage: number = 1;
 	pageSize: number = 3
 
-	pageChanged( event: any ) {
+	pageChanged ( event: any ) {
 		this.currentPage = event as number;
 		this.pageChangedEvent.emit( event )
 	};
-
 
 }
