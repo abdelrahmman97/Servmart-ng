@@ -1,4 +1,4 @@
-<section >
+<section>
     <div class="container ">
         <div class="row ">
             <div class="col-md-5">
@@ -24,28 +24,28 @@
         </div>
     </div>
 </section>
-    <!-- ---------------------------------------SectionTwo------------------------------------------ -->
+<!-- ---------------------------------------SectionTwo------------------------------------------ -->
 
-    <section >
-        <div class="container ">
-            <div class="row   ">
-                <div class="col-md-8 ">
-                    <div class="text">
-                        <p class="fs-2 fw-bold">عن المنتج</p>
-                        <hr>
-                       <p>{{product.description}}</p>
-                    </div>
-
-                    <p class="fs-3 fw-bold">مزايا المنتج</p>
-                    <span><i class="fas fa-check bg-success rounded-circle text-white p-1"></i> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, excepturi.</span><br>
-                    <span><i class="fas fa-check bg-success rounded-circle text-white p-1"></i> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, excepturi.</span><br>
-                    <span><i class="fas fa-check bg-success rounded-circle text-white p-1"></i> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, excepturi.</span><br>
-                    <span><i class="fas fa-check bg-success rounded-circle text-white p-1"></i> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, excepturi.</span><br>
-
-
+<section>
+    <div class="container ">
+        <div class="row   ">
+            <div class="col-md-8 ">
+                <div class="text">
+                    <p class="fs-2 fw-bold">عن المنتج</p>
+                    <hr>
+                    <p>{{product.description}}</p>
                 </div>
-                <div class=" col-md-4     ">
-                   <div class="">
+
+                <!-- <p class="fs-3 fw-bold">مزايا المنتج</p>
+                    <span><i class="fas fa-check bg-success rounded-circle text-white p-1"></i> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, excepturi.</span><br>
+                    <span><i class="fas fa-check bg-success rounded-circle text-white p-1"></i> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, excepturi.</span><br>
+                    <span><i class="fas fa-check bg-success rounded-circle text-white p-1"></i> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, excepturi.</span><br>
+                    <span><i class="fas fa-check bg-success rounded-circle text-white p-1"></i> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, excepturi.</span><br> -->
+
+
+            </div>
+            <div class=" col-md-4     ">
+                <div class="">
                     <div class="imgFixed bg-light p-3 rounded-3     mt-3 ">
                         <div class="textFlex d-flex justify-content-between">
                             <p class="text-secondary fw-bold">السعر</p>
@@ -54,15 +54,16 @@
 
                         <div class="div">
                             <P class="fs-4 fw-bold">${{product.unitPrice}}</P>
-                            <span class="fs-4 fw-bold"><i class="fas fa-arrow-right"></i> 4.0 <i class="fas fa-star" style="color: #e5f505;"></i></span>
+                            <span class="fs-4 fw-bold"><i class="fas fa-arrow-right"></i> 4.0 <i class="fas fa-star"
+                                    style="color: #a78b1a;"></i></span>
                             <P class="fs-4 fw-bold"><i class="fas fa-arrow-right"></i> متاح</P>
 
                         </div>
                         <div class="btns text-center ">
-                           <a  (click)="AddToCart(product.productID)">
-                            <button class="btn btn-outline-primary text-center w-75">اضف المنتج للقائمة</button>
+                            <a (click)="AddToCart(product.productID)">
+                                <button class="btn btn-outline-primary text-center w-75">اضف المنتج للقائمة</button>
 
-                           </a>
+                            </a>
                         </div>
 
 
@@ -72,87 +73,104 @@
                         <img src="imges/09.jpg" class="w-50" alt="">
                     </div>
 
-                   </div>
-                  
-
                 </div>
 
 
             </div>
 
 
-<div class="customerReview bg-light">
-
-</div>
         </div>
-    </section>
 
 
-    <section>
+        <div class="customerReview bg-light">
 
-     <div class="container">
+        </div>
+    </div>
+</section>
+
+
+<section>
+
+    <div class="container">
         <h1 class=" border-bottom">تقييم العملاء</h1>
 
         <div class="row col-lg-8 col-md-12 col-sm-12  ">
 
-        <div class="text d-lg-flex d-md-block d-sm-block gap-2 bg-light rounded-4 p-2">
-       <div>
-        <h1>4.5</h1>
-        <h6>عدد التعليقات</h6>
-        <span id="stars"><i class="fas fa-star" style="color: #e5f505;"></i><i class="fas fa-star" style="color: #e5f505;"></i><i class="fas fa-star" style="color: #e5f505;"></i><i class="fas fa-star" style="color: #e5f505;"></i></span>
-        </div>
-        <div>
-       </div>
+            <div class="text d-lg-flex d-md-block d-sm-block gap-2 bg-light rounded-4 p-2">
+                <div>
+                    <h1>4.5</h1>
+                    <h6>عدد التعليقات</h6>
+                    <span id="stars"><i class="fas fa-star" style="color: #e5f505;"></i><i class="fas fa-star"
+                            style="color: #e5f505;"></i><i class="fas fa-star" style="color: #e5f505;"></i><i
+                            class="fas fa-star" style="color: #e5f505;"></i></span>
+                </div>
+                <div>
+                </div>
 
-            <div class="range w-50 ">
-                <div class="progress w-100 mb-2">
-                    <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax=""> <h6 class="mb-1">85%</h6></div>
-                  </div>
-                <div class="progress w-100 mb-2 ">
-                    <div class="progress-bar " role="progressbar" aria-label="Example with label" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="50"><h6 class="mb-1">75%</h6></div>
-                  </div>
-                <div class="progress w-100 mb-2">
-                    <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="50"><h6 class="mb-1">60%</h6></div>
-                  </div>
-                <div class="progress w-100 mb-2">
-                    <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="50"><h6 class="mb-1">35%</h6></div>
-                  </div>
-                <div class="progress w-100 mb-2">
-                    <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="50"><h6 class="mb-1">15%</h6></div>
-                  </div>
+                <div class="range w-50 ">
+                    <div class="progress w-100  mb-2">
+                        <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 85%;"
+                            aria-valuenow="85" aria-valuemin="0" aria-valuemax="">
+                            <h6 class="mb-1 text-light">85%</h6>
+                        </div>
+                    </div>
+                    <div class="progress w-100 mb-2 ">
+                        <div class="progress-bar " role="progressbar" aria-label="Example with label"
+                            style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="50">
+                            <h6 class="mb-1 text-light">75%</h6>
+                        </div>
+                    </div>
+                    <div class="progress w-100 mb-2">
+                        <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 60%;"
+                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="50">
+                            <h6 class="mb-1 text-light">60%</h6>
+                        </div>
+                    </div>
+                    <div class="progress w-100 mb-2">
+                        <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 35%;"
+                            aria-valuenow="35" aria-valuemin="0" aria-valuemax="50">
+                            <h6 class="mb-1 text-light">35%</h6>
+                        </div>
+                    </div>
+                    <div class="progress w-100 mb-2">
+                        <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 15%;"
+                            aria-valuenow="15" aria-valuemin="0" aria-valuemax="50">
+                            <h6 class="mb-1 text-light">15%</h6>
+                        </div>
+                    </div>
+
+                </div>
+
 
             </div>
-
-
-        </div>
-       </div>
-
         </div>
 
-    </section>
+    </div>
 
-    <section >
-        <div class="container">
-            <div class="row col-8">
-               <!-- <form >
+</section>
+
+<section>
+    <div class="container">
+        <div class="row col-8">
+            <!-- <form >
                 <textarea class="form-control " formControlName="textArea" type="text" name="" id="" cols="25" rows="5"></textarea>
 
                     <button class="btn btn-outline-primary mt-2 "  type="submit">ارسل التعليق <i class="fa-solid fa-arrow-right" style="color: #bcccf0;"></i></button>
 
                </form> -->
-            </div>
-
         </div>
-    </section>
 
-    <section>
-        
-        <div class="container">
-            <h3>خدمات مماثلة</h3>
-         <div class="row">
-            <div class="x col-lg-4 col-md-12 col-sm-12  "  name="contentcard" *ngFor="let t of AllProduct" >
-                <div class="content bg-light rounded-2 p-2" name="elements" >
-                    <div class="image" *ngFor="let m of t.picsURL.slice(0,1)" >
+    </div>
+</section>
+
+<section>
+
+    <div class="container">
+        <h3>خدمات مماثلة</h3>
+        <div class="row">
+            <div class="x col-lg-4 col-md-12 col-sm-12  " name="contentcard" *ngFor="let t of AllProduct">
+                <div class="content bg-light rounded-2 p-2" name="elements">
+                    <div class="image" *ngFor="let m of t.picsURL.slice(0,1)">
                         <img [src]="m" class="p-2 rounded-4" alt="..." />
                     </div>
                     <div class="card-body">
@@ -165,28 +183,29 @@
                                 <i class="far fa-bookmark"></i>
                             </div>
                         </div>
-                        
-                            <h5 class="card-title pe-4">{{ t.productName|minLength:7 }}</h5>
+
+                        <h5 class="card-title pe-4">{{ t.productName|minLength:7 }}</h5>
                         <p class="card-text pe-3">
                             {{t.description|minLength:20}}
                         </p>
-                        
+
                         <div class="footer d-flex justify-content-between text-success ">
                             <div class="text ">
-                                <span class="fs-4 fw-bold">${{ t.unitPrice }}</span><span class="text-secondary fs-5"></span>
+                                <span class="fs-4 fw-bold">${{ t.unitPrice }}</span><span
+                                    class="text-secondary fs-5"></span>
                             </div>
                             <div (click)="getSmiller(t.productID)" class="button col-7">
-                                <button  class="btn btn-primary ">اظهر المعلومات
+                                <button class="btn btn-primary ">اظهر المعلومات
                                     <i class="fas fa-arrow-right fs-6"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-         </div>
         </div>
+    </div>
 
 
 
 
-    </section>
+</section>
