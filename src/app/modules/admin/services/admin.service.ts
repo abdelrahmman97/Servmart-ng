@@ -1,5 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/app/core/environments/environment';
+import { IService } from 'src/app/core/models/Service/IService';
+import { IUser } from 'src/app/core/models/User/IUser';
 
 @Injectable({
   providedIn: 'root'
@@ -24,13 +28,16 @@ export class AdminService {
     return this.httpclint.get<any[]>(this.user);  // get all products
   }
   gstAllusers(){
-    return this.httpclint.get<any[]>(this.users);  // get all products
+    return this.httpclint.get<IUser[]>(this.users);  // get all products
   }
   gstAllvendor(){
     return this.httpclint.get<any[]>(this.vendoe);  // get all products
   }
   gstAllservprovider(){
     return this.httpclint.get<any[]>(this.servprovider);  // get all products
+  }
+  allService(){
+    return this.httpclint.get<IService[]>("https://localhost:7013/api/Service/GetAllServices");
   }
   getprofuct(id:number)
 {
@@ -40,4 +47,11 @@ getrequest(id:number)
 {
 	return   this.httpclint.get<any>(`${this.request}?ID=${id}`);    /// get product by id
 }
+ ServicesALl(){
+  return this.httpclint.get<IService[]>(`${environment.apiUrl}/Service/GetAllServices`);
+ }
+ AllProducet(){
+  return this.httpclint.get<any[]>('https://localhost:7013/GetAllProduct');
+ }
+
 }

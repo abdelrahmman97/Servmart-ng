@@ -5,7 +5,7 @@ export interface IProduct {
 	categoryID: IProductCategory;
 	productName: string;
 	description: string;
-	unitPrice : number;
+	unitPrice : string;
 	stoke: number;
 	picsURL:string;
 }

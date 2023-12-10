@@ -1,3 +1,5 @@
+import { IRole } from "../IRole";
+
 export interface IUser {
 	ID?: string;
 	// personal info
@@ -11,7 +13,7 @@ export interface IUser {
 	PasswordHash: string;
 	PasswordSalt: string;
 	ProfilePic: string;
-	Roles: string[];
+	Roles: IRole[];
 	work: string;
 	Birthday:Date;
 	Gender: string;
