@@ -141,41 +141,36 @@ style="background-image: url(../../../../../assets/images/22.jpg); background-re
                                     <th scope="col" class="border-0">رقم الهاتف</th>
                                     <th scope="col" class="border-0">نوع الحساب</th>
                                     <th scope="col" class="border-0"> عنوان المستخدم</th>
-                                    <th scope="col" class="border-0 rounded-end">Action</th>
                                 </tr>
                             </thead>
 
                             <!-- Table body START -->
                             <tbody class="border-top-0">
                                 <!-- Table item -->
-                                <tr *ngFor="let User of Userlist">
+                                <tr *ngFor="let User of Userall">
                                     <td>
                                         <div class="avatar avatar-md flex-shrink-0">
-                                            <img class="avatar-img rounded-circle" [src]="User.ProfilePic" alt="avatar">
+                                            <img class="avatar-img rounded-circle" [src]="User.profilePic" alt="avatar">
                                         </div>
                                     </td>
                                     <td>
-                                        <h6 class="mb-0"><a href="#">{{User.Username}}</a></h6>
+                                        <h6 class="mb-0"><a href="#">{{User.username}}</a></h6>
                                     </td>
                                     <td>
-                                        {{User.Email}} </td>
+                                        {{User.email}} </td>
                                     <td>
-                                        {{User.PhoneNo}}
+                                        {{User.phoneNo}}
                                     </td>
                                     <td>
                                         <div class="badge text-bg-success">
-                                            {{User.Roles[0].Name}}
+                                            {{User.roles[0].Name}}
                                         </div>
                                     </td>
                                     <td>
                                         <div class="badge bg-success bg-opacity-10 text-success">
-                                            {{User.Address}}
+                                            {{User.address}}
                                         </div>
-                                    </td>
-                                    <td> <a href="#" class="btn btn-sm btn-light mb-0">View</a> </td>
-                                </tr>
-
-
+                               
                             </tbody>
                             <!-- Table body END -->
                         </table>

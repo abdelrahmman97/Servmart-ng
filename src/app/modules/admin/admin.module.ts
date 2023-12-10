@@ -17,7 +17,8 @@ import { VendorComponent } from './Components/vendor/vendor.component';
 import { SingleserviceComponent } from './Components/singleservice/singleservice.component';
 import { SingleproductComponent } from './Components/singleproduct/singleproduct.component';
 import { SinglerequestComponent } from './Components/singlerequest/singlerequest.component';
-
+import { Ngxchart2Component } from './Components/ngxchart2/ngxchart2.component';
+Ngxchart2Component
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { SinglerequestComponent } from './Components/singlerequest/singlerequest
 		RequestComponent,
 		ServproviderComponent,
 		UserComponent,
+		Ngxchart2Component,
 		VendorComponent,
 		SingleserviceComponent,
 		SingleproductComponent,

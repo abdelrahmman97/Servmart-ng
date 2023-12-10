@@ -4358,8 +4358,7 @@
 		</div>
 		<div class="row g-4 row-cols-xl-3 row-col-lg-3 row-col-md-2  ">
 
-			<div class="card me-3 border-0 shadow p-2 pb-0 h-100 div" style="  width: 297px;"
-				*ngFor="let pro of Productlist">
+			<div class="card me-3 border-0 shadow p-2 pb-0 h-100 div" style="  width: 297px;" *ngFor="let pro of Productlist" >
 				<!-- Image -->
 				<img [src]="pro.picsURL" class="rounded-2" alt="Card image">
 
@@ -4405,58 +4404,7 @@
 				</div>
 
 			</div>
-
-			<div class="" id="">
-				<div class="card shadow p-2 pb-0 h-100 div" style="  width: 297px;">
-					<!-- Image -->
-					<img src="../../../../assets/images//homePage-img/car-service.gif" class="rounded-2"
-						alt="Card image">
-
-					<!-- Card body START -->
-					<div class="card-body px-3 pb-0">
-						<!-- Rating and cart -->
-						<div class="d-flex justify-content-between mb-3">
-							<a href="#" class="badge bg-dark text-white"><i
-									class="bi fa-fw bi-star-fill me-2 text-warning"></i>4.0</a>
-							<a href="#" class="h6 mb-0 z-index-2"><i class="bi fa-fw bi-bookmark"></i></a>
-						</div>
-
-					<!-- Title -->
-					<h5 class="card-title  "
-						style="display: flex ; justify-content: center; position: relative; bottom: 25px;">
-						{{pro.productName}}</h5>
-
-					<!-- List -->
-					<ul class="nav nav-divider mb-2 mb-sm-3">
-						<li class="nav-item"> {{pro.description}} </li>
-						<li class="nav-item"> {{pro.categoryID.catagory}} </li>
-
-						</ul>
-					</div>
-					<!-- Card body END -->
-
-				<!-- Card footer START-->
-				<div class="card-footer pt-0">
-					<!-- Price and Button -->
-					<div class="d-sm-flex justify-content-sm-between align-items-center" if>
-						<!-- Price -->
-						<div class="d-flex align-items-center">
-							<h5 class="fw-normal text-success mb-0 me-1"> {{pro.unitPrice}} </h5>
-						</div>
-						<!-- Button -->
-						<div class="mt-2 mt-sm-0 z-index-2">
-							<a [routerLink]="['product/',pro.productID]"
-								class="btn btn-sm btn-primary-soft mb-0 w-100">رؤية المزيد
-								<i class="bi bi-arrow-right ms-2"></i></a>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-
-
-		</div>
+	</div>
 	</div>
 
 </section>
@@ -4567,54 +4515,7 @@
 
 				</div>
 			</div>
-			<div class="div" id="box2">
-				<div class="card shadow p-2 pb-0 h-100 border-0" style="  width: 297px;">
-					<!-- Image -->
-					<img src="../../../../assets/images/Post office-rafiki.png" class="rounded-2" alt="Card image">
-
-					<!-- Card body START -->
-					<div class="card-body px-3 pb-0">
-						<!-- Rating and cart -->
-						<div class="d-flex justify-content-between mb-3">
-							<a href="#" class="badge bg-primarytext-white"><i
-									class="bi fa-fw bi-star-fill me-2 text-warning"></i>4.0</a>
-							<a href="#" class="h6 mb-0 z-index-2"><i class="bi fa-fw bi-bookmark"></i></a>
-						</div>
-
-						<!-- Title -->
-						<h5 class="card-title  "
-							style="display: flex ; justify-content: center; position: relative; bottom: 25px;"><a
-								href="">أسم الخدمة </a></h5>
-
-						<!-- List -->
-						<ul class="nav nav-divider mb-2 mb-sm-3">
-							<li class="nav-item">نوع الخدمة </li>
-							<li class="nav-item"> اسم المستخدم </li>
-							<li class="nav-item"> </li>
-
-						</ul>
-					</div>
-					<!-- Card body END -->
-
-					<!-- Card footer START-->
-					<div class="card-footer pt-0">
-						<!-- Price and Button -->
-						<div class="d-sm-flex justify-content-sm-between align-items-center" if>
-							<!-- Price -->
-							<div class="d-flex align-items-center">
-								<h5 class="fw-normal text-success mb-0 me-1"> 1500ج </h5>
-								<span class="mb-0 me-2">/اليوم</span>
-							</div>
-							<!-- Button -->
-							<div class="mt-2 mt-sm-0 z-index-2">
-								<a href="hotel-detail.html" class="btn btn-sm btn-primary-soft mb-0 w-100">رؤية المزيد
-									<i class="bi bi-arrow-right ms-2"></i></a>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
+		
 		</div>
 	</div>
 </section>

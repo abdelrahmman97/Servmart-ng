@@ -15,9 +15,13 @@ export class DashboardComponent implements OnInit {
 	vendorsList: Observable<any[]>;
 	selectedcatid: number ;
   product: number ;
+  isThereError: boolean = false;
+	errorMessage: string = "";
 
 	protected: Observable<any[]>;
   user: number ;
+  Userall:any[]=[];
+
 
 	users: Observable<any[]>;
 
@@ -45,5 +49,18 @@ export class DashboardComponent implements OnInit {
 	 
     });
 }
+  Userlist(){
+    this.productService.gstAllusers().subscribe({
+      next: (data) => {
+        this.Userall = data;
+        console.log(this.Userall);},
+				error: error => {
+					this.isThereError = true;
+					this.errorMessage = "لقد حدث خطأ غير معروف من فضلك حاول مرة أخرى في وقت لاحق";
+					// this.errorMessage = error.statusText;
+					console.log( error );
+				}
 
+    })
+  }
 }
