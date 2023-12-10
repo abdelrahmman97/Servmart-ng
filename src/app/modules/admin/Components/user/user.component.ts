@@ -25,7 +25,7 @@ export class UserComponent implements OnInit  {
     this.http.delete(`https://localhost:7013/api/User?Id=${userId}`).subscribe(
       () => {
         // Update the user list after deletion
-        this.vendorsList = this.productService.gstAllvendor();
+        this.vendorsList = this.productService.gstAlluser();
         this.vendorsList.subscribe(vendors => {
           console.log('Received vendors data:', vendors);
       
@@ -54,7 +54,7 @@ export class UserComponent implements OnInit  {
 	extractFirstFiveCharacters(longWord: string): string {
 		return longWord.substring(0, 5);}
 	
-		pageSize = 1;
+		pageSize = 5;
   currentPage = 1;
   totalPages: number; 
   visibleData: any[] ;

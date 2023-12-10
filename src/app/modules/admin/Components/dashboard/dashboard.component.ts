@@ -4,6 +4,7 @@ import { IProductCategory } from 'src/app/core/models/Product/IProductCategory';
 import { AddProductService } from 'src/app/modules/vendor/services/Product/AppProductService.service';
 import { AdminService } from '../../services/admin.service';
 import { Observable } from 'rxjs';
+import { IUser } from 'src/app/core/models/User/IUser';
 
 @Component( {
 	selector: 'app-dashboard',
@@ -48,12 +49,14 @@ export class DashboardComponent implements OnInit {
       this.user = data.length;
 	 
     });
+    this.Userlist();
 }
   Userlist(){
     this.productService.gstAllusers().subscribe({
       next: (data) => {
-        this.Userall = data;
-        console.log(this.Userall);},
+        this.Userall = data as IUser[];
+        console.log(data);
+      },
 				error: error => {
 					this.isThereError = true;
 					this.errorMessage = "لقد حدث خطأ غير معروف من فضلك حاول مرة أخرى في وقت لاحق";
