@@ -47,6 +47,7 @@ import { DateDifferencePipe } from './Pipes/Date-Difference/Date-Difference.pipe
 		HeaderComponent,
 		UserDropdownComponent,
 		FooterComponent,
+		BottomSidebarComponent,
 		CustomCurrencyPipe,
 		CustomDatePipe,
 		DateFromNowPipe,
