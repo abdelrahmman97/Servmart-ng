@@ -45,7 +45,6 @@ import { RequestDerailsComponent } from './pages/Components/request-derails/requ
 		ReactiveFormsModule,
 		FormsModule,
 		CoreModule,
-		AdminModule,
 		CustomerModule,
 		SharedModule,
 		VendorModule,
