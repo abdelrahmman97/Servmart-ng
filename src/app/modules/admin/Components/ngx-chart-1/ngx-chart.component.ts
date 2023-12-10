@@ -11,11 +11,11 @@ export class NgxChartComponent  {
 	xAxisLabel = 'الخدمات ';
 	yAxisLabel = 'عدد الخدمات ';
 	chartData = [
-		{ name: ' سباكة ', value: 250 },
-		{ name: 'نجار', value: 150 },
+		{ name: ' سباكة ', value: 30 },
+		{ name: 'نجار', value: 20},
 		{ name: 'خراط', value: 50 },
 		{ name: 'ترزى', value: 15 },
-		{ name: 'لحام حديد', value: 300 },
+		{ name: 'لحام حديد', value: 55 },
 		{ name: 'نقاش', value: 50 },
 		{ name: 'باقى الخدمات ', value: 50 },
 		// ... more data can be added as per your requirements

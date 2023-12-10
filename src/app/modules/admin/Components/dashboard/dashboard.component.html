@@ -76,10 +76,10 @@ style="background-image: url(../../../../../assets/images/22.jpg); background-re
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-7 row">
+    <div class="col-lg-5 row">
         <app-ngxchart2 class="col-12"></app-ngxchart2>
     </div>
-    <div class="col-lg-5">
+    <div class="col-lg-7">
         <app-ngx-chart></app-ngx-chart>
     </div>
 
@@ -136,10 +136,9 @@ style="background-image: url(../../../../../assets/images/22.jpg); background-re
                             <thead class="table-light">
                                 <tr>
                                     <th scope="col" class="border-0 rounded-start">#</th>
-                                    <th scope="col" class="border-0">أسم المستخدم </th>
                                     <th scope="col" class="border-0"> ألاميل</th>
                                     <th scope="col" class="border-0">رقم الهاتف</th>
-                                    <th scope="col" class="border-0">نوع الحساب</th>
+                                    <th scope="col" class="border-0">أسم المستخدم </th>
                                     <th scope="col" class="border-0"> عنوان المستخدم</th>
                                 </tr>
                             </thead>
@@ -153,19 +152,16 @@ style="background-image: url(../../../../../assets/images/22.jpg); background-re
                                             <img class="avatar-img rounded-circle" [src]="User.profilePic" alt="avatar">
                                         </div>
                                     </td>
-                                    <td>
-                                        <h6 class="mb-0"><a href="#">{{User.username}}</a></h6>
-                                    </td>
+                                
                                     <td>
                                         {{User.email}} </td>
                                     <td>
                                         {{User.phoneNo}}
                                     </td>
                                     <td>
-                                        <div class="badge text-bg-success">
-                                            {{User.roles[0].Name}}
-                                        </div>
-                                    </td>
+                                     
+                                            <h6 class="mb-0"><a href="#">{{User.username}}</a></h6>
+                                
                                     <td>
                                         <div class="badge bg-success bg-opacity-10 text-success">
                                             {{User.address}}
