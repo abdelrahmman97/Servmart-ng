@@ -48,12 +48,14 @@ export class DashboardComponent implements OnInit {
       this.user = data.length;
 	 
     });
+    this.Userlist();
 }
   Userlist(){
     this.productService.gstAllusers().subscribe({
       next: (data) => {
         this.Userall = data;
-        console.log(this.Userall);},
+        console.log(data);
+      },
 				error: error => {
 					this.isThereError = true;
 					this.errorMessage = "لقد حدث خطأ غير معروف من فضلك حاول مرة أخرى في وقت لاحق";
