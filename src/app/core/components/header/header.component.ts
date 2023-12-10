@@ -9,9 +9,17 @@ import { ILoginResualtModel } from '../../models/Auth/ILoginResualtModel';
 } )
 export class HeaderComponent {
 
+	isloggedIn: boolean = false;
 	user?: ILoginResualtModel | null = null;
 	constructor ( private auth: AuthService ) {
-		this.auth.getUserAsObservable().subscribe( x => this.user = x );
+		this.auth.getUserAsObservable().subscribe(
+			{
+				next: ( data ) => {
+					this.user = data;
+					this.isloggedIn = ( data == null ) ? false : true;
+					console.log( "user: ", data );
+				}
+			} );
 	}
 
 	isUserLoggedInCustomer: boolean = this.auth.isUserLoggedInCustomer();

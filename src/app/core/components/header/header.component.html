@@ -47,12 +47,12 @@
 								<i class="fas fa-ellipsis-h"></i>
 							</a>
 							<ul class="dropdown-menu min-w-auto dropdown-menu-end">
-								<li>
-									<a class="dropdown-item" [routerLink]="['/dashboard']" target="_blank" *ngIf="user.role && user.role.includes('Admin')">
+								<li *ngIf="isloggedIn">
+									<a class="dropdown-item" [routerLink]="['/admin/dashboard']" target="_blank"
+										*ngIf="user.role && user.role.includes('Admin')">
 										<i class="fa-duotone fa-headset"></i>
 										لوحة التحكم
 									</a>
-									
 								</li>
 								<li>
 									<a class="dropdown-item" href="docs/index.html" target="_blank">
@@ -70,8 +70,8 @@
 						</div>
 					</li>
 
-					<li>
-						<div class="d-flex d-md-none flex-nowrap login-register" *ngIf="!user">
+					<li *ngIf="!isloggedIn">
+						<div class="d-flex d-md-none flex-nowrap login-register">
 							<a class="nav-link flex-nowrap" [routerLink]="['/auth/login']">
 								<i class="fa-duotone fa-arrow-right-to-bracket me-2"></i>
 								Login
@@ -93,7 +93,7 @@
 
 				<!-- show/hide menu button -->
 				<li class="nav-item d-flex">
-					<div class="navbar-nav nav-pills-primary-soft flex-row gap-2 d-md-flex d-none" *ngIf="!user">
+					<div class="navbar-nav nav-pills-primary-soft flex-row gap-2 d-md-flex d-none" *ngIf="!isloggedIn">
 						<a class="nav-link btn-primary-soft d-flex flex-nowrap" [routerLink]="['/auth/login']">
 							<i class="fa-duotone fa-arrow-right-to-bracket me-2"></i>
 							Login
