@@ -5,6 +5,7 @@ import { LayoutComponent } from './core/components/layout/layout.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
 import { AdminLayoutComponent } from './modules/admin/Components/admin-layout/admin-layout.component';
 import { userLogedInGuard } from './shared/guards/userLogedInGuard/user-loged-in.guard';
+import { adminGuard } from './shared/guards/AdminGuard/admin.guard';
 
 
 const routes: Routes = [
@@ -30,7 +31,7 @@ const routes: Routes = [
 		path: "admin",
 		component: AdminLayoutComponent,
 		loadChildren: () => import( './modules/admin/admin.module' ).then( m => m.AdminModule ),
-		canActivate: [ userLogedInGuard ]
+		canActivate: [ userLogedInGuard, adminGuard ]
 	},
 
 	{ path: '**', component: NotFoundComponent }
