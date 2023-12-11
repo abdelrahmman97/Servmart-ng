@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestsOrdersService } from '../../services/RequestsOrders/Requests-Orders.service';
 import { AuthService } from 'src/app/modules/auth/services/auth/Auth.service';
-import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { RequestOffersService } from 'src/app/modules/customer/services/request-offers/request-offers.service';
 
 @Component( {
 	selector: 'app-requestOrders',
@@ -14,6 +14,7 @@ export class RequestOrdersComponent implements OnInit {
 	constructor (
 		private auth: AuthService,
 		private http: HttpClient,
+		private reqOffer: RequestOffersService,
 		private reqOrdersService: RequestsOrdersService
 	) { }
 
@@ -59,5 +60,30 @@ export class RequestOrdersComponent implements OnInit {
 		} );
 	}
 
+	chat ( id: string ) {
+		throw new Error( 'Method Chat() not implemented.' );
+	}
+
+	accept ( id: string ) {
+		this.reqOffer.acceptOffer( id ).subscribe( {
+			next: ( value ) => {
+				console.log( `aceept done: `, value );
+			},
+			error: ( error ) => {
+				console.log( `aceept error: `, error );
+			}
+		} );
+	}
+
+	reject ( id: string ) {
+		this.reqOffer.rejectOffer( id ).subscribe( {
+			next: ( value ) => {
+				console.log( `reject done: `, value );
+			},
+			error: ( error ) => {
+				console.log( `reject error: `, error );
+			}
+		} );
+	}
 
 }

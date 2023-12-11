@@ -34,28 +34,28 @@
 				<ul class="dropdown-menu" aria-labelledby="dropdoanMenu">
 					<!-- Dropdown menu -->
 					<li>
-						<a class="dropdown-item mb-2" href="#">
+						<button class="dropdown-item mb-2" (click)="accept(requestId)">
 							<i class="fa-duotone fa-check-double"></i>
 							قبول
-						</a>
+						</button>
 					</li>
 					<li>
-						<a class="dropdown-item mb-2 bg-primary-soft-hover" href="#">
+						<button class="dropdown-item mb-2 bg-primary-soft-hover" (click)="chat(requestId)">
 							<i class="fa-duotone fa-comments"></i>
 							تواصل
-						</a>
+						</button>
 					</li>
 					<li>
-						<a class="dropdown-item mb-2 bg-primary-soft-hover" href="#">
+						<a class="dropdown-item mb-2 bg-primary-soft-hover" [routerLink]="['sendOffer', requestId]">
 							<i class="fa-duotone fa-paper-plane"></i>
 							اضافة عرض
 						</a>
 					</li>
 					<li>
-						<a class="dropdown-item mb-2 bg-danger-soft-hover" href="#">
+						<button class="dropdown-item mb-2 bg-danger-soft-hover" (click)="reject(requestId)">
 							<i class="fa-duotone fa-trash"></i>
 							رفض
-						</a>
+						</button>
 					</li>
 				</ul>
 			</div>
