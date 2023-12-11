@@ -11,7 +11,9 @@ import { IUser } from 'src/app/core/models/User/IUser';
 export class AdminService {
 	baseURL = "https://localhost:7013/api/Service/GetAllServices";
 	request = "https://localhost:7013/api/Request/GetAllrequest";
-  user = "https://localhost:7013/api/User/GetAllCustomer";
+  user = "https://localhost:7013/api/User/GetAllUsers";
+  Providers = "https://localhost:7013/api/User/GetAllProviders";
+  Vendors = "https://localhost:7013/api/User/GetAllVendors";
   vendoe ="https://localhost:7013/api/User/GetAllVendor";
   servprovider = "https://localhost:7013/api/User/GetAllUser";
   users="https://localhost:7013/api/User/GetAllUsers";
@@ -23,6 +25,12 @@ export class AdminService {
   }
   gstAllrequest(){
     return this.httpclint.get<any[]>(this.request);  // get all products
+  }
+  GetAllProviders(){
+    return this.httpclint.get<any[]>(this.Providers);  // get all products
+  }
+  GetAllVendors(){
+    return this.httpclint.get<any[]>(this.Vendors);  // get all products
   }
   gstAlluser(){
     return this.httpclint.get<any[]>(this.user);  // get all products

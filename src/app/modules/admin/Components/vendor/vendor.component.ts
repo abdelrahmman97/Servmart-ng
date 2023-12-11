@@ -24,7 +24,7 @@ export class VendorComponent implements OnInit  {
     this.http.delete(`https://localhost:7013/api/User?Id=${userId}`).subscribe(
       () => {
         // Update the user list after deletion
-        this.vendorsList = this.productService.gstAllvendor();
+        this.vendorsList = this.productService.GetAllVendors();
         this.vendorsList.subscribe(vendors => {
           console.log('Received vendors data:', vendors);
       
@@ -42,7 +42,7 @@ export class VendorComponent implements OnInit  {
 
 	ngOnInit(): void {
 		
-		this.vendorsList = this.productService.gstAllvendor();
+		this.vendorsList = this.productService.GetAllVendors();
 		this.vendorsList.subscribe(vendors => {
 		  console.log('Received vendors data:', vendors);
 	
