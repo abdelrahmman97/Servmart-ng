@@ -21,7 +21,8 @@
 							<div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
 							</div>
 						</div>
-						<span><span class="text-primary"> عدد المنتجات الموجودة 16</span> اليوم</span>
+						<span><span class="text-primary"> {{productlist.length}}
+							عدد المنتجات الموجودة </span> اليوم</span>
 					</div>
 				</div>
 			</div>
@@ -32,7 +33,7 @@
 							<!-- Number -->
 							<div class="me-2">
 								<span>المنتجات الى تم رفضها </span>
-								<h3 class="mb-0 mt-2">12</h3>
+								<h3 class="mb-0 mt-2">0</h3>
 							</div>
 							<!-- Icon -->
 							<div class="icon-lg rounded-circle flex-shrink-0 bg-danger bg-opacity-10 text-danger mb-0">
@@ -44,7 +45,7 @@
 							<div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
 							</div>
 						</div>
-						<span><span class="text-danger">تم رفض 2 منتج</span> اليوم</span>
+						<span><span class="text-danger">تم رفض 0 منتج</span> اليوم</span>
 					</div>
 				</div>
 
@@ -57,7 +58,7 @@
 							<!-- Number -->
 							<div class="me-2">
 								<span>المنتج التى يتم التحقق منها</span>
-								<h3 class="mb-0 mt-2">20</h3>
+								<h3 class="mb-0 mt-2">0</h3>
 							</div>
 							<!-- Icon -->
 							<div class="icon-lg rounded-circle flex-shrink-0 bg-success bg-opacity-10 text-success mb-0">
@@ -69,7 +70,7 @@
 							<div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
 							</div>
 						</div>
-						<span><span class="text-success">45  المنتج التى تم التحققمنها</span> الوارده</span>
+						<span><span class="text-success">0  المنتج التى تم التحققمنها</span> الوارده</span>
 					</div>
 				</div>
 			</div>
@@ -80,7 +81,7 @@
 							<!-- Number -->
 							<div class="me-2">
 								<span>  ما تم رفضه</span>
-								<h3 class="mb-0 mt-2">28</h3>
+								<h3 class="mb-0 mt-2">0</h3>
 							</div>
 							<!-- Icon -->
 							<div class="icon-lg rounded-circle flex-shrink-0 bg-orange bg-opacity-10 text-orange mb-0">
@@ -158,11 +159,14 @@
 					<tbody *ngFor="let x of productlist" >
 						<tr>
 							
+							
 							<td class="w-25"> <img [src]="x.picsURL[0]" class=" bg-dark w-25 rounded-circle" alt=""></td>
 							<td>{{x.productName}}</td>
 							<td>{{x.unitPrice}}</td>
 							<td>{{x.description}}</td>
-							<td>4</td>
+							<td>
+							 <a class="btn btn-outline-warning" [routerLink]="['/product:',x.productID]"> رؤية تفاصي المنتج </a>
+							</td>
 							<td><button class="btn btn-outline-primary" [routerLink]="['/edit',x.productID]"><i class="fa-regular fa-pen-to-square"></i> تعديل</button></td>
 							<td><button (click)="Delete(x.productID)" class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i>حذف</button></td>
 						</tr>

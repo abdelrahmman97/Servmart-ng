@@ -39,28 +39,33 @@
 		<table class="table table-centered table-hover table-borderless mb-0 table-with-checkbox text-nowrap">
 			<thead class="bg-light">
 				<tr>
-					<th>صورة المنتج</th>
-					<th>اسم المنتج</th>
-					<th>اسم العميل</th>
+					<th>كود الطلب</th>
+					<th>عدد المنتجات</th>
 					<th>التاريخ والوقت</th>
 					<th>العنوان</th>
-					<th>الدفع</th>
+					<!-- <th>الدفع</th> -->
 					<th>السعر النهائي</th>
+					<th> تفاصيل الطلب</th>
 					
 				</tr>
 			</thead>
 			<tbody >
-				<tr *ngFor="let order of DataList|paginate: { itemsPerPage: 9, currentPage: p }" >
-				<td *ngFor="let ordercustomer of order.orderItems
-				">
+				<tr *ngIf="DataList.length==0">لا يوجد عمليات شراء الي الان</tr>
+				<tr *ngFor="let order of DataList" >
+				<!-- <td *ngFor="let ordercustomer of order.orderItems">
 					<img [src]="ordercustomer" style="width: 50px;" class="rounded-circle bg-danger " alt=""></td>
-				<td>{{order.productName}}</td>
-				<td>{{order.userName}}</td>
+				<td>{{order.productName}}</td> -->
+				<td>{{order.id}}</td>
+
+				<td>{{order.totalAmount}}</td>
+		
 				<td>{{order.createAt.slice(0,7)}}</td>
-				<td>{{order.address .slice(0,10)}} <br> {{order.governorate}} <br>{{order.city }}</td>
-				<td>تم</td>
-				<td>{{order.totalPrice
-				}}</td>
+				<td>{{order.address.slice(0,10)}} <br> {{order.governorate}} <br>{{order.city }}</td>
+				<td>{{order.totalPrice}}</td>
+				<td><a class="btn btn-outline-primary" [routerLink]="['/orderDetails:',order.id]">
+					<i class="fa-duotone fa-eye" style="--fa-primary-color: #0a57db; --fa-secondary-color: #0a57db;"></i>
+					رؤية التفاصيل 
+				</a></td>
 				</tr>
 
 			</tbody>
